@@ -1,29 +1,44 @@
-.collapsible-table {
-  width: 100%;
+table {
   border-collapse: collapse;
+  width: 100%;
 }
 
-.collapsible-table th,
-.collapsible-table td {
+th, td {
+  text-align: left;
   padding: 8px;
-  text-align: center;
-  border: 1px solid #ddd;
 }
 
-.collapsible-row {
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.collapsible-header {
   cursor: pointer;
+}
+
+.collapsible-header i {
+  font-size: 14px;
 }
 
 .collapsible-content {
   display: none;
+  padding: 10px;
 }
 
-.collapsible-content ul {
+.show .collapsible-content {
+  display: table-cell;
+}
+
+.player-list {
   list-style: none;
-  padding: 200px;
-  margin: 200px;
+  margin: 0;
+  padding: 0;
 }
 
-.collapsible-content li {
-  padding: 8px;
+.player-list li {
+  margin: 5px 0;
 }
