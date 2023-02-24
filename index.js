@@ -1,82 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Football Scores</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <table id="football-table">
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Opponent</th>
-        <th>Score</th>
-        <th>Result</th>
-        <th>Attendance</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="game-row" data-id="1">
-        <td>1/1/2023</td>
-        <td>Team A</td>
-        <td><span class="highlight">3-1</span></td>
-        <td>Win</td>
-        <td>10,000</td>
-      </tr>
-      <tr class="game-row" data-id="2">
-        <td>1/8/2023</td>
-        <td>Team B</td>
-        <td><span class="highlight">0-0</span></td>
-        <td>Draw</td>
-        <td>8,000</td>
-      </tr>
-      <tr class="game-row" data-id="3">
-        <td>1/15/2023</td>
-        <td>Team C</td>
-        <td><span class="highlight">2-1</span></td>
-        <td>Win</td>
-        <td>12,000</td>
-      </tr>
-      <!-- add more rows here as needed -->
-    </tbody>
-  </table>
+function showGameBox(gameId) {
+  const gameRow = document.querySelector(`.game-row[data-id="${gameId}"]`);
+  const gameCells = gameRow.querySelectorAll("td");
+  const gameBox = document.getElementById("game-box");
 
-  <div id="game-box">
-    <table>
-      <thead>
-        <tr>
-          <th>Team A</th>
-          <th>Score</th>
-          <th>Score</th>
-          <th>Team B</th>
-          <th>Result</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Player 1</td>
-          <td>Player 2</td>
-          <td>Player 3</td>
-          <td>Player 1</td>
-          <td rowspan="11">Win</td>
-        </tr>
-        <tr>
-          <td>Player 4</td>
-          <td>Player 5</td>
-          <td>Player 6</td>
-          <td>Player 2</td>
-        </tr>
-        <tr>
-          <td>Player 7</td>
-          <td>Player 8</td>
-          <td>Player 9</td>
-          <td>Player 3</td>
-        </tr>
-        <!-- add more rows here as needed -->
-      </tbody>
-    </table>
-  </div>
+  // Populate game box with data
+  const gameData = getGameData(gameId);
+  if (gameData) {
+    const teamAScore = gameCells[2].textContent.split("-")[0].trim();
+    const teamBScore = gameCells[2].textContent.split("-")[1].trim();
 
-  <script src="script.js"></script>
-</body>
-</html>
+    gameBox.querySelector("th:first-child").textContent = gameData.teamA;
+    gameBox.querySelector("th:last-child").textContent = gameData.teamB;
+    gameBox.querySelector("td:nth-child(1)").textContent = gameData.playersA[0];
+    gameBox.querySelector("td:nth-child(2)").textContent = gameData.playersA[1];
+    gameBox.querySelector("td:nth-child(3)").textContent = gameData.playersA[2];
+    gameBox.querySelector("td:nth-child(4)").textContent = gameData.playersB[0];
+    gameBox.querySelector("td:nth-child(5)").textContent = gameData.playersB[1];
+    gameBox.querySelector("td:nth-child(6)").textContent = gameData.playersB[2];
+    gameBox.querySelector("td:nth-child(7)").textContent = teamAScore;
+    gameBox.querySelector("td:nth-child(8)").textContent = teamBScore;
+    gameBox.querySelector("td:nth-child(9)").textContent = gameData.result;
+  }
+
+  // Show or hide game box
+  if (gameBox.classList.contains("show") && gameBox.dataset.id === gameId) {
+    gameBox.classList.remove("show");
+    gameBox.dataset.id = "";
+  } else {
+    gameBox.classList.add("show");
+    gameBox.dataset.id = gameId;
+  }
+}
