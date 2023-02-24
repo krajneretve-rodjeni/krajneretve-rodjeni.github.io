@@ -1,0 +1,29 @@
+.collapsible-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.collapsible-table th,
+.collapsible-table td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.collapsible-row {
+  cursor: pointer;
+}
+
+.collapsible-content {
+  display: none;
+}
+
+.collapsible-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.collapsible-content li {
+  padding: 8px;
+}
