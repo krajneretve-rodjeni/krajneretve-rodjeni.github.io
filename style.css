@@ -1,6 +1,11 @@
-body {
+/* style.css */
+
+table {
   font-family: Arial, sans-serif;
   font-size: 16px;
-  margin: 0;
-  padding: 0;
+}
+
+th, td {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
 }
