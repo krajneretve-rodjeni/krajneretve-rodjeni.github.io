@@ -32,13 +32,3 @@ tr:nth-child(even) {
 .show .collapsible-content {
   display: table-cell;
 }
-
-.player-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.player-list li {
-  margin: 5px 0;
-}
