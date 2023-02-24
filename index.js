@@ -1,16 +1,9 @@
-const collapsibleRows = document.querySelectorAll('.collapsible-row');
-
-if (collapsibleRows.length === 0) {
-  console.error('No collapsible rows found.');
+function showDetails(row) {
+  var detailsRow = document.getElementById("details");
+  if (detailsRow.style.display === "none") {
+    detailsRow.style.display = "table-row";
+    detailsRow.style.backgroundColor = row.style.backgroundColor;
+  } else {
+    detailsRow.style.display = "none";
+  }
 }
-
-collapsibleRows.forEach(row => {
-  row.addEventListener('click', () => {
-    const contentRow = row.nextElementSibling;
-    if (!contentRow || !contentRow.classList.contains('collapsible-content')) {
-      console.error('Could not find collapsible content row for clicked row.');
-      return;
-    }
-    contentRow.classList.toggle('show');
-  });
-});
