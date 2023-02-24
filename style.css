@@ -1,24 +1,85 @@
-table {
-  border-collapse: collapse;
+#football-table {
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
+  border-collapse: collapse;
 }
 
-table th, table td {
-  border: 1px solid #ccc;
+#football-table th,
+#football-table td {
   padding: 8px;
   text-align: left;
+  border-bottom: 1px solid #ddd;
 }
 
-table th {
+#football-table th:first-child,
+#football-table td:first-child {
+  width: 20%;
+}
+
+#football-table th:nth-child(2),
+#football-table td:nth-child(2) {
+  width: 30%;
+}
+
+#football-table th:nth-child(3),
+#football-table td:nth-child(3) {
+  width: 15%;
+}
+
+#football-table th:nth-child(4),
+#football-table td:nth-child(4) {
+  width: 15%;
+}
+
+#football-table th:nth-child(5),
+#football-table td:nth-child(5) {
+  width: 20%;
+}
+
+.highlight {
+  font-weight: bold;
+  color: blue;
+  cursor: pointer;
+}
+
+#game-box {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
   background-color: #f2f2f2;
+  padding: 20px;
+  overflow: auto;
 }
 
-table tr.selected {
-  background-color: #ffc107;
+#game-box table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-table tr.hidden {
-  display: none;
+#game-box th,
+#game-box td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+#game-box th:first-child,
+#game-box td:first-child {
+  width: 25%;
+}
+
+#game-box th:nth-child(2),
+#game-box td:nth-child(2) {
+  width: 25%;
+}
+
+#game-box th:nth-child(3),
+#game-box td:nth-child(3) {
+  width: 25%;
+}
+
+#game-box th:nth-child(4),
+#game-box td:nth-child(4) {
+  width: 25%;
 }
