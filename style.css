@@ -8,27 +8,11 @@ th, td {
   padding: 8px;
 }
 
+tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+
 th {
-  background-color: #f2f2f2;
-}
-
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-.collapsible-header {
-  cursor: pointer;
-}
-
-.collapsible-header i {
-  font-size: 14px;
-}
-
-.collapsible-content {
-  display: none;
-  padding: 10px;
-}
-
-.show .collapsible-content {
-  display: table-cell;
+  background-color: #4CAF50;
+  color: white;
 }
