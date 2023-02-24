@@ -1,18 +1,24 @@
 table {
   border-collapse: collapse;
   width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-th, td {
-  text-align: left;
+table th, table td {
+  border: 1px solid #ccc;
   padding: 8px;
+  text-align: left;
 }
 
-tr:nth-child(even){
+table th {
   background-color: #f2f2f2;
 }
 
-th {
-  background-color: #4CAF50;
-  color: white;
+table tr.selected {
+  background-color: #ffc107;
+}
+
+table tr.hidden {
+  display: none;
 }
