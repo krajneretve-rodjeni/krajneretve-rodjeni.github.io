@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-  <head><head>
+<html><head>
     <title>1952-53 | KNR</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -17,19 +16,22 @@
             font-size: 16px;
         }
 
-      #fixedBox {
+      .fixedBox {
         position: fixed;
         top: 20%;
-        left: 20%;
+        left: 25%;
         width: 50%;
         height: 40%;
         background-color: white;
         border: 1px solid black;
+        border-radius: 10px;
         z-index: 9999;
         display: none;
+        overflow: auto;
+        padding: 9px;
       }
 
-      #overlay {
+      .overlay {
         position: fixed;
         top: 0;
         left: 0;
@@ -190,20 +192,54 @@ span:hover + .scorers {
 }
     </style>
   </head>
-  <div id="fixedBox">
+  <body><div id="fixedBox" style="display: none;">
       <p>Click anywhere outside of this box to hide it.</p>
     </div>
 
-    <div id="overlay"></div>
-  <body>
+    <div id="overlay" style="display: none;"></div>
+  
   <div class="banner"><a href="../index.html"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1079036319184978120/logo2.png" class="logo"></a><img src="../images/site/protivnici.png" class="headercontent" align="right"><img src="../images/site/statistika.png" class="headercontent" align="right"><img src="../images/site/abecedarnik.png" class="headercontent" align="right"></div>
   <div class="container">
     <br>
     <br>
     <br>
   <div class="panel panel-default">
-    <div class="panel-body"><div class="img-with-text"><img src="../images/historical/mo2Bvelez2Bmostar2B1953.png" width="100%"><p><i>Stoje: Hamdija Ćemalović, Dušan Rukavina, Salko Selimotić, Vaso Vreća, Anton Bolfek, Žarko Barbarić, Haldun Hrvić<br>Čuče: Mensud Dilberović, Muhamed Mujić, Ranko Borozan, Kruno Radiljević</i></p></div><h1>Sezona 1952-53</h1><p>Veležov pothvat da se plasira u Prvu ligu ikako je bio nezamisliv iz geografske perspektive. Prema popisu stanovništva 1953. čitava mostarska općina je imala manje stanovnika (72.000) nego urbano područje drugog najmanjeg grada u Prvoj ligi, Split (75.000). Ovaj podatak je još potresniji kada se uzme u obzir da od 20 fudbalera koji su igrali za Velež u ovoj historijskoj sezoni, 16 je rođeno u Mostaru, plus još dva fudbalera iz Hercegovine (Dano Praje iz Nevesinja i Vaso Vreća iz Stoca.)</p><p>Među prvim klubovima koji su čestitali Veležu nakon ulaska u Prvu ligu je bila Crvena zvezda, i upravo će sa njima odigrati prvu utakmicu u najvećem rangu jugoslovenskog fudbala. Uprkos porazu koji je došao pred sami kraj utakmice, veliki broj navijača prisutan na Starom Veležovom igralištu je mogao biti zadovoljan kako su se rođeni parirali sa ekipom "Velike četvorke", kojoj je prošle sezone falio samo jedan bod za osvajanje titule. Ni iduća utakmica protiv Sarajeva nije prošla nezapaženo, beogradski Sport opisuje kako nikada nije vladalo toliko interesovanja za jednu utakmicu unutar Bosne i Hercegovine. Posebne pohvale za prvi ligaški derbi Bosne i Hercegovine moraju otići Veležovom golmanu Žarku Barbariću, koji je pravio fantastične odbrane pred oko 12.000 navijača, ali je nažalost morao kapitulirati u 72. minuti Franji Lovriću, i 16 minuta kasnije njegovom bratu Đuri iz penala.</p><p>Za 3. kolo gost u Mostaru je bio splitski Hajduk, prvak prošle sezone. Ova utakmica ostaje posebno zabilježena po tome što je Velež postigao svoj prvi gol u Prvoj ligi, udarac Slavka Hudarina u 39. minuti koji je ujedno i poravnao utakmicu. Čak i sa "jakom i oštrom igrom Veleža" kako je opisano u tadašnjem novinskom izvještaju, za prvi bod se moralo čekati skoro mjesec dana kasnije, a za prvu pobjedu početkom novembra.</p><p id="showBox">Show Box</p><h1>Prva savezna liga</h1></div>
-      
+    <div class="panel-body"><div class="img-with-text"><img src="../images/historical/mo2Bvelez2Bmostar2B1953.png" width="100%"><p><i>Stoje: Hamdija Ćemalović, Dušan Rukavina, Salko Selimotić, Vaso Vreća, Anton Bolfek, Žarko Barbarić, Haldun Hrvić<br>Čuče: Mensud Dilberović, Muhamed Mujić, Ranko Borozan, Kruno Radiljević</i></p></div><h1>Sezona 1952-53</h1><p>Veležov pothvat da se plasira u Prvu ligu ikako je bio nezamisliv iz geografske perspektive. Prema popisu stanovništva 1953. čitava mostarska općina je imala manje stanovnika (72.000) nego urbano područje drugog najmanjeg grada u Prvoj ligi, Split (75.000). Ovaj podatak je još potresniji kada se uzme u obzir da od 20 fudbalera koji su igrali za Velež u ovoj historijskoj sezoni, 16 je rođeno u Mostaru, plus još dva fudbalera iz Hercegovine (Dano Praje iz Nevesinja i Vaso Vreća iz Stoca.)</p><p>Među prvim klubovima koji su čestitali Veležu nakon ulaska u Prvu ligu je bila Crvena zvezda, i upravo će sa njima odigrati prvu utakmicu u najvećem rangu jugoslovenskog fudbala. Uprkos porazu koji je došao pred sami kraj utakmice, veliki broj navijača prisutan na Starom Veležovom igralištu je mogao biti zadovoljan kako su se rođeni parirali sa ekipom "Velike četvorke", kojoj je prošle sezone falio samo jedan bod za osvajanje titule. Ni iduća utakmica protiv Sarajeva nije prošla nezapaženo, beogradski Sport opisuje kako nikada nije vladalo toliko interesovanja za jednu utakmicu unutar Bosne i Hercegovine. Posebne pohvale za prvi ligaški derbi Bosne i Hercegovine moraju otići Veležovom golmanu Žarku Barbariću, koji je pravio fantastične odbrane pred oko 12.000 navijača, ali je nažalost morao kapitulirati u 72. minuti Franji Lovriću, i 16 minuta kasnije njegovom bratu Đuri iz penala.</p><p>Za 3. kolo gost u Mostaru je bio splitski Hajduk, prvak prošle sezone. Ova utakmica ostaje posebno zabilježena po tome što je Velež postigao svoj prvi gol u Prvoj ligi, udarac Slavka Hudarina u 39. minuti koji je ujedno i poravnao utakmicu. Čak i sa "jakom i oštrom igrom Veleža" kako je opisano u tadašnjem novinskom izvještaju, za prvi bod se moralo čekati skoro mjesec dana kasnije, a za prvu pobjedu početkom novembra.</p>
+    <p id="showBox2">Show Box 2</p>
+    <p id="showBox3">Show Box 3</p>
+    <p id="showBox4">Show Box 4</p>
+
+    <div id="fixedBox1" class="fixedBox">
+      <p>ZVEZDA: Krivokuća, Stamković. Zeković, Tadić, Diskić, Džajić, Ognjanović, Mitić, Živanović, Zlatković, Vukosavljević
+<p>VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Bolfek, Radiljević, S.Selimotić, Hrvić, Vreća, Mujić, Ćemalović
+<p>ZVEZDA: Krivokuća, Stamković. Zeković, Tadić, Diskić, Džajić, Ognjanović, Mitić, Živanović, Zlatković, Vukosavljević
+<p>VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Bolfek, Radiljević, S.Selimotić, Hrvić, Vreća, Mujić, Ćemalović<p>ZVEZDA: Krivokuća, Stamković. Zeković, Tadić, Diskić, Džajić, Ognjanović, Mitić, Živanović, Zlatković, Vukosavljević
+<p>VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Bolfek, Radiljević, S.Selimotić, Hrvić, Vreća, Mujić, Ćemalović
+<p>ZVEZDA: Krivokuća, Stamković. Zeković, Tadić, Diskić, Džajić, Ognjanović, Mitić, Živanović, Zlatković, Vukosavljević
+<p>VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Bolfek, Radiljević, S.Selimotić, Hrvić, Vreća, Mujić, Ćemalović
+</p>
+    </div>
+
+    <div id="overlay1" class="overlay"></div>
+
+    <div id="fixedBox2" class="fixedBox">
+      <p>Box 2: Click anywhere outside of this box to hide it.</p>
+    </div>
+
+    <div id="overlay2" class="overlay"></div>
+
+    <div id="fixedBox3" class="fixedBox">
+      <p>Box 3: Click anywhere outside of this box to hide it.</p>
+    </div>
+
+    <div id="overlay3" class="overlay"></div>
+
+	<div id="fixedBox4" class="fixedBox">
+      <p>Box 4: Click anywhere outside of this box to hide it.</p>
+    </div>
+
+    <div id="overlay4" class="overlay"></div><h1>Prva savezna liga</h1></div>
+
     <table>
 		<thead>
 			<tr>
@@ -221,7 +257,7 @@ span:hover + .scorers {
 				<td><span>Crvena zvezda</span><div class="players">VELEŽ: Barbarić, Dilberović, Prajo, Borozan, Bolfek, Ćemalović, Slišković, Mujić, Momić, Hrvić, Hudarin<br>ZVEZDA: Lovrić, Stanković, Zeković, Zlatković, Diskić, Džajić, Ognjanov, Mitić, Živanović, Palfi, Vukosavljević</div></td>
 				<td>Staro Veležovo</td>
 				<td align="center"><span>0 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td><td>0-1</td><td>Ognjanov 76'</td></tr></tbody></table></div></td>
-				<td bgcolor="#F4CCCC" align="center" position="relative"><span>I</span><div class="imagetable" style="top:25.6%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080132408659165274/tab31-8-52.png" width="300px"></div></td>
+				<td bgcolor="#F4CCCC" align="center" position="relative"><p id="showBox1">I</p></td>
 				<td align="right">10,000</td>
 			</tr>
 			<tr>
@@ -586,19 +622,62 @@ span:hover + .scorers {
 </table></div></div></div></div>
 
     <script>
-      const showBoxButton = document.getElementById('showBox');
-      const fixedBox = document.getElementById('fixedBox');
-      const overlay = document.getElementById('overlay');
+      const showBoxButton1 = document.getElementById('showBox1');
+      const fixedBox1 = document.getElementById('fixedBox1');
+      const overlay1 = document.getElementById('overlay1');
 
-      showBoxButton.addEventListener('click', function() {
-        fixedBox.style.display = 'block';
-        overlay.style.display = 'block';
+      showBoxButton1.addEventListener('click', function() {
+        fixedBox1.style.display = 'block';
+        overlay1.style.display = 'block';
       });
 
-      overlay.addEventListener('click', function() {
-        fixedBox.style.display = 'none';
-        overlay.style.display = 'none';
+      overlay1.addEventListener('click', function() {
+        fixedBox1.style.display = 'none';
+        overlay1.style.display = 'none';
+      });
+
+      const showBoxButton2 = document.getElementById('showBox2');
+      const fixedBox2 = document.getElementById('fixedBox2');
+      const overlay2 = document.getElementById('overlay2');
+
+      showBoxButton2.addEventListener('click', function() {
+        fixedBox2.style.display = 'block';
+        overlay2.style.display = 'block';
+      });
+
+      overlay2.addEventListener('click', function() {
+        fixedBox2.style.display = 'none';
+        overlay2.style.display = 'none';
+      });
+
+      const showBoxButton3 = document.getElementById('showBox3');
+      const fixedBox3 = document.getElementById('fixedBox3');
+      const overlay3 = document.getElementById('overlay3');
+
+      showBoxButton3.addEventListener('click', function() {
+        fixedBox3.style.display = 'block';
+        overlay3.style.display = 'block';
+      });
+
+      overlay3.addEventListener('click', function() {
+        fixedBox3.style.display = 'none';
+        overlay3.style.display = 'none';
+      });
+      
+      const showBoxButton4 = document.getElementById('showBox4');
+      const fixedBox4 = document.getElementById('fixedBox4');
+      const overlay4 = document.getElementById('overlay4');
+
+      showBoxButton4.addEventListener('click', function() {
+        fixedBox4.style.display = 'block';
+        overlay4.style.display = 'block';
+      });
+
+      overlay4.addEventListener('click', function() {
+        fixedBox4.style.display = 'none';
+        overlay4.style.display = 'none';
       });
     </script>
-  </body>
-</html>
+  
+
+</body></html>
