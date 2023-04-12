@@ -43,7 +43,7 @@
       }
     .banner {
     background-image: url('../images/site/header.png');
-    height: 5.3%;
+    height: 50px;
     background-size: cover;
     background-position: center;
         position: absolute;
@@ -56,7 +56,6 @@
     position: relative;
     z-index: 2;
   }
-    @media only screen and (min-width: 768px) {
     .logo {
     margin-top:7px;
     margin-left:20px;
@@ -67,20 +66,6 @@
     .logo:hover {
     opacity: 0.5;
 }
-    }
-    @media only screen and (max-width: 768px) {
-    .logo {
-    margin-top: auto;
-    margin-left: auto;
-    opacity: 1;
-    transition: opacity 0.2s ease-in-out;
-}
-
-    .logo:hover {
-    opacity: 0.5;
-}
-    }
-    @media only screen and (min-width: 768px) {
     .headercontent {
     height:30px;
     margin-top:11px;
@@ -92,21 +77,6 @@
     .headercontent:hover {
     opacity: 0.5;
 }
-        }
-        @media only screen and (max-width: 768px) {
-    .headercontent {
-    height:30px;
-    margin-top:11px;
-    margin-right:20px;
-    opacity: 1;
-    transition: opacity 0.2s ease-in-out;
-        display: none;
-}
-
-    .headercontent:hover {
-    opacity: 0.5;
-}
-        }
 .players {
   background-color: #F7F7F7;
   width: 600px;
@@ -220,6 +190,22 @@ span:hover + .scorers {
   clear: both;
   display: table;
 }
+    .my-box {
+  display: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .my-box {
+    display: block;
+  }
+  .my-box-content {
+    font-size: 24px;
+  color: #fff;
+  background-color: #333;
+  padding: 10px;
+}
+  }
+}
     </style>
   </head>
   <body><div id="fixedBox" style="display: none;">
@@ -232,13 +218,16 @@ span:hover + .scorers {
   <div class="container">
     <br>
     <br>
-    <br>
+    <br><div class="my-box">
+  <div class="my-box-content">🇧🇦 Nažalost, ova stranica još nije optimizovana za mobilne uređaje. Molimo vas da otvorite postavke na vašem pretraživaču, i odaberete opciju "Stranica radne površine".
+🇬🇧 Unfortunately, this website is not yet fully optimized for mobile devices. Please open the settings on your browser, and select the "Desktop mode" option.</div>
+</div>
   <div class="panel panel-default">
     <div class="panel-body"><div class="img-with-text"><img src="../images/historical/mo2Bvelez2Bmostar2B1953.png" width="100%"><p><i>Stoje: Hamdija Ćemalović, Dušan Rukavina, Salko Selimotić, Vaso Vreća, Anton Bolfek, Žarko Barbarić, Haldun Hrvić<br>Čuče: Mensud Dilberović, Muhamed Mujić, Ranko Borozan, Kruno Radiljević</i></p></div><h1>Sezona 1952-53</h1><p>Veležov pothvat da se plasira u Prvu ligu ikako je bio nezamisliv iz geografske perspektive. Prema popisu stanovništva 1953. čitava mostarska općina je imala manje stanovnika (72.000) nego urbano područje drugog najmanjeg grada u Prvoj ligi, Split (75.000). Ovaj podatak je još potresniji kada se uzme u obzir da od 20 fudbalera koji su igrali za Velež u ovoj historijskoj sezoni, 16 je rođeno u Mostaru, plus još dva fudbalera iz Hercegovine (Dano Praje iz Nevesinja i Vaso Vreća iz Stoca.)</p><p>Među prvim klubovima koji su čestitali Veležu nakon ulaska u Prvu ligu je bila Crvena zvezda, i upravo će sa njima odigrati prvu utakmicu u najvećem rangu jugoslovenskog fudbala. Uprkos porazu koji je došao pred sami kraj utakmice, veliki broj navijača prisutan na Starom Veležovom igralištu je mogao biti zadovoljan kako su se rođeni parirali sa ekipom "Velike četvorke", kojoj je prošle sezone falio samo jedan bod za osvajanje titule. Ni iduća utakmica protiv Sarajeva nije prošla nezapaženo, beogradski Sport opisuje kako nikada nije vladalo toliko interesovanja za jednu utakmicu unutar Bosne i Hercegovine. Posebne pohvale za prvi ligaški derbi Bosne i Hercegovine moraju otići Veležovom golmanu Žarku Barbariću, koji je pravio fantastične odbrane pred oko 12.000 navijača, ali je nažalost morao kapitulirati u 72. minuti Franji Lovriću, i 16 minuta kasnije njegovom bratu Đuri iz penala.</p><p>Za 3. kolo gost u Mostaru je bio splitski Hajduk, prvak prošle sezone. Ova utakmica ostaje posebno zabilježena po tome što je Velež postigao svoj prvi gol u Prvoj ligi, udarac Slavka Hudarina u 39. minuti koji je ujedno i poravnao utakmicu. Čak i sa "jakom i oštrom igrom Veleža" kako je opisano u tadašnjem novinskom izvještaju, za prvi bod se moralo čekati skoro mjesec dana kasnije, a za prvu pobjedu početkom novembra.</p>
     
     
 
-    <div id="fixedBox1" class="fixedBox" style="display: none;">
+    <div id="fixedBox1" class="fixedBox">
       <p>ZVEZDA: Krivokuća, Stamković. Zeković, Tadić, Diskić, Džajić, Ognjanović, Mitić, Živanović, Zlatković, Vukosavljević
 </p><p>VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Bolfek, Radiljević, S.Selimotić, Hrvić, Vreća, Mujić, Ćemalović
 </p><p>ZVEZDA: Krivokuća, Stamković. Zeković, Tadić, Diskić, Džajić, Ognjanović, Mitić, Živanović, Zlatković, Vukosavljević
@@ -249,7 +238,7 @@ span:hover + .scorers {
 </p>
     </div>
 
-    <div id="overlay1" class="overlay" style="display: none;"></div>
+    <div id="overlay1" class="overlay"></div>
 
     <div id="fixedBox2" class="fixedBox" style="display: none;">
       <p>Box 2: Click anywhere outside of this box to hide it.</p>
@@ -263,11 +252,11 @@ span:hover + .scorers {
 
     <div id="overlay3" class="overlay"></div>
 
-	<div id="fixedBox4" class="fixedBox" style="display: none;">
+	<div id="fixedBox4" class="fixedBox">
       <p>Box 4: Click anywhere outside of this box to hide it.</p>
     </div>
 
-    <div id="overlay4" class="overlay" style="display: none;"></div><h1>Prva savezna liga</h1></div>
+    <div id="overlay4" class="overlay"></div><h1>Prva savezna liga</h1></div>
 
     <table>
 		<thead>
@@ -708,9 +697,6 @@ span:hover + .scorers {
       });
     </script>
   
-
-
-
 
 
 
