@@ -66,14 +66,27 @@
     .logo:hover {
     opacity: 0.5;
 }
-        @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 768px) {
     .headercontent {
     height:30px;
     margin-top:11px;
     margin-right:20px;
     opacity: 1;
     transition: opacity 0.2s ease-in-out;
-        display: block;
+}
+
+    .headercontent:hover {
+    opacity: 0.5;
+}
+        }
+        @media only screen and (max-width: 768px) {
+    .headercontent {
+    height:30px;
+    margin-top:11px;
+    margin-right:20px;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+        display: none;
 }
 
     .headercontent:hover {
@@ -681,6 +694,7 @@ span:hover + .scorers {
       });
     </script>
   
+
 
 
 
