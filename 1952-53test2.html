@@ -56,9 +56,10 @@
     position: relative;
     z-index: 2;
   }
+    @media only screen and (min-width: 768px) {
     .logo {
-    margin-top: 0.4%;
-    margin-left: 1.1%;
+    margin-top:7px;
+    margin-left:20px;
     opacity: 1;
     transition: opacity 0.2s ease-in-out;
 }
@@ -66,6 +67,19 @@
     .logo:hover {
     opacity: 0.5;
 }
+    }
+    @media only screen and (max-width: 768px) {
+    .logo {
+    margin-top: auto;
+    margin-left: auto;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+    .logo:hover {
+    opacity: 0.5;
+}
+    }
     @media only screen and (min-width: 768px) {
     .headercontent {
     height:30px;
@@ -694,6 +708,7 @@ span:hover + .scorers {
       });
     </script>
   
+
 
 
 
