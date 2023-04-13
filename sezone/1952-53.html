@@ -231,28 +231,34 @@ span:hover + .scorers {
     
 
     <div id="fixedBox1" class="fixedBox" style="display: none;">
-      <div class="imagetable"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080132408659165274/tab31-8-52.png" width="100%"></div>
+      <div class="imagetable"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1096063579523915786/tab31-8-1952.png" width="100%"></div>
     </div>
 
     <div id="overlay1" class="overlay" style="display: none;"></div>
 
     <div id="fixedBox2" class="fixedBox" style="display: none;">
-      <div class="imagetable"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080167979112742933/tab14-9-52.png" width="100%"></div>
+      <div class="imagetable"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1096068200501870622/tab14-9-1952.png" width="100%"></div>
     </div>
 
     <div id="overlay2" class="overlay" style="display: none;"></div>
 
     <div id="fixedBox3" class="fixedBox" style="display: none;">
-      <div class="imagetable"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080168744258650132/tab28-9-52.png" width="100%"></div>
+      <div class="imagetable"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1096071389930344550/tab28-9-1952.png" width="100%"></div>
     </div>
 
     <div id="overlay3" class="overlay" style="display: none;"></div>
 
 	<div id="fixedBox4" class="fixedBox" style="display: none;">
       
-    <div class="imagetable"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1095828416252608655/tab12-10-1952.png" width="100%"></div></div>
+    <div class="imagetable"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1096075483109654629/tab12-10-1952.png" width="100%"></div></div>
 
-    <div id="overlay4" class="overlay" style="display: none;"></div><h1>Prva savezna liga</h1></div>
+    <div id="overlay4" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox5" class="fixedBox" style="display: none;">
+      
+    <div class="imagetable"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1096081768089669692/tab19-10-1952.png" width="100%"></div></div>
+
+    <div id="overlay5" class="overlay" style="display: none;"></div><h1>Prva savezna liga</h1></div>
 
     <table>
 		<thead>
@@ -305,7 +311,7 @@ span:hover + .scorers {
 				<td>Staro Veležovo</td>
 				<td align="center"><span>0 - 0</span></td>
             
-				<td bgcolor="#FFF2CC" align="center"><span>N</span><div class="imagetable" style="top: 34.1%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080135512817401978/tab28-9-1952.png" width="300px" top="200"></div></td>
+				<td bgcolor="#FFF2CC" align="center"><p id="showBox5">N</p></td>
 				<td align="right">6,000</td>
 			</tr><tr>
 				<td>26.10.1952.</td>
@@ -691,8 +697,23 @@ span:hover + .scorers {
         fixedBox4.style.display = 'none';
         overlay4.style.display = 'none';
       });
+      
+      const showBoxButton5 = document.getElementById('showBox5');
+      const fixedBox5 = document.getElementById('fixedBox5');
+      const overlay5 = document.getElementById('overlay5');
+
+      showBoxButton5.addEventListener('click', function() {
+        fixedBox5.style.display = 'block';
+        overlay5.style.display = 'block';
+      });
+
+      overlay5.addEventListener('click', function() {
+        fixedBox5.style.display = 'none';
+        overlay5.style.display = 'none';
+      });
     </script>
   
+
 
 
 
