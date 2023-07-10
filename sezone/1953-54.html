@@ -7,7 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
-        body {
+      body {
             background-image: url('../images/site/background.png');
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -15,7 +15,45 @@
             font-family: Helvetica, Arial, sans-serif;
             font-size: 16px;
         }
-          .banner {
+.credits {
+    text-align: center;
+    color: white;
+}
+    .warning {
+    display: inline-block;
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 10px;
+}
+    .warning b {
+    color: red;
+}
+      .fixedBox {
+        position: fixed;
+        top: 20%;
+        left: 25%;
+        width: 50%;
+        height: 60%;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 10px;
+        z-index: 9999;
+        display: none;
+        overflow: auto;
+        padding: 9px;
+      }
+
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 9998;
+        display: none;
+      }
+    .banner {
     background-image: url('../images/site/header.png');
     height: 50px;
     background-size: cover;
@@ -65,13 +103,10 @@ span:hover + .players {
   display: block;
 }
 .imagetable {
-  background-color: #F7F7F7;
-  width: 320px;
-  border: 1px solid black;
-  border-radius: 10px;
-  position: absolute;
-  padding: 9px;
-  display: none;
+    display: block;
+    margin-left: auto;
+  margin-right: auto;
+  width: 60%;
 }
   
 span:hover + .imagetable {
@@ -164,17 +199,371 @@ span:hover + .scorers {
   clear: both;
   display: table;
 }
+    .mobile-box {
+  display: none;
+}
+h2 {
+    margin-top: 1px; 
+}
+    .signature {
+        text-align: right;
+    }
+@media only screen and (max-width: 767px) {
+  .mobile-box {
+    display: block;
+  }
+  .mobile-box-content {
+    font-size: 24px;
+  color: #fff;
+  background-color: #333;
+	  border-radius: 10px;
+  padding: 10px;
+}
+    .banner {
+        display: none;
+    }
+    html, body {
+  overflow: hidden;
+}
+  }
+}
     </style>
-</head>
-<body>
-<div class="banner"><a href="../index.html"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1079036319184978120/logo2.png" class="logo"></a><img src="../images/site/protivnici.png" class="headercontent" align="right"><img src="../images/site/statistika.png" class="headercontent" align="right"><img src="../images/site/abecedarnik.png" class="headercontent" align="right"></div>
-<div class="container">
-    <br>
-    <br>
+  <style id="__web-inspector-hide-shortcut-style__">
+.__web-inspector-hide-shortcut__, .__web-inspector-hide-shortcut__ *, .__web-inspector-hidebefore-shortcut__::before, .__web-inspector-hideafter-shortcut__::after
+{
+    visibility: hidden !important;
+}
+</style></head>
+  <body><div id="fixedBox" style="display: none;">
+      <p>Click anywhere outside of this box to hide it.</p>
+    </div>
+
+    <div id="overlay" style="display: none;"></div>
+  
+  <div class="banner"><a href="../index.html"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1079036319184978120/logo2.png" class="logo"></a><img src="../images/site/statistika.png" class="headercontent" align="right"><img src="../images/site/protivnici.png" class="headercontent" align="right"><img src="../images/site/kalendar.png" class="headercontent" align="right"><img src="../images/site/abecedarnik.png" class="headercontent" align="right"></div>
+  <div class="container">
+    
+    <br><div class="mobile-box">
+  <div class="mobile-box-content">🇧🇦 Nažalost, ova stranica još nije optimizovana za mobilne uređaje. Molimo vas da otvorite postavke na vašem pretraživaču, i odaberete opciju "Stranica radne površine".<br>🇬🇧 Unfortunately, this website is not yet fully optimized for mobile devices. Please open the settings on your browser, and select the "Desktop mode" option.</div>
+</div><br>
     <br>
   <div class="panel panel-default">
-    <div class="panel-body"><div class="img-with-text"><img src="../images/historical/Velez_1953-54.jpg" width="100%"><p><i>Stoje: Muhamed Mujić, Žarko Barbarić, Sulejman Rebac, ---, ---, Anton Bolfek, Hamdija Ćemalović<br>Čuče: ---, ---, ---, ---</i></p></div><h1>Sezona 1953-54</h1><p>Veležov pothvat da se plasira u Prvu ligu ikako je bio nezamisliv iz geografske perspektive. Prema popisu stanovništva 1953. čitava mostarska općina je imala manje stanovnika (72.000) nego urbano područje drugog najmanjeg grada u Prvoj ligi, Split (75.000). Ovaj podatak je još potresniji kada se uzme u obzir da od 20 fudbalera koji su igrali za Velež u ovoj historijskoj sezoni, 16 je rođeno u Mostaru, plus još dva fudbalera iz Hercegovine (Dano Praje iz Nevesinja i Vaso Vreća iz Stoca.)</p><p>Među prvim klubovima koji su čestitali Veležu nakon ulaska u Prvu ligu je bila Crvena zvezda, i upravo će sa njima odigrati prvu utakmicu u najvećem rangu jugoslovenskog fudbala. Uprkos porazu koji je došao pred sami kraj utakmice, veliki broj navijača prisutan na Starom Veležovom igralištu je mogao biti zadovoljan kako su se rođeni parirali sa ekipom "Velike četvorke", kojoj je prošle sezone falio samo jedan bod za osvajanje titule. Ni iduća utakmica protiv Sarajeva nije prošla nezapaženo, beogradski Sport opisuje kako nikada nije vladalo toliko interesovanja za jednu utakmicu unutar Bosne i Hercegovine. Posebne pohvale za prvi ligaški derbi Bosne i Hercegovine moraju otići Veležovom golmanu Žarku Barbariću, koji je pravio fantastične odbrane pred oko 12.000 navijača, ali je nažalost morao kapitulirati u 72. minuti Franji Lovriću, i 16 minuta kasnije njegovom bratu Đuri iz penala.</p><p>Za 3. kolo gost u Mostaru je bio splitski Hajduk, prvak prošle sezone. Ova utakmica ostaje posebno zabilježena po tome što je Velež postigao svoj prvi gol u Prvoj ligi, udarac Slavka Hudarina u 39. minuti koji je ujedno i poravnao utakmicu. Čak i sa "jakom i oštrom igrom Veleža" kako je opisano u tadašnjem novinskom izvještaju, za prvi bod se moralo čekati skoro mjesec dana kasnije, a za prvu pobjedu početkom novembra.</p><h1>Druga savezna liga</h1></div>
-      
+    <div class="panel-body"><div class="img-with-text"><img src="../images/historical/Velez_1953-54.jpg" width="100%"><p><i>Stoje: Muhamed Mujić, Žarko Barbarić, Sulejman Rebac, Hasan Momić, ---, Anton Bolfek, Hamdija Ćemalović<br>Čuče: ---, ---, Mensud Dilberović, ---</i></p></div><h1>Sezona 1953-54</h1><p>Krajem proljetnog dijela sezone 1952-53, Velež je konačno počeo da reda dobre rezultate uz dobru igru. Iako su prema procjenama mnogih novinara već davno ispali (u stvarnosti postojale su teoretske šanse čak i u zadnjoj utakmici protiv Vardara) vladala je pozitivna atmosfera u Mostaru za narednu sezonu, i želja za što brži povratak u Prvu ligu. Dosadašnji trener Bernard Hügl je otišao kako bi postao trener novog prvoligaša Proletera iz Osijeka, a na njegovo mjesto došao je (barem privremeno) Drago Petrović, trener Veležove omladinske škole i jako poštovan veteran i sportski radnik.</p><p>Kuriozitet prije početka sezone je predstavljao dolazak Preußena iz Münstera (Zapadna Njemačka) u Mostar. Danas trećeligaši, ova ekipa je ranih 1950tih godina bila jako poštovana momčad koja je 1951. bila finalist u zapadnonjemačkom šampionatu i imala članove zapadnonjemačke reprezentacije u svojoj postavi. Velež je sa njima odigrao dvije utakmice u Mostaru, jednu 27.7. a drugu idući dan. Velež je pobijedio u prvoj utakmici sa rezultatom od 2-0, a izgubio u drugoj sa minimalnih 1-0. Velež je odmah poslije ove utakmice trebao otputovati za revanš u Zapadnu Njemačku, te tokom povratka odigrati utakmicu sa nepoznatim protivnikom iz Austrije, ali do toga nije došlo.</p><p>Fudbalski savez Jugoslavije odlučio je da nakon dvije sezone ukine plej-of sistem za Prvu ligu pomoću kojeg je Velež ušao u najveći rang jugoslovenskog fudbala, i da vrati standardni dvokružni sistem za jedinstvenu Drugu ligu. U ovoj novoj sezoni Velež je počeo jako dobro i ofanzivno, ostvarili su 4 pobjede u prve 4 utakmice (uključujući dva republička derbija sa Željezničarom iz Sarajeva i banjalučkim Borcem). Međutim, forma je otpala i pri kraju jesenjeg dijela prvenstva Velež je pao na treće mjesto, što je bilo dovoljan razlog za paniku među Mostarcima.</p><img src="https://cdn.discordapp.com/attachments/1079034616264016034/1121843285548339301/image-removebg-preview.png" width="22%" style="float:left"><p>Dosta ljudi je okrivljeno za loše igre, ali od svih igrača najviše kritika u ovom periodu dobio je Vladimir Zelenika. Lokalne novinare je nervirao zbog njegovog preagresivnog i nesportskog ponašanja tokom utakmica. Iz kolumne od strane Mihajla Šašaroge: "[Veležovi] igrači, u prošlosti, bili su primjer discipline, borbenosti, skromnosti, samokritičnosti i ljubavi. Zar se može govoriti o Zelenici da ide stopama starijih »Veležovih« igrača? Ne može! On zapravo tiraniše svoje suigrače i stvara svojim postupcima u igri i vladanju izvjesnu pometnju, disharmoniju, i nervozu." (Sloboda, 1953). Uprkos svemu, valja spomenuti da je završio sezonu kao ubjedljivo najbolji strijelac u ekipi sa 14 golova, i kao treći najbolji u čitavom šampionatu.</p>
+    
+    
+
+    <p>Druga osoba koja je dobila prekomjerne kritike je Drago Petrović, trener ekipe. Došao je u neugodnom trenutku i to kao privremeni trener, ali opet nije zadovoljio, sa njegovim "zastarjelim treninzima" i "nedostatku poštovanja u svlačionici". Već prije godišnje skupštine za 1954. godinu izgubio je svoj posao i Velež je dobio novog trenera, Ivu Radovnikovića iz Splita, koji je tek trebao da se afirmiše kao trener.</p><p>Prije nego što je godina počela, godišnja skupština Veleža za 1954. je bila silno isčekivana. Pred stotine navijača u Radničkom domu, a još više direktno izvan njega atmosfera je bila haotična. Veležovi navijači su optuživali članove uprave za slabe rezultate. Neki su pričali generalno o upravi, a neki direktno kritikovali pojedine članove, između ostalih Dušana Pudara, Adila Bijedića i Aliju Šestića. Samo dva aktivna igrača su bila na skupštini, Muhamed Mujić i Hasan Momić, ovaj prvi da iznese javnosti da nije dobio stipendiju te da ubuduće neće trenirati. Bilo je teško doći do riječi i kroz čitavu skupštinu je bilo prisutno nadglasavanje i vikanje ne bi li druga strana progovorila. Ipak, uprkos svemu ovome, 170 navijača je izglasalo novu upravu, sačinjenu od 15 članova, među kojima je 11 od njih pripadalo prošloj upravi.</p><p>U prvom kolu proljetnog dijela sezone snage su odmjerili Šibenik i Željezničar. Šibenik je pobijedio 2-1, ali je Željezničar poslao žalbu zato što je za Šibenik utakmicu odigrao Zvonko Erak, koji je tokom polusezonske pauze već potpisao i bio registrovan za Lokomotivu iz Zagreba. Nekad krajem aprila, utakmica je registrovana 3-0 u korist Željezničara, i ova dva boda su na kraju ispala presudna za ulazak u Prvu ligu.</p><p>Što se tiče Veleža, prve dvije utakmice su ujedno bile i gostovanja protiv dva slična protivnika po stanju na tabeli, gdje Velež nije uspio da se afirmiše, tako da je samo produbio svoju rezultatsku krizu. Međutim, u narednih 7 utakmica Velež je zaredao 5 pobjeda, i ušao u zadnje kolo na trećem mjestu, sa jednim bodom manje od drugoplasiranog Željezničara. Velež je morao dobiti Branika iz Maribora, koji je bio u grčevitoj borbi za opstanak, dok su Plavi sa Grbavice igrali u gostima protiv Zagreba, koji je već potvrdio plasman u najjači rang jugoslovenskog fudbala. Uprkos visokoj pobjedi od 4-0, i Željezničar je također ostvario pobjedu, te je Velež morao ostati u Drugoj saveznoj ligi.</p><div class="warning"><span><b>Napomena o novinskim izvještajima</b></span><div class="players">Da pristupite novinskom izvještaju neke utakmice, kliknite na slovo koje označava pobjedu (P), neriješen rezultat (N) ili izgubljenu utakmicu (I).<br>Izvještaji su odabrani zaviseći od slučaja do slučaja. Ukoliko imamo više izvještaja za utakmicu, biramo nama najduži poznat izvještaj, bez obzira na izvor ili pristranost pisca.<br>Izvještaji su napisani tačno onako kako se nalaze u izdanju novina koje koristimo kao izvor, što može značiti da se u njemu nalaze arhaizmi, štamparske greške i ostale neobične pojave. Odlučili smo sačuvati ove pojave bez popravke kako bi olakšali sebi, i ne ulazili preduboko u "uređivačku politiku". Ipak, ovo je projekat gdje je premal broj ljudi da uredno pregledavaju gramatiku a da se pisanje istih izvještaja ne oduži, tako da je moguće da smo sami napravili određene greške pri "digitalizaciji" sadržaja. Ukoliko ste primjetili takvu grešku, slobodno je prijavite u našim kontaktima.<br>Kao osnovni minimum za pojavu nekog članka na ovoj stranici, moramo znati koji je njen izvor. Ovo može biti informativna agencija, novine ili elektronski mediji. Još bolje ako znamo tačno ko je autor izvještaja po imenu i prezimenu. U tom slučaju pišemo ime i prezime bez obzira da li su pripisani po punom imenu ili ne (npr. A. H. će postati Asim HADŽAJLIĆ, i S. Ibrulj će postati Saša IBRULJ.). Ovo naravno samo važi ako znamo "od inače" ko je autor djela. Ako imate informaciju o autoru bilo kojeg članka ili više članaka, također je pošaljite u naše kontakte.<br>Ovaj čitav projekat zavisi od medija na jedan ili na drugi način. Kao takav podložan je autorskim pravima i volje originalnog autora ili agencije zaslužne za štampanje teksta. Ukoliko ne želite vidjeti vaš tekst ili tekst na koji polažete pravo na ovoj stranici, obratite se našim <b>KONTAKTIMA</b>.</div></div><div id="fixedBox1" class="fixedBox" style="display: none;">
+    
+    <h2>Dobar početak</h2>
+    <h4>„Velež” — „Napredak” (Kruševac) 3:0 (0:0))</h4>
+    <p>Prije početka utakmice, usljed nepoznavanja protivnika, većina »Veležovih« navijača smatrali su da će gosti lako »legnuti«. Međutim, malo je trebalo pa da budu pobjednici. »Velež« je slabo počeo. Kod njegovih igrača osjećala se neka nesigurnost ili je to bila trema. Možda je do takvog stanja došlo usljed slabog branjenja Đuričića, koji je već u samom početku ispuštao lopte. Da je navalni red protivnika bio malo snalažljiviji i efikasniji mogli su doći do pobjede. Igrali su dobro u polju. Išli su na svaku loptu i među njima ima dobrih pucera. Lako su dolazili do blizine »Veležovog« gola, ali tada nisu znali realizovati svoju nadmoćnost. U završnicama mnogo su oklijevali.</p>
+    <p>Skoro cijelo prvo poluvrijeme bili su ravnopravan protivnik, pa čak su bili i u lakoj nadmoćnosti. »Velež« je bio prisiljen da se brani. Gotovo punih dvadeset minuta, odbrana »Veleža« imala je mnogo posla, ali je ipak uspješno izvršila zadatak.</p>
+    <p>U ovom dijelu igre nije bilo smišljenih i korisnih akcija. Obadva tima ličila su na nižerazredne ekipe. Pravili su početničke greške. Igra nije bila ni dopadljiva.</p>
+    <p>Tek u drugom poluvremenu dolazi do obrta. Odmah se moglo opaziti kod obadva tima riješenost na pobjedu. Dok se gosti ističu borbenošću, dotle »Velež« sređuje svoje redove i izvodi nekoliko prodora. Tim je počeo igrati homogeno i brzo su prodirali prema protivničkom golu. Nižu se uzbudljive situacije, Veležova ekipa nadmašuje svog protivnika u tehničkoj igri. Napokon, poslije nekoliko napada, »Velež« dolazi u vođstvo preko Ćemalovića. Gol je postignut poslije jedne smišljene i brze akcije. Do lopte je došao Hrvić, koji prebacuje Mujića, a ovaj prelazi jednog pa drugog protivničkog igrača i prisebno je dobacuje Čemaloviću koji je sa strane ubacuje u mrežu.</p>
+    <p>Ovaj je gol probudio navijače »Veleža«. Počeli su kolektivno da bodre svoju momčad. »Velež« se razigrao, ali ni protivnik ne popušta. Zahvaljujući dobroj kondiciji i borbenosti uspješno pariraju. Ubrzo je pao i drugi gol, takođe poslije jednog prodora. Ovog puta Selimotić u brzom sprintu uspijeva da se probije i poluvisoko ubacuje loptu u centar na koju pritrčava Zelenika i glavom je skreće u gol. Poslije ovoga gosti izvode protunapade, ali u završnicama nemaju sreće. Simpatična je sa njihove strane borbenost. Treći gol postigao je Zelenika, opet poslije prodora.</p>
+    <p>Sve u svemu najbolja je kod Veleža bila halflinija. Ona je bila ta koja je sprečavala svaku protivničku navalu. Navalni red nije u potpunosti zadovoljio. Više se radilo preko Selimotića, nego preko Ćemalovića. Istina, ovaj je često napuštao svoje mjesto, pa i onda kada to nije bilo potrebno. Golman je u početku bio nesiguran, ali je ipak kasnije odbranio nekoliko opasnih šuteva. Odbrana je donekle zadovoljila.</p>
+    <p>Ovoga puta »Velež« je imao sreće, ali treba uložiti mnogo truda da postignu ono što su posjedovali prije nekoliko mjeseci.</p>
+    <p>Sudija Perović sudio je sa manjim greškama.</p>
+    <div class="signature"><b>Mihajlo ŠAŠAROGA</b><br><i>Sloboda</i></div>
+      <div class="imagetable"><img src="../images/site/table/tab1953-09-13.png" width="100%"></div>
+    </div>
+
+    <div id="overlay1" class="overlay" style="display: none;"></div>
+
+    <div id="fixedBox2" class="fixedBox" style="display: none;">
+     <h2>Druga visoka pobjeda „Veleža” u Mostaru</h2>
+    <h4>„Velež” — „Budućnost” 4 : 0</h4>
+    <p>I u drugom susretu za takmičenje II futbalske lige, »Velež« je zabilježio sigurnu i visoku pobjedu nad vrlo jakim protivniko. Ovoga puta to je bila ekipa požrtvovnih Titograđana, iskusna ali ne i dovoljno jaka da be se efikasno mogla suprostaviti mnogo boljem timu »Veleža«. Većina simpatizera i navijača očekivali su pobjedu domaćeg tima, ali nije niko pokušao prognozirati ovakav rezultat kakav je polučen. Domaći tim prikazao je igru kakvu odavno nije. Prvi okršaj pokazao je da se želi visoko pobjediti protivnika. I zaista dalji tok igre te i konačan rezultat je to dokazao. Ovo je mogla da bude još ubjedljivija pobjeda da gosti sem svoje oštre odbrane na svojim vratima nisu imali odličnog i požrtvovnog mladog golmana Dedovića. On je u nedjelju sigurno branio svoja vrata, odolijevao skoro uvijek teškim udarcima i čestim navalama razigrane navale koja je stalno opsijedala gol gostiju. Golman Dedović osvojio je ogromne simpatije mostarske publike.</p>
+    <b>Igra je čitavo vrijeme bila lijepa i uzbudljiva</b>
+    <p>Pošto je tim »Budućnosti« izveo prvi udarac u drugom minutu, Darmanović I ubacuje slobodnom Radonjiću koji neometan ni od koga silovito tuče, ali Momić krajnjim naporom odbija. Degažiranu loptu Hrvić sa lijevog krila prosljeđuje slobodnom Mujiću koji odmah tuče, ali se lopta odbija o prečku. Još jedna prilika gostima. Popović prima loptu oko sredine terena, lijepo poslužuje Zečevića a ovaj slobodnog Radonjića koji tuče pored samog gola u aut.</p>
+    <p>To je bila i posljednja povoljna prilika gostima. Domaći tim preuzima igru i zadržava sa pritiskom do kraja prvog dijela. Odmah u 10 minutu dolazi do prvog gola. Sa lijeve strane Ćemalović izvodi aut, Mujić kroz noge nekoliko protivničkih igrača vrlo spretno daje Hrviću koji je ubacuje u gol pored palog Dedovića. Sedamnaesti minut zamalo da nije doveo do povećanja rezultata. Selimotić je prešao Methadževića dodaje slobodnom Ćemaloviću koji lijepo tuče ali Dedović boksuje u korner, koji ostaje neiskorišten. Slično je bilo i u 31 minutu. Radiljević nekoliko puta dribluje Darmanovića a Mujić dobivenu loptu tuče u sami ugao — opet golman sigurno brani. U sljedećem minutu opet jak udarac, Lopta ulazi u gol ali se opet tu nalazi Petrović koji loptu glavom izbacuje u korner. Dakle mnogo udaraca malo golova.</p>
+    <b>Igra preko krila i serija golova</b>
+    <p>Što »Veležu« nije uspjelo u prvom dijelu igrom kroz sredinu, donekle je uspjelo u drugom. Igra preko vrlo dobrih krila Selimotića i Ćemalovića po mojem mišljenju donijela je »Veležu« visoku pobjedu. Dok su u prvom dijelu oni bili malo uposleni i često puta ulijetali u sredinu da bi se domogli lopte, u drugom oba krila imala su pune ruke posla. Ipak Selimotić ga je bolje obavio jer je pored sebe imao malo nesigurnog Petrovića te ga je skoro uvijek uspijevao da pređe i lijepo ubaci loptu u sredinu. Sva tri gola postignuta u drugom dijelu najveća su zasluga brzih i požrtvovnih krila. U osmom minutu Ćemalović je poslužio Hrvića koji postiže gol, a u 15 Selimotić Ćemalovića koji udarcem u ugao primorava Dedovića da po treći put vadi loptu iz mreže. Samo tri minuta dijelilo nas je od posljednjeg gola. Nakon što je Petrović jednu tučenu loptu odbio, Mujić pritrčava i sabrano tuče — gol. Do kraja »Velež« je imao dosta prilika ali rezultat je ostao isti. Ipak to je jedna vrijedna i lijepa pobjeda koja je omogućila bivšem prvoligašu da nakon drugog kola sigurno povede na čelu tabele, a da li će da tu prednost održati zavisi od toga najviše kako će shvatiti susrete pa makar i sa slabim protivnikom.</p>
+    <b>Nešto o sudiji i prekršajima</b>
+    <p>Voditi ovu utakmicu nije bilo teško. Pa ipak sudija Makijedo svoj posao nije obavio u potpunosti, ni dobro. Prekršaji teže prirode kao što ih je pravio Popović nad Hrvićem i Darmanović nad Momićem, kada ovi nisu imali kod sebe loptu, morali su se oštro kazniti. Pa kako onda suzbijati nezdravosti kod pojedinih futbalera, ako to ne nastoje oni koji su zato i najodgovorniji, i najpozvaniji. Ovaj slučaj treba da posluži kao primjer lošeg vođenja utakmice.</p>
+    <div class="signature"><b>M. PREMILOVAC</b><br><i>Sloboda</i></div>
+      <div class="imagetable"><img src="../images/site/table/tab1953-09-20.png" width="100%"></div>
+</div>
+
+    <div id="overlay2" class="overlay" style="display: none;"></div>
+
+    <div id="fixedBox3" class="fixedBox" style="display: none;">
+     <h4>U Sarajevu:</h4>
+    <h2>Velež - Željezničar 5 : 3</h2>
+    <p>Domaći su propustili priliku, da odluče ovu utakmicu u prvih pola sata, kada su gosti igrali vrlo ležerno. U tom periodu  Željezničar je bio terenski potpuno nadmoćniji, što se može zaključiti i po tome, da je za prvih pola sata igre pred golom Veleža izvedeno čak sedam kornera.</p>
+    <p>Gosti su u jednom napadu uspjeli postignuti vodstvo. Kasnije su preuzeli inicijativu. Tako su završili do kraja prvog dijela, a kada je u nastavku pao i drugi zgoditak, Velež je sasvim zagospodario terenom. Tek nakon 3:0 domaći su se trgnuli i uspjeli u kratkom razmaku smanjiti na 2:3 Tada je ponovo nastao period nadmoćnosti Mostaraca, koji su uspjeli postići još dva zgoditka. Do kraja utakmice domaći su još uspjeli samo da smanje poraz na 5:3.</p>
+    <p>Pobjeda gostiju je zaslužena, ali rezultat ne daje pravu sliku stanja na terenu. To je bila izjednačena igra u kojoj su domaći imali čak i više šansi. Krivnju za poraz snosi golman Babić, Kočan i Dugonjevac.</p>
+    <div class="signature"><b>M. PODBOJ</b><br><i>Narodni sport</i></div>
+      <div class="imagetable"><img src="../images/site/table/tab1953-10-04.png" width="100%"></div>
+    </div>
+
+    <div id="overlay3" class="overlay" style="display: none;"></div>
+
+	<div id="fixedBox4" class="fixedBox" style="display: none;">
+    <div class="img-with-text"><img src="https://cdn.discordapp.com/attachments/1079034616264016034/1125805882400317541/image.png" width="100%"><p><i>"Hrvić postiže drugi gol za »Velež«. Gol man Đurić uzalud se bacio" (Foto: Oslobođenje)</i></p></div>
+    <h4>U ravnopravnoj igri</h4>
+    <h2>Mostarci efikasniji</h2>
+    <h4>»Velež« - »Borac« 4:2 (2:2)</h4>
+    <p>Gotovo sva predviđanja za današnju utakmicu pokazala su se kao tačna. Vrijeme se nije popravilo, pa je utakmica odigrana pod jakim vjetrom koji nije dozvoljavao nijednoj ekipi da razvije normalnu igru. Ali je obostrana borbenost, a naročito »Borčeva« bila takođe velika. Ona je u ovoj utakmici, koja je oskudijevala u lijepim kombinacijama davala zanimljiv ton i uzbudljivost, a i sam tok rezultata, koji se ovako kretao: 1:0, 1:1, 2:1, 2:2, 3:2, 4:2 za »Velež«, održavao je napetost na utakmici. Jedina stvar, koja se nije ispunila, to je vjerovanje Mostaraca da će njihov pretstavnik u nadmoćnoj igri odnijeti ubjedljivu pobjedu nad »Borcem«. Naprotiv, Banjalučani su bili ravnopravan protivnik, koji je imaomožda, malo više od igre u svojim rukama.</p>
+    <b>Od šest golova posljednji najljepši</b>
+    <p>Seriju golova otvorio je Mujić. Nakon jedne gužve u kaznenom prostoru »Borca« prvo je pucao Rebac, a odbijenu loptu Mujić je sa sredine spoveo u gol. Tek 28 minuta kasnije, naročito je »Borac« izveo više napada, Spaho je uputio jednu loptu prema »Veležovom« golu, a bek Rukavina, u namjeri da degažira, nespretno ju je sproveo u vlastiti gol i time izjednačio. Ponovno voćstvo »Veležu« donio je Hrvić na sličan način kao što je to učinio kod prvog gola Mujić. Izjednačio je Tešanović iz slobodnog udarca u 40 minuti igre, nakon što je Bolfek, 25 metara od gola, srušio Švraku. Đuričić bi, vjerovatno, odbranio šut Tešanovića da ga vjetar nije prevario i zanio loptu. U drugom poluvremenu Mujić je ponovo dao vodeći gol za »Velež«. I, konačno pred sam kraj igre jedan veoma lijep šut Hrvića: sa desne strane kaznenog prostora on je uputio loptu u desni ugao gola, tako da je Đurić bio nemoćan.</p>
+    <p>»Velež« je razočarao i može se slobodno reći da se »Borac» na današnjoj utakmici pokazao kao ravnopravni protivnik »Veležu«, i da je odbrana »Borca«, naročito halflinija Spaho — Šijaković — Jurić briljirala na terenu. »Velež« je igrao slabo, slabije nego u Sarajevu. U njegovom timu treba istači Momiča, Radiljevića, Mujića i Hrvića koji su na svojim leđima iznijeli pobjedu. Među najslabijim na terenu bio je centarfor Zelenika, koji se, uz to, i drsko ponašao prema svojim drugovima i publici.</p>
+    <p>Sudija Stefanović dozvolio je oštriju igu nego što je uobičajeno.</p>
+    <div class="signature"><b>P. LUKAČ</b><br><i>Oslobođenje</i></div>
+    <div class="imagetable"><img src="../images/site/table/tab1953-10-11.png" width="100%"></div></div>
+
+    <div id="overlay4" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox5" class="fixedBox" style="display: none;">
+    <h2>Prvi poraz Mostaraca</h2>
+    <h4>Mačva-Velež 2:0 (2:0)</h4>
+    <p>Početni udarac izveli su domaći, ali su ubrzo »Veležovci« preuzeli inicijativu i sa lakoćom u prvih 15 minuta gospodarili terenom. Igrali su jednostavno, brzo, i forsirali svoja prodorna krila, naročito Repca, pa se, prema početku, očekivala pobjeda gostiju. Izgledalo je da će »Velež« lako izaći na kraj sa ovim opasnim konkurentom. Ipak, te navale nisu uspijevale zbog oprezne i oštre igre domaćih odbranbenih igrača. Pored toga, navalni igrači »Veleža« su oklijevali baš u otskudnim časovima pred golom Šapčana, tako da golman »Mačve« čak nijedanput nije intervenisao. Kad se očekivalo da će »Veležovci« postići zgoditak, dogodio se iznenadni obrt. Jedna neopasna lopta pošla je prema golmanu Mostaraca Đuričiću i on je nespretno intervenisao, ispustivši je, a igrač »Mačve« Ivoš samo je potvrdio gol glavom. Tada su domaći, ponijeti bodrenjem svoje publike, iz jedne vrlo lijepe i brze akcije preko Grujičića postigli i drugi zgoditak. Poslije ovog događaja, pa do kraja utakmice, nema se šta naročito lijepo i pohvalno reći ni o jednom timu. Za takvu rastrganu i nesređenu igru treba »odati« priznanje sudiji Barjaktareviću koji je sigurno svaki minut bar jedanput upotrebio svoju pištaljku za »prekršaj«. Nisu to bile baš takve greške, ali eto on je htio da bude izgleda najzapaženiji čovjek ove utakmice. I uspio je u tome, jer gotovo nijedan igrač poslije drugog gola nije ostao do kraja utakmice pošteđen od opomena sudije Barjaktarevića. Osim toga, poništio je jedan gol Hrvića, koji je bio potpuno regularan.</p>
+    <p>Kao i na dosadašnjim utakmicama, »Velež« je ušao u igru superiorno, siguran u svoju pobjedu. Ali, nije to bila ona ekipa koja je dosada svojom borbenom igrom odnosila pobjede. Danas se igralo mlitavo, bez zalaganja, naročito u navali. Nije bilo one poletne igre koja je krasila igrače mostarskog ligaša i donosila im pobjede. Naprimjer, danas je Zelenika driblao često do iznemoglosti. Imao je povoljnih prilika da puca na gol, a nije to činio. Bilo je slučajeva kada je Zelenika mogao da idealno posluži svoga suigrača, ali on je zadovoljavao svoje prohtjeve, driblajući.</p>
+    <div class="signature"><b>Haldun HRVIĆ</b><br><i>Oslobođenje</i></div>
+    <div class="imagetable"><img src="../images/site/table/tab1953-10-18.png" width="100%"></div></div>
+
+    <div id="overlay5" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox6" class="fixedBox" style="display: none;">
+    <h2>„Velež” - „Lovćen” 2:1 (2:1)</h2>
+    <p>Na nedeljnoj utakmici »Velež« je nastupio sa izmjenjenim timom. Umjesto Momića, koji nije mogao igrati radi povrede noge, na mjestu centerhalfa igrao je Bolfek, a Ćemalović je došao na mjesto halfa, dok je na krilu igrao Selimotić. Zelenika je i ovog puta vodio navalu domaćih.</p>
+        <p>Prva minuta igre pripala je gostima. Oni izvode jedan opasan napad, ali bez uspjeha. Poslije toga Zelenika se našao u pogodnoj situaciji da postigne gol, jer se našao oči u oči sa golmanom, ali je tukao pored gola. U trećoj minuti, poslije jednog prodora, Rebac je postigao prvi gol. On je sa centra poveo loptu vrlo brzo se našao pred protivničkim golom i iz blizine od 4—5 metara neodbranjivo tukao u mrežu...</p>
+    <p>Za skoro čitavo prvo poluvrijeme može se reći da je igra bila ravnopravna. Gosti su u tom dijelu izveli nekoliko opasnih prodora i često su pucali na gol. Jedno kraće vrijeme bili su lako nadmoćni. U vrijeme njihove nadmoćnosti, domaći izvode napad kojeg Rebac pretvara u gol. Poslije toga gosti se trude da smanje rezultat. To im je kanačno uspjelo u 25 m. Mosuđen je korner protiv »Veleža« i poslije pucanja stvorila se gužva iz koje Vrbica postiže gol.</p>
+    <p>Iza toga igra je bila vrlo slaba. Obadvije ekipe popustile su u svojoj borbenosti i nije bilo uzbudljivih momenata.</p>
+    <p>Drugo poluvrijeme nije naličilo na prvo. Ovog puta »Velež« je počeo da izvodi napad za napadom. Svakog momenta njegovi igrači pucali su na protivnički gol , ali nisu imali sreće. Rezultat je ostao nepromjenjen. Lopte su postajale plijen golmana ili se tuklo pored gola i čak u stative. Takvi siloviti napadi trajali su dobrih 30 minuta. Domaći su naprosto opsjedali protivnički gol, ali lopta nije htjela nikako da uđe u mrežu. Preostalih 15 m. igra je uglavnom bila ravnopravna.</p>
+    <p>Prema igri, protivnik nije bio baš kako se očekivalo. Naprotiv, to je tim koji se zna boriti i da je njegova navala bila efikasnija mogli su vrlo lako da iznenade.</p>
+    <p>Kod domaćih su bili najbolji: Mujić i Radiljević, dok su ostali igrali kao i obično. Zapazilo se kod nekih igrača da ne idu na prvu loptu. Ovo naročito važi za Bolfeka. Zelenika je na ovoj utakmici bio nešto bolji nego na zadnjoj utakmici, ali ni izdaleka prema svojim mogućnostima. Selimotić je udovoljio. Hrvić je podbacio. Rebac je baš kao i obično čekao gotovinu. Njemu nedostaje borbenosti pa da bude zaista jedan od boljih igrača.</p>
+    <p>Kod protivnika najbolji je bio Pajević i uža odbrana.</p>
+    <p>Ova utakmica opet je potvrdila da navala »Veleža« nije bila esikasna i da se nije igralo homogeno, iako to neki tvrde.</p>
+    <p>Sudija P. Mrkobrad sudio je dobro.</p>
+    <div class="signature"><i>Sloboda</i></div>
+    <div class="imagetable"><img src="../images/site/table/tab1953-11-01.png" width="100%"></div></div>
+
+    <div id="overlay6" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox7" class="fixedBox" style="display: none;">
+    <div class="img-with-text"><img src="https://cdn.discordapp.com/attachments/1079034616264016034/1126442354694434926/image.png" width="100%"><p><i>"Vođa navale Zagreba Jagodić uspješno je nastupao protiv Veleža. Na slici u borbi s Momićem" (Foto: Narodni sport)</i></p></div>
+    <h4>„Zagreb” — „Velež” 2:0 (2:0)</h4>
+    <h2>Slaba igra Mostaraca</h2>
+    <p>Derbi susret Druge lige završio se sigurnom pobjedom „Zagreba” od 2:0. Očekivalo se da će „Velež”, poslije slabijih igara na posljednjim utakmicama, zaigrati bolje protiv „Zagreba” — kandidata za prvo mjesto u Drugoj ligi. Iako su Mostarci došli u Zagreb bez Repca i Selimotića, smatraće sačuvati tradiciju i vratiti se iz aZgreba neporaženi.</p>
+    <p>Međutim, ovoga puta „Velež” je igrao sasvim slabo i nekorisno i nije opravdao povjerenje koje uživa kod zagrebačke publike. Kroz čitav period utakmice Zagrepčani su bili zrelija ekipa, igrali su tehnički bolje, jednom riječju, bili su ekipa koja zaslužuje da se povrati među prvoligaše. Na drugoj strani, Mostarci su se sasvim razlikovali od njih. Bili su nesređeni, pojedinci su nastojali da igraju individualno i ekipa se nije osjećala kao kolektiv. To naročito važi za navalni red, koji je potpuno podbacio.</p>
+    <p>U cjelini, utakmica hje bila slaba. Lopta je bila češće kod domaćih i njima pripada uglavnom veći dio igre. Mostarci su forsirali igru kroz sredinu, gdje je sigurni centarhalf Klaić budno pazio na svaki pokret „Veležove” navale.</p>
+    <p>Prvi gol, koji je postigao „Zagreb”, bio je plod jedne smišljene kombinacije koja je počela od sredine igrališta. Kada je lopta bila ubačena u kazneni prostor, tu se našao Jagodić, neometan od svoga čuvara Momića, i odmah poslao loptu pored nemoćnog golmana. I drugi gol pao je greškom Momića. Umjesto da pusti jednu neopasnu loptu, kojoj je pošao u susre Đuričić on joj je promjenio pravac i lopta, umjesto da bude u rukama golmana, našla se u mreži.</p>
+    <p>Osim postignutih golova, domaći nisu imali zrelih šansi, izuzev kad je Bolfek, poslije gola, skrenuo loptu aslobodnom Jagodiću.</p>
+    <p>Pred kraj utakmice sudija Podupski isključio je iz igre Hrvića zbog prigovaranja. Inače je vrlo često griješio.</p>
+    <div class="signature"><b>Haldun HRVIĆ</b><br><i>Oslobođenje</i></div>
+    <div class="imagetable"><img src="../images/site/table/tab1953-11-15.png" width="100%"></div></div>
+
+    <div id="overlay7" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox8" class="fixedBox" style="display: none;">
+    <h2>„Velež” - „Šibenik” 2:0 (2:0)</h2>
+    <p>Ljubitelji „Veleža” napustili su u nedjelju igralište sa izvjesnom zabrinutošću. Mnogi su u sebi postavljala ova i slična pitanja: — Dokle sa ovakom igrom? Nešto nije u redu kod „Veleža”? Pobjeda je postignuta ali je ona mogla biti dovedena u pitanje. Ukratko, Velež je razočarao.</p>
+    <p>Kroz cijelo vrijeme igre opažala se nehegemonost u igri. Dok je halflinija odlično funkcionisala, dotle je navalni red potpuno podbacio. Zelenika je upropaštavao šansu za šansom. Rebac je čekao „gotovinu”, Selimotić je lutao, Mujić je više trčao i poveo se postupcima Zelenike. Sve u svemu neozbiljna igra za koju bi se moglo reći da je najlošija u Mostaru unazad nekoliko posljednjih godina.</p>
+    <p>Uopšte uzevši Velež je imao sreću. Da su gosti igrali korisnije, da su jednostavno imali dobre pucere oni bi bili pobjednici. I pored toga što su gosti igrali dobro u polju nisu u završnim akcijama pokazivali dovoljno okretnosti.</p>
+    <p>Uglavnom je Velež igrao podređenu ulogu, izuzev jednog dijela prvog poluvremena kada su postignuti golovi. Oni su bili rezultat prodora, u 16 i 43 minuti igre. Zelenika je promašio penal, koji je dosuđen u prvom poluvremenu. Tukao je pored gola.</p>
+    <p>Igra je bila neinteresantna i kroz cijelo vrijeme Veležova navala nije izvela neke naročite kombinacije ni poteze koji bi bar donekle pokazali da je to tim druge lige i doskorašnji član prve lige. Više je ličilo na neki provinciski tim, bez iskustva i drugih osobina. Nisu pokazali uobičajenu borbenost. Jedino bi bili izuzetak Bolfek, Momić i donekle Radiljević. Irović mnogo obećava i uz dobru pažnju mnogo će postići u budućnosti.</p>
+    <div class="signature"><b>Mihajlo ŠAŠAROGA</b><br><i>Sloboda</i></div>
+    <div class="imagetable"><img src="../images/site/table/tab1953-11-29.png" width="100%"></div></div>
+
+    <div id="overlay8" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox9" class="fixedBox" style="display: none;">
+    <h2>Za kraj 2 prepotrebna boda</h2>
+    <h4>Branik je danas opet priredio senzaciju i zaigrao protiv Veleža kao „po notama”</h4>
+    <p>Nismo pogriješili u prijašnjem izdanju našeg lista, kada smo tvrdili, da je Branik vjerovatno postavio sam sebi zadatak, da svake nedelje na novo iznenadi sportsku javnost sa neobičnim rezultatima. I tako je bilo ovaj put. Iako su se Branikovi navijači u srcima možda nadali za kakvo »čudo«, oni su se ipak izvana puno žalili, da Branik ne vrijedi »prebijene pare« i ostvariti častan rezultat protiv Veleža (mora se uzeti raspoloženje Mariborčana u obzir, koje je poslije katastrofe prošle nedjelje u Kruševcu ličilo na nulu) nije nikome padao na pamet.</p>
+    <p>Ali danas su se obistinili i najbolji, najoptimističniji snovi. Branik je zaigrao kao po notama. Sa svojom igrom je iznenadio gledaoce, te i goste, koji su došli u Maribor, da odnesu dva boda, koja su im bila potrebna za osvajanje naslova jesenjeg prvaka. Mariborčani su se danas trudili, startali na svaku loptu, što je imalo za posljedicu, da su bili u premoći u svakom dijelu igre, osim par minuta tokom drugog poluvremena.</p>
+    <b>Branik nastupa sa izmjenjenim sastavom</b>
+    <p>2.500 gledalaca je toplo pozdravilo obe ekipe, koje su došle na stadion u Ljudskom vrtu u ovom sastavu: [...]</p>
+    <p>Gledaoci su bili posebno iznenađeni, jer se na krilskoj poziciji nenadano pojavio Čučko, međutim u napadu su se nakon dosta vremena pojavili Dugandžija i Vitek. Iako su prisutni na početku ovaj sastav mnogo kritikovali, poslije se iskazalo, da je imao trener Dragišević sretnu ruku pri izboru igrača ovaj put.</p>
+    <b>Od 0;1 do 5;1</b>
+    <p>Nakon što su se ekipe otresle začetne nervoze, Velež je izveo opasan napad. U 5. minuti je naime Rebac izvršio prodor po lijevom krilu, preigrao odbranu i streljao mimo presječenoga Filipančića u mrežu. Tako da Velež vodi 1:0. Ali već u 12. min. Branik izjednačuje. Iz slobodnog udarca udaljenog 20 metara Plaznik je preko živog zida zatresao mrežu. Nekoliko minuta kasnije je Plaznik opet postigao gol. Potrčao je po lijevom krilu u sjajno streljao pored nemoćnog golmana u gol. — 2:1 za Branik. Napad za napadom se dešava na vratima gostiju, koji nikako ne mogu razviti svoju igru. Većina lopti je oduzeta od Veležovih napadača od strane izuzetno raspoloženih krilnih igrača Branika, koje je odlično »dirigovao« slavljenik jubileja Gajšek. U 34. min. Norković iskorištava lijep ubačaj sa lijeve strane, i postiže treći gol za Branik. Tek pred kraj poluvremena pred golom Branika nastaje opasna situacija. Oštar šut Zelenika ide mimo pored gola u aut.</p>
+    <p>I u drugom poluvremenu Branik ima bolju igru. Krilni igrači lijepo poslužuju napad sa korisnim loptama i tako na golove nije se trebalo dugo čekati. U 60. min. cijeli napad pranika izvodi lijepu kombinaciju, koju je zaključio Dugandžija sa preciznim šutem u mrežu — 4:1 za Branik. Peti gol Branika je pao radi nesigurnosti golmana Irovića. Visoka lopta mu je u 70. min. ispala iz ruka, pa je osvojio Vitek, koji je šalje u gol.</p>
+    <p>Tek poslije ovog gola se Velež oslobodio pritiska i približno pet minuta prevladava. Napadi gostiju su neuspješni, zato što Branikova odbrana odlično igra. I Filipančić je bio u dobroj formi i predstavljao za suprotne napadače nepremostivu prepreku. Veležova ofanziva je tako bila samo kratak intermezzo. Opet prevladava Branik, ali se rezultat do zadnjeg zvižduka Zagrepčana Mikulana ne mjenja. Sudija je imao puno posla sa oštrim i na trenutke nedisciplinovanim igračima iz Mostara.</p>
+    <p>Gledaoci su zdušno pozdravili lijep i zaslužen uspjeh domaće ekipe. Igra, koju su danas pokazali Mariborčani, daje dobru nadu za drugi dio takmičenja, gdje treba napomenuti, da Branik igra u proljećnom dijelu prvenstva 5 utakmica na domaćem igralištu i to sa takvim klubovima, koji mogu biti lagano poraženi.</p>
+    <b>Dvjestota Gajšekova tekma</b>
+    <p>Gajšek je danas odigrao dvjestotu utakmicu za Branik. Gajšek je u današnjoj utakmici idilično igrao. Bio je bez dvojbe najbolji igrač na igralištu. Za Branik su također bili odlični Plaznik i  Fiveši, ali moramo pohvaliti i sve druge igrače, jer u Branikovoj ekipi danas nije bilo slabe karike. Za goste najbolji igrač je bio srednji krilni Momić, dok je u napadu to bio Ćemalović.</p>
+    <div class="signature"><i>Polet</i> (prevedeno uz pomoć DeepL)</div>
+    <div class="imagetable"><img src="../images/site/table/tab1953-12-06.png" width="100%"></div></div>
+
+    <div id="overlay9" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox10" class="fixedBox" style="display: none;">
+    <h2>„Napredak” - „Velež” 2:1 (1:0)</h2>
+    <p>U prvoj utakmici Druge savezne lige Mostarci su pretrpjeli poraz na vrućem kruševačkom terenu. Igra je počela u oštrom naletu domaćih tako da je Mostarcima trebalo dobrih desetak minuta da se malo srede. Lopta je uglavnom bila kod domaćih igrača i oni su već u četvrtoj minuti postigli voćstvo preko Mihajlovića. Još nekoliko minuta trajala je ta nadmoćnost Kruševljana, a onda su »Veležovci« počeli polako da se oslobađaju pritiska. Mostarci su počeli izvoditi lijepe kombinacije. Nadmoć je trajala do konca poluvremena. Međutim navala gostiju ispoljila je i ovog puta slabo pucanje na gol. Nijedan udarac nije bio poslan u prvih 45 minuta. »Napretkovci« su u ovom vremenu rijetko napadali ali su vrlo opasno ugrožavali gol Irovića.</p>
+    <p>Drugo poluvrijeme počelo je opet izvjesnom nadmoćnošću gostiju. Međutim, kao i u prvom poluvremenu navale su završavale pred kaznenim prostorom »Napretka«. Domaći su i pored nadmoćnosti »Veleža« postigli drugi zgoditak. U jednom duelu pali su na zemlju Momić i Mitić, ali ovaj posljednji bio je spretniji i proturio loptu slobodnom Mihajloviću, koji iz neposredne sredine postiže gol za domaće. Ostalo je još 25 minuta igre i »Veležovci« su pokušali da smanje rezultat. To im je ipak uspjelo pred kraj utakmice. Lijepo poslužen od Zelenike Hrvić se oslobodio svog čuvara i s desetak metara smanjio rezultat na 2:1. Želja za izjednačenjem natjerala je »Veležovce« da svojski zapnu ali nisu uspjeli odnijeti bod iz Kruševca.</p>
+    <p>Kod domaćih istakli su se Mihajlović i Vulić, a kod »Veleža« Zelenika i Momić.</p>
+    <div class="signature"><b>Haldun HRVIĆ</b><br><i>Oslobođenje</i></div>
+    <div class="imagetable"><img src="../images/site/table/tab1954-04-04.png" width="100%"></div></div>
+
+    <div id="overlay10" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox11" class="fixedBox" style="display: none;">
+    <h4>Budućnost — Velež 1:0 (1:0)</h4>
+    <h2>Kao u stonom tenisu</h2>
+    <p>Interesovanje za utakmicu bilo je veliko ne samo u Titogradu, nego u celoj Crnoj Gori, tako da je Radio Titograd vršio prenos ove utakmice.</p>
+    <p>Još pre dva dana najvatreniji Budućnosti davali su veoma optimistične prognoze za nedeljni susret. Svakako da je to bilo bez dubljeg osnova, pošto Velež pretstavlja solidnu ekipu koju naročito oblikuju borbenost i osećanje za skupnu igru.</p>
+    <p>Iz spikerske kabine na igralištu Budućnosti stekao sam utisak da gledam utakmicu u stonom tenisu, malo neuobičajenu, jer se igralo na terenu od 100 metara. Odbranbeni igrači i jednog i drugog tima prosto su se igrali s kolegama iz protivničke navale. Stvarno, nosioci čitave igre bile su odbrane. Za njih su desetorica navalnih igrača prosto bili ono što je u stonom tenisu mreža — prostor koji treba prebaciti. Lopta je od jedne odbrane slata drugoj, a ponekad se zaustavljala oko sredine igrališta — da bi ubrzo bila vraćena odbrambenim igračima koji su se trudili da je visoko što dalje prebace na protivničko polje. I kada kažem da su odbrane iznele glavni teret, da su diktirali tempo igre, neću pogrešiti ako takođe kažem — da su one krive što je utakmica imala obeležje pimplanja.</p>
+    <p>Početak je mnogo obećavao, a utakmica nam je pružila svega jedan lep gol i mnogo loših, nervoznih i netačnih udaraca.</p>
+    <p>Budućnost je u 5 min preko Radevića dala jedini gol. Na taj način ona je osvojila dva boda i izbila na peto mesto, sa istim brojem bodova kao i četvrti Velež.</p>
+   <div class="signature"><b>Dragan ĐORĐEVIĆ</b><br><i>Futbal</i></div>
+    <div class="imagetable"><img src="../images/site/table/tab1954-04-11.png" width="100%"></div></div>
+
+    <div id="overlay11" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox12" class="fixedBox" style="display: none;">
+    <h2>„Velež” - „Željezničar” 2:0 (0:0)</h2>
+    <p>Prva dva neuspjeha »Veleža« u proljećnom dijelu takmičenja utjecala su da je kod dobrog dijela navijača zavladao izvjestan pesimizam. Ipak je igra pokazala drugo. Od samog početka zaigralo se borbeno i živo. »Velež« se prvi sređuje i njegova navala počinje opsjedati protivnički gol. Nišu se uzbudljive situacije. Opucano je mnogo lopti prema protivničkom golu, ali nije bilo sreće. Lopta je postajala plijen golmana ili je prolazila pored ili više stativa. Najzrelije šanse za postizanje golova imao je Hrvić u prvim minutama kada ga je Rebac odlično poslužio. Iza toga je Mujić tukao iz neposredne blizine, ali preko gola. U sličnoj situaciji našao se Zelenika kada je glavom prebacio loptu preko gola, a malo kasnije pored stative. Nije iskorišćena mogućnost kada je nastala gužva, pošto je golman »Željezničara« ispustio loptu.</p>
+    <p>Uglavnom se igralo na polovici terena »Željezničara«. Njegov navalni red izveo je nekoliko protivnapada, ali oni nisu bili opasni. Svaku njihovu akciju razbijala je odbrana »Veleža«.</p>
+    <p>I pored toga što je »Velež« u drugom poluvremenu igrao protiv vjetra ipak je zaigrao mnogo bolje i korisnije. Zapravo »Velež« je postao apsolutni gospodar terena. »Željezničar« se našao u poziciji branitelja. U ovom dijelu igre tim domaćih  je počeo da izvodi čitavu seriju veoma opasnih napada. Vrebac I imao je mnogo  posla. Uopšte uzevši »Željezničar« je imao sreću da nije doživio katastrofu, jer je izgledalo kao da se igra na jedan gol. Tek u 70 minuti dosuđen je penal protiv gostiju. Zelenika prisebno tuče i postiže gol. Iza ovoga opet »Velež« vrši silovite napade. U 73 minuti Zelenika tuče jako ali u stativu. Lopta se odbija i na nju pritrčava Mujić i postiže drugi gol. Iza toga desio se nesvakidašnji događaj na terenu. Poslije primljenog gola gosti su počeli protestovati i u jednom momentu Martinović je došao kod sudije Nikolića i neprimjetno ga udario šakom u slabine radi čega sudija nije mogao odmah nastaviti sa suđenjem. Tada je sudija izbacio Martinovića iz igre, ali se ovaj prikrio i nije htio izaći sa terena. Malo kasnije bio je primjećen od sudije i izbačen iz igre.</p>
+    <p>Do kraja igre »Velež« je izveo još mnogo napada. Postigao je i treći gol, ali ga je sudija poništio, navodno da je postignut iz ofsajda.</p>
+    <p>Na ovoj utakmici »Velež« je zadovoljio. Njegovi igrači išli su na prvu loptu i žilavo se borili. Izdržali su živ tempo igre do kraja utakmice. I ovaj susret je dokazao da »Velež« može postići dobar plasman ukoliko se svi igrači budu zalagali kao na ovoj utakmici. Izrazito slabih mjesta nije bilo. Cijeli tim je igrao poletno i borbeno.</p>
+    <p>Kroz čitavo vrijeme igralo se borbeno, ali se na momente prelazilo u grubost — nepotrebno čarkanje, udaranje i međusobno izazivanje. U tome je prednjačio Martinović i još neki igrači »Željezničara« i »Veleža«.</p>
+    <p>Sudija Nikolić imao je težak zadatak. Od početka je sjeckao igru, što je bilo potrebno ali je to stvaralo nervozu kod igrača. Nije tolerisao prednost i više je oštetio »Velež« nego goste.</p>
+    <p>U toku utakmice dosuđen je 1 penal, 14 kornera (12 protiv »Željezničara« i 2 protiv »Veleža«', 27 faulova (13 protiv domaćih i 14 protiv tima gostiju).</p>
+    <div class="signature"><b>Mihajlo ŠAŠAROGA</b><br><i>Sloboda</i></div>
+    <div class="imagetable">
+    <img src="../images/site/table/tab1954-04-18.png" width="100%"></div></div>
+
+    <div id="overlay12" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox13" class="fixedBox" style="display: none;">
+    <h4>Borac — Velež 2:1 (1:1)</h4>
+    <h2>Još dva boda Glazerove čete</h2>
+    <p>Već dve godine Banjalučani nisu imali prilike da gledaju svog starog znanca. Tada je Velež bio član Prve lige, a Borac potsavezne. Mostarci su tada igrali kudikamo bolje nego danas. Zato su Banjalučani s puno optimizma očekivali današnji derbi bosanskih ligaša i starih rivala.</p>
+    <b>Potrebni su nam bodovi...</b>
+    <p>Kada sam u subotu razgovarao s mladim Veležovim golmanom Irovićem, on mi je rekao ono što su mislili svi njegovi drugovi: „Bodovi su nam potrebni, jer ako sutra pobedimo, imamo dosta izgleda da se ponovo vratimo u društvo najboljih”.</p>
+    <p>Znači, Hercegovci su se itekako bili naoštrili za današnju borbu.</p>
+    <b>Dobra igra</b>
+    <p>Ovo vredi samo za prvih 45 minuta. Tada su i jedni i drugi igrači igrali dobro i požrtvovano, i vreme je odmicalo brzo kao da gledamo kakav uzbudljiv film. Ali, ruku na srce. Velež je čitavo pola sata ugrožavao vrata sigurnog Đukića, tako da se i pored njegove dobre igre svaki čas očekivalo da će on ipak morati da izvadi loptu iz mreže. Borac je nekoliko puta došao u povoljnu priliku da zatrese mrežu gostiju, no njegova navala nije znala da uputi loptu na pravo mesto.</p>
+    <b>Opet isključenje</b>
+    <p>Sat je pokazivao 59 min. igre kad je Novaković u jednom pokušaju da udari loptu promašio i nenamerno udario Zeleniku. Vođa navale plavih je na očigled i sudije i gledalaca namerno udario Novakovića i sudija Čolić je, na zaprepašćenje svih prisutnih, pokazao put u svlačionicu. Isključenje Novakovića, mislim prestrogo je dosuđeno. Ovo je, izgleda, prilično uticalo na sve igrače, tako da se sve do 84 min. igralo nesređeno i rastrgano, lopta se nasumice udarala kao da su svi bili zadovoljni nerešenim rezultatom. Tada je u protivničkom šesnaestercu mladi Knez iz okreta, pored iznenađenog Irovića, postigao gol. Na igralištu je tada bio pravi urnebes od zaglušive vike radosnih navijača. Nisu se mogla čuti tri poslednja zvižduka sudije, tako da su se nekoliko igrača skoro ceo minut i posle toga borili za loptu.</p>
+    <b>„Borac će ispasti”</b>
+    <p>Kad su navijači, radosni i razdragani, iznosili igrače Borca, neko je sa tribina dobacio desnom beku Veleža Dilberoviću: „Nama su bila potrebnija dva boda”. Ali je on na to zajedljivo odgovorio: „Ali ćete ipak ispasti”. Mislim da se desni bek Veleža ipak malo „zaleteo”, jer ako Borac bude i dalje igrao pažjlivo, sigurno je da će demantovati ovu njegovu izjavu ko gubi, ima pravo da se ljuti, i zato mu mnogo ne zameramo.</p>
+    <div class="signature"><b>L. PAPIĆ</b><br><i>Futbal</i></div>
+    <div class="imagetable"><img src="../images/site/table/tab1954-04-25.png" width="100%"></div></div>
+
+    <div id="overlay13" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox14" class="fixedBox" style="display: none;">
+    <h2>»Velež« - »Mačva« 5:0</h2>
+    <p>Mnogobrojni navijači koji su posmatrali nedjeljni susret otišli su zadovoljni sa utakmice. Ovog puta »Velež« je zadovoljio. Njegovi su redovi savršeno funkcionisali. Pobjeda je rezultat borbene i efikasne igre. »Velež« je već u prvim minutama preuzeo inicijativu u svoje ruke. Njegova navala je stalno u napadu. Rebac je u 3 min bio u situaciji da postigne gol, ali je lopta otišla preko prečke. Malo zatim i Zelenika je imao sličnu šansu. Tek u 5 m. postignut je prvi gol. Zelenika se našao između dva igrača, ali je prisebno proturio loptu naprijed na koju zatim pritrčava i oštro tuče.</p>
+    <p>Iza ovoga opet »Velež« napada. Tek u 17 m., kad je Zelenika bio u povoljnoj situaciji da postigne gol bio je grubo srušen radi čega je dosuđen jedanaesterac kojeg Zelenika pretvara u gol. Golman se nije uopšte pomaknuo.</p>
+    <p>Do kraja poluvremena »Velež« dominira terenom, ali se ne povećava rezultat iako je poslano mnogo lopti na protivnički gol.</p>
+    <p>I drugo poluvreme ličilo je na prvo. »Velež« je apsolutni gospodar terena. Gosti su prisiljeni da se brane, ali nisu mogli izaći na kraj sa razigranim timom »Veleža«, koji je igrao jednostavno, korisno i borbeno. Išlo se na prvu loptu i odmah se sprovodile brze akcije prema protivničkom golu. Navalni igrači su se odlično slagali. Svaka akcija bila je opasna. Nizao se prodor za prodorom. Upućeno je mnogo lopti na gol protivnika, jer se pucalo iz svake pozicije. U 48 m. dolazi do povećavanja rezultata. Rebac je sa krila dodao loptu Mujiću a ovaj je prisebno i jako sprovodi u mrežu. Prije toga Rebac je pogodio stativu. Pet minuta kasnije Zelenika odlično poslužuje Repca, a ovaj, pošto je prešao dvojicu igrača, jako tuče u gol. To je bio veoma lijep gol. Posljednji gol postigao je Mujić iz jedne gužve u 84 m.</p>
+    <p>Za nedjeljnu utakmicu može se reći da je na njoj Velež daleko nadigrao svog protivnika i da bi rezultat od 7:0 ili 8:0 bio realniji. Gosti nisu imali šansi za postizavanje golova. U toku igre uspjeli su svega 3—4 puta da dođu do gola i jedinu su šansu imali u 40 m. kada se Ivoš našao sam pred golom.</p>
+    <p>»Veležov« tim kao cjelina odlično je igrao i kad bi na predstojećim utakmicama igrao ovako borbeno i korisno bio bi siguran kandidat za ulazak u I ligu.</p>
+    <div class="signature"><i>Sloboda</i></div>
+    <div class="imagetable"><img src="../images/site/table/tab1954-05-02.png" width="100%"></div></div>
+
+    <div id="overlay14" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox15" class="fixedBox" style="display: none;">
+    <h2>Prva neriješena igra Mostaraca</h2>
+    <h4>„Velež” — „Lovćen” 1:1 (1:0)</h4>
+    <p>»Veležovci« su doputovali na Cetinje sa željom da odnesu dva boda i da prekinu tradiciju gubljenja utakmice na stranim terenima. Međutim, to im je samo polovično uspjelo. Nisu bili poraženi i odnijeli su jedan bod. Mostarcima nije uspjelo kao ni jednom dosada drugom ligašu da sa Cetinja odnese oba boda. Utakmica je počela mirno s obje strane. »Veležovci« su ipak prvi ugrozili gol domaćih. Navala »Veleža« igrala je u početku jednostavno, a samo nekoliko minuta poslije prvog sudijinog zvižduka Selimotić je pogodio stativu. Isti igrač je u toku prvog poluvremena bio u sličnim situacijama još dva puta, ali je mreža »Lovćena« ostala netaknuta. Odbrana Mostaraca igrala je u prvom poluvremenu brzo i sigurno, nije dopuštala igračima »Lovćena« da slobodno pucaju na vrata Irovića. Samo je jedanput desna polutka domaćih bila u idealnoj prilici da postigne zgoditak, ali je lopta otišla preko stative. U drugom poluvremenu »Veležovci« su krenuli još borbenije u napad. Punih deset minuta trajala je opsada »Lovćenovog« gola. Jedna brza kombinacija navalnog reda Mostaraca završila se zgoditkom kada je Mujić sa 18 metara oštro šutirao u desni ugao. Poslije toga »Velež« je igrao još mirnije i sigurnije, ali samo zahvaljujući nepreciznosti svoje navale i vrlo brzim intervencijama uže odbrane »Lovćena« rezultat je ostao sve do 85 minuta nepromijenjen. Ni Cetinjani nisu mirovali.</p>
+    <p>Iako je »Velež« nastavio igru nešto defanzivnije, u želji da očuva rezultat, domaći su dugačkim loptama često ugrožavali gol protivnika. I baš iz jedne takve gužve desno krilo Vrbica uspjelo je da ubaci loptu u mrežu »Veleža«, dok su se golman i još dva odbranbena igrača nalazila na zemlji.</p>
+    <p>Utakmica je inače bila vrlo brza, oštra i interesantna. Kod »Veleža« igrali su vrlo dobro Mujić, Zelenika, Radiljević i Momić, a kod domaćih Pajević, Lubarda i Ivanović.</p>
+    <p>Na utakmicu je doputovalo kamionima oko 250 Mostaraca, koji su bodrili svoj tim.</p>
+    <div class="signature"><b>Haldun HRVIĆ</b><br><i>Oslobođenje</i></div>
+    <div class="imagetable"><img src="../images/site/table/tab1954-05-23.png" width="100%"></div></div>
+
+    <div id="overlay15" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox16" class="fixedBox" style="display: none;">
+    <h2><u>Ubjedljiva pobjeda ekipe Mostaraca</u><br>„Velež” „Zagreb” 3:0</h2>
+    <p>Prema početku igre teško je bilo predvidjeti pobjednika. Obadvije ekipe počele su mlako i igra je bila prilično rastrgana, kao da se ne igra prvenstvena utakmica. Tek poslije 20 m. »Velež« se donekle sređuje i počinje da ugrožava gol gostiju. Zelenika je jednom prilikom jako tukao, a malo zatim i Mujić, ali pored gola. Slične šanse ponovile su se nekoliko puta.</p>
+    <p>Domaći nisu igrali prema svojim mogućnostima. Odbrana je bila sigurna i na vrijeme je intervenisala, dok je navalni red podbacio. Akcija je bilo dosta, ali navalni red nije pokazao dovoljno snalažljivosti da svoju nadmoćnost realizuje u golovima. Oni nisu igrali homogeno. Pravili su početničke greške. Slabo su dodavali jedan drugom i nisu se dovoljno zalagali. Odbrana gostiju bez većih napora uspjela je da osujeti svaku akcciju domaćih.</p>
+    <p>Drugo poluvrijeme nije naličilo na prvo. Ovog puta su domaći zaigrali borbenije. Počeli su sa jakim prodorima. Ali, ni tada, nisu pokazali dovoljno umješnosti. U polju su dobro igrali, ali u završnicama su mnogo griješili. Tek u 50 minuti Zelenika jako tuče na gol. Lopta se odbija no Zelenika opet pritrčava i postiže gol. Poslije toga tim domaćih izvodi niz akcija. Zagreb se uglavnom brani. U 78 m. dosuđen je korner u korist domaćih. Rebac vrlo lijepo tuče i lopta u luku pada pred sam gol, sama skreće u mrežu. Ovakav gol se može rijetko vidjeti na futbalskim terenima. Pred sam kraj igre Rebac opet dolazi do lopte. On prelazi trojicu igrača i prisebno ali vrlo jako tuče i postiže gol sa 16 m.</p>
+    <p>Pobjeda je izvojevana zasluženo i pored toga što »Velež« nije igrao kako treba. Odbrana je bila bolji dio tima. Srednji red je podbacio, a navala je mnogo griješila. Momić je bio najbolji na terenu. Dilberović i Rukavina su zadovoljili. Radiljeviću nije ništa polazilo za rukom. Rebac je igrao defanzivno i vrlo slabo. Iskupio se postignutim golovima. Selimotić se zalagao ali nije bio koristan. Mujić je igrao dobro. Zelenika, Hrvić i Bolfek nisu zadovoljili. Sve u svemu, tim kao cjelina, i pored pobjede, mnogo je razočarao. Nije bilo homogene i kolektivne igre i zalaganja. Za ovu igru moglo bi se reći da nije ni sjenka onoj igri koju su pokazali protiv Mačve.</p>
+    <div class="signature"><b>Mihajlo ŠAŠAROGA</b><br><i>Sloboda</i></div>
+    <div class="imagetable"><img src="../images/site/table/tab1954-05-30.png" width="100%"></div></div>
+
+    <div id="overlay16" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox17" class="fixedBox" style="display: none;">
+    <h2>»Šibenik« izgubio protiv »Veleža« 3:1</h2>
+    <p>Danas je u Šibeniku odigrana predposljednja utakmica Druge savezne lige između »Šibenika« i »Veleža« iz Mostara i ujedno posljednja utakmica Druge savezne lige u Šibeniku. Da li će Šibeničani bar u doglednoj budućnosti imati priliku da na svom terenu ponovno vide drugoligaše veliko je pitanje.</p>
+    <p>Već u samom početku igre gosti su preuzeli inicijativu i dominirali terenom prvih deset minuta. »Velež« je svim silama i pod svaku cijenu htio pobjedu. Njegovi igrači neprestano su vršili napade na vrata domaćih, koje su bekovi lakoćom otklanjali. Danas su Šibeničani imali prilike da u I. poluvremenu vide jednu zaista vrlo dobru utakmicu. Pred kraj prvog poluvremena igrači »Veleža« igrali su sa dosta nervoze a tim više kad su njihove akcije ostale bez rezultata. Na mahove ispoljavali su nešto oštriju igru, koja im nije donijela nikakvog rezultata.</p>
+    <p>U drugom vremenu u samom početku »Velež« mijenja taktiku i svim snagama opsjeda vrata domaćih. Šibeničani su nesređeno igrali i već u 49. minutu preko Zelenike gosti postižu prvi zgoditak, a nakon 3 minuta odnosno u 51. minutu Mujić povisuje rezultat na 2:0. Šibenčani ne uspijevaju srediti svoje redove. Igrači »Veleža« to koriste i vrše stalne napade. Iz jednog dosuđenog kornera u 60. minutu Cvitanović postiže jedini gol za Šibenik, a u nastavku igre u 65. minutu Mujić postiže treći zgoditak za »Veleža«.</p>
+    <p>Najbolji igrači kod »Veleža« bili su Rebac, Zelenika i Mujić, a kod domaćih Bašić, Tambača i Zorić.</p>
+    <div class="signature"><b>M. M.</b><br><i>Slobodna Dalmacija</i></div><div class="imagetable"><img src="../images/site/table/tab1954-06-06.png" width="100%"></div></div>
+
+    <div id="overlay17" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox18" class="fixedBox" style="display: none;">
+    <h2>Velež - Branik 4:0 (4:0)</h2>
+    <p>Početak igre pripada gostima. Oni su nastojali da već u prvim minutama dođu do pobjede. Zaigrali su borbeno, smišljeno i dopadljivo. U tom dijelu igre osjetila se neka nesigurnost kod tima domaćih. »Velež« se uglavnom branio. Irović je imao mnogo posla. Uspješno je odbranio dva opasna šuta. U jednoj prilici dvojica protivničkih igrača uspjeli su se probiti i ostaviti »Veležovu« odbranu za svojim leđima. Bila je bezizlazna situacija, ali je Irović u jednom skoku uspio da odbrani jak šut. Slično se ponovilo poslije nekoliko minuta. Malo kasnije Irović je istrčao i lopta je pošla u prazan gol, ali u zadnjem momentu Rukavina pritrčava i izbacuje loptu u polje.</p>
+    <p>Onda, kada je »Branik« dominirao terenom, »Velež« izvodi jednu akciju. Mujić dodaje loptu Hrviću, a ovaj Zeleniki koji proigrava dvojicu protivničkih igrača i najposlije golmana te postiže gol.</p>
+    <p>I pored primljenog gola gosti ne polažu oružje. Oni igraju istim tempom, nastojeći da poprave stanje. Ali opet »Veležova« navala izvodi akciju. Mujić nabacuje loptu u centar na koju pritrčava Zelenika i glavom je sprovodi u mrežu.</p>
+    <p>Tek iza ovog gola »Velež« se sređuje i počinje da izvodi seriju napada. Oko 25 minuta domaći su bili apsolutni gospodari terena. Svi su redovi odlično funkcionisali. U 37 minuti, poslije jedne akcije, Hrvić je grubo srušen u kaznenom prostoru protivnika. Dosuđen je penal, kojeg Zelenika pretvara u gol.</p>
+    <p>Postignuta su još dva gola, ali ih sudija nije priznao navodno da su podignuta iz ofsajda. Pri kraju prvog poluvremena, opet Mujić, koji je inače bio inicijator svih akcija, nabacuje jednu poluvisoku loptu pred gol koju Hrvić glavom sprovodi u gol.</p>
+    <p>Za drugo poluvrijeme može se reći da je igra bila neinteresantna i slaba. »Velež« je igrao konfuzno, dok su se gosti žilavo borili nastojeći da poprave rezultat. Oni nisu ni jednog časa popuštali u tempu. Bila je simpatična njihova upornost, zalaganje i nastojanje da poprave rezultat. Oni su izveli nekoliko uspjelih prodora, ali nisu imali mnogo sreće, jer u završnicama nisu pokazivali mnogo umješnosti, a i dobrim dijelom »Veležova« odbrana uspjela je da na vrijeme interveniše.</p>
+    <p>Opšte uzevši, »Velež« nije igrao prema svojim mogućnostima. Izgleda da se zadovoljio postignutim rezultatom u prvom poluvremenu, pa se nisu zalagali u drugom dijelu igre. Najbolji su bili u timu pobjednika: Momić, Mujić i Zelenika, a najslabiji Slišković i Rebac. Kod gostiju istakao se srednji red.</p>
+    <p>Poslije ove utakmice »Velež« je zauzeo treće mjesto, sa jednim bodom manje od prvo i drugoplasiranih na tabeli druge Savezne lige. Dakle, »Velež« je ostao u istoj ligi, no sa novim iskustvom, pa već sada treba vršiti svestrane pripreme za buduća takmičenja, kako bi iduće godine ušli u red najboljih timova naše zemlje.</p>
+    <div class="signature"><b>Mihajlo ŠAŠAROGA</b><br><i>Sloboda</i></div><div class="imagetable"><img src="../images/site/table/tab1954-06-13.png" width="100%"></div></div>
+
+    <div id="overlay18" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox19" class="fixedBox" style="display: none;">
+    <h2>Velež — Partizan 0:4 (0:1)</h2>
+    <p>Već u prvom minutu Milutinović prelazi tri Veležova igrača i šalje opasan šut na Veležov gol. Odmah zatim Velež izvodi protivnapad i potpuno preuzima inicijativu u svoje ruke. Nižu se akcije prema Stojanovićevom golu. Već u 4 min. Borozan šalje loptu u kazneni prostor gde se stvara gužva, ali Stojanović smelim skokom spasava gol izbacivanjem lopte u korner. Odmah zatim opet je Velež u napadu i Zelenika šutira. Loptu dodiruje Stefanović i ona dolazi do slobodnog Rebca koji tuče pored gola. Minut kasnije ponavlja se slična situacija, ali ovoga puta Stefanović uspešnije interveniše.</p><b>Neočekivani gol</b><p>Posle 25 minuta Partizan se konačno sređuje. Do tog vremena Veležova navala nije znala da iskoristi nadmoćnost. Njegovi igrači pravili su početničke greške. Stojanović se tri puta našao u veoma kritičnoj situaciji, ali je uspešno intervenisao i tako uspeo da spase svoja vrata. Posle toga Partizan brzim prodorima vrlo često dolazi pred Barbarićev gol. U jednom momentu stvorila se gužva pred golom, pritrčao je Milutinović, ali Barbarić je intervenisao i prosto neverovatnim skokom uspeo da uhvati loptu. U 30 minutu došlo je da igralištu do jedne veoma ružne slike. Borili su se Zelenika i Stefanović. Kada je Stefanović oduzeo loptu, Zelenika ga je bezobrazno udario po nogama. Poslednji minuti prvog poluvremena pripadali su Partizanu, ali ni njegova navala nije uspela da realizuje sve napore. U nastavku igre već u prvim minutima opet greškom levog beka, lopta je došla do Veselinovića koji se našao oči u oči sa Barbarićem. On je ispod njega poslao loptu u mrežu sa skoro 20 metara.</p><b>Gruba igra</b><p>Posle ovoga, pa do završetka, nije više bilo lepe igre i uzbudljivih situacija. Igrači su se međusobno čarkali i otvoreno udarali. Igralo se grubo. Ispadi pojedinih igrača bili su nesportski. U jednom momentu Čajkovski je zajaukao, izgledao je kao da je udaren, iako to nije bio. On je simulirao i zato je bio izviždan od publike. Malo zatim gosti iznenada povećavaju rezultat. U 52 minutu Barbarić izbacuje loptu, ali veoma kratko. Do lopte je došao Milutinović i razumljivo loptu je vratio u prazan gol. Trinaest minuta kasnije dosuđen je penal protiv Veleža koji je pretvoren u gol. Pri kraju igre grubo je srušen Hrvić pred Partizanovim golom. Igra je prekiinuta. Dok je lekar intervenisao, sudija je na zaprepašćenje publike nastavio igru iako je na terenu bilo i neigrača.</p><p>Sve u svemu nijedan tim nije ispunio očekivanja. Velež nije igrao kako zna niti je njegova ekipa pružila uobičajenu borbenost.</p><p>Partizan je ovoga puta razočarao Mostarce gde je prvi put igrao od 1946 godine. Njegovi najbolji igrači, inače naši poznati reprezentativci, nisu pokazali ono što znaju, a tim kao celina igrao je veoma mlako i rastrgano.</p><p>Sudija Makijedo na kraju igre bio je prisiljen da isključi Dilberovića zbog ispada.</p><div class="signature"><b>Šefik PAŠIĆ</b><br><i>Sport</i></div>
+    
+    <div class="imagetable"><img src="../images/site/table/tab1954-06-13.png" width="100%"></div>
+</div>
+
+    <div id="overlay19" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox20" class="fixedBox" style="display: none;"><h2>„Velež“ iznenadio BSK-a sa 4:2 (2:2)</h2>
+    <p>Poletnom igrom »Velež« je danas zasluženo pobijedio »BSK« sa 4:2 (2:2). [...]</p><p>Mada klizav teren od pljuska, koji je trajao neprekidno dva sata prije utakmice nije dozvoljavao da se razvije lijepa igra, za današnju utakmicu između »BSK-a« i »Veleža« može se reći da je bila vrlo interesantna. Još u početku obje ekipe snažno navaljuju u namjeri da osiguraju pobjedu. Iako Marković postiže gol u osmom minutu, Zelenika izjednačuje u 12. minuti. Poslije toga BSK opet prelazi u vodstvo preko istog igrača u 35. minuti, ali u 44. minutu Zelenika izjednačuje na 2:2 iz jedanaesterca koji je skrivio Stanković.</p><p>Drugo poluvrijeme proteklo je u znatnoj nadmoćnosti »Veleža«, koji je uspio da u 48. minuti preko Mujića i u 78. minuti preko Selimotića poveća rezultat na 4:2. U ovom dijelu igre gosti su prikazali odličnu igru. Domaći su vrlo rijetko uspijevali da dođu do gola »Veleža« na kome se nalazio vrlo dobar golman Barbarić. U timu »Veleža« nije bilo slabih mjesta, a najbolji su bili pored Barbarića Borozan, Bolfek i Zelenika. Za požrtvovanu i dobru igru Beograđani su srdačno nagradili goste aplauzom. U timu »BSK-a« nitko se nije naročito istakao.</p><div class="signature"><i>Slobodna Dalmacija</i></div>
+    
+    <div class="imagetable"><img src="../images/site/table/tab1953-05-31.png" width="100%"></div></div>
+
+    <div id="overlay20" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox21" class="fixedBox" style="display: none;"><h2>Velež - Spartak 2:0</h2>
+    <p>Poslije nedeljne utakmice navijači su zadovoljno napustili teren. Kako i ne bi kad je njihov ljubimac odnio još jednu pobjedu. To je bila teška borba po blatnjavom terenu. Veležovci su zaigrali kao nikada do sada. Mladi tim dao je sve od sebe. Igrao je jednostavnije i korisnije. Rezultat takve igre ispoljio ce u golovima. Ovog puta znali su iskoristiti povoljne situacije.</p><p>»Spartak« nije bio loš tim, već naprotiv veoma dobar, borben sa odličnom kondicijom i ostalim odlikama jedne iskusne ekipe. Ipak oni nisu imali uspjeha. Igrali su dobro u polju, ali kad se takva igra trebala realizovati njihova navala je u završnicima pravila grube greške. Mnogo su kombinovali, a to im se osvetilo. Takač, Palatinos, Branisavljević i još neki drugi imali su pogodnih situacija da postignu gol, ali su uvijek oklijevali.</p><p>Odbrana »Veleža« ispunila je časno svoj zadatak. Momić je bio stub svog tima i ujedno najbolji na terenu. Barbarić nije imao mnogo posla, ali je odbranio dvije opasne lopte. Bolfek je podbacio. Izgleda da mu nije odgovaralo mjesto beka. Rukavina je bio siguran, ali mu se može zamjeriti što je ostavljao protivničko krilo. Borozan nije ispunio očakivanja koja su se od njega očekivala. Radiljević je položio ispit. Bio je siguran i uz Momića najbolji u svom timu. Za Sliškovića ce može reći da napreduje i da će to biti efikasno i korisno krilo. Mujić, Zelenika, Hrvić i Ćemalović dobro su se slagali i znali su da opasno ugrožavaju protivnički gol. Tim kao cjelina igrao je dobro.</p><p>Ovom pobjedom dokazao je tim »Veleža« da nije bio »zreo« za ispadanje i da je tvrd orah i za naše najbolje timove. Sve šanse nisu izgubljene. Ukoliko bi tukli »Vardara« u Skoplju sa nekoliko golova razlike bilo bi mogućnosti da ostane u ligi najboljih. Bilo kako, smatramo da će se igrači »Veleža« dostojno boriti i na posljednjoj utakmici, onako kako to znaju. To očekuje sportska javnost Mostara i Hercegovine.</p>
+    <div class="signature"><i>Sloboda</i></div>
+    
+    <div class="imagetable"><img src="../images/site/table/tab1953-06-14.png" width="100%"></div></div>
+
+    <div id="overlay21" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox22" class="fixedBox" style="display: none;">
+    <h2>Utakmica odlučena u prvim minutima</h2>
+    <h4>„Vardar” — „Velež” 5:2 (2:0)</h4>
+    <p>Već u prvim minutima igre videlo se da će tim „Vardara” odneti pobedu. Igrači „Vardara” su počeli silovitim napadima, bez uobičajene nervoze. Nasuprot njima igrači „Veleža” zaigrali su bolje tek pri kraju drugog dela igre. Njih je možda u početku igre demoralisao prvi gol koji je postignut već u 5 minutu. Dao ga je Velkovski. On je sa tridesetak metara pogodio gornji desni ugao i iznenadio inače odličnog Barbarića. U 24 inutu Karamfilović je lako pored palog Barbarića poslao loptu u mrežu.</p>
+        <p>U drugom delu „Vardar” počinje sa silovitim napadima i već u 2 minutu Karamfilović dodaje Velkovskom, koji je prodro do gol-aut linije i centrirao previsoko Cincijevski je vešto prevario i Barbarića i centarhalfa „Veleža” propustivši loptu slobodnom Georgijevski II, koji je bez oklevanja povećao na 3:0. Od ovog momenta igrači „Vardara” počinju da igraju ležerno. Kao plod ovakve igre „Vardara” došla su dva gola Zelenike. Četvrti gol za „Vardar” postigao je Velkovski, a peti gol bio je autogol Bolfeka. Pobeda Vardara je zaslužena.</p>
+    <div class="signature"><b>B. BLAGOJEVSKI</b><br><i>Borba</i></div>
+    <div class="imagetable"><img src="../images/site/table/tab1953-06-21.png" width="100%"></div></div>
+
+    <div id="overlay22" class="overlay" style="display: none;"></div>
+
+<div id="fixedBox23" class="fixedBox" style="display: none;">
+    <div class="imagetable"><img src="https://cdn.discordapp.com/attachments/1079034616264016034/1079094041234395157/bez_kruga.png" width="100%"></div></div>
+
+    <div id="overlay23" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox24" class="fixedBox" style="display: none;">
+    <div class="imagetable"><img src="https://cdn.discordapp.com/attachments/1079034616264016034/1079094041234395157/bez_kruga.png" width="100%"></div></div>
+
+    <div id="overlay24" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox25" class="fixedBox" style="display: none;">
+    <div class="imagetable"><img src="https://cdn.discordapp.com/attachments/1079034616264016034/1079094041234395157/bez_kruga.png" width="100%"></div></div>
+
+    <div id="overlay25" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox26" class="fixedBox" style="display: none;">
+    <div class="imagetable"><img src="https://cdn.discordapp.com/attachments/1079034616264016034/1079094041234395157/bez_kruga.png" width="100%"></div></div>
+
+    <div id="overlay26" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox27" class="fixedBox" style="display: none;">
+    <div class="imagetable"><img src="https://cdn.discordapp.com/attachments/1079034616264016034/1079094041234395157/bez_kruga.png" width="100%"></div></div>
+
+    <div id="overlay27" class="overlay" style="display: none;"></div><h1>Druga savezna liga</h1></div>
+
     <table>
 		<thead>
 			<tr>
@@ -188,182 +577,151 @@ span:hover + .scorers {
 		</thead>
 		<tbody>
 			<tr>
-				<td>31.8.1952.</td>
-				<td><span>Crvena zvezda</span><div class="players">VELEŽ: Barbarić, Dilberović, Prajo, Borozan, Bolfek, Ćemalović, Slišković, Mujić, Momić, Hrvić, Hudarin<br>ZVEZDA: Lovrić, Stanković, Zeković, Zlatković, Diskić, Džajić, Ognjanov, Mitić, Živanović, Palfi, Vukosavljević</div></td>
+				<td>13.9.1953.</td>
+				<td><span>Napredak Kruševac</span><div class="players">VELEŽ: Đurićić, Dilberović, Rukavina, Momić, Bolfek, Radiljević, Mujić, Selimotić, Zelenika, Hrvić, Ćemalović<br>NAPREDAK: Isajlović, Zdravković, Pantić, Perović, Vulić, V. Vuković, J. Vuković, Mitić, Ristić, Đorić, Kostić</div></td>
 				<td>Staro Veležovo</td>
-				<td align="center"><span>0 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td><td>0-1</td><td>Ognjanov 76'</td></tr></tbody></table></div></td>
-				<td bgcolor="#F4CCCC" align="center" position="relative"><span>I</span><div class="imagetable" style="top:25.6%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080132408659165274/tab31-8-52.png" width="300px"></div></td>
-				<td align="right">10,000</td>
+				<td align="center"><span>3 - 0</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Ćemalović 52'</td><td>1-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Zelenika 55'</td><td>2-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Zelenika 83'</td><td>3-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td></tr></tbody></table></div></td>
+				<td bgcolor="#D9EAD3" align="center" position="relative"><p id="showBox1">P</p></td>
+				<td align="right">4,000</td>
 			</tr>
 			<tr>
-				<td>14.9.1952.</td>
-				<td><span>FK Sarajevo</span><div class="players">SARAJEVO: Pejak, Brozović, Biogradlić, Agošton, Švraka, Glavočević, Žigante, Živković, F. Lovrić, Bukvić, Đ. Lovrić<br>VELEŽ: Barbarić, Dilberović, Prajo, Borozan, Bolfek, Ćemalović, Mujić, Momić, Zelenika, Hrvić, Hudarin</div></td>
-				<td>Koševo</td>
-				<td align="center"><span>0 - 2</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td><td>0-1</td><td>F. Lovrić 72'</td></tr><tr><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td><td>0-2</td><td>Đ. Lovrić 88' (p)</td></tr></tbody></table></div></td>
-				<td bgcolor="#F4CCCC" align="center"><span>I</span><div class="imagetable" style="top:29.85%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080167979112742933/tab14-9-52.png" width="300px"></div></td>
-				<td align="right">12,000</td>
+				<td>20.9.1953.</td>
+				<td><span>Budućnost Titograd</span><div class="players">VELEŽ: Đuričić, Dilberović, Rukavina, Bolfek, Momić, Radiljević, Selimotić, Mujić, Zelenika <font color="BF9000">■</font>, Hrvić, Ćemalović<br>BUDUĆNOST: Dedović, Perović, Eterović, M. Darmanović, Methadžović, Zečević, Čelebić, Popović, V. Darmanović, Vučeković, Radonjić</div></td>
+				<td>Staro Veležovo</td>
+				<td align="center"><span>4 - 0</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Hrvić 10'</td><td>1-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Hrvić 53'</td><td>2-0</td><td></td></tr><tr><td>Ćemalović 60'</td><td>3-0</td><td></td></tr><tr><td>Mujić 63'</td><td>4-0</td><td></td></tr></tbody></table></div></td>
+				<td bgcolor="#D9EAD3" align="center"><p id="showBox2">P</p></td>
+				<td align="right">3,500</td>
 			</tr>
 			<tr>
-				<td>28.9.1952.</td>
-				<td><span>Hajduk Split</span><div class="players">VELEŽ: Barbarić, Dilberović, Prajo, Borozan, Bolfek, Ćemalović, Mujić, Momić, Radiljević, Hrvić, Hudarin<br>HAJDUK: Beara, Kokeza, D. Grčić, Luštica, Krstulović, S. Grčić, Šenauer, Broketa, Vukas, Matošić, Arapović</div></td>
-				<td>Staro Veležovo</td>
-				<td align="center"><span>1 - 2</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Vukas 14'</td></tr><tr><td>Hudarin 39'</td><td>1-1</td><td></td></tr><tr><td></td><td>1-2</td><td>Broketa 65'</td></tr></tbody></table></div></td>
+				<td>4.10.1953.</td>
+				<td><span>Željezničar Sarajevo</span><div class="players">ŽELJEZNIČAR: Babić, Abramović, Dugonjevac, Ubović, Kočan, Milenković, Martinović, Radonjić, Kulović, Gojković, Pašić<br>VELEŽ: Đuričić, Dilberović, Rukavina, Bolfek, Momić, Radiljević, Rebac, Zelenika, Hrvić, Ćemalović, Mujić</div></td>
+				<td>Grbavica</td>
+				<td align="center"><span>5 - 3</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Zelenika 31'</td><td>1-0</td><td></td></tr><tr><td>Mujić 52'</td><td>2-0</td><td></td></tr><tr><td>Zelenika 62'</td><td>3-0</td><td></td></tr><tr><td></td><td>3-1</td><td>Pašić 69'</td></tr><tr><td></td><td>3-2</td><td>Gojković 76'</td></tr><tr><td>Mujić 81'</td><td>4-2</td><td></td></tr><tr><td>Ćemalović 86'</td><td>5-2</td><td></td></tr><tr><td></td><td>5-3</td><td>Kulović 88'</td></tr></tbody></table></div></td>
             
-				<td bgcolor="#F4CCCC" align="center"><span>I</span><div class="imagetable" style="top: 34.1%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080135512817401978/tab28-9-1952.png" width="300px" top="200"></div></td>
-				<td align="right">10,000</td>
+				<td bgcolor="#D9EAD3" align="center"><p id="showBox3">P</p></td>
+				<td align="right">12,000</td>
 			</tr>
 		<tr>
-				<td>12.10.1952.</td>
-				<td><span>Vojvodina Novi Sad</span><div class="players">VOJVODINA: Vasić, Savović, Ristić, Ninković, Milovanov, Boškov, Krgin, Rajkov, Krstić, Leškov, Vlaović<br>VELEŽ: Barbarić, Dilberović, Prajo, Borozan, Bolfek, Ćemalović, Mujić, Momić, Šestič, Hrvić, Hudarin</div></td>
-				<td>Stadion Vojvodine</td>
-				<td align="center"><span>3 - 5</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Bolfek 15'</td><td>1-0</td><td></td></tr><tr><td>Borozan 25'</td><td>2-0</td><td></td></tr><tr><td></td><td>2-1</td><td>Krstić 26'</td></tr><tr><td></td><td>2-2</td><td>Rajkov 27'</td></tr><tr><td>Hrvić 30'</td><td>3-2</td><td></td></tr><tr><td></td><td>3-3</td><td>Boškov 39'</td></tr><tr><td></td><td>3-4</td><td>Milanov 61'</td></tr><tr><td></td><td>3-5</td><td>Vlaović 88'</td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#F4CCCC" align="center"><span>I</span><div class="imagetable" style="top: 34.1%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080135512817401978/tab28-9-1952.png" width="300px" top="200"></div></td>
-				<td align="right">6,000</td>
-			</tr><tr>
-				<td>19.10.1952.</td>
-				<td><span>Lokomotiva Zagreb</span><div class="players">VELEŽ: Barbarić, Slišković, Rukavina, Dilberović, Bolfek, Radiljević, Hudarin, Mujić, Borozan, Hrvić, Ćemalović<br>LOKOMOTIVA: Grčević, Rajs, Balan, Kobe, Andročec, Pukšec, Odžak, Čorn, Firm, Bobek, Papec</div></td>
+				<td>11.10.1953.</td>
+				<td><span>Borac Banja Luka</span><div class="players">VELEŽ: Đuričić, Dilberović, Rukavina, Bolfek, Momić, Radiljević, Rebac, Mujić, Zelenika, Hrvić, Ćemalović<br>BORAC: Đurić, Banjac, Hadžiabdić, Spaho, Šijaković, Jurić, Šašivarević, Popović, Tešanović, Švraka, Novaković</div></td>
 				<td>Staro Veležovo</td>
-				<td align="center"><span>0 - 0</span></td>
+				<td align="center"><span>4 - 2</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Mujić 3'</td><td>1-0</td><td></td></tr><tr><td></td><td>1-1</td><td>Rukavina 34' (ag)</td></tr><tr><td>Hrvić 39'</td><td>2-1</td><td></td></tr><tr><td></td><td>2-2</td><td>Tešanović 40'</td></tr><tr><td>Mujić 68'</td><td>3-2</td><td></td></tr><tr><td>Hrvić 89'</td><td>4-2</td><td></td></tr></tbody></table></div></td>
             
-				<td bgcolor="#FFF2CC" align="center"><span>N</span><div class="imagetable" style="top: 34.1%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080135512817401978/tab28-9-1952.png" width="300px" top="200"></div></td>
-				<td align="right">6,000</td>
-			</tr><tr>
-				<td>26.10.1952.</td>
-				<td><span>Dinamo Zagreb</span><div class="players">DINAMO: Staničić, D. Horvat, Crnković, Beseredi, I. Horvat, Mantula, Benko, Lipušinović, Cimermančić, Dvornić, Čajkovski<br>VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Bolfek, Ćemalović, Mujić, Rebac, Musa, Hrvić, Hudarin</div></td>
-				<td>Maksimir</td>
-				<td align="center"><span>0 - 4</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td><td>0-1</td><td>Lipušinović 30'</td></tr><tr><td></td><td>0-2</td><td>Cimermančić 73'</td></tr><tr><td></td><td>0-3</td><td>Cimermančić 78'</td></tr><tr><td></td><td>0-4</td><td>Cimermančić 79'</td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#F4CCCC" align="center"><span>I</span><div class="imagetable" style="top: 34.1%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080135512817401978/tab28-9-1952.png" width="300px" top="200"></div></td>
-				<td align="right">10,000</td>
-			</tr><tr>
-				<td>9.11.1952.</td>
-				<td><span>NK Zagreb</span><div class="players">VELEŽ: Barbarić, Dilberović, Rukavina, Momić, Bolfek, Ćemalović, Mujić, Rebac, Slišković, Hrvić, Hudarin<br>ZAGREB: Maček, Jurić, Dubravčić, Blažetić, Klaić, Joksimović, Devčić, Medved, Vidošević, Jurišić, Butković</div></td>
-				<td>Staro Veležovo</td>
-				<td align="center"><span>2 - 0</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Mujić 8'</td><td>1-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Rebac 83'</td><td>2-0</td><td></td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#D9EAD3" align="center"><span>P</span><div class="imagetable" style="top: 34.1%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080135512817401978/tab28-9-1952.png" width="300px" top="200"></div></td>
-				<td align="right">8,000</td>
-			</tr><tr>
-				<td>16.11.1952.</td>
-				<td><span>Partizan</span><div class="players">PARTIZAN: Stojanović, Belin, Čolić, Čajkovski, Jovanović, Atanacković, Ognjanović, Veselinović, Valok, Bobek, Herceg<br>VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Bolfek, Ćemalović, Mujić, Rebac, S. Selimotić, Hrvić, Momić</div></td>
-				<td>Stadion JNA</td>
-				<td align="center"><span>1 - 4</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Selimotić 29'</td><td>1-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td></td><td>1-1</td><td>Veselinović 31'</td></tr><tr><td></td><td>1-2</td><td>Valok 35'</td></tr><tr><td></td><td>1-3</td><td>Valok 79'</td></tr><tr><td></td><td>1-4</td><td>Herceg 86'</td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#F4CCCC" align="center"><span>I</span><div class="imagetable" style="top: 34.1%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080135512817401978/tab28-9-1952.png" width="300px" top="200"></div></td>
-				<td align="right">8,000</td>
-			</tr><tr>
-				<td>23.11.1952.</td>
-				<td><span>BSK Beograd</span><div class="players">VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Momić, Bolfek, Selimotić, Mujić, Rebac, Hrvić, Ćemalović<br>BSK: Cvetković, Odaković, Filipović, Kaloperović, Tasić, Davidović, Panić, Jocić, Spaić, Cokić, Marković</div></td>
-				<td>Staro Veležovo</td>
-				<td align="center"><span>0 - 0</span></td>
-            
-				<td bgcolor="#FFF2CC" align="center"><span>N</span><div class="imagetable" style="top: 34.1%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080135512817401978/tab28-9-1952.png" width="300px" top="200"></div></td>
-				<td align="right">9,000</td>
-			</tr><tr>
-				<td>7.12.1952.</td>
-				<td><span>Spartak Subotica</span><div class="players">SPARTAK: Kampa, Tapiška, Bogešić, Čikoš, Kopilović, Kujundžić, Palatinus, Takač, Rudinski, Gereš, Branisavljević<br>VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Momić, Bolfek, Selimotić, Mujić, Musa, Hrvić, Ćemalović</div></td>
-				<td>Gradski stadion</td>
-				<td align="center"><span>0 - 4</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td><td>0-1</td><td>Begešić 10'</td></tr><tr><td></td><td>0-2</td><td>Palatinus 24'</td></tr><tr><td></td><td>0-3</td><td>Begešić 38'</td></tr><tr><td></td><td>0-4</td><td>Palatinus 68'</td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#F4CCCC" align="center"><span>I</span><div class="imagetable" style="top: 34.1%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080135512817401978/tab28-9-1952.png" width="300px" top="200"></div></td>
-				<td align="right">4,500</td>
-			</tr><tr>
-				<td>14.12.1952.</td>
-				<td><span>Vardar Skoplje</span><div class="players">VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Radiljević, Momić, Slišković, Mujić, Bolfek, Hrvić, Ćemalović<br>VARDAR: Vidinić, Araovski, Novak, Milanov, Kokinovski, Gerov, Cincijevski, Velkoski, D. Georgijevski, Janevski, P. Georgijevski</div></td>
-				<td>Staro Veležovo</td>
-				<td align="center"><span>3 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Janevski 2'</td></tr><tr><td>Ćemalović 12'</td><td>1-1</td><td></td></tr><tr><td>Hrvić 53'</td><td>2-1</td><td></td></tr><tr><td>Slišković 89'</td><td>3-1</td><td></td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#D9EAD3" align="center"><span>P</span><div class="imagetable" style="top: 34.1%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080135512817401978/tab28-9-1952.png" width="300px" top="200"></div></td>
-				<td align="right">5,000</td>
-			</tr><tr>
-				<td>8.3.1953.</td>
-				<td><span>Crvena zvezda</span><div class="players">ZVEZDA: Krivokuća, Stanković, Zeković, Tadić, Diskić, Džajić, Ognjanović, Mitić, Živanović, Zlatković, Vukosavljević<br>VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Bolfek, Radiljević, Selimotić, Hrvić, Vreća, Mujić, Ćemalović</div></td>
-				<td>Avala</td>
-				<td align="center"><span>0 - 4</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td><td>0-1</td><td>Vukosavljević 11'</td></tr><tr><td></td><td>0-2</td><td>Mitić 22'</td></tr><tr><td></td><td>0-3</td><td>Živadinović 31'</td></tr><tr><td></td><td>0-4</td><td>Vukosavljević 70'</td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#F4CCCC" align="center"><span>I</span><div class="imagetable" style="top: 34.1%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080135512817401978/tab28-9-1952.png" width="300px" top="200"></div></td>
-				<td align="right">23,000</td>
-			</tr><tr>
-				<td>15.3.1953.</td>
-				<td><span>FK Sarajevo</span><div class="players">VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Bolfek, Radiljević, Ćemalović, Selimotić, Rebac, Mujić, Vreća<br>SARAJEVO: Pejak, Brozović, Biogradlić, Agoston, Svraka, Glavočević, Žigante, F. Lovrić, Stipić, Đ. Lovrić, Živkov</div></td>
-				<td>Staro Veležovo</td>
-				<td align="center"><span>1 - 2</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Živkov 5'</td></tr><tr><td></td><td>0-2</td><td>Stipić 61'</td></tr><tr><td>Mujić 83'</td><td>1-2</td><td></td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#F4CCCC" align="center"><span>I</span><div class="imagetable" style="top: 34.1%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080135512817401978/tab28-9-1952.png" width="300px" top="200"></div></td>
-				<td align="right">10,000</td>
-			</tr><tr>
-				<td>22.3.1953.</td>
-				<td><span>Hajduk Split</span><div class="players">HAJDUK: Beara, Delić, Broketa, Krstulović, Ratković, Luštica, Šenauer, Kragić, Matošić, Vukas, Arapović<br>VELEŽ: Barbarić, Dilberović, Prajo, Borozan, Bolfek, Ćemalović, Rebac, Mujić, Zelenika, Hrvić, Vreća</div></td>
-				<td>Stari plac</td>
-				<td align="center"><span>0 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>⠀⠀⠀⠀⠀⠀⠀</td><td>0-1</td><td>Vukas 35'</td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#F4CCCC" align="center"><span>I</span><div class="imagetable" style="top: 34.1%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080135512817401978/tab28-9-1952.png" width="300px" top="200"></div></td>
-				<td align="right">9,000</td>
-			</tr><tr>
-				<td>29.3.1953.</td>
-				<td><span>Vojvodina Novi Sad</span><div class="players">VELEŽ: Barbarić, Dilberović, Prajo, Hrvić, Bolfek, Ćemalović, Rebac, Mujić, Zelenika, Selimotić, Drljević<br>VOJVODINA: Vasić, Savović, Torbarov, Blanarik, Milovanov, Leškov, R. Krstić, Rajkov, Hadžić, Boškov, D. Krstić</div></td>
-				<td>Staro Veležovo</td>
-				<td align="center"><span>3 - 5</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Hadžić 30'</td></tr><tr><td></td><td>0-2</td><td>Rajkov 33'</td></tr><tr><td></td><td>0-3</td><td>Rajkov 36'</td></tr><tr><td>Zelenika 38'</td><td>1-3</td><td></td></tr><tr><td></td><td>1-4</td><td>Rajkov 70'</td></tr><tr><td></td><td>1-5</td><td>Rajkov 77'</td></tr><tr><td>Rebac 80'</td><td>2-5</td><td></td></tr><tr><td>Drljević 84'</td><td>3-5</td><td></td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#F4CCCC" align="center"><span>I</span><div class="imagetable" style="top: 34.1%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080135512817401978/tab28-9-1952.png" width="300px" top="200"></div></td>
-				<td align="right">6,000</td>
-			</tr><tr>
-				<td>19.4.1953.</td>
-				<td><span>Dinamo Zagreb</span><div class="players">VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Momić, Bolfek, Rebac, Mujić, Zelenika, Hrvić, Ćemalović<br>DINAMO: Kralj, Banozić, Crnković, Beseredi, I. Horvat, Kapetanović, Benko, Lipošinović, Osojnak, Ž. Čajkovski, Dvornić</div></td>
-				<td>Staro Veležovo</td>
-				<td align="center"><span>3 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Osojnak 47'</td></tr><tr><td>Zelenika 57'</td><td>1-1</td><td></td></tr><tr><td>Hrvić 65'</td><td>2-1</td><td></td></tr><tr><td>Zelenika 87'</td><td>3-1</td><td></td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#D9EAD3" align="center"><span>P</span><div class="imagetable" style="top: 34.1%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080135512817401978/tab28-9-1952.png" width="300px" top="200"></div></td>
-				<td align="right">7,000</td>
-			</tr><tr>
-				<td>26.4.1953.</td>
-				<td><span>NK Zagreb</span><div class="players">ZAGREB: Maček, Jurić, Dubravčić, Šantek, Vidošević, Blažetić, Tajder, Medved, Jagodić, Joksimović, Devčić<br>VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Momić, Bolfek, Rebac, Mujić, Zelenika, Hrvić, Ćemalović</div></td>
-				<td>Kranjčevičeva</td>
-				<td align="center"><span>3 - 3</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Jagodić 12'</td></tr><tr><td>Rebac 34'</td><td>1-1</td><td></td></tr><tr><td></td><td>1-2</td><td>Devčić 41'</td></tr><tr><td>Zelenika 44'</td><td>2-2</td><td></td></tr><tr><td>Zelenika 74'</td><td>3-2</td><td></td></tr><tr><td></td><td>3-3</td><td>Joksimović 80'</td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#FFF2CC" align="center"><span>N</span><div class="imagetable" style="top: 34.1%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080135512817401978/tab28-9-1952.png" width="300px" top="200"></div></td>
-				<td align="right">8,000</td>
-			</tr><tr>
-				<td>28.4.1953.</td>
-				<td><span>Lokomotiva Zagreb</span><div class="players">LOKOMOTIVA: Nežmah, Čudek, Balan, Pukšec, Andročec, Rein, Odžak, Šal, Firm, Papec, O. Bobek<br>VELEŽ: Barbarić, Dilberović, Rukavina, Bolfek, Momić, Borozan, Rebac, Mujić, Zelenika, Hrvić, Ćemalović</div></td>
-				<td>Kajzerica</td>
-				<td align="center"><span>2 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Hrvić 31'</td><td>1-0</td><td></td></tr><tr><td></td><td>1-1</td><td>Firm 40'</td></tr><tr><td>Zelenika 61'</td><td>2-1</td><td></td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#D9EAD3" align="center"><span>P</span><div class="imagetable" style="top: 34.1%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080135512817401978/tab28-9-1952.png" width="300px" top="200"></div></td>
-				<td align="right">4,500</td>
-			</tr><tr>
-				<td>24.5.1953.</td>
-				<td><span>Partizan</span><div class="players">VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Momić, Bolfek, Rebac, Mujić, Zelenika, Hrvić, Ćemalović<br>PARTIZAN: Stojanović, Belin, Čolić, Čajkovski, Stefanović, Jovanović, Valok, Veselinović, Milutinović, Zebrc, Atanacković</div></td>
-				<td>Staro Veležovo</td>
-				<td align="center"><span>0 - 4</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td><td>0-1</td><td>Valok 12'</td></tr><tr><td></td><td>0-2</td><td>Veselinović 46'</td></tr><tr><td></td><td>0-3</td><td>Milutinović 52'</td></tr><tr><td></td><td>0-4</td><td>Veselinović 65'</td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#F4CCCC" align="center"><span>I</span><div class="imagetable" style="top: 34.1%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080135512817401978/tab28-9-1952.png" width="300px" top="200"></div></td>
-				<td align="right">10,000</td>
-			</tr><tr>
-				<td>31.5.1953.</td>
-				<td><span>BSK Beograd</span><div class="players">BSK: Radenković, Odanović, Filipović, Tasić, Stanković, Kaloperović, Panić, Jocić, Marković, Konstantinović, Radović<br>VELEŽ: Barbarić, Bolfek, Rukavina, Borozan, Momić, Radiljević, S. Selimotić, Mujić, Zelenika, Hrvić, Ćemalović</div></td>
-				<td>Avala</td>
-				<td align="center"><span>4 - 2</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Marković 8'</td></tr><tr><td>Zelenika 12'</td><td>1-1</td><td></td></tr><tr><td></td><td>1-2</td><td>Marković 35'</td></tr><tr><td>Zelenika 44' (p)</td><td>2-2</td><td></td></tr><tr><td>Mujić 48'</td><td>3-2</td><td></td></tr><tr><td>S. Selimotić 78'</td><td>4-2</td><td></td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#D9EAD3" align="center"><span>P</span><div class="imagetable" style="top: 34.1%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080135512817401978/tab28-9-1952.png" width="300px" top="200"></div></td>
-				<td align="right">45,000</td>
-			</tr><tr>
-				<td>14.6.1953.</td>
-				<td><span>Spartak Subotica</span><div class="players">VELEŽ: Barbarić, Bolfek, Rukavina, Borozan, Momić, Radiljević, Slišković, Mujić, Zelenika, Hrvić, Ćemalović<br>SPARTAK: Glončak, Tapiška, Bogešić, Jakovetić, Kopilović, B. Čikoš, Palatinus, Takač, Pejić, Kujundžić, Branislavljević</div></td>
-				<td>Staro Veležovo</td>
-				<td align="center"><span>2 - 0</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Hrvić 12'</td><td>1-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Slišković 28'</td><td>2-0</td><td></td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#D9EAD3" align="center"><span>P</span><div class="imagetable" style="top: 34.1%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080135512817401978/tab28-9-1952.png" width="300px" top="200"></div></td>
+				<td bgcolor="#D9EAD3" align="center"><p id="showBox4">P</p></td>
 				<td align="right">3,000</td>
 			</tr><tr>
-				<td>21.6.1953.</td>
-				<td><span>Vardar Skoplje</span><div class="players">VARDAR: Vidinić, Arsevsiji, Lazarevski, G. Georgijevski, Petrovski, Kokinovski, Karanfilović, Velkovski, Milanov, Cincijevski, P. Georgijevski<br>VELEŽ: Barbarić, Bolfek, Rukavina, Ćemalović, Musa, Radiljević, Slišković, Mujić, Zelenika, Hrvić, Drljević</div></td>
-				<td>Gradski park</td>
-				<td align="center"><span>2 - 5</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Velkovski 5'</td></tr><tr><td></td><td>0-2</td><td>Karanfilović 24'</td></tr><tr><td></td><td>0-3</td><td>P. Georgijevski 47'</td></tr><tr><td>Zelenika 78'</td><td>1-3</td><td></td></tr><tr><td></td><td>1-4</td><td>Velkovski 79'</td></tr><tr><td></td><td>1-5</td><td>Bolfek 85' (ag)</td></tr><tr><td>Zelenika 90'</td><td>2-5</td><td></td></tr></tbody></table></div></td>
+				<td>18.10.1953.</td>
+				<td><span>Mačva Šabac</span><div class="players">MAČVA: Milutinović, Manojlović <font color="BF9000">■</font>, Stanković, Vilotić, Stokanović, Bingulac, Grujičić, Stefanović, Belogrlić, Ivoš, Čvorić<br>VELEŽ: Đuričić, Dilberović, Rukavina, Ćemalović, Momić, Bolfek <font color="BF9000">■</font>, Rebac, Mujić, Zelenika <font color="BF9000">■</font>, Hrvić, Radiljević<br></div></td>
+				<td>Gradski stadion</td>
+				<td align="center"><span>0 - 2</span>
+<div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Ivoš 25'</td></tr><tr><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀</td><td>0-2</td><td>Grujičić 30'</td></tr></tbody></table></div></td>
             
-				<td bgcolor="#F4CCCC" align="center"><span>I</span><div class="imagetable" style="top: 34.1%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080135512817401978/tab28-9-1952.png" width="300px" top="200"></div></td>
-				<td align="right">12,000</td>
+				<td bgcolor="#F4CCCC" align="center"><p id="showBox5">I</p></td>
+				<td align="right">6,000</td>
+			</tr><tr>
+				<td>1.11.1953.</td>
+				<td><span>Lovćen Cetinje</span><div class="players">VELEŽ: Đuričić, Dilberović, Rukavina, Ćemalović, Bolfek, Radiljević, Selimotić, Mujić, Zelenika, Hrvić, Rebac<br>LOVĆEN: Petanović, Vujović, Raičković, Ivanović, Lubarda, Jovičević, Bastać, Vrbica, Pajević, Jabučanin, Begović</div></td>
+				<td>Staro Veležovo</td>
+				<td align="center"><span>2 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Rebac 3'</td><td>1-0</td><td></td></tr><tr><td>Rebac 12'</td><td>2-0</td><td></td></tr><tr><td></td><td>2-1</td><td>Vrbica 25'</td></tr></tbody></table></div></td>
+            
+				<td bgcolor="#D9EAD3" align="center"><p id="showBox6">P</p></td>
+				<td align="right">5,000</td>
+			</tr><tr>
+				<td>15.11.1953.</td>
+				<td><span>NK Zagreb</span><div class="players">ZAGREB: Arneri, Vidošević, Dubravčić, Šantek, Klaić, Joksimović, Benčić, Medved, Jagodić, Cvetan, Devčić<br>VELEŽ: Đuričić, Dilberović, Rukavina, Bolfek, Momić, Radiljević, Slišković, Mujić, Zelenika, Hrvić <font color="990000">■</font> 80', Ćemalović</div></td>
+				<td>Kranjčevičeva</td>
+				<td align="center"><span>0 - 2</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>⠀⠀⠀⠀⠀⠀⠀⠀</td><td>0-1</td><td>Jagodić 34'</td></tr><tr><td></td><td>0-2</td><td>Momić 39' (ag)</td></tr></tbody></table></div></td>
+            
+				<td bgcolor="#F4CCCC" align="center"><p id="showBox7">I</p></td>
+				<td align="right">15,000</td>
+			</tr><tr>
+				<td>29.11.1953.</td>
+				<td><span>NK Šibenik</span><div class="players">VELEŽ: Irović, Dilberović, Rukavina, Bolfek, Momić, Radiljević, Selimotić, Mujić, Zelenika, Rebac, Ćemalović<br>ŠIBENIK: Bašić, Iljadica, Jelenković, Blažević, Z. Erak, Tambača, Zorić, A. Erak, Bujas, Tedling, Cvitanović</div></td>
+				<td>Staro Veležovo</td>
+				<td align="center"><span>2 - 0</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Zelenika 16'</td><td>1-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Zelenika 43'</td><td>2-0</td><td></td></tr></tbody></table></div></td>
+            
+				<td bgcolor="#D9EAD3" align="center"><p id="showBox8">P</p></td>
+				<td align="right">3,500</td>
+			</tr><tr>
+				<td>6.12.1953.</td>
+				<td><span>Branik Maribor</span><div class="players">BRANIK: Filipančić, Pirc, Železinger, Šaho, Gajšek, Čučko, Norković, Fiveši, Plaznik, Dugandžija, Vitek<br>VELEŽ: Irović, Dilberović, Rukavina, Bolfek, Momić, Radiljević, Selimotić, Mujić, Zelenika, Rebac, Ćemalović</div></td>
+				<td>Ljudski vrt</td>
+				<td align="center"><span>1 - 5</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Rebac 5'</td><td>1-0</td><td></td></tr><tr><td></td><td>1-1</td><td>Plaznik 12'</td></tr><tr><td></td><td>1-2</td><td>Plaznik 15'</td></tr><tr><td></td><td>1-3</td><td>Norković 34'</td></tr><tr><td></td><td>1-4</td><td>Dugandžija 60'</td></tr><tr><td></td><td>1-5</td><td>Vitek 70'</td></tr></tbody></table></div></td>
+            
+				<td bgcolor="#F4CCCC" align="center"><p id="showBox9">I</p></td>
+				<td align="right">2,000</td>
+			</tr><tr>
+				<td>4.4.1954.</td>
+				<td><span>Napredak Kruševac</span><div class="players">NAPREDAK: Krstić, S. Petrović, Pantić, Lj. Petrović, Vulić, Ivković, Vukanić, M. Petrović, Matić, Mihajlović, Tomić<br>VELEŽ: Irović, Dilberović, Rukavina, Selimotić, Momić, Bolfek, Rebac, Mujić, Zelenika, Hrvić, Drljević</div></td>
+				<td>Stadion Napretka</td>
+				<td align="center"><span>1 - 2</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Mihajlović 4'</td></tr><tr><td></td><td>0-2</td><td>Mihajlović 64'</td></tr><tr><td>Hrvić 82'</td><td>1-2</td><td></td></tr></tbody></table></div></td>
+            
+				<td bgcolor="#F4CCCC" align="center"><p id="showBox10">I</p></td>
+				<td align="right">5,000</td>
+			</tr><tr>
+				<td>11.4.1954.</td>
+				<td><span>Budućnost Titograd</span><div class="players">BUDUĆNOST: Dedović, Savović, Petrović, M. Darmanović, Popović	Zečević, Vučeković, Vasović, V. Darmanović, Radović, Radonjić<br>VELEŽ: Irović, Dilberović, Rukavina, Selimotić, Momić, Radiljević, Rebac, Mujić, Zelenika, Hrvić, Bolfek</div></td>
+				<td>Stadion pod Goricom</td>
+				<td align="center"><span>0 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>⠀⠀⠀⠀⠀⠀⠀⠀</td><td>0-1</td><td>Radonjić 5'</td></tr></tbody></table></div></td>
+            
+				<td bgcolor="#F4CCCC" align="center"><p id="showBox11">I</p></td>
+				<td align="right">3,500</td>
+			</tr><tr>
+				<td>18.4.1954.</td>
+				<td><span>Željezničar Sarajevo</span><div class="players">VELEŽ: Irović, Dilberović, Rukavina, Bolfek, Momić, Radiljević, Rebac, Mujić, Zelenika, Hrvić, Slišković<br>ŽELJEZNIČAR: S. Vrebac, Kranjc, Abramović, Ubović, M. Vrebac, Đorđević, Martinović <font color="990000">■</font>, Kulović, Radonjić, Kurtović, Pašić</div></td>
+				<td>Staro Veležovo</td>
+				<td align="center"><span>2 - 0</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Zelenika 70' (p)</td><td>1-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Mujić 75'</td><td>2-0</td><td></td></tr></tbody></table></div></td>
+            
+				<td bgcolor="#D9EAD3" align="center"><p id="showBox12">P</p></td>
+				<td align="right">4,000</td>
+			</tr><tr>
+				<td>25.4.1954.</td>
+				<td><span>Borac Banja Luka</span><div class="players">BORAC: Jukić, Banjac, Boro Jovanović, Boži. Jovanović, Šljaković, Spaho, Jelić, Maričević, Ibrahimpašić, Knez, Novaković <font color="990000">■</font> 59'<br>VELEŽ: Irović, Dilberović, Rukavina, Bolfek, Momić, Radiljević, Rebac, Mujić, Zelenika <font color="990000">■</font> 59', Hrvić, Slišković</div></td>
+				<td>Gradski stadion</td>
+				<td align="center"><span>1 - 2</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Rebac 42'</td><td>1-0</td><td></td></tr><tr><td></td><td>1-1</td><td>Maričević 45'</td></tr><tr><td></td><td>1-2</td><td>Knez 84'</td></tr></tbody></table></div></td>
+            
+				<td bgcolor="#F4CCCC" align="center"><p id="showBox13">I</p></td>
+				<td align="right">5,000</td>
+			</tr><tr>
+				<td>2.5.1954.</td>
+				<td><span>Mačva Šabac</span><div class="players">VELEŽ: Irović, Dilberović, Rukavina, Bolfek, Momić, Radiljević, Rebac, Mujić, Zelenika, Hrvić, Selimotić<br>MAČVA: Begović, Manojlović <font color="BF9000">■</font>, Stanković, Obradović, Stokanović, Bingulac, Grujičić, Stefanović, Vilotić, Ivoš, Čvorić</div></td>
+				<td>Staro Veležovo</td>
+				<td align="center"><span>5 - 0</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Zelenika 5'</td><td>1-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Zelenika 17' (p)</td><td>2-0</td><td></td></tr><tr><td>Mujić 48'</td><td>3-0</td><td></td></tr><tr><td>Rebac 53'</td><td>4-0</td><td></td></tr><tr><td>Mujić 84'</td><td>5-0</td><td></td></tr></tbody></table></div></td>
+            
+				<td bgcolor="#D9EAD3" align="center"><p id="showBox14">P</p></td>
+				<td align="right">4,000</td>
+			</tr><tr>
+				<td>23.5.1954.</td>
+				<td><span>Lovćen Cetinje</span><div class="players">LOVĆEN: Marković, Vujović, Jovanović, Ivanović, Lubarda, Popović, Vrbica, Begović, Pajević, Milić, Neradović<br>VELEŽ: Irović, Dilberović, Rukavina, Bolfek, Momić, Radiljević, Rebac, Mujić, Zelenika, Hrvić, Selimotić</div></td>
+				<td><i>Gostujuća utakmica</i></td>
+				<td align="center"><span>1 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Mujić 57'</td><td>1-0</td><td></td></tr><tr><td></td><td>1-1</td><td>Vrbica 85'</td></tr></tbody></table></div></td>
+            
+				<td bgcolor="#FFF2CC" align="center"><p id="showBox15">N</p></td>
+				<td align="right">3,000</td>
+			</tr><tr>
+				<td>30.5.1954.</td>
+				<td><span>NK Zagreb</span><div class="players">VELEŽ: Irović, Dilberović, Rukavina, Bolfek, Momić, Radiljević, Rebac, Mujić, Zelenika, Hrvić, Selimotić<br>ZAGREB: Maček, Vidošević, Dubravčić, Beseredi, Klaić, Joksimović, N. Benčić, Šantek, Jagodić, Cvetan, Lj. Benčić</div></td>
+				<td>Staro Veležovo</td>
+				<td align="center"><span>3 - 0</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Zelenika 50'</td><td>1-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Rebac 78'</td><td>2-0</td><td></td></tr><tr><td>Rebac 88'</td><td>3-0</td><td></td></tr></tbody></table></div></td>
+            
+				<td bgcolor="#D9EAD3" align="center"><p id="showBox16">P</p></td>
+				<td align="right">4,000</td>
+			</tr><tr>
+				<td>6.6.1954.</td>
+				<td><span>NK Šibenik</span><div class="players">ŠIBENIK: Bašić, Batinica, Jelenković, Tambača, Iljadica, Bego, Stošić, Zjačić, Zorić, Cvitanović, Tedling<br>VELEŽ: Irović, Dilberović, Rukavina, Bolfek, Momić, Radiljević, Rebac, Mujić, Zelenika, Hrvić, Selimotić</div></td>
+				<td>Rade Končar</td>
+				<td align="center"><span>3 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Zelenika 49'</td><td>1-0</td><td></td></tr><tr><td>Mujić 51'</td><td>2-0</td><td></td></tr><tr><td></td><td>2-1</td><td>Cvitanović 60'</td></tr><tr><td>Mujić 65'</td><td>3-1</td><td></td></tr></tbody></table></div></td>
+            
+				<td bgcolor="#D9EAD3" align="center"><p id="showBox17">P</p></td>
+				<td align="right">5,000</td>
+			</tr><tr>
+				<td>13.6.1954.</td>
+				<td><span>Branik Maribor</span><div class="players">VELEŽ: Irović, Bolfek, Rukavina, Selimotić, Momić <font color="BF9000">■</font>, Radiljević, Rebac, Mujić, Zelenika, Hrvić, Slišković<br>BRANIK: Najmiler, Gajšek, Pirc, Čučko, Železinger, Šaho, Norković, Petrović, Plaznik, Elsner, Posavec</div></td>
+				<td>Staro Veležovo</td>
+				<td align="center"><span>4 - 0</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Zelenika 13'</td><td>1-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Zelenika 16'</td><td>2-0</td><td></td></tr><tr><td>Zelenika 31' (p)</td><td>3-0</td><td></td></tr><tr><td>Hrvić 42'</td><td>4-0</td><td></td></tr></tbody></table></div></td>
+            
+				<td bgcolor="#D9EAD3" align="center"><p id="showBox18">P</p></td>
+				<td align="right">3,000</td>
 			</tr></tbody>
 	</table>
       <h1>Kup Maršala Tita</h1><table>
@@ -379,52 +737,36 @@ span:hover + .scorers {
 		</thead>
 		<tbody>
 			<tr>
-				<td>20.7.1952.</td>
-				<td><span>Leotar Trebinje</span></td>
-				<td>Staro Veležovo</td>
-				<td align="center"><span>5 - 4</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Hrvić (2)<br>Mujić<br>Hudarin<br>Selimotić</td><td>5-4</td><td>⠀⠀⠀⠀⠀⠀⠀</td></tr></tbody></table></div></td>
-				<td bgcolor="#D9EAD3" align="center" position="relative"><span><b>✓</b></span><div class="imagetable" style="top:25.6%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080132408659165274/tab31-8-52.png" width="300px"></div></td>
+				<td>16.8.1953.</td>
+				<td><span>Željezničar Sarajevo</span><div class="players">ŽELJEZNIČAR: Radovanović, Hondan, Dugonjevac, Ubović, Kočan, Đorđević, Martinović, Salihović, Kulović, Bajrami, Trbić<br>VELEŽ: Đuričić, Dilberović, Rukavina, Bolfek, Momić, Radiljević, Vreća, Zelenika, S. Selimotić, Hrvić, Ćemalović</div></td>
+				<td>Grbavica</td>
+				<td align="center"><span>4 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Zelenika 33'</td><td>1-0</td><td></td></tr><tr><td>Ćemalović 34'</td><td>2-0</td><td></td></tr><tr><td>Zelenika 37'</td><td>3-0</td><td></td></tr><tr><td>Zelenika 53'</td><td>4-0</td><td></td></tr><tr><td></td><td>4-1</td><td>Lovrić 69'</td></tr></tbody></table></div></td>
+				<td bgcolor="#D9EAD3" align="center" position="relative"><span><b>✓</b></span></td>
 				<td align="right">Q1</td>
-			<td align="right"></td></tr>
+			<td align="right">4,500</td></tr>
 			<tr>
-				<td>31.7.1952.</td>
-				<td><span>Sutjeska Foča</span></td>
+				<td>19.8.1953.</td>
+				<td><span>Bratstvo Travnik</span><div class="players">VELEŽ: Đuričić, Dilberović, Prajo, S. Selimotić, Bolfek, Radiljević, Vreća, Mujić, Zelenika, Hrvić, Ćemalović<br>BRATSTVO: Jelin, Omerčaušević, Gržić, Ćurčić, Caco, Falk, Kolar, Dautović, Blažević, Ledić, Obradović</div></td>
 				<td>Staro Veležovo</td>
-				<td align="center"><span>6 - 2</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Hudarin (4)<br>Slišković<br>Rebac</td><td>6-2</td><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td></tr></tbody></table></div></td>
-				<td bgcolor="#D9EAD3" align="center"><span><b>✓</b></span><div class="imagetable" style="top:29.85%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080167979112742933/tab14-9-52.png" width="300px"></div></td>
+				<td align="center"><span>10 - 0</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Mujić 15'</td><td>1-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Zelenika 20'</td><td>2-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Zelenika 31'</td><td>3-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Vreća 55'</td><td>4-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Mujić 57'</td><td>5-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Vreća 60'</td><td>6-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Vreća 60'</td><td>7-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Ćemalović 68'</td><td>8-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Mujić 80'</td><td>9-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Hrvić 86'</td><td>10-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td></tr></tbody></table></div></td>
+				<td bgcolor="#D9EAD3" align="center"><span><b>✓</b></span></td>
 				<td align="right">Q2</td>
-			<td align="right">800</td></tr>
-			<tr>
-				<td>17.8.1952.</td>
-				<td><span>Sloga Doboj</span></td>
-				<td>Staro Veležovo</td>
-				<td align="center"><span>4 - 0</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Mujić<br>Hrvić<br>Momić<br>Rebac</td><td>4-0</td><td>⠀⠀⠀⠀⠀⠀⠀</td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#D9EAD3" align="center"><span><b>✓</b></span><div class="imagetable" style="top: 34.1%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080135512817401978/tab28-9-1952.png" width="300px" top="200"></div></td>
-				<td align="right">Q3</td>
-			<td align="right">600</td></tr>
+			<td align="right">1,500</td></tr>
+			
 		<tr>
-				<td>24.8.1952.</td>
-				<td><span>Radnički Kikinda</span></td>
-				<td><i>Gostujuća utakmica</i></td>
-				<td align="center"><span>4 - 0</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Rebac (2)<br>Ćemalović<br>(ag)</td><td>1-0</td><td>⠀⠀⠀⠀⠀⠀</td></tr></tbody></table></div></td>
+				<td>22.8.1953.</td>
+				<td><span>Crvena zvezda</span><div class="players">ZVEZDA: Mrkušić, Stanković, Zeković, Naumović, Spajić, Popović, Đajić, Kostić, Šijaković, Cokić, Zlatković</div></td>
+				<td>Avala</td>
+				<td align="center"><span>0 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>⠀⠀⠀⠀⠀⠀⠀⠀</td><td>0-1</td><td>Cokić 76'</td></tr></tbody></table></div></td>
             
-				<td bgcolor="#D9EAD3" align="center"><span><b>✓</b></span><div class="imagetable" style="top: 34.1%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080135512817401978/tab28-9-1952.png" width="300px" top="200"></div></td>
-				<td align="right">1/16</td>
-			<td align="right"></td></tr><tr>
-				<td>2.9.1952.</td>
-				<td><span>Crvena zvezda</span><div class="players">ZVEZDA: Lovrić, Stojanović, Zeković, Palfi, Diskić, Milić, Ognjanov, Mitić, Živanović, Vukosavljević, Zlatković</div></td>
-				<td>Staro Veležovo</td>
-				<td align="center"><span>1 - 3</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Hudarin 13'</td><td>1-0</td><td></td></tr><tr><td></td><td>1-1</td><td>Ognjanov 82'</td></tr><tr><td></td><td>1-2</td><td>Palfi 85'</td></tr><tr><td></td><td>1-3</td><td>Vukosavljević 90'</td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#F4CCCC" align="center"><span><b>✕</b></span><div class="imagetable" style="top: 34.1%; left: 55.5%"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1080135512817401978/tab28-9-1952.png" width="300px" top="200"></div></td>
+				<td bgcolor="#F4CCCC" align="center"><b>✕</b></td>
 				<td align="right">1/8</td>
-			<td align="right">10,000</td></tr></tbody>
+			<td align="right">5,000</td></tr></tbody>
 	</table>
      <div class="row">
   </div><div class="row">
   <div class="column">
-    <img src="https://cdn.discordapp.com/attachments/1079034567710744627/1082381972556492922/image.png" style="width:120%">
+    <img src="../images/site/table/tabela1953-54.png" style="width:120%">
   </div><div class="column"><table class="sortable">
 	<tbody>
 		<tr>
@@ -434,129 +776,456 @@ span:hover + .scorers {
 			<th>Golovi</th>
 		</tr>
 		<tr>
-			<td>Žarko Barbarić</td>
+			<td>Gordan Irović</td>
 			<td>Golman</td>
-			<td>22 (4)</td>
-			<td>-51</td>
+			<td>11 (5)</td>
+			<td>-12</td>
 		</tr>
 		<tr>
+			<td>Miroslav Đuričić</td>
+			<td>Golman</td>
+			<td>7 (2)</td>
+			<td>-10</td>
+		</tr><tr>
 			<td>Anton Bolfek</td>
 			<td>Odbrana</td>
-			<td>22</td>
-			<td>1</td>
-		</tr>
-		<tr>
-			<td>Ranko Borozan</td>
-			<td>Odbrana</td>
-			<td>20</td>
-			<td>1</td>
-		</tr>
-    <tr>
-			<td>Mensud Dilberović</td>
-			<td>Odbrana</td>
-			<td>19</td>
+			<td>18</td>
 			<td>0</td>
-		</tr>
-    <tr>
-			<td>Slavko Rukavina</td>
+		</tr><tr>
+			<td>Dušan Rukavina</td>
 			<td>Odbrana</td>
-			<td>16</td>
+			<td>18</td>
 			<td>0</td>
-		</tr>
-    <tr>
+		</tr><tr>
 			<td>Hasan Momić</td>
 			<td>Odbrana</td>
-			<td>15</td>
+			<td>17</td>
 			<td>0</td>
-		</tr>
-    <tr>
+		</tr><tr>
 			<td>Kruno Radiljević</td>
 			<td>Odbrana</td>
+			<td>17</td>
+			<td>0</td>
+		</tr><tr>
+			
+			<td>Mensud Dilberović</td><td>Odbrana</td>
+			<td>17</td>
+			<td>0</td>
+		</tr><tr>
+			<td>Vlado Slišković</td><td>Odbrana</td>
+			<td>4</td>
+			<td>0</td>
+		</tr><tr>
+			<td>Vladimir Zelenika</td><td>Vezni red i napad</td>
+			<td>18</td>
+			<td>14</td>
+		</tr><tr>
+			<td>Muhamed Mujić</td><td>Vezni red i napad</td>
+			<td>18</td>
+			<td>11</td>
+		</tr><tr>
+			<td>Haldun Hrvić</td><td>Vezni red i napad</td>
+			<td>16</td>
+			<td>6</td>
+		</tr><tr>
+			<td>Sulejman Rebac</td><td>Vezni red i napad</td>
+			<td>15</td>
 			<td>7</td>
+		</tr><tr>
+			<td>Salko Selimotić</td><td>Vezni red i napad</td>
+			<td>12</td>
 			<td>0</td>
-		</tr>
-    <tr>
-			<td>Vlado Slišković</td>
-			<td>Odbrana</td>
-			<td>6</td>
-			<td>2</td>
-		</tr>
-    <tr>
-			<td>Dane Prajo</td>
-			<td>Odbrana</td>
-			<td>6</td>
-			<td>0</td>
-		</tr>
-    <tr>
-			<td>Alija Šestić</td>
-			<td>Odbrana</td>
-			<td>1</td>
-			<td>0</td>
-		</tr>
-    <tr>
-			<td>Haldun Hrvić</td>
-			<td>Vezni red i napad</td>
-			<td>22</td>
-			<td>5</td>
-		</tr>
-    <tr>
-			<td>Muhamed Mujić</td>
-			<td>Vezni red i napad</td>
-			<td>22</td>
-			<td>2</td>
-		</tr>
-    <tr>
-			<td>Hamdija Ćemalović</td>
-			<td>Vezni red i napad</td>
-			<td>22</td>
-			<td>2</td>
-		</tr>
-    <tr>
-			<td>Vlado Zelenika</td>
-			<td>Vezni red i napad</td>
-			<td>11</td>
+		</tr><tr>
+			<td>Hamdija Ćemalović</td><td>Vezni red i napad</td>
 			<td>9</td>
-		</tr>
-    <tr>
-			<td>Sulejman Rebac</td>
-			<td>Vezni red i napad</td>
-			<td>11</td>
 			<td>3</td>
-		</tr>
-    <tr>
-			<td>Slavko Hudarin</td>
-			<td>Vezni red i napad</td>
-			<td>6</td>
+		</tr><tr>
+			<td>Nusret Drljević</td><td>Vezni red i napad</td>
 			<td>1</td>
-		</tr>
-    <tr>
-			<td>Salko Selimotić</td>
-			<td>Vezni red i napad</td>
-			<td>6</td>
-			<td>1</td>
-		</tr>
-    <tr>
-			<td>Jole Musa</td>
-			<td>Vezni red i napad</td>
-			<td>3</td>
 			<td>0</td>
-		</tr>
-    <tr>
-			<td>Vaso Vreća</td>
-			<td>Vezni red i napad</td>
-			<td>3</td>
-			<td>0</td>
-		</tr>
-    <tr>
-			<td>Nusret Drljević</td>
-			<td>Vezni red i napad</td>
-			<td>2</td>
-			<td>1</td>
-		</tr>
-	</tbody>
+		</tr></tbody>
 </table></div></div></div></div>
 
+    <script>
+      const showBoxButton1 = document.getElementById('showBox1');
+      const fixedBox1 = document.getElementById('fixedBox1');
+      const overlay1 = document.getElementById('overlay1');
 
+      showBoxButton1.addEventListener('click', function() {
+        fixedBox1.style.display = 'block';
+        overlay1.style.display = 'block';
+      });
 
+      overlay1.addEventListener('click', function() {
+        fixedBox1.style.display = 'none';
+        overlay1.style.display = 'none';
+      });
+
+      const showBoxButton2 = document.getElementById('showBox2');
+      const fixedBox2 = document.getElementById('fixedBox2');
+      const overlay2 = document.getElementById('overlay2');
+
+      showBoxButton2.addEventListener('click', function() {
+        fixedBox2.style.display = 'block';
+        overlay2.style.display = 'block';
+      });
+
+      overlay2.addEventListener('click', function() {
+        fixedBox2.style.display = 'none';
+        overlay2.style.display = 'none';
+      });
+
+      const showBoxButton3 = document.getElementById('showBox3');
+      const fixedBox3 = document.getElementById('fixedBox3');
+      const overlay3 = document.getElementById('overlay3');
+
+      showBoxButton3.addEventListener('click', function() {
+        fixedBox3.style.display = 'block';
+        overlay3.style.display = 'block';
+      });
+
+      overlay3.addEventListener('click', function() {
+        fixedBox3.style.display = 'none';
+        overlay3.style.display = 'none';
+      });
+      
+      const showBoxButton4 = document.getElementById('showBox4');
+      const fixedBox4 = document.getElementById('fixedBox4');
+      const overlay4 = document.getElementById('overlay4');
+
+      showBoxButton4.addEventListener('click', function() {
+        fixedBox4.style.display = 'block';
+        overlay4.style.display = 'block';
+      });
+
+      overlay4.addEventListener('click', function() {
+        fixedBox4.style.display = 'none';
+        overlay4.style.display = 'none';
+      });
+      
+      const showBoxButton5 = document.getElementById('showBox5');
+      const fixedBox5 = document.getElementById('fixedBox5');
+      const overlay5 = document.getElementById('overlay5');
+
+      showBoxButton5.addEventListener('click', function() {
+        fixedBox5.style.display = 'block';
+        overlay5.style.display = 'block';
+      });
+
+      overlay5.addEventListener('click', function() {
+        fixedBox5.style.display = 'none';
+        overlay5.style.display = 'none';
+      });
+      
+      const showBoxButton6 = document.getElementById('showBox6');
+      const fixedBox6 = document.getElementById('fixedBox6');
+      const overlay6 = document.getElementById('overlay6');
+
+      showBoxButton6.addEventListener('click', function() {
+        fixedBox6.style.display = 'block';
+        overlay6.style.display = 'block';
+      });
+
+      overlay6.addEventListener('click', function() {
+        fixedBox6.style.display = 'none';
+        overlay6.style.display = 'none';
+      });
+      
+      const showBoxButton7 = document.getElementById('showBox7');
+      const fixedBox7 = document.getElementById('fixedBox7');
+      const overlay7 = document.getElementById('overlay7');
+
+      showBoxButton7.addEventListener('click', function() {
+        fixedBox7.style.display = 'block';
+        overlay7.style.display = 'block';
+      });
+
+      overlay7.addEventListener('click', function() {
+        fixedBox7.style.display = 'none';
+        overlay7.style.display = 'none';
+      });
+      
+      const showBoxButton8 = document.getElementById('showBox8');
+      const fixedBox8 = document.getElementById('fixedBox8');
+      const overlay8 = document.getElementById('overlay8');
+
+      showBoxButton8.addEventListener('click', function() {
+        fixedBox8.style.display = 'block';
+        overlay8.style.display = 'block';
+      });
+
+      overlay8.addEventListener('click', function() {
+        fixedBox8.style.display = 'none';
+        overlay8.style.display = 'none';
+      });
+      
+      const showBoxButton9 = document.getElementById('showBox9');
+      const fixedBox9 = document.getElementById('fixedBox9');
+      const overlay9 = document.getElementById('overlay9');
+
+      showBoxButton9.addEventListener('click', function() {
+        fixedBox9.style.display = 'block';
+        overlay9.style.display = 'block';
+      });
+
+      overlay9.addEventListener('click', function() {
+        fixedBox9.style.display = 'none';
+        overlay9.style.display = 'none';
+      });
+      
+      const showBoxButton10 = document.getElementById('showBox10');
+      const fixedBox10 = document.getElementById('fixedBox10');
+      const overlay10 = document.getElementById('overlay10');
+
+      showBoxButton10.addEventListener('click', function() {
+        fixedBox10.style.display = 'block';
+        overlay10.style.display = 'block';
+      });
+
+      overlay10.addEventListener('click', function() {
+        fixedBox10.style.display = 'none';
+        overlay10.style.display = 'none';
+      });
+      
+      const showBoxButton11 = document.getElementById('showBox11');
+      const fixedBox11 = document.getElementById('fixedBox11');
+      const overlay11 = document.getElementById('overlay11');
+
+      showBoxButton11.addEventListener('click', function() {
+        fixedBox11.style.display = 'block';
+        overlay11.style.display = 'block';
+      });
+
+      overlay11.addEventListener('click', function() {
+        fixedBox11.style.display = 'none';
+        overlay11.style.display = 'none';
+      });
+      
+      const showBoxButton12 = document.getElementById('showBox12');
+      const fixedBox12 = document.getElementById('fixedBox12');
+      const overlay12 = document.getElementById('overlay12');
+
+      showBoxButton12.addEventListener('click', function() {
+        fixedBox12.style.display = 'block';
+        overlay12.style.display = 'block';
+      });
+
+      overlay12.addEventListener('click', function() {
+        fixedBox12.style.display = 'none';
+        overlay12.style.display = 'none';
+      });
+      
+      const showBoxButton13 = document.getElementById('showBox13');
+      const fixedBox13 = document.getElementById('fixedBox13');
+      const overlay13 = document.getElementById('overlay13');
+
+      showBoxButton13.addEventListener('click', function() {
+        fixedBox13.style.display = 'block';
+        overlay13.style.display = 'block';
+      });
+
+      overlay13.addEventListener('click', function() {
+        fixedBox13.style.display = 'none';
+        overlay13.style.display = 'none';
+      });
+      
+      const showBoxButton14 = document.getElementById('showBox14');
+      const fixedBox14 = document.getElementById('fixedBox14');
+      const overlay14 = document.getElementById('overlay14');
+
+      showBoxButton14.addEventListener('click', function() {
+        fixedBox14.style.display = 'block';
+        overlay14.style.display = 'block';
+      });
+
+      overlay14.addEventListener('click', function() {
+        fixedBox14.style.display = 'none';
+        overlay14.style.display = 'none';
+      });
+      
+      const showBoxButton15 = document.getElementById('showBox15');
+      const fixedBox15 = document.getElementById('fixedBox15');
+      const overlay15 = document.getElementById('overlay15');
+
+      showBoxButton15.addEventListener('click', function() {
+        fixedBox15.style.display = 'block';
+        overlay15.style.display = 'block';
+      });
+
+      overlay15.addEventListener('click', function() {
+        fixedBox15.style.display = 'none';
+        overlay15.style.display = 'none';
+      });
+      
+      const showBoxButton16 = document.getElementById('showBox16');
+      const fixedBox16 = document.getElementById('fixedBox16');
+      const overlay16 = document.getElementById('overlay16');
+
+      showBoxButton16.addEventListener('click', function() {
+        fixedBox16.style.display = 'block';
+        overlay16.style.display = 'block';
+      });
+
+      overlay16.addEventListener('click', function() {
+        fixedBox16.style.display = 'none';
+        overlay16.style.display = 'none';
+      });
+      
+      const showBoxButton17 = document.getElementById('showBox17');
+      const fixedBox17 = document.getElementById('fixedBox17');
+      const overlay17 = document.getElementById('overlay17');
+
+      showBoxButton17.addEventListener('click', function() {
+        fixedBox17.style.display = 'block';
+        overlay17.style.display = 'block';
+      });
+
+      overlay17.addEventListener('click', function() {
+        fixedBox17.style.display = 'none';
+        overlay17.style.display = 'none';
+      });
+      
+      const showBoxButton18 = document.getElementById('showBox18');
+      const fixedBox18 = document.getElementById('fixedBox18');
+      const overlay18 = document.getElementById('overlay18');
+
+      showBoxButton18.addEventListener('click', function() {
+        fixedBox18.style.display = 'block';
+        overlay18.style.display = 'block';
+      });
+
+      overlay18.addEventListener('click', function() {
+        fixedBox18.style.display = 'none';
+        overlay18.style.display = 'none';
+      });
+      
+      const showBoxButton19 = document.getElementById('showBox19');
+      const fixedBox19 = document.getElementById('fixedBox19');
+      const overlay19 = document.getElementById('overlay19');
+
+      showBoxButton19.addEventListener('click', function() {
+        fixedBox19.style.display = 'block';
+        overlay19.style.display = 'block';
+      });
+
+      overlay19.addEventListener('click', function() {
+        fixedBox19.style.display = 'none';
+        overlay19.style.display = 'none';
+      });
+      
+      const showBoxButton20 = document.getElementById('showBox20');
+      const fixedBox20 = document.getElementById('fixedBox20');
+      const overlay20 = document.getElementById('overlay20');
+
+      showBoxButton20.addEventListener('click', function() {
+        fixedBox20.style.display = 'block';
+        overlay20.style.display = 'block';
+      });
+
+      overlay20.addEventListener('click', function() {
+        fixedBox20.style.display = 'none';
+        overlay20.style.display = 'none';
+      });
+      
+      const showBoxButton21 = document.getElementById('showBox21');
+      const fixedBox21 = document.getElementById('fixedBox21');
+      const overlay21 = document.getElementById('overlay21');
+
+      showBoxButton21.addEventListener('click', function() {
+        fixedBox21.style.display = 'block';
+        overlay21.style.display = 'block';
+      });
+
+      overlay21.addEventListener('click', function() {
+        fixedBox21.style.display = 'none';
+        overlay21.style.display = 'none';
+      });
+      
+      const showBoxButton22 = document.getElementById('showBox22');
+      const fixedBox22 = document.getElementById('fixedBox22');
+      const overlay22 = document.getElementById('overlay22');
+
+      showBoxButton22.addEventListener('click', function() {
+        fixedBox22.style.display = 'block';
+        overlay22.style.display = 'block';
+      });
+
+      overlay22.addEventListener('click', function() {
+        fixedBox22.style.display = 'none';
+        overlay22.style.display = 'none';
+      });
+      
+      const showBoxButton23 = document.getElementById('showBox23');
+      const fixedBox23 = document.getElementById('fixedBox23');
+      const overlay23 = document.getElementById('overlay23');
+
+      showBoxButton23.addEventListener('click', function() {
+        fixedBox23.style.display = 'block';
+        overlay23.style.display = 'block';
+      });
+
+      overlay23.addEventListener('click', function() {
+        fixedBox23.style.display = 'none';
+        overlay23.style.display = 'none';
+      });
+      
+      const showBoxButton24 = document.getElementById('showBox24');
+      const fixedBox24 = document.getElementById('fixedBox24');
+      const overlay24 = document.getElementById('overlay24');
+
+      showBoxButton24.addEventListener('click', function() {
+        fixedBox24.style.display = 'block';
+        overlay24.style.display = 'block';
+      });
+
+      overlay24.addEventListener('click', function() {
+        fixedBox24.style.display = 'none';
+        overlay24.style.display = 'none';
+      });
+      
+      const showBoxButton25 = document.getElementById('showBox25');
+      const fixedBox25 = document.getElementById('fixedBox25');
+      const overlay25 = document.getElementById('overlay25');
+
+      showBoxButton25.addEventListener('click', function() {
+        fixedBox25.style.display = 'block';
+        overlay25.style.display = 'block';
+      });
+
+      overlay25.addEventListener('click', function() {
+        fixedBox25.style.display = 'none';
+        overlay25.style.display = 'none';
+      });
+      
+      const showBoxButton26 = document.getElementById('showBox26');
+      const fixedBox26 = document.getElementById('fixedBox26');
+      const overlay26 = document.getElementById('overlay26');
+
+      showBoxButton26.addEventListener('click', function() {
+        fixedBox26.style.display = 'block';
+        overlay26.style.display = 'block';
+      });
+
+      overlay26.addEventListener('click', function() {
+        fixedBox26.style.display = 'none';
+        overlay26.style.display = 'none';
+      });
+      
+      const showBoxButton27 = document.getElementById('showBox27');
+      const fixedBox27 = document.getElementById('fixedBox27');
+      const overlay27 = document.getElementById('overlay27');
+
+      showBoxButton27.addEventListener('click', function() {
+        fixedBox27.style.display = 'block';
+        overlay27.style.display = 'block';
+      });
+
+      overlay27.addEventListener('click', function() {
+        fixedBox27.style.display = 'none';
+        overlay27.style.display = 'none';
+      });
+    </script>
+  <div class="credits"><p>© 2024 Kraj Neretve Rođeni</p><b>KONTAKT | FACEBOOK</b><p></p>
+</div>
 
 </body></html>
