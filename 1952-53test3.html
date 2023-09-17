@@ -86,7 +86,7 @@
             }
         }
         .size1 {
-    		border: none;
+        border: none;
             display: none; 
         }
 
@@ -96,7 +96,7 @@
             }
         }
         .size2 {
-    		border: none;
+        	border: none;
             display: none; 
         }
 
@@ -182,45 +182,60 @@ span:hover + .scorers {
         font-family: 'Trebuchet MS', sans-serif;
         text-align: center;
     }
-        table {
-            margin: 0 auto;
-			border-collapse: collapse;
-			width: 75%;
-		}
-		th, td {
-			padding: 8px;
-			border-bottom: 1px solid #ddd;
-		}
-		th {
-			background-color: #D84B4B;
-			color: white;
-		}
+        .table-container {
+            display: block;
+            flex-direction: column;
+            margin-left: auto;
+            margin-right: auto;
+            width: 75%;
+            background-color: #f0f0f0;
+            }
+         .size2 .table-container {
+            width: 90%;
+            }
+        .table-row {
+            display: flex;
+            justify-content: space-between;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+        .table-cell {
+            flex: 1;
+            padding: 8px;
+            vertical-align: middle;
+            overflow: hidden;
+        }
+        .table-row.header {
+            background-color: #D84B4B;
+            color: #fff;
+            font-weight: bold;
+        }
         .scorerstable {
             margin: right;
-			border-collapse: collapse;
-			width: 100%;
-		}
-		.scorerstable .th, .td {
-			padding: 0px;
-			border-bottom: 1px solid #ddd;
-		}
-		.scorerstable .th {
-			background-color: #D84B4B;
-			color: white;
-		}
+      border-collapse: collapse;
+      width: 100%;
+    }
+    .scorerstable .th, .td {
+      padding: 0px;
+      border-bottom: 1px solid #ddd;
+    }
+    .scorerstable .th {
+      background-color: #D84B4B;
+      color: white;
+    }
     .sortable {
             margin: 0 auto;
-			border-collapse: collapse;
-			width: 100%;
-		}
-		.sortable th, td {
-			padding: 8px;
-			border-bottom: 1px solid #ddd;
-		}
-		.sortable th {
-			background-color: #D84B4B;
-			color: white;
-		}
+      border-collapse: collapse;
+      width: 100%;
+    }
+    .sortable th, td {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+    .sortable th {
+      background-color: #D84B4B;
+      color: white;
+    }
     .finaltable {
         display: block;
         margin-top: 1%;
@@ -324,7 +339,7 @@ h2 {
 
     <div id="overlay3" class="overlay" style="display: none;"></div>
 
-	<div id="fixedBox4" class="fixedBox" style="display: none;"><h4>Vojvodina - Velež 5:3 (3:3)</h4>
+  <div id="fixedBox4" class="fixedBox" style="display: none;"><h4>Vojvodina - Velež 5:3 (3:3)</h4>
     <h2>Još jedna propuštena prilika . . .</h2>
     <b>Poraz poslije vodstva od 2:0</b>
     <p>Četvrto kolo državnog prvenstva donijelo je „Veležu” četvćti poraz. I igrači i prijatelji „Veleža” nadali su se da će se poslije utakmice u Novom Sadu „Velež” upisati bar sa jednim bodom u ljestvicu dvanaest najboljih u zemlji. Prethodne igre sa „Crvenom zvezdom” i „Hajuukom” obećavale su da bi se protivnik, kao što je „Vojvodina” mogao savladati. Tome u prilog išle su dosadašnje slabe igre Novosađana u ovogodišnjem prvenstvu.</p>
@@ -613,386 +628,212 @@ h2 {
     <div class="imagetable"><img src="https://cdn.discordapp.com/attachments/1079034616264016034/1079094041234395157/bez_kruga.png" width="100%"></div></div>
 
     <div id="overlay27" class="overlay" style="display: none;"></div><h1>Prva savezna liga</h1></div>
-
-    <table>
-		<thead>
-			<tr>
-				<th>Datum</th>
-				<th>Protivnik</th>
-				<th class="size1">Stadion</th>
-				<th align="center">Rezultat</th>
-				<th align="center">P,N,I?</th>
-				<th class="size1">Posjeta</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>31.8.1952.</td>
-				<td><span>Crvena zvezda</span><div class="players">VELEŽ: Barbarić, Dilberović, Prajo, Borozan, Bolfek, Ćemalović, Slišković, Mujić, Momić, Hrvić, Hudarin<br>ZVEZDA: Lovrić, Stanković, Zeković, Zlatković, Diskić, Đajić, Ognjanov, Mitić, Živanović, Palfi, Vukosavljević</div></td>
-				<td class="size1">Staro Veležovo</td>
-				<td align="center"><span>0 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td><td>0-1</td><td>Ognjanov 76'</td></tr></tbody></table></div></td>
-				<td bgcolor="#F4CCCC" align="center" position="relative"><p id="showBox1">I</p></td>
-				<td class="size1" align="right">10,000</td>
-			</tr>
-			<tr>
-				<td>14.9.1952.</td>
-				<td><span>FK Sarajevo</span><div class="players">SARAJEVO: Pejak, Brozović, Biogradlić, Agošton, Švraka, Glavočević, Žigante, Živković, F. Lovrić, Bukvić, Đ. Lovrić<br>VELEŽ: Barbarić, Dilberović, Prajo, Borozan, Bolfek, Ćemalović, Mujić, Momić, Zelenika, Hrvić, Hudarin</div></td>
-				<td class="size1">Koševo</td>
-				<td align="center"><span>0 - 2</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td><td>0-1</td><td>F. Lovrić 72'</td></tr><tr><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td><td>0-2</td><td>Đ. Lovrić 88' (p)</td></tr></tbody></table></div></td>
-				<td bgcolor="#F4CCCC" align="center"><p id="showBox2">I</p></td>
-				<td class="size1" align="right">12,000</td>
-			</tr>
-			<tr>
-				<td>28.9.1952.</td>
-				<td><span>Hajduk Split</span><div class="players">VELEŽ: Barbarić, Dilberović, Prajo, Borozan, Bolfek, Ćemalović, Mujić, Momić, Radiljević, Hrvić, Hudarin<br>HAJDUK: Beara, Kokeza, D. Grčić, Luštica, Krstulović, S. Grčić, Šenauer, Broketa, Vukas, Matošić, Arapović</div></td>
-				<td class="size1">Staro Veležovo</td>
-				<td align="center"><span>1 - 2</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Vukas 14'</td></tr><tr><td>Hudarin 39'</td><td>1-1</td><td></td></tr><tr><td></td><td>1-2</td><td>Broketa 65'</td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#F4CCCC" align="center"><p id="showBox3">I</p></td>
-				<td class="size1" align="right">10,000</td>
-			</tr>
-		<tr>
-				<td>12.10.1952.</td>
-				<td><span>Vojvodina Novi Sad</span><div class="players">VOJVODINA: Vasić, Savović, Ristić, Ninković, Milovanov, Boškov <font color="990000">■</font>, Krgin, Rajkov, Krstić, Leškov, Vlaović<br>VELEŽ: Barbarić, Dilberović, Prajo, Borozan <font color="BF9000">■</font>, Bolfek, Ćemalović, Mujić, Momić, Šestič, Hrvić, Hudarin</div></td>
-				<td class="size1">Stadion Vojvodine</td>
-				<td align="center"><span>3 - 5</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Bolfek 15'</td><td>1-0</td><td></td></tr><tr><td>Borozan 25'</td><td>2-0</td><td></td></tr><tr><td></td><td>2-1</td><td>Krstić 26'</td></tr><tr><td></td><td>2-2</td><td>Rajkov 27'</td></tr><tr><td>Hrvić 30'</td><td>3-2</td><td></td></tr><tr><td></td><td>3-3</td><td>Boškov 39'</td></tr><tr><td></td><td>3-4</td><td>Milanov 61'</td></tr><tr><td></td><td>3-5</td><td>Vlaović 88'</td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#F4CCCC" align="center"><p id="showBox4">I</p></td>
-				<td class="size1" align="right">6,000</td>
-			</tr><tr>
-				<td>19.10.1952.</td>
-				<td><span>Lokomotiva Zagreb</span><div class="players">VELEŽ: Barbarić, Slišković, Rukavina, Dilberović, Bolfek, Radiljević, Hudarin, Mujić, Borozan, Hrvić, Ćemalović<br>LOKOMOTIVA: Grčević, Rajs <font color="BF9000">■</font>, Balan, Kobe, Andročec, Pukšec, Odžak, Čorn, Firm, Bobek, Papec</div></td>
-				<td class="size1">Staro Veležovo</td>
-				<td align="center"><span>0 - 0</span></td>
-            
-				<td bgcolor="#FFF2CC" align="center"><p id="showBox5">N</p></td>
-				<td class="size1" align="right">6,000</td>
-			</tr><tr>
-				<td>26.10.1952.</td>
-				<td><span>Dinamo Zagreb</span><div class="players">DINAMO: Staničić, D. Horvat, Crnković, Beseredi, I. Horvat, Mantula, Benko, Lipušinović, Cimermančić, Dvornić, Čajkovski<br>VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Bolfek, Ćemalović, Mujić, Rebac, Musa, Hrvić, Hudarin</div></td>
-				<td class="size1">Maksimir</td>
-				<td align="center"><span>0 - 4</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td><td>0-1</td><td>Lipušinović 30'</td></tr><tr><td></td><td>0-2</td><td>Cimermančić 73'</td></tr><tr><td></td><td>0-3</td><td>Cimermančić 78'</td></tr><tr><td></td><td>0-4</td><td>Cimermančić 79'</td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#F4CCCC" align="center"><p id="showBox6">I</p></td>
-				<td class="size1" align="right">10,000</td>
-			</tr><tr>
-				<td>9.11.1952.</td>
-				<td><span>NK Zagreb</span><div class="players">VELEŽ: Barbarić, Dilberović, Rukavina, Momić, Bolfek, Ćemalović, Mujić, Rebac, Slišković, Hrvić, Hudarin<br>ZAGREB: Maček, Jurić, Dubravčić, Blažetić, Klaić, Joksimović, Devčić, Medved, Vidošević, Jurišić, Butković</div></td>
-				<td class="size1">Staro Veležovo</td>
-				<td align="center"><span>2 - 0</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Mujić 8'</td><td>1-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Rebac 83'</td><td>2-0</td><td></td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#D9EAD3" align="center"><p id="showBox7">P</p></td>
-				<td class="size1" align="right">8,000</td>
-			</tr><tr>
-				<td>16.11.1952.</td>
-				<td><span>Partizan</span><div class="players">PARTIZAN: Stojanović, Belin, Čolić, Čajkovski <font color="BF9000">■</font>, Jovanović, Atanacković <font color="BF9000">■</font>, Ognjanović, Veselinović, Valok, Bobek, Herceg<br>VELEŽ: Barbarić, Dilberović, Rukavina, Borozan <font color="BF9000">■</font>, Bolfek, Ćemalović, Mujić, Rebac, S. Selimotić, Hrvić, Momić</div></td>
-				<td class="size1">Stadion JNA</td>
-				<td align="center"><span>1 - 4</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>S. Selimotić 29'</td><td>1-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td></td><td>1-1</td><td>Veselinović 31'</td></tr><tr><td></td><td>1-2</td><td>Valok 35'</td></tr><tr><td></td><td>1-3</td><td>Valok 79'</td></tr><tr><td></td><td>1-4</td><td>Herceg 86'</td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#F4CCCC" align="center"><p id="showBox8">I</p></td>
-				<td class="size1" align="right">8,000</td>
-			</tr><tr>
-				<td>23.11.1952.</td>
-				<td><span>BSK Beograd</span><div class="players">VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Momić, Bolfek, Selimotić, Mujić, Rebac, Hrvić, Ćemalović<br>BSK: Cvetković, Odaković, Filipović, Kaloperović, Tasić, Davidović, Panić, Jocić, Spaić, Cokić, Marković</div></td>
-				<td class="size1">Staro Veležovo</td>
-				<td align="center"><span>0 - 0</span></td>
-            
-				<td bgcolor="#FFF2CC" align="center"><p id="showBox9">N</p></td>
-				<td class="size1" align="right">9,000</td>
-			</tr><tr>
-				<td>7.12.1952.</td>
-				<td><span>Spartak Subotica</span><div class="players">SPARTAK: Kampa, Tapiška, Bogešić, Čikoš, Kopilović, Kujundžić, Palatinus, Takač, Rudinski, Gereš, Branisavljević<br>VELEŽ: Barbarić, Dilberović, Rukavina, Borozan <font color="990000">■</font>, Momić, Bolfek, Selimotić, Mujić, Musa, Hrvić, Ćemalović</div></td>
-				<td class="size1">Gradski stadion</td>
-				<td align="center"><span>0 - 4</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td><td>0-1</td><td>Bogešić 10' (p)</td></tr><tr><td></td><td>0-2</td><td>Palatinus 24'</td></tr><tr><td></td><td>0-3</td><td>Bogešić 37'</td></tr><tr><td></td><td>0-4</td><td>Palatinus 69'</td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#F4CCCC" align="center"><p id="showBox10">I</p></td>
-				<td class="size1" align="right">4,500</td>
-			</tr><tr>
-				<td>14.12.1952.</td>
-				<td><span>Vardar Skoplje</span><div class="players">VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Radiljević, Momić, Slišković, Mujić, Bolfek, Hrvić, Ćemalović<br>VARDAR: Vidinić, Araovski, Novak, Milanov, Kokinovski, Gerov, Cincijevski, Velkoski, D. Georgijevski, Janevski, P. Georgijevski</div></td>
-				<td class="size1">Staro Veležovo</td>
-				<td align="center"><span>3 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Janevski 2'</td></tr><tr><td>Ćemalović 12'</td><td>1-1</td><td></td></tr><tr><td>Hrvić 53'</td><td>2-1</td><td></td></tr><tr><td>Slišković 89'</td><td>3-1</td><td></td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#D9EAD3" align="center"><p id="showBox11">P</p></td>
-				<td class="size1" align="right">5,000</td>
-			</tr><tr>
-				<td>8.3.1953.</td>
-				<td><span>Crvena zvezda</span><div class="players">ZVEZDA: Krivokuća, Stanković, Zeković, Tadić, Diskić, Đajić, Ognjanović, Mitić, Živanović, Zlatković, Vukosavljević<br>VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Bolfek, Radiljević, Selimotić, Hrvić, Vreća, Mujić, Ćemalović</div></td>
-				<td class="size1">Avala</td>
-				<td align="center"><span>0 - 4</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td><td>0-1</td><td>Vukosavljević 11'</td></tr><tr><td></td><td>0-2</td><td>Mitić 22'</td></tr><tr><td></td><td>0-3</td><td>Živanović 31' (p)</td></tr><tr><td></td><td>0-4</td><td>Vukosavljević 70'</td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#F4CCCC" align="center"><p id="showBox12">I</p></td>
-				<td class="size1" align="right">23,000</td>
-			</tr><tr>
-				<td>15.3.1953.</td>
-				<td><span>FK Sarajevo</span><div class="players">VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Bolfek, Radiljević, Ćemalović, Selimotić, Rebac, Mujić, Vreća<br>SARAJEVO: Pejak, Brozović, Biogradlić, Agoston, Svraka, Glavočević, Žigante, F. Lovrić, Stipić, Đ. Lovrić, Živkov</div></td>
-				<td class="size1">Staro Veležovo</td>
-				<td align="center"><span>1 - 2</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Živkov 5'</td></tr><tr><td></td><td>0-2</td><td>Stipić 61'</td></tr><tr><td>Mujić 83'</td><td>1-2</td><td></td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#F4CCCC" align="center"><p id="showBox13">I</p></td>
-				<td class="size1" align="right">10,000</td>
-			</tr><tr>
-				<td>22.3.1953.</td>
-				<td><span>Hajduk Split</span><div class="players">HAJDUK: Beara, Delić, Broketa, Krstulović, Ratković, Luštica, Šenauer, Kragić, Matošić, Vukas, Arapović<br>VELEŽ: Barbarić, Dilberović, Prajo, Borozan, Bolfek, Ćemalović, Rebac, Mujić, Zelenika <font color="BF9000">■</font>, Hrvić, Vreća</div></td>
-				<td class="size1">Stari plac</td>
-				<td align="center"><span>0 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>⠀⠀⠀⠀⠀⠀⠀</td><td>0-1</td><td>Vukas 35'</td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#F4CCCC" align="center"><p id="showBox14">I</p></td>
-				<td class="size1" align="right">9,000</td>
-			</tr><tr>
-				<td>29.3.1953.</td>
-				<td><span>Vojvodina Novi Sad</span><div class="players">VELEŽ: Barbarić, Dilberović, Prajo, Hrvić, Bolfek <font color="BF9000">■</font>, Ćemalović, Rebac, Mujić, Zelenika <font color="BF9000">■</font>, Selimotić, Drljević<br>VOJVODINA: Vasić, Savović, Torbarov, Blanarik, Milovanov, Leškov, R. Krstić, Rajkov, Hadžić, Boškov, D. Krstić</div></td>
-				<td class="size1">Staro Veležovo</td>
-				<td align="center"><span>3 - 5</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Hadžić 30'</td></tr><tr><td></td><td>0-2</td><td>Rajkov 33'</td></tr><tr><td></td><td>0-3</td><td>Rajkov 36'</td></tr><tr><td>Zelenika 38'</td><td>1-3</td><td></td></tr><tr><td></td><td>1-4</td><td>Rajkov 70'</td></tr><tr><td></td><td>1-5</td><td>Rajkov 77'</td></tr><tr><td>Rebac 80'</td><td>2-5</td><td></td></tr><tr><td>Drljević 84'</td><td>3-5</td><td></td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#F4CCCC" align="center"><p id="showBox15">I</p></td>
-				<td class="size1" align="right">6,000</td>
-			</tr><tr>
-				<td>19.4.1953.</td>
-				<td><span>Dinamo Zagreb</span><div class="players">VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Momić, Bolfek, Rebac, Mujić, Zelenika, Hrvić, Ćemalović<br>DINAMO: Kralj, Banozić, Crnković, Beseredi, I. Horvat, Kapetanović, Benko, Lipošinović, Osojnak, Ž. Čajkovski, Dvornić</div></td>
-				<td class="size1">Staro Veležovo</td>
-				<td align="center"><span>3 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Osojnak 47'</td></tr><tr><td>Zelenika 57'</td><td>1-1</td><td></td></tr><tr><td>Hrvić 65'</td><td>2-1</td><td></td></tr><tr><td>Zelenika 87'</td><td>3-1</td><td></td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#D9EAD3" align="center"><p id="showBox16">P</p></td>
-				<td class="size1" align="right">7,000</td>
-			</tr><tr>
-				<td>26.4.1953.</td>
-				<td><span>NK Zagreb</span><div class="players">ZAGREB: Maček, Jurić, Dubravčić, Šantek, Vidošević, Blažetić, Tajder, Medved, Jagodić, Joksimović, Devčić<br>VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Momić, Bolfek, Rebac, Mujić, Zelenika, Hrvić, Ćemalović</div></td>
-				<td class="size1">Kranjčevičeva</td>
-				<td align="center"><span>3 - 3</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Jagodić 12'</td></tr><tr><td>Rebac 34'</td><td>1-1</td><td></td></tr><tr><td></td><td>1-2</td><td>Devčić 41'</td></tr><tr><td>Zelenika 44'</td><td>2-2</td><td></td></tr><tr><td>Zelenika 74'</td><td>3-2</td><td></td></tr><tr><td></td><td>3-3</td><td>Joksimović 80'</td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#FFF2CC" align="center"><p id="showBox17">N</p></td>
-				<td class="size1" align="right">8,000</td>
-			</tr><tr>
-				<td>28.4.1953.</td>
-				<td><span>Lokomotiva Zagreb</span><div class="players">LOKOMOTIVA: Nežmah, Čudek, Balan, Pukšec <font color="BF9000">■</font>, Andročec, Rein, Odžak, Šal, Firm, Papec, O. Bobek<br>VELEŽ: Barbarić, Dilberović <font color="BF9000">■</font>, Rukavina, Bolfek <font color="BF9000">■</font>, Momić, Borozan, Rebac, Mujić, Zelenika <font color="BF9000">■</font>, Hrvić, Ćemalović</div></td>
-				<td class="size1">Kranjčevičeva</td>
-				<td align="center"><span>2 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Hrvić 31'</td><td>1-0</td><td></td></tr><tr><td></td><td>1-1</td><td>Firm 40'</td></tr><tr><td>Zelenika 61'</td><td>2-1</td><td></td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#D9EAD3" align="center"><p id="showBox18">P</p></td>
-				<td class="size1" align="right">4,500</td>
-			</tr><tr>
-				<td>24.5.1953.</td>
-				<td><span>Partizan</span><div class="players">VELEŽ: Barbarić, Dilberović <font color="990000">■</font>, Rukavina, Borozan, Momić, Bolfek, Rebac, Mujić, Zelenika <font color="BF9000">■</font>, Hrvić, Ćemalović<br>PARTIZAN: Stojanović, Belin, Čolić, Čajkovski, Stefanović, Jovanović, Valok, Veselinović, Milutinović, Zebrc, Atanacković</div></td>
-				<td class="size1">Staro Veležovo</td>
-				<td align="center"><span>0 - 4</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td><td>0-1</td><td>Valok 12'</td></tr><tr><td></td><td>0-2</td><td>Veselinović 46'</td></tr><tr><td></td><td>0-3</td><td>Milutinović 52'</td></tr><tr><td></td><td>0-4</td><td>Veselinović 65'</td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#F4CCCC" align="center"><p id="showBox19">I</p></td>
-				<td class="size1" align="right">10,000</td>
-			</tr><tr>
-				<td>31.5.1953.</td>
-				<td><span>BSK Beograd</span><div class="players">BSK: Radenković, Odanović, Filipović, Tasić, Stanković, Kaloperović, Panić, Jocić, Marković, Konstantinović, Radović<br>VELEŽ: Barbarić, Bolfek, Rukavina, Borozan, Momić, Radiljević, S. Selimotić, Mujić, Zelenika, Hrvić, Ćemalović</div></td>
-				<td class="size1">Avala</td>
-				<td align="center"><span>4 - 2</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Marković 8'</td></tr><tr><td>Zelenika 12'</td><td>1-1</td><td></td></tr><tr><td></td><td>1-2</td><td>Marković 35'</td></tr><tr><td>Zelenika 44' (p)</td><td>2-2</td><td></td></tr><tr><td>Mujić 48'</td><td>3-2</td><td></td></tr><tr><td>S. Selimotić 78'</td><td>4-2</td><td></td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#D9EAD3" align="center"><p id="showBox20">P</p></td>
-				<td class="size1" align="right">45,000</td>
-			</tr><tr>
-				<td>14.6.1953.</td>
-				<td><span>Spartak Subotica</span><div class="players">VELEŽ: Barbarić, Bolfek, Rukavina, Borozan, Momić, Radiljević, Slišković, Mujić, Zelenika, Hrvić, Ćemalović<br>SPARTAK: Glončak, Tapiška, Bogešić, Jakovetić, Kopilović, B. Čikoš, Palatinus, Takač, Pejić, Kujundžić, Branislavljević</div></td>
-				<td class="size1">Staro Veležovo</td>
-				<td align="center"><span>2 - 0</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Hrvić 12'</td><td>1-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Slišković 28'</td><td>2-0</td><td></td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#D9EAD3" align="center"><p id="showBox21">P</p></td>
-				<td class="size1" align="right">3,000</td>
-			</tr><tr>
-				<td>21.6.1953.</td>
-				<td><span>Vardar Skoplje</span><div class="players">VARDAR: Vidinić, Arsevsiji, Lazarevski, G. Georgijevski, Petrovski, Kokinovski, Karanfilović, Velkovski, Milanov, Cincijevski, P. Georgijevski<br>VELEŽ: Barbarić, Bolfek, Rukavina, Ćemalović, Musa, Radiljević, Slišković, Mujić, Zelenika, Hrvić, Drljević</div></td>
-				<td class="size1">Gradski park</td>
-				<td align="center"><span>2 - 5</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Velkovski 5'</td></tr><tr><td></td><td>0-2</td><td>Karanfilović 24'</td></tr><tr><td></td><td>0-3</td><td>P. Georgijevski 47'</td></tr><tr><td>Zelenika 78'</td><td>1-3</td><td></td></tr><tr><td></td><td>1-4</td><td>Velkovski 79'</td></tr><tr><td></td><td>1-5</td><td>Bolfek 85' (ag)</td></tr><tr><td>Zelenika 90'</td><td>2-5</td><td></td></tr></tbody></table></div></td>
-            
-				<td bgcolor="#F4CCCC" align="center"><p id="showBox22">I</p></td>
-				<td class="size1" align="right">12,000</td>
-			</tr></tbody>
-	</table>
+<div class="table-container">
+        <div class="table-row header">
+            <div class="table-cell">Datum</div>
+            <div class="table-cell">Protivnik</div>
+            <div class="table-cell size1">Stadion</div>
+            <div class="table-cell" style="text-align: center;">Rezultat</div>
+            <div class="table-cell" style="text-align: center;">P,N,I?</div>
+            <div class="table-cell size1" style="text-align: right;">Posjeta</div>
+        </div>
+        <div class="table-row">
+            <div class="table-cell">31.8.1952.</div>
+            <div class="table-cell">Crvena zvezda</div>
+            <div class="table-cell size1">Staro Veležovo</div>
+            <div class="table-cell" style="text-align: center;">0 - 1</div>
+            <div class="table-cell" style="text-align: center;">I</div>
+            <div class="table-cell size1" style="text-align: right;">10,000</div>
+        </div>
+    </div>
       <h1>Kup Maršala Tita</h1><table>
-		<thead>
-			<tr>
-				<th>Datum</th>
-				<th>Protivnik</th>
-				<th>Stadion</th>
-				<th align="center">Rezultat</th>
-				<th align="center">Prolaz?</th>
-				<th>Faza takm.</th><th>Posjeta</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>20.7.1952.</td>
-				<td><span>Leotar Trebinje</span><div class="players">VELEŽ: Ćubela, Dilberović, Šestić, Borozan, Bolfek, Ćemalović, Selimotić, Mujić, Rebac, Hrvić, Hudarin</div></td>
-				<td>Staro Veležovo</td>
-				<td align="center"><span>5 - 4</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Hrvić (2)<br>Mujić<br>Hudarin<br>Selimotić</td><td>5-4</td><td>Živković (2)<br>Bratić<br>Kopić</td></tr></tbody></table></div></td>
-				<td bgcolor="#D9EAD3" align="center" position="relative"><span><b>✓</b></span></td>
-				<td align="right">Q1</td>
-			<td align="right"></td></tr>
-			<tr>
-				<td>31.7.1952.</td>
-				<td><span>Sutjeska Foča</span><div class="players">VELEŽ: Barbarić, Dilberović, Šestić, Borozan, Bolfek, Ćemalović, Rebac, Slišković, Mujić, Hrvić, Hudarin<br>SUTJESKA: Trkulja, Vislavski, Ilišin, Kenig, Šikić, Miler, Milinković, Hadžiosmanović, Brković, Ferković, Vasković</div></td>
-				<td>Staro Veležovo</td>
-				<td align="center"><span>6 - 2</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Hudarin (4)<br>Slišković<br>Rebac</td><td>6-2</td><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td></tr></tbody></table></div></td>
-				<td bgcolor="#D9EAD3" align="center"><span><b>✓</b></span></td>
-				<td align="right">Q2</td>
-			<td align="right">800</td></tr>
-			<tr>
-				<td>17.8.1952.</td>
-				<td><span>Sloga Doboj</span><div class="players">VELEŽ: Ćubela, Dilberović, Hudarin, Borozan, Prajo, Ćemalović, Slišković, Mujić, Rebac, Hrvić, Momić<br>SLOGA: Kruškić, Marić, Bampa, Avdić, Ibrahimović, Kresoja, Dautbegović, Salihović, Mišković, Bubalo, Ramić</div></td>
-				<td>Staro Veležovo</td>
-				<td align="center"><span>4 - 0</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Mujić 21'</td><td>1-0</td><td>⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Hrvić 25'</td><td>2-0</td><td>⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Momić 66'</td><td>3-0</td><td>⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Rebac 75'</td><td>4-0</td><td>⠀⠀⠀⠀⠀⠀⠀</td></tr></tbody></table></div></td>
+    <thead>
+      <tr>
+        <th>Datum</th>
+        <th>Protivnik</th>
+        <th>Stadion</th>
+        <th align="center">Rezultat</th>
+        <th align="center">Prolaz?</th>
+        <th>Faza takm.</th><th>Posjeta</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>20.7.1952.</td>
+        <td><span>Leotar Trebinje</span><div class="players">VELEŽ: Ćubela, Dilberović, Šestić, Borozan, Bolfek, Ćemalović, Selimotić, Mujić, Rebac, Hrvić, Hudarin</div></td>
+        <td>Staro Veležovo</td>
+        <td align="center"><span>5 - 4</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Hrvić (2)<br>Mujić<br>Hudarin<br>Selimotić</td><td>5-4</td><td>Živković (2)<br>Bratić<br>Kopić</td></tr></tbody></table></div></td>
+        <td bgcolor="#D9EAD3" align="center" position="relative"><span><b>✓</b></span></td>
+        <td align="right">Q1</td>
+      <td align="right"></td></tr>
+      <tr>
+        <td>31.7.1952.</td>
+        <td><span>Sutjeska Foča</span><div class="players">VELEŽ: Barbarić, Dilberović, Šestić, Borozan, Bolfek, Ćemalović, Rebac, Slišković, Mujić, Hrvić, Hudarin<br>SUTJESKA: Trkulja, Vislavski, Ilišin, Kenig, Šikić, Miler, Milinković, Hadžiosmanović, Brković, Ferković, Vasković</div></td>
+        <td>Staro Veležovo</td>
+        <td align="center"><span>6 - 2</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Hudarin (4)<br>Slišković<br>Rebac</td><td>6-2</td><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td></tr></tbody></table></div></td>
+        <td bgcolor="#D9EAD3" align="center"><span><b>✓</b></span></td>
+        <td align="right">Q2</td>
+      <td align="right">800</td></tr>
+      <tr>
+        <td>17.8.1952.</td>
+        <td><span>Sloga Doboj</span><div class="players">VELEŽ: Ćubela, Dilberović, Hudarin, Borozan, Prajo, Ćemalović, Slišković, Mujić, Rebac, Hrvić, Momić<br>SLOGA: Kruškić, Marić, Bampa, Avdić, Ibrahimović, Kresoja, Dautbegović, Salihović, Mišković, Bubalo, Ramić</div></td>
+        <td>Staro Veležovo</td>
+        <td align="center"><span>4 - 0</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Mujić 21'</td><td>1-0</td><td>⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Hrvić 25'</td><td>2-0</td><td>⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Momić 66'</td><td>3-0</td><td>⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Rebac 75'</td><td>4-0</td><td>⠀⠀⠀⠀⠀⠀⠀</td></tr></tbody></table></div></td>
             
-				<td bgcolor="#D9EAD3" align="center"><b>✓</b></td>
-				<td align="right">Q3</td>
-			<td align="right">600</td></tr>
-		<tr>
-				<td>24.8.1952.</td>
-				<td><span>Radnički Kikinda</span><div class="players">VELEŽ: Ćubela,	Dilberović, Momić, Borozan, Bolfek, Ćemalović, Slišković, S. Selimotić, Rebac, Hrvić, Hudarin</div></td>
-				<td>Šestog oktobra</td>
-				<td align="center"><span>4 - 0</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Rebac 10'</td><td>1-0</td><td>⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Rebac 13'</td><td>2-0</td><td>⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Ćemalović ?'</td><td>3-0</td><td>⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Terzin (ag) ?'</td><td>4-0</td><td>⠀⠀⠀⠀⠀⠀</td></tr></tbody></table></div></td>
+        <td bgcolor="#D9EAD3" align="center"><b>✓</b></td>
+        <td align="right">Q3</td>
+      <td align="right">600</td></tr>
+    <tr>
+        <td>24.8.1952.</td>
+        <td><span>Radnički Kikinda</span><div class="players">VELEŽ: Ćubela,  Dilberović, Momić, Borozan, Bolfek, Ćemalović, Slišković, S. Selimotić, Rebac, Hrvić, Hudarin</div></td>
+        <td>Šestog oktobra</td>
+        <td align="center"><span>4 - 0</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Rebac 10'</td><td>1-0</td><td>⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Rebac 13'</td><td>2-0</td><td>⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Ćemalović ?'</td><td>3-0</td><td>⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Terzin (ag) ?'</td><td>4-0</td><td>⠀⠀⠀⠀⠀⠀</td></tr></tbody></table></div></td>
             
-				<td bgcolor="#D9EAD3" align="center"><b>✓</b></td>
-				<td align="right">1/16</td>
-			<td align="right">2,000</td></tr><tr>
-				<td>2.9.1952.</td>
-				<td><span>Crvena zvezda</span><div class="players">VELEŽ: Barbarić, Dilberović, Prajo, Borozan, Bolfek, Ćemalović, Slišković, Mujić, Momić, Hrvić, Hudarin<br>ZVEZDA: Lovrić, Stojanović, Zeković, Palfi, Diskić, Milić, Ognjanov, Mitić, Živanović, Vukosavljević, Zlatković</div></td>
-				<td>Staro Veležovo</td>
-				<td align="center"><span>1 - 3</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Hudarin 13'</td><td>1-0</td><td></td></tr><tr><td></td><td>1-1</td><td>Ognjanov 82'</td></tr><tr><td></td><td>1-2</td><td>Palfi 85'</td></tr><tr><td></td><td>1-3</td><td>Vukosavljević 90'</td></tr></tbody></table></div></td>
+        <td bgcolor="#D9EAD3" align="center"><b>✓</b></td>
+        <td align="right">1/16</td>
+      <td align="right">2,000</td></tr><tr>
+        <td>2.9.1952.</td>
+        <td><span>Crvena zvezda</span><div class="players">VELEŽ: Barbarić, Dilberović, Prajo, Borozan, Bolfek, Ćemalović, Slišković, Mujić, Momić, Hrvić, Hudarin<br>ZVEZDA: Lovrić, Stojanović, Zeković, Palfi, Diskić, Milić, Ognjanov, Mitić, Živanović, Vukosavljević, Zlatković</div></td>
+        <td>Staro Veležovo</td>
+        <td align="center"><span>1 - 3</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Hudarin 13'</td><td>1-0</td><td></td></tr><tr><td></td><td>1-1</td><td>Ognjanov 82'</td></tr><tr><td></td><td>1-2</td><td>Palfi 85'</td></tr><tr><td></td><td>1-3</td><td>Vukosavljević 90'</td></tr></tbody></table></div></td>
             
-				<td bgcolor="#F4CCCC" align="center"><b>✕</b></td>
-				<td align="right">1/8</td>
-			<td align="right">10,000</td></tr></tbody>
-	</table>
+        <td bgcolor="#F4CCCC" align="center"><b>✕</b></td>
+        <td align="right">1/8</td>
+      <td align="right">10,000</td></tr></tbody>
+  </table>
      <div class="row">
   </div><div class="row">
   <div class="column">
     <img src="../images/site/table/tabela1952-53.png" style="width:120%">
   </div><div class="column"><table class="sortable">
-	<tbody>
-		<tr>
-			<th>Ime igrača</th>
-			<th>Pozicija</th>
-			<th>Nastupi</th>
-			<th>Golovi</th>
-		</tr>
-		<tr>
-			<td>Žarko Barbarić</td>
-			<td>Golman</td>
-			<td>22 (4)</td>
-			<td>-51</td>
-		</tr>
-		<tr>
-			<td>Anton Bolfek</td>
-			<td>Odbrana</td>
-			<td>22</td>
-			<td>1</td>
-		</tr>
-		<tr>
-			<td>Ranko Borozan</td>
-			<td>Odbrana</td>
-			<td>20</td>
-			<td>1</td>
-		</tr>
+  <tbody>
     <tr>
-			<td>Mensud Dilberović</td>
-			<td>Odbrana</td>
-			<td>19</td>
-			<td>0</td>
-		</tr>
+      <th>Ime igrača</th>
+      <th>Pozicija</th>
+      <th>Nastupi</th>
+      <th>Golovi</th>
+    </tr>
     <tr>
-			<td>Dušan Rukavina</td>
-			<td>Odbrana</td>
-			<td>16</td>
-			<td>0</td>
-		</tr>
+      <td>Žarko Barbarić</td>
+      <td>Golman</td>
+      <td>22 (4)</td>
+      <td>-51</td>
+    </tr>
     <tr>
-			<td>Hasan Momić</td>
-			<td>Odbrana</td>
-			<td>15</td>
-			<td>0</td>
-		</tr>
+      <td>Anton Bolfek</td>
+      <td>Odbrana</td>
+      <td>22</td>
+      <td>1</td>
+    </tr>
     <tr>
-			<td>Kruno Radiljević</td>
-			<td>Odbrana</td>
-			<td>7</td>
-			<td>0</td>
-		</tr>
+      <td>Ranko Borozan</td>
+      <td>Odbrana</td>
+      <td>20</td>
+      <td>1</td>
+    </tr>
     <tr>
-			<td>Vlado Slišković</td>
-			<td>Odbrana</td>
-			<td>6</td>
-			<td>2</td>
-		</tr>
+      <td>Mensud Dilberović</td>
+      <td>Odbrana</td>
+      <td>19</td>
+      <td>0</td>
+    </tr>
     <tr>
-			<td>Dane Prajo</td>
-			<td>Odbrana</td>
-			<td>6</td>
-			<td>0</td>
-		</tr>
+      <td>Dušan Rukavina</td>
+      <td>Odbrana</td>
+      <td>16</td>
+      <td>0</td>
+    </tr>
     <tr>
-			<td>Alija Šestić</td>
-			<td>Odbrana</td>
-			<td>1</td>
-			<td>0</td>
-		</tr>
+      <td>Hasan Momić</td>
+      <td>Odbrana</td>
+      <td>15</td>
+      <td>0</td>
+    </tr>
     <tr>
-			<td>Haldun Hrvić</td>
-			<td>Vezni red i napad</td>
-			<td>22</td>
-			<td>5</td>
-		</tr>
+      <td>Kruno Radiljević</td>
+      <td>Odbrana</td>
+      <td>7</td>
+      <td>0</td>
+    </tr>
     <tr>
-			<td>Muhamed Mujić</td>
-			<td>Vezni red i napad</td>
-			<td>22</td>
-			<td>2</td>
-		</tr>
+      <td>Vlado Slišković</td>
+      <td>Odbrana</td>
+      <td>6</td>
+      <td>2</td>
+    </tr>
     <tr>
-			<td>Hamdija Ćemalović</td>
-			<td>Vezni red i napad</td>
-			<td>22</td>
-			<td>2</td>
-		</tr>
+      <td>Dane Prajo</td>
+      <td>Odbrana</td>
+      <td>6</td>
+      <td>0</td>
+    </tr>
     <tr>
-			<td>Vlado Zelenika</td>
-			<td>Vezni red i napad</td>
-			<td>11</td>
-			<td>10</td>
-		</tr>
+      <td>Alija Šestić</td>
+      <td>Odbrana</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
     <tr>
-			<td>Sulejman Rebac</td>
-			<td>Vezni red i napad</td>
-			<td>11</td>
-			<td>4</td>
-		</tr>
+      <td>Haldun Hrvić</td>
+      <td>Vezni red i napad</td>
+      <td>22</td>
+      <td>5</td>
+    </tr>
     <tr>
-			<td>Slavko Hudarin</td>
-			<td>Vezni red i napad</td>
-			<td>6</td>
-			<td>1</td>
-		</tr>
+      <td>Muhamed Mujić</td>
+      <td>Vezni red i napad</td>
+      <td>22</td>
+      <td>2</td>
+    </tr>
     <tr>
-			<td>Salko Selimotić</td>
-			<td>Vezni red i napad</td>
-			<td>6</td>
-			<td>1</td>
-		</tr>
+      <td>Hamdija Ćemalović</td>
+      <td>Vezni red i napad</td>
+      <td>22</td>
+      <td>2</td>
+    </tr>
     <tr>
-			<td>Jole Musa</td>
-			<td>Vezni red i napad</td>
-			<td>3</td>
-			<td>0</td>
-		</tr>
+      <td>Vlado Zelenika</td>
+      <td>Vezni red i napad</td>
+      <td>11</td>
+      <td>10</td>
+    </tr>
     <tr>
-			<td>Vaso Vreća</td>
-			<td>Vezni red i napad</td>
-			<td>3</td>
-			<td>0</td>
-		</tr>
+      <td>Sulejman Rebac</td>
+      <td>Vezni red i napad</td>
+      <td>11</td>
+      <td>4</td>
+    </tr>
     <tr>
-			<td>Nusret Drljević</td>
-			<td>Vezni red i napad</td>
-			<td>2</td>
-			<td>1</td>
-		</tr>
-	</tbody>
+      <td>Slavko Hudarin</td>
+      <td>Vezni red i napad</td>
+      <td>6</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Salko Selimotić</td>
+      <td>Vezni red i napad</td>
+      <td>6</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Jole Musa</td>
+      <td>Vezni red i napad</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Vaso Vreća</td>
+      <td>Vezni red i napad</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Nusret Drljević</td>
+      <td>Vezni red i napad</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+  </tbody>
 </table></div></div></div></div>
 
     <script>
