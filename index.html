@@ -8,19 +8,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
         body {
-            background-image: url('https://cdn.discordapp.com/attachments/1079034567710744627/1079034771067371690/background.png');
+            background-image: url('../images/site/background.png');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
             font-family: Helvetica, Arial, sans-serif;
             font-size: 16px;
         }
-	    .credits {
-    text-align: center;
-    color: white;
-}
           .banner {
-    background-image: url('https://cdn.discordapp.com/attachments/1079034567710744627/1079034770618585148/header.png');
+    background-image: url('../images/site/header.png');
     height: 50px;
     background-size: cover;
     background-position: center;
@@ -30,6 +26,11 @@
     width: 100%;
     z-index: 1;
   }
+    @media screen and (max-width: 660px) {
+            .banner {
+                display: none;
+            }
+        }
     .content {
     position: relative;
     z-index: 2;
@@ -44,6 +45,22 @@
     .logo:hover {
     opacity: 0.5;
 }
+  .logo2 {
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+    display: none;
+}
+
+    .logo2:hover {
+    opacity: 0.5;
+}
+  @media screen and (max-width: 660px) {
+            .logo2 {
+                display: block;
+            }
+        }
     .headercontent {
     height:30px;
     margin-top:11px;
@@ -55,14 +72,37 @@
     .headercontent:hover {
     opacity: 0.5;
 }
+	.size1 {
+    		border: none;
+            display: none; 
+        }
+
+        @media screen and (min-width: 661px) {
+            .size1 {
+                display: block;
+            }
+        }
+        .size2 {
+    		border: none;
+            display: none; 
+        }
+
+        @media screen and (max-width: 660px) {
+            .size2 {
+                display: block;
+            }
+        }
         table, td {
   border: 2px solid black;
   border-collapse: collapse;
   color: black;
+  width: 90%;
+  table-layout: fixed;
   margin-left: auto;
   margin-right: auto;
   }
           td {
+          width: 1%;
     text-align: center;
     font-size: 15px;
   }
@@ -72,11 +112,13 @@
 <div class="banner"><a href="../index.html"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1079036319184978120/logo2.png" class="logo"></a><img src="../images/site/statistika.png" class="headercontent" align="right"><img src="../images/site/protivnici.png" class="headercontent" align="right"><img src="../images/site/kalendar.png" class="headercontent" align="right"><img src="../images/site/abecedarnik.png" class="headercontent" align="right"></div>
 <div class="container">
     <br>
-    <br>
+    <br><div class="logo2">
+        <img src="https://cdn.discordapp.com/attachments/1079034567710744627/1079036319184978120/logo2.png" style="width:100%;">
+    </div>
     <br>
   <div class="panel panel-default">
-    <div class="panel-body"><img src="https://cdn.discordapp.com/attachments/1079034616264016034/1079556110597492776/razglednica.png" width="500px" align="right"><p>Dragi Rođeni, nakon višegodišnjeg rada skupljajući podatke vezane uz naš klub, konačno smo spremni otvoriti stranicu "Kraj Neretve Rođeni". U cilju nam je što bolje dočarati svaki period naše historije, te je čuvati pristupačnom za sve generacije koje su zainteresovane za klub iz Mostara.</p><p>Broj ljudi koji su na neki način sačuvali historiju Veleža, od čuvanja slika u ladici do pisanja službenog protokola, je prevelik da bi se svakome lično zahvalilo, ali je ipak jako vrijedan poduhvat. Posebne zasluge idu Nebojši Jakovljeviću na direktnoj pomoći vezanoj uz ovu web stranicu, bez čije pomoći ne bismo mogli dostići ovaj nivo za 10 godina, te Ismetu Derviševiću, bivšem klupskom sekretaru, za pisanje almanaha povodom 75. godišnjice Veleža 1997. godine, te Enesu Vukotiću, bivšem šefu računovodstva u Veležu, koji je sam sakupio mnogo klupskih dokumenata koje i danas vrijedno čuva.</p><p>Ispod možete pronaći dvije tabele: jedna kraća u kojoj su navedene sezone prije II svjetskog rata, sezone od 1945-46 do 1952 kada se format tadašnjeg ligaškog sistema previše mijenjao i nedostaju podaci vezani uz protokol, i sezona 1994 (plus kup 1994-95) koja je odigrana u skraćenom formatu zbog rata u Bosni i Hercegovini. U drugoj tabeli nalaze se sve sezone od ulaska Veleža u Prvu saveznu ligu 1952. godine do prekinute sezone 1991-92, a zatim se nastavlja od sezone 1995-96 do danas.</p></div>
-    <table style="width:90%" "height="60%&quot;">
+    <div class="panel-body"><img src="https://cdn.discordapp.com/attachments/1079034616264016034/1079556110597492776/razglednica.png" width="500px" align="right" class="size1"><img src="https://cdn.discordapp.com/attachments/1079034616264016034/1079556110597492776/razglednica.png" width="100%" class="size2"><p>Dragi Rođeni, nakon višegodišnjeg rada skupljajući podatke vezane uz naš klub, konačno smo spremni otvoriti stranicu "Kraj Neretve Rođeni". U cilju nam je što bolje dočarati svaki period naše historije, te je čuvati pristupačnom za sve generacije koje su zainteresovane za klub iz Mostara.</p><p>Broj ljudi koji su na neki način sačuvali historiju Veleža, od čuvanja slika u ladici do pisanja službenog protokola, je prevelik da bi se svakome lično zahvalilo, ali je ipak jako vrijedan poduhvat. Posebne zasluge idu Nebojši Jakovljeviću na direktnoj pomoći vezanoj uz ovu web stranicu, bez čije pomoći ne bismo mogli dostići ovaj nivo za 10 godina, te Ismetu Derviševiću, bivšem klupskom sekretaru, za pisanje almanaha povodom 75. godišnjice Veleža 1997. godine, te Enesu Vukotiću, bivšem šefu računovodstva u Veležu, koji je sam sakupio mnogo klupskih dokumenata koje i danas vrijedno čuva.</p><p>Ispod možete pronaći dvije tabele: jedna kraća u kojoj su navedene sezone prije II svjetskog rata, sezone od 1945-46 do 1952 kada se format tadašnjeg ligaškog sistema previše mijenjao i nedostaju podaci vezani uz protokol, i sezona 1994 (plus kup 1994-95) koja je odigrana u skraćenom formatu zbog rata u Bosni i Hercegovini. U drugoj tabeli nalaze se sve sezone od ulaska Veleža u Prvu saveznu ligu 1952. godine do prekinute sezone 1991-92, a zatim se nastavlja od sezone 1995-96 do danas.</p></div>
+    <table class="size1">
   <tbody><tr>
     <td>1922-40</td>
     <td>ㅤㅤㅤㅤ</td>
@@ -90,9 +132,8 @@
     <td>ㅤㅤㅤㅤ</td>
     <td>1994</td>
   </tr>
-  
-  
-  </tbody></table><br><table style="width:90%" "height="60%&quot;">
+  </tbody></table>
+  <br><table class="size1">
   <tbody><tr>
     <td><a href="../sezone/1952-53.html">1952-53</a></td>
     <td><a href="../sezone/1953-54.html">1953-54</a></td>
@@ -169,9 +210,124 @@
     <td>2021-22</td>
     <td>2022-23</td>
     </tr></tbody></table>
+    <br><table class="size2">
+  <tbody><tr>
+    <td style="background-color:gray; color:white;">Pregled:</td>
+    <td>1922-40</td>
+    <td>1945-46</td>
+    <td>1946-47</td>
+    <td>1947-48</td>
+  </tr>
+  <tr>
+    <td>1948-49</td>
+    <td>1950</td>
+    <td>1951</td>
+    <td>1952</td>
+    <td>1994</td>
+  </tr></tbody></table>
+  <br><table class="size2">
+  <tbody><tr>
+    <td><a href="../sezone/1952-53.html">1952-53</a></td>
+    <td><a href="../sezone/1953-54.html">1953-54</a></td>
+    <td><a href="../sezone/1954-55.html">1954-55</a></td>
+    <td>1955-56</td>
+    <td>1956-57</td>
+  </tr>
+  <tr>
+    <td>1957-58</td>
+    <td>1958-59</td>
+    <td>1959-60</td>
+    <td>1960-61</td>
+    <td>1961-62</td>
+  </tr>
+  <tr>
+    <td>1962-63</td>
+    <td>1963-64</td>
+    <td>1964-65</td>
+    <td>1965-66</td>
+    <td>1966-67</td>
+  </tr>
+  <tr>
+    <td>1967-68</td>
+    <td>1968-69</td>
+    <td>1969-70</td>
+    <td>1970-71</td>
+    <td>1971-72</td>
+  </tr>
+  <tr>
+    <td>1972-73</td>
+    <td>1973-74</td>
+    <td>1974-75</td>
+    <td>1975-76</td>
+    <td>1976-77</td>
+  </tr>
+  <tr>
+    <td>1977-78</td>
+    <td>1978-79</td>
+    <td>1979-80</td>
+    <td>1980-81</td>
+    <td>1981-82</td>
+  </tr>
+  <tr>
+    <td>1982-83</td>
+    <td>1983-84</td>
+    <td>1984-85</td>
+    <td>1985-86</td>
+    <td>1986-87</td>
+  </tr>
+  <tr>
+    <td>1987-88</td>
+    <td>1988-89</td>
+    <td>1989-90</td>
+    <td>1990-91</td>
+    <td>1991-92</td>
+  </tr>
+  <tr>
+    <td>1995-96</td>
+    <td>1996-97</td>
+    <td>1997-98</td>
+    <td>1998-99</td>
+    <td>1999-00</td>
+  </tr>
+  <tr>
+    <td>2000-01</td>
+    <td>2001-02</td>
+    <td>2002-03</td>
+    <td>2003-04</td>
+    <td>2004-05</td>
+  </tr>
+  <tr>
+    <td>2005-06</td>
+    <td>2006-07</td>
+    <td>2007-08</td>
+    <td>2008-09</td>
+    <td>2009-10</td>
+  </tr>
+  <tr>
+    <td>2010-11</td>
+    <td>2011-12</td>
+    <td>2012-13</td>
+    <td>2013-14</td>
+    <td>2014-15</td>
+  </tr>
+  <tr>
+    <td>2015-16</td>
+    <td>2016-17</td>
+    <td>2017-18</td>
+    <td>2018-19</td>
+    <td>2019-20</td>
+  </tr>
+  <tr>
+    <td>2020-21</td>
+    <td>2021-22</td>
+    <td>2022-23</td>
+    <td>2023-24</td>
+    <td></td>
+  </tr></tbody></table>
     ⠀
 </div>
 </div>
-<div class="credits"><p>© 2024 Kraj Neretve Rođeni</p><b>KONTAKT | FACEBOOK</b><p></p>
+<iframe src="../copyright.html" frameborder="0" style="margin-left: auto; margin-right: auto; width: 100%;"></iframe>
 </div>
+
 </body></html>
