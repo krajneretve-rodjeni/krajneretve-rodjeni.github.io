@@ -1,0 +1,693 @@
+<html><head>
+    <title>Statistika | KNR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/988123060349579354/1078702126810812436/271451405_104300318809737_531087692418489057_n.png" type="image/png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+      body {
+            background-image: url('../images/site/background.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 16px;
+        }
+.credits {
+    text-align: center;
+    color: white;
+}
+    .warning {
+    display: inline-block;
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 10px;
+}
+    .warning b {
+    color: red;
+}
+      .fixedBox {
+        position: fixed;
+        top: 20%;
+        left: 25%;
+        width: 50%;
+        height: 60%;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 10px;
+        z-index: 9999;
+        display: none;
+        overflow: auto;
+        padding: 9px;
+      }
+
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 9998;
+        display: none;
+      }
+    .banner {
+    background-image: url('../images/site/header.png');
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+        position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  }
+    @media screen and (max-width: 660px) {
+            .banner {
+                display: none;
+            }
+        }
+        .logo2 {
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+    display: none;
+}
+
+    .logo2:hover {
+    opacity: 0.5;
+}
+  @media screen and (max-width: 660px) {
+            .logo2 {
+                display: block;
+            }
+        }
+        .size1 {
+        border: none;
+            display: none; 
+        }
+
+        @media screen and (min-width: 661px) {
+            .size1 {
+                display: block;
+            }
+        }
+        .size2 {
+        	border: none;
+            display: none; 
+        }
+
+        @media screen and (max-width: 660px) {
+            .size2 {
+                display: block;
+            }
+        }
+    .content {
+    position: relative;
+    z-index: 2;
+  }
+    .logo {
+    margin-top:7px;
+    margin-left:20px;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+    .logo:hover {
+    opacity: 0.5;
+}
+    .headercontent {
+    height:30px;
+    margin-top:11px;
+    margin-right:20px;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+    .headercontent:hover {
+    opacity: 0.5;
+}
+.players {
+  background-color: #F7F7F7;
+  width: 600px;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: absolute;
+  padding: 9px;
+  display: none;
+}
+  
+span:hover + .players {
+  display: block;
+}
+.imagetable {
+    display: block;
+    margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+  
+span:hover + .imagetable {
+  display: block;
+}
+.scorers {
+  background-color: #F7F7F7;
+  white-space: nowrap;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: absolute;
+  right: 39%;
+  padding: 0px;
+  display: none;
+  text-align: left;
+}
+  
+span:hover + .scorers {
+  display: block;
+}
+    @media screen and (max-width: 660px) {
+ 				.scorers {
+        			right: auto;
+                    left: 5%
+    					}
+					}
+    .img-with-text {
+    text-align: center;
+    font-size: 14px;
+    width: 35%;
+        float: right;
+}
+
+.img-with-text img {
+    display: block;
+    margin: 0 auto;
+}
+    h1 {
+        font-family: 'Trebuchet MS', sans-serif;
+        text-align: center;
+    }
+        .table-container {
+            display: flex;
+            flex-direction: column;
+            margin-left: auto;
+            margin-right: auto;
+            width: 98%;
+            }
+            @media screen and (min-width: 661px) {
+ 				.table-container {
+        			width: 75%;
+    					}
+					}
+        .table-row {
+            display: flex;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+        .table-cell {
+            flex: 2;
+            padding: 8px;
+        }
+        .table-row.header {
+            background-color: #D84B4B;
+            color: #fff;
+            font-weight: bold;
+        }
+        .scorerstable {
+            margin: right;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    .scorerstable .th, .td {
+      padding: 0px;
+      border-bottom: 1px solid #ddd;
+    }
+    .scorerstable .th {
+      background-color: #D84B4B;
+      color: white;
+    }
+    .sortable {
+            margin: 0 auto;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    .sortable th, td {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+    .sortable th {
+      background-color: #D84B4B;
+      color: white;
+    }
+    .finaltable {
+        display: block;
+        margin-top: 1%;
+        margin-down: 1%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+    }
+    .column {
+  float: left;
+  width: 50%;
+  padding: 5%;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+h2 {
+    margin-top: 1px; 
+}
+    .signature {
+        text-align: right;
+    }
+    </style>
+  </head>
+  <body><div id="fixedBox" style="display: none;">
+      <p>Click anywhere outside of this box to hide it.</p>
+    </div>
+
+    <div id="overlay" style="display: none;"></div>
+  
+  <div class="banner"><a href="../index.html"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1079036319184978120/logo2.png" class="logo"></a><img src="../images/site/statistika.png" class="headercontent" align="right"><a href="..protivnici/protivnici.html"><img src="../images/site/protivnici.png" class="headercontent" align="right"></a><a href="../kalendar/kalendar.html"><img src="../images/site/kalendar.png" class="headercontent" align="right"></a><a href="../abecedarnik/abecedarnik.html"><img src="../images/site/abecedarnik.png" class="headercontent" align="right"></a></div>
+  <div class="container">
+    
+    <br>
+    <br>
+    <div class="logo2">
+        <a href="../index.html"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1079036319184978120/logo2.png" style="width:100%;"></a>
+    </div>
+    <br>
+  <h2 style="margin-left: auto;
+        margin-right: auto;
+        width: 52%;
+        text-align: justify;
+      	text-justify: inter-word;
+    	color: white;" class="size1">Vaša izabrana rubrika "Statistika" je još u izradi.</h2>
+        <h2 style="text-align: justify;
+      	text-justify: inter-word;
+    	color: white;" class="size2">Vaša izabrana rubrika "Statistika" je još u izradi.</h2>
+        <h1 style="margin-left: auto;
+        margin-right: auto;
+        width: 52%;
+        text-align: justify;
+      	text-justify: inter-word;
+        color: white;" class="size1">Radovi su i dalje u toku...</h1>
+        <h1 style="text-align: justify;
+      	text-justify: inter-word;
+        color: white;" class="size2">Radovi su i dalje u toku...</h1>
+     	<img src="../images/site/statistika-izgradnja.png" style="margin-left: auto;
+  margin-right: auto;
+  width: 52%;
+  border: 5px solid white;
+  box-shadow: 3px 3px 5px black;" class=size1>
+<img src="../images/site/statistika-izgradnja.png" style="width: 100%;
+	border: 5px solid white;
+  	box-shadow: 3px 3px 5px black;" class="size2">
+    <br><script>
+      const showBoxButton1 = document.getElementById('showBox1');
+      const fixedBox1 = document.getElementById('fixedBox1');
+      const overlay1 = document.getElementById('overlay1');
+
+      showBoxButton1.addEventListener('click', function() {
+        fixedBox1.style.display = 'block';
+        overlay1.style.display = 'block';
+      });
+
+      overlay1.addEventListener('click', function() {
+        fixedBox1.style.display = 'none';
+        overlay1.style.display = 'none';
+      });
+
+      const showBoxButton2 = document.getElementById('showBox2');
+      const fixedBox2 = document.getElementById('fixedBox2');
+      const overlay2 = document.getElementById('overlay2');
+
+      showBoxButton2.addEventListener('click', function() {
+        fixedBox2.style.display = 'block';
+        overlay2.style.display = 'block';
+      });
+
+      overlay2.addEventListener('click', function() {
+        fixedBox2.style.display = 'none';
+        overlay2.style.display = 'none';
+      });
+
+      const showBoxButton3 = document.getElementById('showBox3');
+      const fixedBox3 = document.getElementById('fixedBox3');
+      const overlay3 = document.getElementById('overlay3');
+
+      showBoxButton3.addEventListener('click', function() {
+        fixedBox3.style.display = 'block';
+        overlay3.style.display = 'block';
+      });
+
+      overlay3.addEventListener('click', function() {
+        fixedBox3.style.display = 'none';
+        overlay3.style.display = 'none';
+      });
+      
+      const showBoxButton4 = document.getElementById('showBox4');
+      const fixedBox4 = document.getElementById('fixedBox4');
+      const overlay4 = document.getElementById('overlay4');
+
+      showBoxButton4.addEventListener('click', function() {
+        fixedBox4.style.display = 'block';
+        overlay4.style.display = 'block';
+      });
+
+      overlay4.addEventListener('click', function() {
+        fixedBox4.style.display = 'none';
+        overlay4.style.display = 'none';
+      });
+      
+      const showBoxButton5 = document.getElementById('showBox5');
+      const fixedBox5 = document.getElementById('fixedBox5');
+      const overlay5 = document.getElementById('overlay5');
+
+      showBoxButton5.addEventListener('click', function() {
+        fixedBox5.style.display = 'block';
+        overlay5.style.display = 'block';
+      });
+
+      overlay5.addEventListener('click', function() {
+        fixedBox5.style.display = 'none';
+        overlay5.style.display = 'none';
+      });
+      
+      const showBoxButton6 = document.getElementById('showBox6');
+      const fixedBox6 = document.getElementById('fixedBox6');
+      const overlay6 = document.getElementById('overlay6');
+
+      showBoxButton6.addEventListener('click', function() {
+        fixedBox6.style.display = 'block';
+        overlay6.style.display = 'block';
+      });
+
+      overlay6.addEventListener('click', function() {
+        fixedBox6.style.display = 'none';
+        overlay6.style.display = 'none';
+      });
+      
+      const showBoxButton7 = document.getElementById('showBox7');
+      const fixedBox7 = document.getElementById('fixedBox7');
+      const overlay7 = document.getElementById('overlay7');
+
+      showBoxButton7.addEventListener('click', function() {
+        fixedBox7.style.display = 'block';
+        overlay7.style.display = 'block';
+      });
+
+      overlay7.addEventListener('click', function() {
+        fixedBox7.style.display = 'none';
+        overlay7.style.display = 'none';
+      });
+      
+      const showBoxButton8 = document.getElementById('showBox8');
+      const fixedBox8 = document.getElementById('fixedBox8');
+      const overlay8 = document.getElementById('overlay8');
+
+      showBoxButton8.addEventListener('click', function() {
+        fixedBox8.style.display = 'block';
+        overlay8.style.display = 'block';
+      });
+
+      overlay8.addEventListener('click', function() {
+        fixedBox8.style.display = 'none';
+        overlay8.style.display = 'none';
+      });
+      
+      const showBoxButton9 = document.getElementById('showBox9');
+      const fixedBox9 = document.getElementById('fixedBox9');
+      const overlay9 = document.getElementById('overlay9');
+
+      showBoxButton9.addEventListener('click', function() {
+        fixedBox9.style.display = 'block';
+        overlay9.style.display = 'block';
+      });
+
+      overlay9.addEventListener('click', function() {
+        fixedBox9.style.display = 'none';
+        overlay9.style.display = 'none';
+      });
+      
+      const showBoxButton10 = document.getElementById('showBox10');
+      const fixedBox10 = document.getElementById('fixedBox10');
+      const overlay10 = document.getElementById('overlay10');
+
+      showBoxButton10.addEventListener('click', function() {
+        fixedBox10.style.display = 'block';
+        overlay10.style.display = 'block';
+      });
+
+      overlay10.addEventListener('click', function() {
+        fixedBox10.style.display = 'none';
+        overlay10.style.display = 'none';
+      });
+      
+      const showBoxButton11 = document.getElementById('showBox11');
+      const fixedBox11 = document.getElementById('fixedBox11');
+      const overlay11 = document.getElementById('overlay11');
+
+      showBoxButton11.addEventListener('click', function() {
+        fixedBox11.style.display = 'block';
+        overlay11.style.display = 'block';
+      });
+
+      overlay11.addEventListener('click', function() {
+        fixedBox11.style.display = 'none';
+        overlay11.style.display = 'none';
+      });
+      
+      const showBoxButton12 = document.getElementById('showBox12');
+      const fixedBox12 = document.getElementById('fixedBox12');
+      const overlay12 = document.getElementById('overlay12');
+
+      showBoxButton12.addEventListener('click', function() {
+        fixedBox12.style.display = 'block';
+        overlay12.style.display = 'block';
+      });
+
+      overlay12.addEventListener('click', function() {
+        fixedBox12.style.display = 'none';
+        overlay12.style.display = 'none';
+      });
+      
+      const showBoxButton13 = document.getElementById('showBox13');
+      const fixedBox13 = document.getElementById('fixedBox13');
+      const overlay13 = document.getElementById('overlay13');
+
+      showBoxButton13.addEventListener('click', function() {
+        fixedBox13.style.display = 'block';
+        overlay13.style.display = 'block';
+      });
+
+      overlay13.addEventListener('click', function() {
+        fixedBox13.style.display = 'none';
+        overlay13.style.display = 'none';
+      });
+      
+      const showBoxButton14 = document.getElementById('showBox14');
+      const fixedBox14 = document.getElementById('fixedBox14');
+      const overlay14 = document.getElementById('overlay14');
+
+      showBoxButton14.addEventListener('click', function() {
+        fixedBox14.style.display = 'block';
+        overlay14.style.display = 'block';
+      });
+
+      overlay14.addEventListener('click', function() {
+        fixedBox14.style.display = 'none';
+        overlay14.style.display = 'none';
+      });
+      
+      const showBoxButton15 = document.getElementById('showBox15');
+      const fixedBox15 = document.getElementById('fixedBox15');
+      const overlay15 = document.getElementById('overlay15');
+
+      showBoxButton15.addEventListener('click', function() {
+        fixedBox15.style.display = 'block';
+        overlay15.style.display = 'block';
+      });
+
+      overlay15.addEventListener('click', function() {
+        fixedBox15.style.display = 'none';
+        overlay15.style.display = 'none';
+      });
+      
+      const showBoxButton16 = document.getElementById('showBox16');
+      const fixedBox16 = document.getElementById('fixedBox16');
+      const overlay16 = document.getElementById('overlay16');
+
+      showBoxButton16.addEventListener('click', function() {
+        fixedBox16.style.display = 'block';
+        overlay16.style.display = 'block';
+      });
+
+      overlay16.addEventListener('click', function() {
+        fixedBox16.style.display = 'none';
+        overlay16.style.display = 'none';
+      });
+      
+      const showBoxButton17 = document.getElementById('showBox17');
+      const fixedBox17 = document.getElementById('fixedBox17');
+      const overlay17 = document.getElementById('overlay17');
+
+      showBoxButton17.addEventListener('click', function() {
+        fixedBox17.style.display = 'block';
+        overlay17.style.display = 'block';
+      });
+
+      overlay17.addEventListener('click', function() {
+        fixedBox17.style.display = 'none';
+        overlay17.style.display = 'none';
+      });
+      
+      const showBoxButton18 = document.getElementById('showBox18');
+      const fixedBox18 = document.getElementById('fixedBox18');
+      const overlay18 = document.getElementById('overlay18');
+
+      showBoxButton18.addEventListener('click', function() {
+        fixedBox18.style.display = 'block';
+        overlay18.style.display = 'block';
+      });
+
+      overlay18.addEventListener('click', function() {
+        fixedBox18.style.display = 'none';
+        overlay18.style.display = 'none';
+      });
+      
+      const showBoxButton19 = document.getElementById('showBox19');
+      const fixedBox19 = document.getElementById('fixedBox19');
+      const overlay19 = document.getElementById('overlay19');
+
+      showBoxButton19.addEventListener('click', function() {
+        fixedBox19.style.display = 'block';
+        overlay19.style.display = 'block';
+      });
+
+      overlay19.addEventListener('click', function() {
+        fixedBox19.style.display = 'none';
+        overlay19.style.display = 'none';
+      });
+      
+      const showBoxButton20 = document.getElementById('showBox20');
+      const fixedBox20 = document.getElementById('fixedBox20');
+      const overlay20 = document.getElementById('overlay20');
+
+      showBoxButton20.addEventListener('click', function() {
+        fixedBox20.style.display = 'block';
+        overlay20.style.display = 'block';
+      });
+
+      overlay20.addEventListener('click', function() {
+        fixedBox20.style.display = 'none';
+        overlay20.style.display = 'none';
+      });
+      
+      const showBoxButton21 = document.getElementById('showBox21');
+      const fixedBox21 = document.getElementById('fixedBox21');
+      const overlay21 = document.getElementById('overlay21');
+
+      showBoxButton21.addEventListener('click', function() {
+        fixedBox21.style.display = 'block';
+        overlay21.style.display = 'block';
+      });
+
+      overlay21.addEventListener('click', function() {
+        fixedBox21.style.display = 'none';
+        overlay21.style.display = 'none';
+      });
+      
+      const showBoxButton22 = document.getElementById('showBox22');
+      const fixedBox22 = document.getElementById('fixedBox22');
+      const overlay22 = document.getElementById('overlay22');
+
+      showBoxButton22.addEventListener('click', function() {
+        fixedBox22.style.display = 'block';
+        overlay22.style.display = 'block';
+      });
+
+      overlay22.addEventListener('click', function() {
+        fixedBox22.style.display = 'none';
+        overlay22.style.display = 'none';
+      });
+      
+      const showBoxButton23 = document.getElementById('showBox23');
+      const fixedBox23 = document.getElementById('fixedBox23');
+      const overlay23 = document.getElementById('overlay23');
+
+      showBoxButton23.addEventListener('click', function() {
+        fixedBox23.style.display = 'block';
+        overlay23.style.display = 'block';
+      });
+
+      overlay23.addEventListener('click', function() {
+        fixedBox23.style.display = 'none';
+        overlay23.style.display = 'none';
+      });
+      
+      const showBoxButton24 = document.getElementById('showBox24');
+      const fixedBox24 = document.getElementById('fixedBox24');
+      const overlay24 = document.getElementById('overlay24');
+
+      showBoxButton24.addEventListener('click', function() {
+        fixedBox24.style.display = 'block';
+        overlay24.style.display = 'block';
+      });
+
+      overlay24.addEventListener('click', function() {
+        fixedBox24.style.display = 'none';
+        overlay24.style.display = 'none';
+      });
+      
+      const showBoxButton25 = document.getElementById('showBox25');
+      const fixedBox25 = document.getElementById('fixedBox25');
+      const overlay25 = document.getElementById('overlay25');
+
+      showBoxButton25.addEventListener('click', function() {
+        fixedBox25.style.display = 'block';
+        overlay25.style.display = 'block';
+      });
+
+      overlay25.addEventListener('click', function() {
+        fixedBox25.style.display = 'none';
+        overlay25.style.display = 'none';
+      });
+      
+      const showBoxButton26 = document.getElementById('showBox26');
+      const fixedBox26 = document.getElementById('fixedBox26');
+      const overlay26 = document.getElementById('overlay26');
+
+      showBoxButton26.addEventListener('click', function() {
+        fixedBox26.style.display = 'block';
+        overlay26.style.display = 'block';
+      });
+
+      overlay26.addEventListener('click', function() {
+        fixedBox26.style.display = 'none';
+        overlay26.style.display = 'none';
+      });
+      
+      const showBoxButton27 = document.getElementById('showBox27');
+      const fixedBox27 = document.getElementById('fixedBox27');
+      const overlay27 = document.getElementById('overlay27');
+
+      showBoxButton27.addEventListener('click', function() {
+        fixedBox27.style.display = 'block';
+        overlay27.style.display = 'block';
+      });
+
+      overlay27.addEventListener('click', function() {
+        fixedBox27.style.display = 'none';
+        overlay27.style.display = 'none';
+      });
+    </script>
+  <iframe src="../copyright.html" frameborder="0" style="margin-left: auto; margin-right: auto; width: 100%;"></iframe>
+
+</div>
+</body></html>
