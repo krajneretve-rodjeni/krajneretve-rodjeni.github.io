@@ -313,6 +313,320 @@ h2 {
 
     <div id="fixedBox2" class="fixedBox" style="display: none;">
     <h4>Opreznost Veležovci</h4>
+    <h2>Velež-Odred 2:<html><head>
+    <title>1955-56 | KNR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/988123060349579354/1078702126810812436/271451405_104300318809737_531087692418489057_n.png" type="image/png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+      body {
+            background-image: url('../images/site/background.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 16px;
+        }
+.credits {
+    text-align: center;
+    color: white;
+}
+    .warning {
+    display: inline-block;
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 10px;
+}
+    .warning b {
+    color: red;
+}
+      .fixedBox {
+        position: fixed;
+        top: 20%;
+        left: 25%;
+        width: 50%;
+        height: 60%;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 10px;
+        z-index: 9999;
+        display: none;
+        overflow: auto;
+        padding: 9px;
+      }
+	    @media screen and (max-width: 660px) {
+            .fixedBox {
+            	left: 12.5%;
+                width: 75%;
+            }
+        }
+
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 9998;
+        display: none;
+      }
+    .banner {
+    background-image: url('../images/site/header.png');
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+        position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  }
+    @media screen and (max-width: 660px) {
+            .banner {
+                display: none;
+            }
+        }
+        .logo2 {
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+    display: none;
+}
+
+    .logo2:hover {
+    opacity: 0.5;
+}
+  @media screen and (max-width: 660px) {
+            .logo2 {
+                display: block;
+            }
+        }
+        .size1 {
+        border: none;
+            display: none; 
+        }
+
+        @media screen and (min-width: 661px) {
+            .size1 {
+                display: block;
+            }
+        }
+        .size2 {
+        	border: none;
+            display: none; 
+        }
+
+        @media screen and (max-width: 660px) {
+            .size2 {
+                display: block;
+            }
+        }
+    .content {
+    position: relative;
+    z-index: 2;
+  }
+    .logo {
+    margin-top:7px;
+    margin-left:20px;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+    .logo:hover {
+    opacity: 0.5;
+}
+    .headercontent {
+    height:30px;
+    margin-top:11px;
+    margin-right:20px;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+    .headercontent:hover {
+    opacity: 0.5;
+}
+.players {
+  background-color: #F7F7F7;
+  width: 600px;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: absolute;
+  padding: 9px;
+  display: none;
+}
+  
+span:hover + .players {
+  display: block;
+}
+.imagetable {
+    display: block;
+    margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+  
+span:hover + .imagetable {
+  display: block;
+}
+.scorers {
+  background-color: #F7F7F7;
+  white-space: nowrap;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: absolute;
+  right: 39%;
+  padding: 0px;
+  display: none;
+  text-align: left;
+}
+  
+span:hover + .scorers {
+  display: block;
+}
+    @media screen and (max-width: 660px) {
+ 				.scorers {
+        			right: auto;
+                    left: 5%
+    					}
+					}
+    .img-with-text {
+    text-align: center;
+    font-size: 14px;
+    width: 35%;
+        float: right;
+}
+
+.img-with-text img {
+    display: block;
+    margin: 0 auto;
+}
+    h1 {
+        font-family: 'Trebuchet MS', sans-serif;
+        text-align: center;
+    }
+        .table-container {
+            display: flex;
+            flex-direction: column;
+            margin-left: auto;
+            margin-right: auto;
+            width: 98%;
+            }
+            @media screen and (min-width: 661px) {
+ 				.table-container {
+        			width: 75%;
+    					}
+					}
+        .table-row {
+            display: flex;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+        .table-cell {
+            flex: 2;
+            padding: 8px;
+        }
+        .table-row.header {
+            background-color: #D84B4B;
+            color: #fff;
+            font-weight: bold;
+        }
+        .scorerstable {
+            margin: right;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    .scorerstable .th, .td {
+      padding: 0px;
+      border-bottom: 1px solid #ddd;
+    }
+    .scorerstable .th {
+      background-color: #D84B4B;
+      color: white;
+    }
+    .sortable {
+            margin: 0 auto;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    .sortable th, td {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+    .sortable th {
+      background-color: #D84B4B;
+      color: white;
+    }
+    .finaltable {
+        display: block;
+        margin-top: 1%;
+        margin-down: 1%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+    }
+    .column {
+  float: left;
+  width: 50%;
+  padding: 5%;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+h2 {
+    margin-top: 1px; 
+}
+    .signature {
+        text-align: right;
+    }
+    </style>
+  </head>
+  <body><div id="fixedBox" style="display: none;">
+      <p>Click anywhere outside of this box to hide it.</p>
+    </div>
+
+    <div id="overlay" style="display: none;"></div>
+  
+  <div class="banner"><a href="../index.html"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1079036319184978120/logo2.png" class="logo"></a><a href="../statistika.html"><img src="../images/site/statistika.png" class="headercontent" align="right"></a><a href="../protivnici/protivnici.html"><img src="../images/site/protivnici.png" class="headercontent" align="right"></a><a href="../kalendar/kalendar.html"><img src="../images/site/kalendar.png" class="headercontent" align="right"></a><a href="../abecedarnik/abecedarnik.html"><img src="../images/site/abecedarnik.png" class="headercontent" align="right"></a></div>
+  <div class="container">
+    
+    <br>
+    <br>
+    <div class="logo2">
+        <a href="../index.html"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1079036319184978120/logo2.png" style="width:100%;"></a>
+    </div>
+    <br>
+  <div class="panel panel-default">
+    <div class="panel-body"><div class="img-with-text size1"><img src="../images/historical/Velež%201955-56.png" width="100%"><p><i>Stoje: Haldun Hrvić, Gordan Irović, Anton Bolfek, Vlado Slišković, Dušan Rukavina, Vlado Zelenika<br>Čuče: Muhamed Mujić, Kruno Radiljević, Zejnil Selimotić, Hamdija Ćemalović, Mensud Dilberović</i></p></div><div class="size2" style="text-align: center;"><img src="../images/historical/Velež%201955-56.png" width="100%"><p><i>Stoje: Haldun Hrvić, Gordan Irović, Anton Bolfek, Vlado Slišković, Dušan Rukavina, Vlado Zelenika<br>Čuče: Muhamed Mujić, Kruno Radiljević, Zejnil Selimotić, Hamdija Ćemalović, Mensud Dilberović</i></p></div><h1>Sezona 1955-56</h1>
+
+    
+    
+    
+    <h3><i>Uskoro na ovoj stranici:<li>Rezime sezone</li><li>Protokol (zapisnik) utakmica</li><li>Detaljni izvještaji sa terena</li></i></h3><div id="fixedBox1" class="fixedBox" style="display: none;">
+    <h2>Dobar početak</h2>
+    <h4>„Velež” — „Budućnost” 5:0 (2:0)</h4>
+    <p>Već u drugoj minuti »Velež« postiže gol. Akcija je počela od Radiljevića. Loptu je vrlo lijepo dodao Selimotiću, a ovaj još ljepše Zeleniki, koji je izvanrednim šutem šalje u mrežu. To je bila brza i uspjela akcija. Poslije toga se vjerovalo da će gosti položiti oružje. Ali do toga nije odmah došlo. Oni su počeli da izvode protunapade. U 8 minuti, Irović je bio prisiljen da boksovanjem izbaci loptu u polje. Malo kasnije Darmanović I uspio je da prodre do pred sam gol, ali je lopta prošla više stative. To je bila idealna prilika za postizanje gola. Tek pred kraj prvog dijela igre Hrvić povisuje rezultat. On je iskoristio grešku protivničke odbrane.</p>
+    <p>U tom dijelu igre gosti su bili donekle ravnopravni i na momente nadmoćniji. U polju su dobro igrali, ali navala je komplikovala svaku zrelu akciju, što je opet iskoristila odbrana domaćih i na vrijeme je intervenisala.</p>
+    <p>Drugo poluvrijeme pripada »Veležu«. Gosti su bili primorani da se povuku i brane. Izgledalo je kao da se igra na jedan gol. I pored toga »Veležova« navala nije iskoristila sve one povoljne šanse. Postigli su još tri gola, ali to ne znači da su igrali najbolje. Mnogo se griješilo. Da su se malo više zalagali gosti bi doživjeli još veću katastrofu. Treći gol postigao je Mujić iz blizine. Malo kasnije se pružila prilika da Selimotić I postigne gol, ali je oklijevao. U 65 minuti Zelenika je izveo pravu egzibiciju. Uspio je da predribla 4—5 protivničkih igrača i onda je oštro šutirao po zemlji, između igrača i lopta je zatresla mrežu. Iza toga Hrvić je loptu dodao Zeleniki, a ovaj bez oklijevanja jako tuče i povisuje rezultat.</p>
+    <p>Na nedjeljnoj utakmici »Velež« nije igrao prema svojim mogućnostima. I pored toga, svojom jednostavnom i efikasnom igrom zasluženo je pobijedio. Od gostiju smo više očekivali. Oni su igrali slabo i nismo mogli opaziti izvjestan napredak od prošle godine, već naprotiv nazadovanje. Nije to ona ranija ekipa koja je bila ravnopravna i čak bolja.</p>
+    <p>Kod domaćih istakli su se: Selimotić I i Zelenika, a kod gostiju Vasović, Petrović i Darmanović I.</p>
+    <p>Sudija Stefanović nije imao mnogo posla.</p>
+    <div class="signature"><b>Š. A.</b><br><i>Sloboda</i></div>
+      <div class="size1" style="margin-left: auto; margin-right: auto; width: 60%;"><img src="../images/site/table/tab1954-08-29.png" width="100%"></div>
+      <div class="size2"><img src="../images/site/table/tab1954-08-29.png" width="100%"></div>
+    </div>
+
+    <div id="overlay1" class="overlay" style="display: none;"></div>
+
+    <div id="fixedBox2" class="fixedBox" style="display: none;">
+    <h4>Opreznost Veležovci</h4>
     <h2>Velež-Odred 2:1(1:1)</h2>
     <p>I u posljednjem susretu Velež je odnio tijesnu, ali vrijednu pobjedu. To je osma pobjeda unazad dva mjeseca. Za isto vrijeme nije doživio ni jedan poraz. Odlično je počeo i nadamo se da će nastaviti s nizanjem pobjeda.</p>
     <p>U Ljubljani je Velež nastupio sa nešto izmjenjenim timom. Momić je igrao na krilu, dok su ostali igrali na svojim mjestima.</p>
@@ -829,50 +1143,50 @@ h2 {
             <div class="table-cell size1" style="text-align: right; flex: 1.1;">9,000</div>
         </div>
         <div class="table-row">
-            <div class="table-cell size1" style="flex: 1.7;">15.5.1955.</div>
-            <div class="table-cell size2">15.5.1955.</div>
-            <div class="table-cell"><span>FK Zenica</span>
-<div class="players">ZENICA: Tomanović, Pezer, Jaroš, Sarajlić, Mujkić, Ljubanić, Udovičić, Galić, Tarabar, Brdarević, Varešanović<br>VELEŽ: Irović, Dilberović, Rukavina, Z. Selimotić, Momić, Radiljević, Slišković, Mujić, Bolfek, Hrvić, Ćišić</div></div>
-            <div class="table-cell size1">Blatuša</div>
-            <div class="table-cell" style="text-align: center; flex: 1.2;"><span>0 - 0</span></div>
-            <div class="table-cell" style="text-align: center; flex: 1; background-color: #FFF2CC;" id="showBox14">N</div>
-            <div class="table-cell size1" style="text-align: right; flex: 1.1;">4,500</div>
-        </div>
-        <div class="table-row">
-            <div class="table-cell size1" style="flex: 1.7;">22.5.1955.</div>
-            <div class="table-cell size2">22.5.1955.</div>
-            <div class="table-cell"><span>Napredak Kruševac</span><div class="players">VELEŽ: Irović, Dilberović, Rukavina, Ćemalović, Momić, Radiljević, Slišković, Mujić, Bolfek, Hrvić, Ćišić<br>NAPREDAK: Stepić, Vuković, Pantić, Ristić, Vulić, Lj. Petrović, Spasić, Stefanović, Durković, M. Petrović, Jovčić</div></div>
+            <div class="table-cell size1" style="flex: 1.7;">4.3.1956.</div>
+            <div class="table-cell size2">4.3.1956.</div>
+            <div class="table-cell"><span>Radnički Beograd</span>
+</div>
             <div class="table-cell size1">Staro Veležovo</div>
-            <div class="table-cell" style="text-align: center; flex: 1.2;"><span>1 - 0</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Bolfek 35'</td><td>1-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀</td></tr></tbody></table></div></div>
-            <div class="table-cell" style="text-align: center; flex: 1; background-color: #D9EAD3;" id="showBox15">P</div>
-            <div class="table-cell size1" style="text-align: right; flex: 1.1;">4,000</div>
+            <div class="table-cell" style="text-align: center; flex: 1.2;"><span>3 - 1</span></div>
+            <div class="table-cell" style="text-align: center; flex: 1; background-color: #D9EAD3;" id="showBox14">P</div>
+            <div class="table-cell size1" style="text-align: right; flex: 1.1;">8,000</div>
         </div>
         <div class="table-row">
-            <div class="table-cell size1" style="flex: 1.7;">29.5.1955.</div>
-            <div class="table-cell size2">29.5.1955.</div>
-            <div class="table-cell"><span>Mačva Šabac</span><div class="players">MAČVA: Milutinović, Manojlović, Stanković, Kapamadžija, Stokanović, Sl. Stefanović, Ivoš, D. Stefanović, Kovačević, Vilotić, Obradović<br>VELEŽ: Irović, Dilberović, Rukavina, Slišković, Bolfek, Radiljević, S. Selimotić, Mujić, Zelenika, Hrvić, Ćišić</div></div>
-            <div class="table-cell size1">Gradski stadion</div>
-            <div class="table-cell" style="text-align: center; flex: 1.2;"><span>0 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td><td>0-1</td><td>Sl. Stefanović 62'</td></tr></tbody></table></div></div>
+            <div class="table-cell size1" style="flex: 1.7;">11.3.1956.</div>
+            <div class="table-cell size2">11.3.1956.</div>
+            <div class="table-cell"><span>Crvena zvezda</span></div>
+            <div class="table-cell size1">Staro Veležovo</div>
+            <div class="table-cell" style="text-align: center; flex: 1.2;"><span>1 - 3</span></div>
+            <div class="table-cell" style="text-align: center; flex: 1; background-color: #F4CCCC;" id="showBox15">I</div>
+            <div class="table-cell size1" style="text-align: right; flex: 1.1;">13,000</div>
+        </div>
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.7;">17.3.1956.</div>
+            <div class="table-cell size2">17.3.1956.</div>
+            <div class="table-cell"><span>BSK Beograd</span></div>
+            <div class="table-cell size1">Stadion JNA</div>
+            <div class="table-cell" style="text-align: center; flex: 1.2;"><span>0 - 1</span></div>
             <div class="table-cell" style="text-align: center; flex: 1; background-color: #F4CCCC;" id="showBox16">I</div>
-            <div class="table-cell size1" style="text-align: right; flex: 1.1;">2,500</div>
+            <div class="table-cell size1" style="text-align: right; flex: 1.1;">8,000</div>
         </div>
         <div class="table-row">
-            <div class="table-cell size1" style="flex: 1.7;">5.6.1955.</div>
-            <div class="table-cell size2">5.6.1955.</div>
-            <div class="table-cell"><span>Lovćen Cetinje</span><div class="players">VELEŽ: Irović, Bolfek, Rukavina, Ćemalović, Momić, Radiljević, S. Selimotić, Mujić, Zelenika, Hrvić, Ćišić<br>LOVĆEN: Radović, Vujović, Stojanović, Ivanović, Lubarda, Mandić, Pravilović, Vrbica, Pajević, Jabučanin, Kusovac</div></div>
+            <div class="table-cell size1" style="flex: 1.7;">25.3.1956.</div>
+            <div class="table-cell size2">25.3.1956.</div>
+            <div class="table-cell"><span>Vojvodina Novi Sad</span></div>
             <div class="table-cell size1">Staro Veležovo</div>
-            <div class="table-cell" style="text-align: center; flex: 1.2;"><span>4 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Hrvić 12'</td><td>1-0</td><td></td></tr><tr><td>Zelenika 22' (p)</td><td>2-0</td><td></td></tr><tr><td>Zelenika 43' (p)</td><td>3-0</td><td></td></tr><tr><td></td><td>3-1</td><td>Pravilović 47'</td></tr><tr><td>Mujić 71'</td><td>4-1</td><td></td></tr></tbody></table></div></div>
-            <div class="table-cell" style="text-align: center; flex: 1; background-color: #D9EAD3;" id="showBox17">P</div>
-            <div class="table-cell size1" style="text-align: right; flex: 1.1;">4,500</div>
+            <div class="table-cell" style="text-align: center; flex: 1.2;"><span>1 - 1</span></div>
+            <div class="table-cell" style="text-align: center; flex: 1; background-color: #FFF2CC;" id="showBox17">N</div>
+            <div class="table-cell size1" style="text-align: right; flex: 1.1;">6,000</div>
         </div>
         <div class="table-row">
-            <div class="table-cell size1" style="flex: 1.7;">12.6.1955.</div>
-            <div class="table-cell size2">12.6.1955.</div>
-            <div class="table-cell"><span>Rabotnički Skoplje</span><div class="players">RABOTNIČKI: Gičevski, Jovanovski, Kokinovski <font color="990000">■</font> 67', Trajčev, Bačvarov, Petrovski, Markovski, Elzeser, Vučinovski, Radevski, Ibrahimovski<br>VELEŽ: Irović, Bolfek, Rukavina, Ćemalović, Momić, Dilberović, S. Selimotić, Mujić, Musa, Hrvić, Ćišić</div></div>
-            <div class="table-cell size1">Gradski park</div>
-            <div class="table-cell" style="text-align: center; flex: 1.2;"><span>2 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Musa 4'</td><td>1-0</td><td></td></tr><tr><td>Mujić 46'</td><td>2-0</td><td></td></tr><tr><td></td><td>2-1</td><td>Petkovski 83'</td></tr></tbody></table></div></div>
+            <div class="table-cell size1" style="flex: 1.7;">8.4.1956.</div>
+            <div class="table-cell size2">8.4.1956.</div>
+            <div class="table-cell"><span>Proleter Osijek</span></div>
+            <div class="table-cell size1">Kraj Drave</div>
+            <div class="table-cell" style="text-align: center; flex: 1.2;"><span>2 - 1</span></div>
             <div class="table-cell" style="text-align: center; flex: 1; background-color: #D9EAD3;" id="showBox18">P</div>
-            <div class="table-cell size1" style="text-align: right; flex: 1.1;">2,000</div>
+            <div class="table-cell size1" style="text-align: right; flex: 1.1;">7,500</div>
         </div>
         
         
