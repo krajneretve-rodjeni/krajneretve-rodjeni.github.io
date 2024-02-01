@@ -64,7 +64,7 @@
     height: 50px;
     background-size: cover;
     background-position: center;
-        position: absolute;
+        position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -116,6 +116,7 @@
     z-index: 2;
   }
     .logo {
+    position: fixed;
     margin-top:7px;
     margin-left:20px;
     opacity: 1;
@@ -126,9 +127,16 @@
     opacity: 0.5;
 }
     .headercontent {
+    position: fixed;
     height:30px;
     margin-top:11px;
     margin-right:20px;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+    .headercontent:hover {
+    opacity: 0.5;
 }
 .players {
   background-color: #F7F7F7;
@@ -272,21 +280,6 @@ h2 {
         cursor: pointer;
         padding: 0px;
     }
-    .rubric {
-      position: absolute;
-      margin-top: 11px;
-      margin-left: 17%;
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-    }
-
-    .rubric:first-child {
-      opacity: 1;
-    }
-    @media (min-width: 1400px) {
-    .rubric {
-      display: none;
-    }
     </style>
   </head>
   <body><div id="fixedBox" style="display: none;">
@@ -295,7 +288,7 @@ h2 {
 
     <div id="overlay" style="display: none;"></div>
   
-  <div class="banner"><a href="../index.html"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1079036319184978120/logo2.png" class="logo"></a><a href="../statistika.html"><img src="https://krajneretve-rodjeni.github.io/images/site/statistika.png" class="rubric" align="right"></a><a href="../protivnici/protivnici.html"><img src="https://krajneretve-rodjeni.github.io/images/site/protivnici.png" class="rubric" align="right"></a><a href="../kalendar/kalendar.html"><img src="https://krajneretve-rodjeni.github.io/images/site/kalendar.png" class="rubric" align="right"></a><a href="../abecedarnik/abecedarnik.html"><img src="https://krajneretve-rodjeni.github.io/images/site/abecedarnik.png" class="rubric" align="right"></a></div>
+  <div class="banner"><a href="../index.html"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1079036319184978120/logo2.png" class="logo"></a><a href="../statistika.html"><img src="../images/site/statistika.png" class="headercontent" align="right"></a><a href="../protivnici/protivnici.html"><img src="../images/site/protivnici.png" class="headercontent" align="right"></a><a href="../kalendar/kalendar.html"><img src="../images/site/kalendar.png" class="headercontent" align="right"></a><a href="../abecedarnik/abecedarnik.html"><img src="../images/site/abecedarnik.png" class="headercontent" align="right"></a></div>
   <div class="container">
     
     <br class="size1">
@@ -1602,7 +1595,6 @@ h2 {
         overlay27.style.display = 'none';
       });
     </script>
-    <script src="rubric.js"></script>
   <iframe src="../copyright.html" frameborder="0" style="margin-left: auto; margin-right: auto; width: 100%;"></iframe>
 
 </div>
