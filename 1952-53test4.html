@@ -291,7 +291,6 @@ h2 {
       overflow: hidden;
       position: relative;
       float: right;
-      display: none;
     }
 
     .rubric {
@@ -300,9 +299,10 @@ h2 {
       position: absolute;
       transition: opacity 0.5s ease-in-out;
       opacity: 0;
+      display: none;
     }
 		@media screen and (min-width: 830px) and (max-width: 1399px) {
- 				#rubric-container {
+ 				.rubric {
         			display: block;
     					}
 					}
