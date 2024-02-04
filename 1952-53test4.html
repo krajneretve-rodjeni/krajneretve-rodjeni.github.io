@@ -64,7 +64,7 @@
     height: 50px;
     background-size: cover;
     background-position: center;
-        position: fixed;
+        position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -116,7 +116,6 @@
     z-index: 2;
   }
     .logo {
-    position: fixed;
     margin-top:7px;
     margin-left:20px;
     opacity: 1;
@@ -127,17 +126,22 @@
     opacity: 0.5;
 }
     .headercontent {
-    position: fixed;
     height:30px;
     margin-top:11px;
     margin-right:20px;
     opacity: 1;
     transition: opacity 0.2s ease-in-out;
+    display: none;
 }
 
     .headercontent:hover {
     opacity: 0.5;
 }
+@media screen and (min-width: 1400px) {
+ 				.header-content {
+        			display: block;
+    					}
+					}
 .players {
   background-color: #F7F7F7;
   width: 600px;
@@ -280,6 +284,31 @@ h2 {
         cursor: pointer;
         padding: 0px;
     }
+    #rubric-container {
+      margin-top: 8px;
+      width: 303px;
+      height: 37px;
+      overflow: hidden;
+      position: relative;
+      float: right;
+      display: none;
+    }
+
+    .rubric {
+      width: auto;
+      height: 100%;
+      position: absolute;
+      transition: opacity 0.5s ease-in-out;
+      opacity: 0;
+    }
+		@media screen and (min-width: 830px) and (max-width: 1399px) {
+ 				#rubric-container {
+        			display: block;
+    					}
+					}
+    .visible {
+      opacity: 1;
+    }
     </style>
   </head>
   <body><div id="fixedBox" style="display: none;">
@@ -289,6 +318,12 @@ h2 {
     <div id="overlay" style="display: none;"></div>
   
   <div class="banner"><a href="../index.html"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1079036319184978120/logo2.png" class="logo"></a><a href="../statistika.html"><img src="../images/site/statistika.png" class="headercontent" align="right"></a><a href="../protivnici/protivnici.html"><img src="../images/site/protivnici.png" class="headercontent" align="right"></a><a href="../kalendar/kalendar.html"><img src="../images/site/kalendar.png" class="headercontent" align="right"></a><a href="../abecedarnik/abecedarnik.html"><img src="../images/site/abecedarnik.png" class="headercontent" align="right"></a></div>
+  <div id="rubric-container" class="blur">
+  <a href="../abecedarnik.html"><img class="rubric visible" src="https://krajneretve-rodjeni.github.io/images/site/abecedarnik.png"></a>
+  <a href="../kalendar.html"><img class="rubric" src="https://krajneretve-rodjeni.github.io/images/site/kalendar.png"></a>
+  <a href="../protivnici.html"><img class="rubric" src="https://krajneretve-rodjeni.github.io/images/site/protivnici.png"></a>
+  <a href="../statistika.html"><img class="rubric" src="https://krajneretve-rodjeni.github.io/images/site/statistika.png"></a>
+</div>
   <div class="container">
     
     <br class="size1">
@@ -1595,6 +1630,7 @@ h2 {
         overlay27.style.display = 'none';
       });
     </script>
+    <script src="rubric.js"></script>
   <iframe src="../copyright.html" frameborder="0" style="margin-left: auto; margin-right: auto; width: 100%;"></iframe>
 
 </div>
