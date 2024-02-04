@@ -9,5 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const rotationInterval = setInterval(rotateImages, 5000);
+
+    // Initialize the first image to be visible
     images[currentIndex].classList.add('visible');
   });
