@@ -1,10 +1,13 @@
-const images = document.querySelectorAll('.rubric');
-  let currentIndex = 0;
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('.rubric');
+    let currentIndex = 0;
 
-  function rotateImages() {
-    images[currentIndex].style.opacity = 0;
-    currentIndex = (currentIndex + 1) % images.length;
-    images[currentIndex].style.opacity = 1;
-  }
+    function rotateImages() {
+      images[currentIndex].classList.remove('visible');
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.add('visible');
+    }
 
-  const rotationInterval = setInterval(rotateImages, 1000);
+    const rotationInterval = setInterval(rotateImages, 5000);
+    images[currentIndex].classList.add('visible');
+  });
