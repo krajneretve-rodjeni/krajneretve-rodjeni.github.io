@@ -58,7 +58,7 @@
     height: 50px;
     background-size: cover;
     background-position: center;
-        position: absolute;
+        position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -125,8 +125,13 @@
     margin-right:20px;
     opacity: 1;
     transition: opacity 0.2s ease-in-out;
+    display: none;
 }
-
+@media screen and (min-width: 1400px) {
+            .headercontent {
+            	display: block;
+            }
+        }
     .headercontent:hover {
     opacity: 0.5;
 }
@@ -274,7 +279,16 @@ h2 {
 
     <div id="overlay" style="display: none;"></div>
   
-  <div class="banner"><a href="../index.html"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1079036319184978120/logo2.png" class="logo"></a><a href="../statistika.html"><img src="../images/site/statistika.png" class="headercontent" align="right"></a><img src="../images/site/protivnici.png" class="headercontent" align="right"><a href="../kalendar/kalendar.html"><img src="../images/site/kalendar.png" class="headercontent" align="right"></a><a href="../abecedarnik/abecedarnik.html"><img src="../images/site/abecedarnik.png" class="headercontent" align="right"></a></div>
+  <div class="banner"><a href="../index.html"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1079036319184978120/logo2.png" class="logo"></a><a href="../statistika.html"><img src="../images/site/statistika.png" class="headercontent" align="right"></a><img src="../images/site/protivnici.png" class="headercontent" align="right"><a href="../kalendar/kalendar.html"><img src="../images/site/kalendar.png" class="headercontent" align="right"></a><a href="../abecedarnik/abecedarnik.html"><img src="../images/site/abecedarnik.png" class="headercontent" align="right"></a>
+	<div class="dropdown">
+    <img class="dropdown-img" src="../images/site/dropdown-menu.png">
+    <div class="dropdown-content">
+        <a href="../abecedarnik/abecedarnik.html"><img src="../images/site/abecedarnik.png"></a>
+        <a href="../kalendar/kalendar.html"><img src="../images/site/kalendar.png"></a>
+        <a><img src="../images/site/protivnici.png"></a>
+        <a href="../statistika.html"><img src="../images/site/statistika.png"></a>
+    </div>
+	</div></div>
   <div class="container">
     
     <br class="size1">
