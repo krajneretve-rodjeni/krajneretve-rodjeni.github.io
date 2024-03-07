@@ -3,7 +3,7 @@
     <title>1955-56 | KNR</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/988123060349579354/1078702126810812436/271451405_104300318809737_531087692418489057_n.png" type="image/png">
+    <link rel="shortcut icon" href="https://i.imgur.com/XchyWzg.png" type="image/png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
@@ -131,8 +131,13 @@
     margin-right:20px;
     opacity: 1;
     transition: opacity 0.2s ease-in-out;
+        display: none;
 }
-
+@media screen and (min-width: 1410px) {
+            .headercontent {
+            	display: block;
+            }
+        }
     .headercontent:hover {
     opacity: 0.5;
 }
@@ -285,6 +290,57 @@ h2 {
                 width: 50%;
             }
         }
+        .paper {
+        margin-top: auto;
+        margin-bottom: auto;
+        cursor: pointer;
+        padding: 0px;
+    }
+    .dropdown {
+            position: relative;
+            margin-left: auto;
+            margin-right: 10px;
+            float: right;
+            display: none;
+        }
+@media screen and (min-width: 800px) and (max-width: 1409px) {
+            .dropdown {
+                display: block;
+            }
+        }
+        .dropdown-img {
+            width: 100%; 
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(231, 215, 215, 0.5);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 10px;
+            right: 0;
+        }
+
+        .dropdown-content a {
+            padding: 12px 16px;
+            display: block;
+            text-decoration: none;
+            color: #333;
+        }
+    
+        .dropdown-content a:hover {
+            background-color: rgba(239, 215, 147, 0.66);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
     </style>
   </head>
   <body><div id="fixedBox" style="display: none;">
@@ -293,13 +349,21 @@ h2 {
 
     <div id="overlay" style="display: none;"></div>
   
-  <div class="banner"><a href="../index.html"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1079036319184978120/logo2.png" class="logo"></a><a href="../statistika.html"><img src="../images/site/statistika.png" class="headercontent" align="right"></a><a href="../protivnici/protivnici.html"><img src="../images/site/protivnici.png" class="headercontent" align="right"></a><a href="../kalendar/kalendar.html"><img src="../images/site/kalendar.png" class="headercontent" align="right"></a><a href="../abecedarnik/abecedarnik.html"><img src="../images/site/abecedarnik.png" class="headercontent" align="right"></a></div>
+  <div class="banner"><a href="../index.html"><img src="https://i.imgur.com/gbKQfNP.png" class="logo"></a><a href="../statistika.html"><img src="../images/site/statistika.png" class="headercontent" align="right"></a><a href="../protivnici/protivnici.html"><img src="../images/site/protivnici.png" class="headercontent" align="right"></a><a href="../kalendar/kalendar.html"><img src="../images/site/kalendar.png" class="headercontent" align="right"></a><a href="../abecedarnik/abecedarnik.html"><img src="../images/site/abecedarnik.png" class="headercontent" align="right"></a><div class="dropdown">
+    <img class="dropdown-img" src="../images/site/dropdown-menu.png">
+    <div class="dropdown-content">
+        <a href="../abecedarnik/abecedarnik.html"><img src="../images/site/abecedarnik.png"></a>
+        <a href="../kalendar/kalendar.html"><img src="../images/site/kalendar.png"></a>
+        <a href="../protivnici/protivnici.html"><img src="../images/site/protivnici.png"></a>
+        <a href="../statistika.html"><img src="../images/site/statistika.png"></a>
+    </div>
+</div></div>
   <div class="container">
     
     <br class="size1">
     <br>
     <div class="logo2">
-        <a href="../index.html"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1079036319184978120/logo2.png" style="width:100%;"></a>
+        <a href="../index.html"><img src="https://i.imgur.com/gbKQfNP.png" style="width:100%;"></a>
     </div>
     <br>
   <div class="panel panel-default">
@@ -310,7 +374,7 @@ h2 {
     
     
     <h3><i>Uskoro na ovoj stranici:<li>Rezime sezone</li><li>Ekskluzivne slike sa tekmi</li><li>Protokol (zapisnik) utakmica</li><li>Tabele iz kola u kolo</li><li>Detaljni izvještaji sa terena</li></i></h3>
-<br class="size1"><br class="size1"><br class="size1"><br class="size1"><div id="fixedBox1" class="fixedBox" style="display: none;">
+<br class="size1"><br class="size1"><br class="size1"><br class="size1"><div class="warning"><span><b>Napomena o novinskim izvještajima</b></span><div class="players">Da pristupite novinskom izvještaju neke utakmice, kliknite na novinsku agenciju u redu kojem se nalazi utakmica.<br>Izvještaji su odabrani zaviseći od slučaja do slučaja. Ukoliko imamo više izvještaja za utakmicu, biramo nama najduži poznat izvještaj, bez obzira na izvor ili pristranost pisca.<br>Izvještaji su napisani tačno onako kako se nalaze u izdanju novina koje koristimo kao izvor, što može značiti da se u njemu nalaze arhaizmi, štamparske greške i ostale neobične pojave. Odlučili smo sačuvati ove pojave bez popravke kako bi olakšali sebi, i ne ulazili preduboko u "uređivačku politiku". Ipak, ovo je projekat gdje je premal broj ljudi da uredno pregledavaju gramatiku a da se pisanje istih izvještaja ne oduži, tako da je moguće da smo sami napravili određene greške pri "digitalizaciji" sadržaja. Ukoliko ste primjetili takvu grešku, slobodno je prijavite u našim kontaktima.<br>Kao osnovni minimum za pojavu nekog članka na ovoj stranici, moramo znati koji je njen izvor. Ovo mogu biti informativne agencije, novine ili elektronski mediji. Još bolje ako znamo tačno ko je autor izvještaja po imenu i prezimenu. U tom slučaju pišemo ime i prezime bez obzira da li su pripisani po punom imenu ili ne (npr. A. H. će postati Asim HADŽAJLIĆ, i S. Ibrulj će postati Saša IBRULJ.). Ovo naravno samo važi ako znamo "od inače" ko je autor djela. Ako imate informaciju o autoru bilo kojeg članka ili više članaka, također je pošaljite u naše kontakte.<br>Ovaj čitav projekat zavisi od medija na jedan ili na drugi način. Kao takav podložan je autorskim pravima i volje originalnog autora ili agencije zaslužne za štampanje teksta. Ukoliko ne želite vidjeti vaš tekst ili tekst na koji polažete pravo na ovoj stranici, obratite se našim <b>KONTAKTIMA</b>.</div></div><div id="fixedBox1" class="fixedBox" style="display: none;">
     <h2>Dobar start „Veleža”</h2>
     <h4>„Radnički” — „Velež” 2:2 (1:1)</h4>
     <p>»Velež« je propustio veliku šansu. Osamnaest minuta prije završene utakmice, vodio je sa 2:1 i imao je sve izglede da napravi prvo veliko iznenađenje u ovom prvenstvu. Međutim, njegova odbrana, koja je tokom cijele igre bila vrlo požrtvovana, borbena i sigurna, samo je za trenutak ostavila slobodne igrače »Radničkog«, a to je bilo dovoljno za izjednačenje. Bilo je to u 27 minutu drugog dijela igre. Bolfek je skrivio slobodan udarac. Igrači »Veleža« napravili su »zid«. Petaković je oštro šutirao. Lopta je pogodila nekog igrača »Veleža« i ponovo se odbila do Petakovića. Ovaj je odmah šutirao i lopta je odsjela u desnom uglu Irovićevog gola.</p>
@@ -595,7 +659,7 @@ h2 {
     <p><b>2:0</b> — u 23 minuti. Mujić je otpočeo seriju golova, krasnim i preciznim udarcem sa ivice šesnaesterca u sam desni gornji ugao. Majerović je samo pogledom otpratio loptu do cilja.</p>
     <p><b>3:0</b> — trebalo je biti ranije. Selimotić mlađi postigao je efektan gol, poništen na intervenciju međašnog sudije zbog navodnog ofsajda. Mislimo da je sudija u ovom momentu pogriješio . . . »Pravi« treći gol uslijedio je nakon kombinacije Musa — Mujić. Raspoloženom Mujiću trebao je samo kratak trzaj noge i lopta je ušetala u donji lijevi ugao Dinamove mreže.</p>
     <p><b>3:1</b> — Prva ozbiljna greška Bolfeka omogućila je najopasnijem napadaču »plavih« Lipošinoviću da smanji vođstvo domaćih.</p>
-    <p><b>4:1</b> — Poslije pola sata drugog poluvremena, koje je proteklo u laganoj premoći Veleža, Mujić je konnačno odlučio utakmicu, postizanjem trećeg gola. Majerović je bio nemoćan.</p>
+    <p><b>4:1</b> — Poslije pola sata drugog poluvremena, koje je proteklo u laganoj premoći Veleža, Mujić je konačno odlučio utakmicu, postizanjem trećeg gola. Majerović je bio nemoćan.</p>
     <p><b>5:1</b> i <b>6:1</b> nije bilo teško postići. »Grogirani« Dinamo nalazio se na pragu nezapamćene katastrofe. Posljednji zvižduk odličnog sudije Markovića iz Beograda označio je kraj očajničkih napora Zagrebčana za očuvanje rezultata.</p>
     <p>Od Dinama se očekivalo mnogo, a nismo vidjeli — skoro ništa. Nepouzdan čuvar mreže, slabi bekovi, još lošija half - linija, »pimplerska« navala — eto, u toj jednoj rečenici sadržana je kratka »biografija« tima zagrebačkih »plavih«, onakvog kakvog ga je u Mostaru posmatralo oko devet hiljada gledalaca.</p>
     <div class="signature"><b>Asim HADŽAJLIĆ</b><br><i>Sloboda</i></div>
@@ -902,6 +966,248 @@ h2 {
 	
     <div class="table-container table-width">
         <div class="table-row header">
+            <div class="table-cell size1" style="flex: 1.5;">Datum</div>
+            <div class="table-cell size2">Datum</div>
+            <div class="table-cell">Protivnik</div>
+            <div class="table-cell size1">Stadion</div>
+            <div class="table-cell" style="text-align: center; flex: 1;">Rezultat</div>
+            <div class="table-cell size1" style="text-align: center; flex: 0.6;">P,N,I?</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.7;">Posjeta</div>
+        	<div class="table-cell size1" style="text-align: right; flex: 0.8;">Izvještaj</div>
+            <div class="table-cell size2" style="text-align: right; flex: 0.8;">Izvj.</div>
+        </div>
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">31.8.1952.</div>
+            <div class="table-cell size2">31.8.1952.</div>
+            <div class="table-cell"><span>Crvena zvezda</span><div class="players">VELEŽ: Barbarić, Dilberović, Prajo, Borozan, Bolfek, Ćemalović, Slišković, Mujić, Momić, Hrvić, Hudarin<br>ZVEZDA: Lovrić, Stanković, Zeković, Zlatković, Diskić, Đajić, Ognjanov, Mitić, Živanović, Palfi, Vukosavljević</div></div>
+            <div class="table-cell size1">Staro Veležovo</div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>0 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td><td>0-1</td><td>Ognjanov 76'</td></tr></tbody></table></div></div>
+            <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #F4CCCC;">I</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.7;">10,000</div>
+        <div class="table-cell paper" style="text-align: right; flex: 1;" id="showBox1"><img src="../images/site/press/osl.svg" style="width: 90%;"></div></div>
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">14.9.1952.</div>
+            <div class="table-cell size2">14.9.1952.</div>
+            <div class="table-cell"><span>FK Sarajevo</span><div class="players">SARAJEVO: Pejak, Brozović, Biogradlić, Agošton, Švraka, Glavočević, Žigante, Živković, F. Lovrić, Bukvić, Đ. Lovrić<br>VELEŽ: Barbarić, Dilberović, Prajo, Borozan, Bolfek, Ćemalović, Mujić, Momić, Zelenika, Hrvić, Hudarin</div></div>
+            <div class="table-cell size1">Koševo</div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>0 - 2</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td><td>0-1</td><td>F. Lovrić 72'</td></tr><tr><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td><td>0-2</td><td>Đ. Lovrić 88' (p)</td></tr></tbody></table></div></div>
+            <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #F4CCCC;">I</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.7;">12,000</div>
+        <div class="table-cell paper" style="text-align: right; flex: 1;" id="showBox2"><img src="../images/site/press/sloboda.png" style="width: 90%"></div></div>
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">28.9.1952.</div>
+            <div class="table-cell size2">28.9.1952.</div>
+            <div class="table-cell"><span>Hajduk Split</span><div class="players">VELEŽ: Barbarić, Dilberović, Prajo, Borozan, Bolfek, Ćemalović, Mujić, Momić, Radiljević, Hrvić, Hudarin<br>HAJDUK: Beara, Kokeza, D. Grčić, Luštica, Krstulović, S. Grčić, Šenauer, Broketa, Vukas, Matošić, Arapović</div></div>
+            <div class="table-cell size1">Staro Veležovo</div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>1 - 2</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Vukas 14'</td></tr><tr><td>Hudarin 39'</td><td>1-1</td><td></td></tr><tr><td></td><td>1-2</td><td>Broketa 65'</td></tr></tbody></table></div></div>
+            <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #F4CCCC;">I</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.7;">10,000</div>
+        <div class="table-cell paper" style="text-align: right; flex: 1;" id="showBox3"><img src="../images/site/press/osl.svg" style="width: 90%"></div></div>
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">12.10.1952.</div>
+            <div class="table-cell size2">12.10.1952.</div>
+            <div class="table-cell"><span>Vojvodina Novi Sad</span><div class="players">VOJVODINA: Vasić, Savović, Ristić, Ninković, Milovanov, Boškov <font color="990000">■</font>, Krgin, Rajkov, Krstić, Leškov, Vlaović<br>VELEŽ: Barbarić, Dilberović, Prajo, Borozan <font color="BF9000">■</font>, Bolfek, Ćemalović, Mujić, Momić, Šestič, Hrvić, Hudarin</div></div>
+            <div class="table-cell size1">Stadion Vojvodine</div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>3 - 5</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Bolfek 15'</td><td>1-0</td><td></td></tr><tr><td>Borozan 25'</td><td>2-0</td><td></td></tr><tr><td></td><td>2-1</td><td>Krstić 26'</td></tr><tr><td></td><td>2-2</td><td>Rajkov 27'</td></tr><tr><td>Hrvić 30'</td><td>3-2</td><td></td></tr><tr><td></td><td>3-3</td><td>Boškov 39'</td></tr><tr><td></td><td>3-4</td><td>Milanov 61'</td></tr><tr><td></td><td>3-5</td><td>Vlaović 88'</td></tr></tbody></table></div></div>
+            <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #F4CCCC;">I</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.7;">6,000</div>
+        <div class="table-cell paper" style="text-align: right; flex: 1;" id="showBox4"><img src="../images/site/press/sloboda.png" style="width: 90%"></div></div>
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">19.10.1952.</div>
+            <div class="table-cell size2">19.10.1952.</div>
+            <div class="table-cell"><span>Lokomotiva Zagreb</span><div class="players">VELEŽ: Barbarić, Slišković, Rukavina, Dilberović, Bolfek, Radiljević, Hudarin, Mujić, Borozan, Hrvić, Ćemalović<br>LOKOMOTIVA: Grčević, Rajs <font color="BF9000">■</font>, Balan, Kobe, Andročec, Pukšec, Odžak, Čorn, Firm, Bobek, Papec</div></div>
+            <div class="table-cell size1">Staro Veležovo</div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;">0 - 0</div>
+            <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #FFF2CC;">N</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.7;">6,000</div>
+        <div class="table-cell paper" style="text-align: right; flex: 1;" id="showBox5"><img src="../images/site/press/sloboda.png" style="width: 90%"></div></div>
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">26.10.1952.</div>
+            <div class="table-cell size2">26.10.1952.</div>
+            <div class="table-cell"><span>Dinamo Zagreb</span><div class="players">DINAMO: Staničić, D. Horvat, Crnković, Beseredi, I. Horvat, Mantula, Benko, Lipušinović, Cimermančić, Dvornić, Čajkovski<br>VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Bolfek, Ćemalović, Mujić, Rebac, Musa, Hrvić, Hudarin</div></div>
+            <div class="table-cell size1">Maksimir</div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>0 - 4</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td><td>0-1</td><td>Lipušinović 30'</td></tr><tr><td></td><td>0-2</td><td>Cimermančić 73'</td></tr><tr><td></td><td>0-3</td><td>Cimermančić 78'</td></tr><tr><td></td><td>0-4</td><td>Cimermančić 79'</td></tr></tbody></table></div></div>
+            <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #F4CCCC;">I</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.7;">10,000</div>
+        <div class="table-cell paper" style="text-align: right; flex: 1;" id="showBox6"><img src="../images/site/press/osl.svg" style="width: 90%"></div></div>
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">9.11.1952.</div>
+            <div class="table-cell size2">9.11.1952.</div>
+            <div class="table-cell"><span>NK Zagreb</span><div class="players">VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Momić, Bolfek, Slišković, Mujić, Rebac, Hrvić, Ćemalović<br>ZAGREB: Maček, Jurić, Dubravčić, Blažetić, Klaić, Joksimović, Devčić, Medved, Vidošević, Jurišić, Butković</div></div>
+            <div class="table-cell size1">Staro Veležovo</div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>2 - 0</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Mujić 8'</td><td>1-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Rebac 83'</td><td>2-0</td><td></td></tr></tbody></table></div></div>
+            <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #D9EAD3;">P</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.7;">8,000</div>
+        <div class="table-cell paper" style="text-align: right; flex: 1;" id="showBox7"><img src="../images/site/press/sloboda.png" style="width: 90%"></div></div>
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">16.11.1952.</div>
+            <div class="table-cell size2">16.11.1952.</div>
+            <div class="table-cell"><span>Partizan</span><div class="players">PARTIZAN: Stojanović, Belin, Čolić, Čajkovski <font color="BF9000">■</font>, Jovanović, Atanacković <font color="BF9000">■</font>, Ognjanović, Veselinović, Valok, Bobek, Herceg<br>VELEŽ: Barbarić, Dilberović, Rukavina, Borozan <font color="BF9000">■</font>, Bolfek, Ćemalović, Mujić, Rebac, Selimotić, Hrvić, Momić</div></div>
+            <div class="table-cell size1">Stadion JNA</div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>1 - 4</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Selimotić 29'</td><td>1-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td></td><td>1-1</td><td>Veselinović 31'</td></tr><tr><td></td><td>1-2</td><td>Valok 35'</td></tr><tr><td></td><td>1-3</td><td>Valok 79'</td></tr><tr><td></td><td>1-4</td><td>Herceg 86'</td></tr></tbody></table></div></div>
+            <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #F4CCCC;">I</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.7;">10,000</div>
+        <div class="table-cell paper" style="text-align: right; flex: 1;" id="showBox8"><img src="../images/site/press/jsl_sport.png" style="width: 90%"></div></div>
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">23.11.1952.</div>
+            <div class="table-cell size2">23.11.1952.</div>
+            <div class="table-cell"><span>BSK Beograd</span><div class="players">VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Momić, Bolfek, Selimotić, Mujić, Rebac, Hrvić, Ćemalović<br>BSK: Cvetković, Odaković, Filipović, Kaloperović, Tasić, Davidović, Panić, Jocić, Spaić, Cokić, Marković</div></div>
+            <div class="table-cell size1">Staro Veležovo</div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;">0 - 0</div>
+            <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #FFF2CC;">N</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.7;">4,000</div>
+        <div class="table-cell paper" style="text-align: right; flex: 1;" id="showBox9"><img src="../images/site/press/osl.svg" style="width: 90%"></div></div>
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">7.12.1952.</div>
+            <div class="table-cell size2">7.12.1952.</div>
+            <div class="table-cell"><span>Spartak Subotica</span><div class="players">SPARTAK: Kampa, Tapiška, Bogešić, Čikoš, Kopilović, Kujundžić, Palatinus, Takač, Rudinski, Gereš, Branisavljević<br>VELEŽ: Barbarić, Dilberović, Rukavina, Borozan <font color="990000">■</font>, Momić, Bolfek, Selimotić, Mujić, Musa, Hrvić, Ćemalović</div></div>
+            <div class="table-cell size1">Gradski stadion</div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>0 - 4</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td><td>0-1</td><td>Bogešić 10' (p)</td></tr><tr><td></td><td>0-2</td><td>Palatinus 24'</td></tr><tr><td></td><td>0-3</td><td>Bogešić 37'</td></tr><tr><td></td><td>0-4</td><td>Palatinus 69'</td></tr></tbody></table></div></div>
+            <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #F4CCCC;">I</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.7;">4,000</div>
+        <div class="table-cell paper" style="text-align: right; flex: 1;" id="showBox10"><img src="../images/site/press/osl.svg" style="width: 90%"></div></div>
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">14.12.1952.</div>
+            <div class="table-cell size2">14.12.1952.</div>
+            <div class="table-cell"><span>Vardar Skoplje</span><div class="players">VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Radiljević, Momić, Slišković, Mujić, Bolfek, Hrvić, Ćemalović<br>VARDAR: Vidinić, Araovski, Novak, Milanov, Kokinovski, Gerov, Cincijevski, Velkoski, D. Georgijevski, Janevski, P. Georgijevski</div></div>
+            <div class="table-cell size1">Staro Veležovo</div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>3 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Janevski 2'</td></tr><tr><td>Ćemalović 12'</td><td>1-1</td><td></td></tr><tr><td>Hrvić 53'</td><td>2-1</td><td></td></tr><tr><td>Slišković 89'</td><td>3-1</td><td></td></tr></tbody></table></div></div>
+            <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #D9EAD3;">P</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.7;">4,000</div>
+        <div class="table-cell paper" style="text-align: right; flex: 1;" id="showBox11"><img src="../images/site/press/osl.svg" style="width: 90%"></div></div>
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">8.3.1953.</div>
+            <div class="table-cell size2">8.3.1953.</div>
+            <div class="table-cell"><span>Crvena zvezda</span><div class="players">ZVEZDA: Krivokuća, Stanković, Zeković, Tadić, Diskić, Đajić, Ognjanović, Mitić, Živanović, Zlatković, Vukosavljević<br>VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Bolfek, Radiljević, Selimotić, Hrvić, Vreća, Mujić, Ćemalović</div></div>
+            <div class="table-cell size1">Avala</div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>0 - 4</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td><td>0-1</td><td>Vukosavljević 11'</td></tr><tr><td></td><td>0-2</td><td>Mitić 22'</td></tr><tr><td></td><td>0-3</td><td>Živanović 31' (p)</td></tr><tr><td></td><td>0-4</td><td>Vukosavljević 70'</td></tr></tbody></table></div></div>
+            <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #F4CCCC;">I</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.7;">23,000</div>
+        <div class="table-cell paper" style="text-align: right; flex: 1;" id="showBox12"><img src="../images/site/press/borba.png" style="width: 90%"></div></div>
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">15.3.1953.</div>
+            <div class="table-cell size2">15.3.1953.</div>
+            <div class="table-cell"><span>FK Sarajevo</span><div class="players">VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Bolfek, Ćemalović, Rebac, Mujić, Zelenika, Hrvić, Vreća<br>SARAJEVO: Pejak, Brozović, Biogradlić, Agoston, Svraka, Glavočević, Žigante, F. Lovrić, Stipić, Đ. Lovrić, Živkov</div></div>
+            <div class="table-cell size1">Staro Veležovo</div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>1 - 2</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Živkov 5'</td></tr><tr><td></td><td>0-2</td><td>Stipić 61'</td></tr><tr><td>Mujić 83'</td><td>1-2</td><td></td></tr></tbody></table></div></div>
+            <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #F4CCCC;">I</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.7;">10,000</div>
+        <div class="table-cell paper" style="text-align: right; flex: 1;" id="showBox13"><img src="../images/site/press/sloboda.png" style="width: 90%"></div></div>
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">22.3.1953.</div>
+            <div class="table-cell size2">22.3.1953.</div>
+            <div class="table-cell"><span>Hajduk Split</span><div class="players">HAJDUK: Beara, Delić, Broketa, Krstulović, Ratković, Luštica, Šenauer, Kragić, Matošić, Vukas, Arapović<br>VELEŽ: Barbarić, Dilberović, Prajo, Borozan, Bolfek, Ćemalović, Rebac, Mujić, Zelenika <font color="BF9000">■</font>, Hrvić, Vreća</div></div>
+            <div class="table-cell size1">Stari plac</div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>0 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>⠀⠀⠀⠀⠀⠀⠀</td><td>0-1</td><td>Vukas 35'</td></tr></tbody></table></div></div>
+            <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #F4CCCC;">I</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.7;">9,000</div>
+        <div class="table-cell paper" style="text-align: right; flex: 1;" id="showBox14"><img src="../images/site/press/sd.png" style="width: 90%"></div></div>
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">29.3.1953.</div>
+            <div class="table-cell size2">29.3.1953.</div>
+            <div class="table-cell"><span>Vojvodina Novi Sad</span><div class="players">VELEŽ: Barbarić, Dilberović, Prajo, Hrvić, Bolfek <font color="BF9000">■</font>, Ćemalović, Rebac, Mujić, Zelenika <font color="BF9000">■</font>, Selimotić, Drljević<br>VOJVODINA: Vasić, Savović, Torbarov, Blanarik, Milovanov, Leškov, R. Krstić, Rajkov, Hadžić, Boškov, D. Krstić</div></div>
+            <div class="table-cell size1">Staro Veležovo</div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>3 - 5</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Hadžić 30'</td></tr><tr><td></td><td>0-2</td><td>Rajkov 33'</td></tr><tr><td></td><td>0-3</td><td>Rajkov 36'</td></tr><tr><td>Zelenika 38'</td><td>1-3</td><td></td></tr><tr><td></td><td>1-4</td><td>Rajkov 70'</td></tr><tr><td></td><td>1-5</td><td>Rajkov 77'</td></tr><tr><td>Rebac 80'</td><td>2-5</td><td></td></tr><tr><td>Drljević 84'</td><td>3-5</td><td></td></tr></tbody></table></div></div>
+            <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #F4CCCC;">I</div><div class="table-cell size1" style="text-align: right; flex: 0.7;">6,000</div>
+        <div class="table-cell paper" style="text-align: right; flex: 1;" id="showBox15"><img src="../images/site/press/sloboda.png" style="width: 90%"></div></div>
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">19.4.1953.</div>
+            <div class="table-cell size2">19.4.1953.</div>
+            <div class="table-cell"><span>Dinamo Zagreb</span><div class="players">VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Momić, Bolfek, Rebac, Mujić, Zelenika, Hrvić, Ćemalović<br>DINAMO: Kralj, Banozić, Crnković, Beseredi, I. Horvat, Kapetanović, Benko, Lipošinović, Osojnak, Ž. Čajkovski, Dvornić</div></div>
+            <div class="table-cell size1">Staro Veležovo</div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>3 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Osojnak 47'</td></tr><tr><td>Zelenika 57'</td><td>1-1</td><td></td></tr><tr><td>Hrvić 65'</td><td>2-1</td><td></td></tr><tr><td>Zelenika 87'</td><td>3-1</td><td></td></tr></tbody></table></div></div>
+            <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #D9EAD3;">P</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.7;">7,000</div>
+        <div class="table-cell paper" style="text-align: right; flex: 1;" id="showBox16"><img src="../images/site/press/sd.png" style="width: 90%"></div></div>
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">26.4.1953.</div>
+            <div class="table-cell size2">26.4.1953.</div>
+            <div class="table-cell"><span>NK Zagreb</span><div class="players">ZAGREB: Maček, Jurić, Dubravčić, Šantek, Vidošević, Blažetić, Tajder, Medved, Jagodić, Joksimović, Devčić<br>VELEŽ: Barbarić, Dilberović, Rukavina, Borozan, Momić, Bolfek, Rebac, Mujić, Zelenika, Hrvić, Ćemalović</div></div>
+            <div class="table-cell size1">Kranjčevićeva</div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>3 - 3</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Jagodić 12'</td></tr><tr><td>Rebac 34'</td><td>1-1</td><td></td></tr><tr><td></td><td>1-2</td><td>Devčić 41'</td></tr><tr><td>Zelenika 44'</td><td>2-2</td><td></td></tr><tr><td>Zelenika 74'</td><td>3-2</td><td></td></tr><tr><td></td><td>3-3</td><td>Joksimović 80'</td></tr></tbody></table></div></div>
+            <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #FFF2CC;">N</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.7;">8,000</div>
+        <div class="table-cell paper" style="text-align: right; flex: 1;" id="showBox17"><img src="../images/site/press/borba.png" style="width: 90%;" <="" div=""></div></div>
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">28.4.1953.</div>
+            <div class="table-cell size2">28.4.1953.</div>
+            <div class="table-cell"><span>Lokomotiva Zagreb</span><div class="players">LOKOMOTIVA: Nežmah, Čudek, Balan, Pukšec <font color="BF9000">■</font>, Andročec, Rein, Odžak, Šal, Firm, Papec, O. Bobek<br>VELEŽ: Barbarić, Dilberović <font color="BF9000">■</font>, Rukavina, Bolfek <font color="BF9000">■</font>, Momić, Borozan, Rebac, Mujić, Zelenika <font color="BF9000">■</font>, Hrvić, Ćemalović</div></div>
+            <div class="table-cell size1">Kranjčevićeva</div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>2 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Hrvić 31'</td><td>1-0</td><td></td></tr><tr><td></td><td>1-1</td><td>Firm 40'</td></tr><tr><td>Zelenika 61'</td><td>2-1</td><td></td></tr></tbody></table></div></div>
+            <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #D9EAD3;">P</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.7;">8,000</div>
+        <div class="table-cell paper" style="text-align: right; flex: 1;" id="showBox18"><img src="../images/site/press/jsl_sport.png" style="width: 90%;"></div></div>
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">24.5.1953.</div>
+            <div class="table-cell size2">24.5.1953.</div>
+            <div class="table-cell"><span>Partizan</span><div class="players">VELEŽ: Barbarić, Dilberović <font color="990000">■</font>, Rukavina, Borozan, Momić, Bolfek, Rebac, Mujić, Zelenika <font color="BF9000">■</font>, Hrvić, Ćemalović<br>PARTIZAN: Stojanović, Belin, Čolić, Čajkovski, Stefanović, Jovanović, Valok, Veselinović, Milutinović, Zebrc, Atanacković</div></div>
+            <div class="table-cell size1">Staro Veležovo</div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>0 - 4</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td><td>0-1</td><td>Valok 12'</td></tr><tr><td></td><td>0-2</td><td>Veselinović 46'</td></tr><tr><td></td><td>0-3</td><td>Milutinović 52'</td></tr><tr><td></td><td>0-4</td><td>Veselinović 65'</td></tr></tbody></table></div></div>
+            <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #F4CCCC;">I</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.7;">10,000</div>
+        <div class="table-cell paper" style="text-align: right; flex: 1;" id="showBox19"><img src="../images/site/press/jsl_sport.png" style="width: 90%;"></div></div>
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">31.5.1953.</div>
+            <div class="table-cell size2">31.5.1953.</div>
+            <div class="table-cell"><span>BSK Beograd</span><div class="players">BSK: Radenković, Odanović, Filipović, Tasić, Stanković, Kaloperović, Panić, Jocić, Marković, Konstantinović, Radović<br>VELEŽ: Barbarić, Bolfek, Rukavina, Borozan, Momić, Radiljević, Selimotić, Mujić, Zelenika, Hrvić, Ćemalović</div></div>
+            <div class="table-cell size1">Avala</div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>4 - 2</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Marković 8'</td></tr><tr><td>Zelenika 12'</td><td>1-1</td><td></td></tr><tr><td></td><td>1-2</td><td>Marković 35'</td></tr><tr><td>Zelenika 44' (p)</td><td>2-2</td><td></td></tr><tr><td>Mujić 48'</td><td>3-2</td><td></td></tr><tr><td>Selimotić 78'</td><td>4-2</td><td></td></tr></tbody></table></div></div>
+            <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #D9EAD3;">P</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.7;">45,000</div>
+        <div class="table-cell paper" style="text-align: right; flex: 1;" id="showBox20"><img src="../images/site/press/sd.png" style="width: 90%;"></div></div>
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">14.6.1953.</div>
+            <div class="table-cell size2">14.6.1953.</div>
+            <div class="table-cell"><span>Spartak Subotica</span><div class="players">VELEŽ: Barbarić, Bolfek, Rukavina, Borozan, Momić, Radiljević, Slišković, Mujić, Zelenika, Hrvić, Ćemalović<br>SPARTAK: Glončak, Tapiška, Bogešić, Jakovetić, Kopilović, B. Čikoš, Palatinus, Takač, Pejić, Kujundžić, Branislavljević</div></div>
+            <div class="table-cell size1">Staro Veležovo</div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>2 - 0</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Hrvić 12'</td><td>1-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Slišković 28'</td><td>2-0</td><td></td></tr></tbody></table></div></div>
+            <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #D9EAD3;">P</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.7;">3,000</div>
+        <div class="table-cell paper" style="text-align: right; flex: 1;" id="showBox21"><img src="../images/site/press/sloboda.png" style="width: 90%"></div></div>
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">21.6.1953.</div>
+            <div class="table-cell size2">21.6.1953.</div>
+            <div class="table-cell"><span>Vardar Skoplje</span><div class="players">VARDAR: Vidinić, Arsevsiji, Lazarevski, G. Georgijevski, Petrovski, Kokinovski, Karanfilović, Velkovski, Milanov, Cincijevski, P. Georgijevski<br>VELEŽ: Barbarić, Bolfek, Rukavina, Ćemalović, Musa, Radiljević, Slišković, Mujić, Zelenika, Hrvić, Drljević</div></div>
+            <div class="table-cell size1">Gradski park</div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>2 - 5</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Velkovski 5'</td></tr><tr><td></td><td>0-2</td><td>Karanfilović 24'</td></tr><tr><td></td><td>0-3</td><td>P. Georgijevski 47'</td></tr><tr><td>Zelenika 78'</td><td>1-3</td><td></td></tr><tr><td></td><td>1-4</td><td>Velkovski 79'</td></tr><tr><td></td><td>1-5</td><td>Bolfek 85' (ag)</td></tr><tr><td>Zelenika 90'</td><td>2-5</td><td></td></tr></tbody></table></div></div>
+            <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #F4CCCC;">I</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.7;">12,000</div>
+        <div class="table-cell paper" style="text-align: right; flex: 1;" id="showBox22"><img src="../images/site/press/borba.png" style="width: 90%;" <="" div=""></div></div>
+    <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">21.6.1953.</div>
+            <div class="table-cell size2">21.6.1953.</div>
+            <div class="table-cell"><span>Vardar Skoplje</span><div class="players">VARDAR: Vidinić, Arsevsiji, Lazarevski, G. Georgijevski, Petrovski, Kokinovski, Karanfilović, Velkovski, Milanov, Cincijevski, P. Georgijevski<br>VELEŽ: Barbarić, Bolfek, Rukavina, Ćemalović, Musa, Radiljević, Slišković, Mujić, Zelenika, Hrvić, Drljević</div></div>
+            <div class="table-cell size1">Gradski park</div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>2 - 5</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Velkovski 5'</td></tr><tr><td></td><td>0-2</td><td>Karanfilović 24'</td></tr><tr><td></td><td>0-3</td><td>P. Georgijevski 47'</td></tr><tr><td>Zelenika 78'</td><td>1-3</td><td></td></tr><tr><td></td><td>1-4</td><td>Velkovski 79'</td></tr><tr><td></td><td>1-5</td><td>Bolfek 85' (ag)</td></tr><tr><td>Zelenika 90'</td><td>2-5</td><td></td></tr></tbody></table></div></div>
+            <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #F4CCCC;">I</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.7;">12,000</div>
+        <div class="table-cell paper" style="text-align: right; flex: 1;" id="showBox22"><img src="../images/site/press/borba.png" style="width: 90%;" <="" div=""></div></div><div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">21.6.1953.</div>
+            <div class="table-cell size2">21.6.1953.</div>
+            <div class="table-cell"><span>Vardar Skoplje</span><div class="players">VARDAR: Vidinić, Arsevsiji, Lazarevski, G. Georgijevski, Petrovski, Kokinovski, Karanfilović, Velkovski, Milanov, Cincijevski, P. Georgijevski<br>VELEŽ: Barbarić, Bolfek, Rukavina, Ćemalović, Musa, Radiljević, Slišković, Mujić, Zelenika, Hrvić, Drljević</div></div>
+            <div class="table-cell size1">Gradski park</div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>2 - 5</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Velkovski 5'</td></tr><tr><td></td><td>0-2</td><td>Karanfilović 24'</td></tr><tr><td></td><td>0-3</td><td>P. Georgijevski 47'</td></tr><tr><td>Zelenika 78'</td><td>1-3</td><td></td></tr><tr><td></td><td>1-4</td><td>Velkovski 79'</td></tr><tr><td></td><td>1-5</td><td>Bolfek 85' (ag)</td></tr><tr><td>Zelenika 90'</td><td>2-5</td><td></td></tr></tbody></table></div></div>
+            <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #F4CCCC;">I</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.7;">12,000</div>
+        <div class="table-cell paper" style="text-align: right; flex: 1;" id="showBox22"><img src="../images/site/press/magyar_szo.png" style="width: 90%;" <="" div=""></div></div><div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">21.6.1953.</div>
+            <div class="table-cell size2">21.6.1953.</div>
+            <div class="table-cell"><span>Vardar Skoplje</span><div class="players">VARDAR: Vidinić, Arsevsiji, Lazarevski, G. Georgijevski, Petrovski, Kokinovski, Karanfilović, Velkovski, Milanov, Cincijevski, P. Georgijevski<br>VELEŽ: Barbarić, Bolfek, Rukavina, Ćemalović, Musa, Radiljević, Slišković, Mujić, Zelenika, Hrvić, Drljević</div></div>
+            <div class="table-cell size1">Gradski park</div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>2 - 5</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Velkovski 5'</td></tr><tr><td></td><td>0-2</td><td>Karanfilović 24'</td></tr><tr><td></td><td>0-3</td><td>P. Georgijevski 47'</td></tr><tr><td>Zelenika 78'</td><td>1-3</td><td></td></tr><tr><td></td><td>1-4</td><td>Velkovski 79'</td></tr><tr><td></td><td>1-5</td><td>Bolfek 85' (ag)</td></tr><tr><td>Zelenika 90'</td><td>2-5</td><td></td></tr></tbody></table></div></div>
+            <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #F4CCCC;">I</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.7;">12,000</div>
+        <div class="table-cell paper" style="text-align: right; flex: 1;" id="showBox22"><img src="../images/site/press/borba.png" style="width: 90%;" <="" div=""></div></div><div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">21.6.1953.</div>
+            <div class="table-cell size2">21.6.1953.</div>
+            <div class="table-cell"><span>Vardar Skoplje</span><div class="players">VARDAR: Vidinić, Arsevsiji, Lazarevski, G. Georgijevski, Petrovski, Kokinovski, Karanfilović, Velkovski, Milanov, Cincijevski, P. Georgijevski<br>VELEŽ: Barbarić, Bolfek, Rukavina, Ćemalović, Musa, Radiljević, Slišković, Mujić, Zelenika, Hrvić, Drljević</div></div>
+            <div class="table-cell size1">Gradski park</div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>2 - 5</span><div class="scorers"><table class="scorerstable"><tbody><tr><td></td><td>0-1</td><td>Velkovski 5'</td></tr><tr><td></td><td>0-2</td><td>Karanfilović 24'</td></tr><tr><td></td><td>0-3</td><td>P. Georgijevski 47'</td></tr><tr><td>Zelenika 78'</td><td>1-3</td><td></td></tr><tr><td></td><td>1-4</td><td>Velkovski 79'</td></tr><tr><td></td><td>1-5</td><td>Bolfek 85' (ag)</td></tr><tr><td>Zelenika 90'</td><td>2-5</td><td></td></tr></tbody></table></div></div>
+            <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #F4CCCC;">I</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.7;">12,000</div>
+        <div class="table-cell paper" style="text-align: right; flex: 1;" id="showBox22"><img src="../images/site/press/borba.png" style="width: 90%;" <="" div=""></div></div></div>
+<div class="table-container table-width">
+        <div class="table-row header">
             <div class="table-cell size1" style="flex: 1.7;">Datum</div>
             <div class="table-cell size2">Datum</div>
             <div class="table-cell">Protivnik</div>
@@ -1074,10 +1380,6 @@ h2 {
             <div class="table-cell" style="text-align: center; flex: 1; background-color: #D9EAD3;" id="showBox18">P</div>
             <div class="table-cell size1" style="text-align: right; flex: 1.1;">7,500</div>
         </div>
-        
-        
-        
-        
     <div class="table-row">
             <div class="table-cell size1" style="flex: 1.7;">15.4.1956.</div>
             <div class="table-cell size2">15.4.1956.</div>
@@ -1145,6 +1447,59 @@ h2 {
         </div></div>
       <h1>Kup Maršala Tita</h1>
       <div class="table-container table-width">
+        <div class="table-row header">
+            <div class="table-cell size1" style="flex: 1.5;">Datum</div>
+            <div class="table-cell size2">Datum</div>
+            <div class="table-cell">Protivnik</div>
+            <div class="table-cell size1">Stadion</div>
+            <div class="table-cell" style="text-align: center; flex: 1;">Rezultat</div>
+            <div class="table-cell" style="text-align: center; flex: 0.9;">Prolaz?</div>
+            <div class="table-cell size1" style="text-align: right; flex: 1.1;">Faza takm.</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.8;">Posjeta</div>
+        </div>
+        
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">8.8.1954.</div>
+            <div class="table-cell size2">8.8.1954.</div>
+            <div class="table-cell"><span>Mladost Prijedor</span><div class="players">VELEŽ: Irović, Dilberović, Ćubela, Ćemalović, Bolfek, Radiljević, S. Selimotić, Mujić, Zelenika, Z. Selimotić, Ćišić<br>MLADOST: Kralj, Selman, Urkšić, Đulkić, Kulenović, Popović, Haverić, Simić, Kulenović, Zombra, Ćorić</div></div>
+            <div class="table-cell size1">Staro Veležovo</div>
+            <div class="table-cell" style="text-align: center; flex: 1;"><span>11 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Zelenika 8'</td><td>1-0</td><td></td></tr><tr><td>Ćišić 15'</td><td>2-0</td><td></td></tr><tr><td>Zelenika 24'</td><td>3-0</td><td></td></tr><tr><td>Zelenika 30'</td><td>4-0</td><td></td></tr><tr><td>Ćišić 34'</td><td>5-0</td><td></td></tr><tr><td>Z. Selimotić 51'</td><td>6-0</td><td></td></tr><tr><td>Z.Selimotić 59'</td><td>7-0</td><td></td></tr><tr><td>???</td><td>8-0</td><td></td></tr><tr><td>???</td><td>9-0</td><td></td></tr><tr><td>???</td><td>10-0</td><td></td></tr><tr><td></td><td>10-1</td><td>Kulenović 75'</td></tr><tr><td>Kulenović 84' (ag)</td><td>11-1</td><td></td></tr></tbody></table></div></div>
+            <div class="table-cell" style="text-align: center; flex: 0.9; background-color: #D9EAD3;" id="showBox1"><b>✓</b></div>
+            <div class="table-cell size1" style="text-align: right; flex: 1.1;">Q1</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.8;">3,000</div>
+        </div><div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">15.8.1954.</div>
+            <div class="table-cell size2">15.8.1954.</div>
+            <div class="table-cell"><span>FK Sarajevo</span><div class="players">SARAJEVO: Hajrović, Stipić, Džemidžić, Živkov, Švraka, Agoston, Žigante, Novo, Lovrić, Pacuka, Marković<br>VELEŽ: Irović, Ćubela, Dilberović, Radiljević, Bolfek, Slišković, S. Selimotić, Mujić, Zelenika, Hrvić, Ćišić</div></div>
+            <div class="table-cell size1">Grbavica</div>
+            <div class="table-cell" style="text-align: center; flex: 1;"><span>7 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Ćišić 13'</td><td>1-0</td><td></td></tr><tr><td>Zelenika 20'</td><td>2-0</td><td></td></tr><tr><td>Zelenika 32'</td><td>3-0</td><td></td></tr><tr><td>Zelenika 65'</td><td>4-0</td><td></td></tr><tr><td>Mujić 70'</td><td>5-0</td><td></td></tr><tr><td>Mujić 73'</td><td>6-0</td><td></td></tr><tr><td>Mujić 80'</td><td>7-0</td><td></td></tr><tr><td></td><td>7-1</td><td>Marković 85'</td></tr></tbody></table></div></div>
+            <div class="table-cell" style="text-align: center; flex: 0.9; background-color: #D9EAD3;" id="showBox2"><b>✓</b></div>
+            <div class="table-cell size1" style="text-align: right; flex: 1.1;">Q2</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.8;">5,000</div>
+        </div>
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">22.8.1954.</div>
+            <div class="table-cell size2">22.8.1954.</div>
+            <div class="table-cell"><span>BSK Beograd</span><div class="players">VELEŽ: Irović, Dilberović, Ćubela, Bolfek <font color="990000">■</font> 8', Radiljević, Slišković, S. Selimotić, Mujić, Zelenika, Z. Selimotić, Ćemalović<br>BSK: Cvetković, Stojanović, Odanović, Jovanović, Perić, Davidović, Panić I, Vidić, Antić, Jelisavić, Panić II</div></div>
+            <div class="table-cell size1">Staro Veležovo</div>
+            <div class="table-cell" style="text-align: center; flex: 1;"><span>3 - 2</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Zelenika 31'</td><td>1-0</td><td></td></tr><tr><td>Zelenika 36' (p)</td><td>2-0</td><td></td></tr><tr><td>S. Selimotić 43'</td><td>3-0</td><td></td></tr><tr><td></td><td>3-1</td><td>Panić 75'</td></tr><tr><td></td><td>3-2</td><td>Antić 89'</td></tr></tbody></table></div></div>
+            <div class="table-cell" style="text-align: center; flex: 0.9; background-color: #D9EAD3;"><b>✓</b></div>
+            <div class="table-cell size1" style="text-align: right; flex: 1.1;">1/8</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.8;">6,000</div>
+        </div>
+        
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">9.10.1954.</div>
+            <div class="table-cell size2">9.10.1954.</div>
+            <div class="table-cell"><span>Crvena zvezda</span><div class="players">ZVEZDA: S. Krivokuća, B. Stanković, Zeković, V. Popović, Spajić, Đajić, Zlatković, Mitić, Cokić, Nešović, Veselinov<br>VELEŽ: Irović, Dilberović, Rukavina, Slišković, Bolfek, Radiljević, S. Selimotić, Mujić, Zelenika, Hrvić, Z. Selimotić</div></div>
+            <div class="table-cell size1">Avala</div>
+            <div class="table-cell" style="text-align: center; flex: 1;"><span>0 - 9</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>⠀⠀⠀⠀⠀⠀⠀</td><td>0-1</td><td>Spajić 10'</td></tr><tr><td></td><td>0-2</td><td>Mitić 34'</td></tr><tr><td></td><td>0-3</td><td>Mitić 49'</td></tr><tr><td></td><td>0-4</td><td>Spajić 54'</td></tr><tr><td></td><td>0-5</td><td>Mitić 65'</td></tr><tr><td></td><td>0-6</td><td>Spajić 66'</td></tr><tr><td></td><td>0-7</td><td>Spajić 84'</td></tr><tr><td></td><td>0-8</td><td>Mitić 88'</td></tr><tr><td></td><td>0-9</td><td>Đajić 90'</td></tr></tbody></table></div></div>
+            <div class="table-cell" style="text-align: center; flex: 0.9; background-color: #F4CCCC;"><b>✕</b></div>
+            <div class="table-cell size1" style="text-align: right; flex: 1.1;">1/4</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.8;">4,000</div>
+        </div>
+       </div>
+<div class="table-container table-width">
         <div class="table-row header">
             <div class="table-cell size1" style="flex: 1.7;">Datum</div>
             <div class="table-cell size2">Datum</div>
