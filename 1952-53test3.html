@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html><head>
-    <title>1960-61 | KNR</title>
+    <title>1961-62 | KNR</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/988123060349579354/1078702126810812436/271451405_104300318809737_531087692418489057_n.png" type="image/png">
+    <link rel="shortcut icon" href="https://i.imgur.com/XchyWzg.png" type="image/png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
@@ -131,8 +131,13 @@
     margin-right:20px;
     opacity: 1;
     transition: opacity 0.2s ease-in-out;
+        display: none;
 }
-
+@media screen and (min-width: 1410px) {
+            .headercontent {
+            	display: block;
+            }
+        }
     .headercontent:hover {
     opacity: 0.5;
 }
@@ -272,6 +277,51 @@ h2 {
     .signature {
         text-align: right;
     }
+	    .dropdown {
+            position: relative;
+            margin-left: auto;
+            margin-right: 10px;
+            float: right;
+            display: none;
+        }
+@media screen and (min-width: 800px) and (max-width: 1409px) {
+            .dropdown {
+                display: block;
+            }
+        }
+        .dropdown-img {
+            width: 100%; 
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(231, 215, 215, 0.5);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 10px;
+            right: 0;
+        }
+
+        .dropdown-content a {
+            padding: 12px 16px;
+            display: block;
+            text-decoration: none;
+            color: #333;
+        }
+    
+        .dropdown-content a:hover {
+            background-color: rgba(239, 215, 147, 0.66);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
     </style>
   </head>
   <body><div id="fixedBox" style="display: none;">
@@ -280,17 +330,26 @@ h2 {
 
     <div id="overlay" style="display: none;"></div>
   
-  <div class="banner"><a href="../index.html"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1079036319184978120/logo2.png" class="logo"></a><a href="../statistika.html"><img src="../images/site/statistika.png" class="headercontent" align="right"></a><a href="../protivnici/protivnici.html"><img src="../images/site/protivnici.png" class="headercontent" align="right"></a><a href="../kalendar/kalendar.html"><img src="../images/site/kalendar.png" class="headercontent" align="right"></a><a href="../abecedarnik/abecedarnik.html"><img src="../images/site/abecedarnik.png" class="headercontent" align="right"></a></div>
+  <div class="banner"><a href="../index.html"><img src="https://i.imgur.com/gbKQfNP.png" class="logo"></a><a href="../statistika.html"><img src="../images/site/statistika.png" class="headercontent" align="right"></a><a href="../protivnici/protivnici.html"><img src="../images/site/protivnici.png" class="headercontent" align="right"></a><a href="../kalendar/kalendar.html"><img src="../images/site/kalendar.png" class="headercontent" align="right"></a><a href="../abecedarnik/abecedarnik.html"><img src="../images/site/abecedarnik.png" class="headercontent" align="right"></a>
+  <div class="dropdown">
+    <img class="dropdown-img" src="../images/site/dropdown-menu.png">
+    <div class="dropdown-content">
+        <a href="../abecedarnik/abecedarnik.html"><img src="../images/site/abecedarnik.png"></a>
+        <a href="../kalendar/kalendar.html"><img src="../images/site/kalendar.png"></a>
+        <a href="../protivnici/protivnici.html"><img src="../images/site/protivnici.png"></a>
+        <a href="../statistika.html"><img src="../images/site/statistika.png"></a>
+    </div>
+  </div></div>
   <div class="container">
     
     <br class="size1">
     <br>
     <div class="logo2">
-        <a href="../index.html"><img src="https://cdn.discordapp.com/attachments/1079034567710744627/1079036319184978120/logo2.png" style="width:100%;"></a>
+        <a href="../index.html"><img src="https://i.imgur.com/gbKQfNP.png" style="width:100%;"></a>
     </div>
     <br>
   <div class="panel panel-default">
-    <div class="panel-body"><div class="img-with-text size1"><img src="../images/historical/Velež%201960-61.png" width="100%"><p><i>Stoje: Dane Prajo, Vlado Slišković, Ivan Ćurković, Zdravko Rodin, Mehmed Handžić, Kruno Radiljević<br>Čuče: Bruno Repar, Muhamed Mujić, Vlado Zelenika, Sulejman Rebac, Zejnil Selimotić</i></p></div><div class="size2" style="text-align: center;"><img src="../images/historical/Velež%201960-61.png" width="100%"><p><i>Stoje: Dane Prajo, Vlado Slišković, Ivan Ćurković, Zdravko Rodin, Mehmed Handžić, Kruno Radiljević<br>Čuče: Bruno Repar, Muhamed Mujić, Vlado Zelenika, Sulejman Rebac, Zejnil Selimotić</i></p></div><h1>Sezona 1960-61</h1>
+    <div class="panel-body"><div class="img-with-text size1"><img src="../images/historical/Velež%201961-62.png" width="100%"><p><i>Stoje: Kemal Šestić, Mehmed Handžić, Ivan Ćurković, Nikola Benco, Vlado Slišković, Zejnil Selimotić<br>Čuče: Nusret Čerkić, Ivan Popović, Muhamed Mujić, Bruno Repar, Kruno Radiljević</i></p></div><div class="size2" style="text-align: center;"><img src="../images/historical/Velež%201961-62.png" width="100%"><p><i>Stoje: Kemal Šestić, Mehmed Handžić, Ivan Ćurković, Nikola Benco, Vlado Slišković, Zejnil Selimotić<br>Čuče: Nusret Čerkić, Ivan Popović, Muhamed Mujić, Bruno Repar, Kruno Radiljević</i></p></div><h1>Sezona 1961-62</h1>
 
 
     
@@ -943,7 +1002,7 @@ h2 {
      <div class="row">
   </div><div class="row">
   <div class="column size1">
-    <img src="../images/site/table/tabela1960-61.png" style="width:120%">
+    <img src="../images/site/table/tabela1961-62.png" style="width:120%">
     
     
   </div><div class="column size1"><table class="sortable">
@@ -1068,7 +1127,7 @@ h2 {
 </table>
 </div>
 </div>
-<br class="size2"><div class="size2" style="text-align: center;"><img src="../images/site/table/tabela1960-61.png" width="98%"></div>
+<br class="size2"><div class="size2" style="text-align: center;"><img src="../images/site/table/tabela1961-62.png" width="98%"></div>
 <br class="size2"><div class="size2"><div class="table-container table-width">
         <div class="table-row header" style="border-radius: 8px 8px 0px 0px;">
             <div class="table-cell">Ime igrača</div>
