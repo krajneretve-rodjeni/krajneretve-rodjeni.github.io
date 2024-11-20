@@ -358,7 +358,13 @@ h2 {
     height: 480px;
     overflow: auto;
 }
-
+    
+@media screen and (max-width: 660px) {
+            .two-column-layout {
+                display: none;
+            }
+        }
+    
 .report-column {
     padding: 9px;
     flex: 1vh 2vh; /* Equal spacing between columns */
@@ -855,25 +861,72 @@ h2 {
         <div class="table-row">
             <div class="table-cell size1" style="flex: 1.5;">29.8.1954.</div>
             <div class="table-cell size2">29.8.1954.</div>
-            <div class="table-cell"><span>Budućnost Titograd</span><div class="players">VELEŽ: Irović, Dilberović, Rukavina, Slišković, Bolfek, Radiljević, S. Selimotić, Mujić, Zelenika, Hrvić, Ćišić<br>BUDUĆNOST: Dedović, Mugoša, Petrović, Rogošić, Popović, Zečević, V. Darmanović, Radović, M. Darmanović, Vasović, Radonjić</div></div>
+            <div class="table-cell"><span>Budućnost Titograd</span></div>
             <div class="table-cell size1">Staro Veležovo</div>
-            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>5 - 0</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Zelenika 2'</td><td>1-0</td><td>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td></tr><tr><td>Hrvić 44'</td><td>2-0</td><td></td></tr><tr><td>Mujić 53'</td><td>3-0</td><td></td></tr><tr><td>Zelenika 65'</td><td>4-0</td><td></td></tr><tr><td>Zelenika 68'</td><td>5-0</td><td></td></tr></tbody></table></div></div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>5 - 0</span></div>
             <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #D9EAD3;">P</div>
             <div class="table-cell size1" style="text-align: right; flex: 0.7;">5,000</div>
         <div class="table-cell paper clickable-row" data-row-id="1" style="text-align: right; flex: 1;" id="showBox1"><img src="../images/site/press/sloboda.png" style="width: 90%;"></div></div>
-        <div class="table-row hover-row" data-hover-id="1">
-      <div class="table-cell" colspan="8">Detailed content for Row 1: Player and score details...</div>
+        <div class="table-row hover-row" data-hover-id="1" style="display: none;">
+      <div class="table-cell" colspan="8"><div class="two-column-layout">
+  <div class="report-column">
+    <p>Stadion: Karaburma. Gledalaca: 2.000. Sudija: Adem Fazlagić (Čapljina).</p>
+    <p style="margin-bottom: 0px;">OFK: Kocejić, Mirković (Stojanović 85'), Bratić, Terzić, Kuzmanovski, Đurđević (Delibašić 77'), Ćurčić, Spoljarić, Đukanović, Lončar, Nikoličić</p>
+    <p>VELEŽ: Pudar, Pintul (Mavrak 71'), Musa, Farac (Dalić 46'), Bejatović <font color="BF9000">■</font>, Glogovac, Jokišić, Tufek, Pušić <font color="BF9000">■</font>, Maslovar, Beširević</p>
+    <p class="aligned-text" style="margin-bottom: 0px;"><span class="left-text">0-1</span><span class="left-text">Đukanović 20'</span></p>
+  <p class="aligned-text" style="margin-bottom: 0px;"><span class="left-text">0-2</span><span class="left-text">Špoljarić (p) 28'</span></p><p class="aligned-text" style="margin-bottom: 0px;"><span class="left-text">0-3</span><span class="left-text">Đukanović 38'</span></p><p class="aligned-text" style="margin-bottom: 0px;"><span class="left-text">0-4</span><span class="left-text">Đukanović 42'</span></p><p class="aligned-text" style="margin-bottom: 0px;"><span class="left-text">Jokišić 53'</span><span class="left-text">1-4</span></p><p class="aligned-text" style="margin-bottom: 0px;"><span class="left-text">1-5</span><span class="left-text">Ćurčić 71'</span></p></div>
+  <div class="report-column">
+    <h4>Težak poraz »rođenih« na Karaburmi</h4>
+    <h2>Prva rata »školarine«!</h2>
+<h4>Oslabljeni neigranjem Jedvaja i Kodre naletjeli na minu izuzetno motivisanih beogradskih »romantičara« — Sve riješeno (4:0) u prvoj dionici meča — Izuzev Jokišića kod »crvenih« svi podbacili</h4>
+    <p>Kakav debakl »rođenih« na Karaburmi!</p>
+    <p>Beogradski »romantičari«, koji su prije pet dana, zajedno s Pelisterom, zahvaljujući naštimovanoj glasačkoj mašineriji na Terazijama, nakon otkaza klubova iz Hrvatske, uletjeli su u prvoligaško društvo, i održali žestoku fudbalsku lekciju Mostarcima.</p>
+    <p>Gosti sa Neretve, bez dvojice ponajboljih pojedinaca u timu, kapitena Zdenka Jedvaja i prvog strijelca Mehe Kodre, samo u prvih dvadesetak minuta uspjeli su da pariraju mladićima trenera Petkovića. A onda je došao kolaps »crvenih«...</p>
+    <p>Odbrana gostiju bila je poput ementalera, srednji red Pinokijeva družina, a napadači kao brodolomci daleko od rta Dobre nade. Stoga nije nikakvo čudo što su Beograđani, u periodu od 20. minuta do kraja poluvremena, sve što su zamislili neometano mogli i realizovati. Njihova »devetka« Dragan Đukanović (ko je taj?) skoro ni kriv ni dužan se proslavio.</p>
+    <p>»Plavi« su kao od šale probijali bočne pozicije Veležove odbrane. Mladići u užoj odbrani »rođenih«, Pintul, Musa i Farac, pokazali su veliko neiskustvo, naivnost i totalno odsustvo koncentracije. Veliku pometnju u zadnji red gostiju nepromišljenim istrčavanjem konstantno je unosio i golman Velibor Pudar, koji je, ako je suditi po ovom meču, daleko ispod renomea »letećih Mostaraca«. Lako je domaćinu 
+bilo davati golove u sudaru s protivnikom koji nije znao ni kuda će ni šta će. A najradije bi u zemlju propao!
+</p>
+    <p>U drugom dijelu meča Mostarci su bili nešto vispreniji. Ulazak Dalića, umjesto indisponiranog Farca, učinio je njihovu igru usmišljenijom, bržom i opasnijom. Nagrada u vidu počasnoga gola stigla je već nakon osam minuta. Dobar centaršut s desne strane Nikola Jokišić je »santračevski« — lopta se uz desnu stativu gola golmana Kocejića otkotrljala u mrežu — ralizovao. Pošto su tada domaći fudbaleri bili isključili motore izgledalo je da će gosti postići još koji gol. Ali, bila je to pogrešna pretpostavka. Breme katastrofe bilo je veliki »okov« da bi se »rođeni« mogli vratiti u igru.</p>
+    
+    <p>Sredinom drugoga poluvremena došlo je do nove kardinalne greške u odbrani gostiju, pa je Ćurčić upalio petardu u mreži Pudara. Nevjerovatno, ali drugoligaši na startu znaju i mnogo jače timove od ovoga Veležovog današnjeg  ne samo »baciti na pleća«, nego i poniziti.</p>
+    <p>Ipak, pod Bijelim brijegom ne treba dizati uzbunu. Treba se pripremiti za ovakve šok-terapije. Tim se stvara, a i narod lijepo kaže »Prvi mačići se u vodu (Dunav) bacaju«...</p>
+    <p>Početak je prvenstva. Valja sačuvati zdravu pamet i ne gubiti živce.</p><div class="signature"><i>Sloboda</i></div>
+  </div>
+</div>
+<div class="size2"><p>Stadion: Karaburma. Gledalaca: 2.000. Sudija: Adem Fazlagić (Čapljina).</p>
+    <p style="margin-bottom: 0px;">OFK: Kocejić, Mirković (Stojanović 85'), Bratić, Terzić, Kuzmanovski, Đurđević (Delibašić 77'), Ćurčić, Spoljarić, Đukanović, Lončar, Nikoličić</p>
+    <p>VELEŽ: Pudar, Pintul (Mavrak 71'), Musa, Farac (Dalić 46'), Bejatović <font color="BF9000">■</font>, Glogovac, Jokišić, Tufek, Pušić <font color="BF9000">■</font>, Maslovar, Beširević</p>
+    <p class="aligned-text" style="margin-bottom: 0px;"><span class="left-text">0-1</span><span class="left-text">Đukanović 20'</span></p>
+  <p class="aligned-text" style="margin-bottom: 0px;"><span class="left-text">0-2</span><span class="left-text">Špoljarić (p) 28'</span></p><p class="aligned-text" style="margin-bottom: 0px;"><span class="left-text">0-3</span><span class="left-text">Đukanović 38'</span></p><p class="aligned-text" style="margin-bottom: 0px;"><span class="left-text">0-4</span><span class="left-text">Đukanović 42'</span></p><p class="aligned-text" style="margin-bottom: 0px;"><span class="left-text">Jokišić 53'</span><span class="left-text">1-4</span></p><p class="aligned-text" style="margin-bottom: 0px;"><span class="left-text">1-5</span><span class="left-text">Ćurčić 71'</span></p>
+    <div style="border-top: 2px solid #404040; margin-top: 10px;"></div>
+    
+    <h4>Težak poraz »rođenih« na Karaburmi</h4>
+    <h2>Prva rata »školarine«!</h2>
+<h4>Oslabljeni neigranjem Jedvaja i Kodre naletjeli na minu izuzetno motivisanih beogradskih »romantičara« — Sve riješeno (4:0) u prvoj dionici meča — Izuzev Jokišića kod »crvenih« svi podbacili</h4>
+    <p>Kakav debakl »rođenih« na Karaburmi!</p>
+    <p>Beogradski »romantičari«, koji su prije pet dana, zajedno s Pelisterom, zahvaljujući naštimovanoj glasačkoj mašineriji na Terazijama, nakon otkaza klubova iz Hrvatske, uletjeli su u prvoligaško društvo, i održali žestoku fudbalsku lekciju Mostarcima.</p>
+    <p>Gosti sa Neretve, bez dvojice ponajboljih pojedinaca u timu, kapitena Zdenka Jedvaja i prvog strijelca Mehe Kodre, samo u prvih dvadesetak minuta uspjeli su da pariraju mladićima trenera Petkovića. A onda je došao kolaps »crvenih«...</p>
+    <p>Odbrana gostiju bila je poput ementalera, srednji red Pinokijeva družina, a napadači kao brodolomci daleko od rta Dobre nade. Stoga nije nikakvo čudo što su Beograđani, u periodu od 20. minuta do kraja poluvremena, sve što su zamislili neometano mogli i realizovati. Njihova »devetka« Dragan Đukanović (ko je taj?) skoro ni kriv ni dužan se proslavio.</p>
+    <p>»Plavi« su kao od šale probijali bočne pozicije Veležove odbrane. Mladići u užoj odbrani »rođenih«, Pintul, Musa i Farac, pokazali su veliko neiskustvo, naivnost i totalno odsustvo koncentracije. Veliku pometnju u zadnji red gostiju nepromišljenim istrčavanjem konstantno je unosio i golman Velibor Pudar, koji je, ako je suditi po ovom meču, daleko ispod renomea »letećih Mostaraca«. Lako je domaćinu 
+bilo davati golove u sudaru s protivnikom koji nije znao ni kuda će ni šta će. A najradije bi u zemlju propao!
+</p>
+    <p>U drugom dijelu meča Mostarci su bili nešto vispreniji. Ulazak Dalića, umjesto indisponiranog Farca, učinio je njihovu igru usmišljenijom, bržom i opasnijom. Nagrada u vidu počasnoga gola stigla je već nakon osam minuta. Dobar centaršut s desne strane Nikola Jokišić je »santračevski« — lopta se uz desnu stativu gola golmana Kocejića otkotrljala u mrežu — ralizovao. Pošto su tada domaći fudbaleri bili isključili motore izgledalo je da će gosti postići još koji gol. Ali, bila je to pogrešna pretpostavka. Breme katastrofe bilo je veliki »okov« da bi se »rođeni« mogli vratiti u igru.</p>
+    
+    <p>Sredinom drugoga poluvremena došlo je do nove kardinalne greške u odbrani gostiju, pa je Ćurčić upalio petardu u mreži Pudara. Nevjerovatno, ali drugoligaši na startu znaju i mnogo jače timove od ovoga Veležovog današnjeg  ne samo »baciti na pleća«, nego i poniziti.</p>
+    <p>Ipak, pod Bijelim brijegom ne treba dizati uzbunu. Treba se pripremiti za ovakve šok-terapije. Tim se stvara, a i narod lijepo kaže »Prvi mačići se u vodu (Dunav) bacaju«...</p>
+    <p>Početak je prvenstva. Valja sačuvati zdravu pamet i ne gubiti živce.</p><div class="signature"><i>Sloboda</i></div>
+</div></div>
     </div>
         <div class="table-row">
             <div class="table-cell size1" style="flex: 1.5;">12.9.1954.</div>
             <div class="table-cell size2">12.9.1954.</div>
-            <div class="table-cell"><span>Odred Ljubljana</span><div class="players">ODRED: Grčević, Medved, Ruper, Žižek, Smole, Berginc, Krgin, Žumbar, Zdravković, Jurišić, Klančišar<br>VELEŽ: Irović, Dilberović, Rukavina, Slišković, Bolfek, Radiljević, S. Selimotić, Mujić, Zelenika, Hrvić, Momić</div></div>
+            <div class="table-cell"><span>Odred Ljubljana</span></div>
             <div class="table-cell size1">Bežigrad</div>
-            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>2 - 1</span><div class="scorers"><table class="scorerstable"><tbody><tr><td>Zelenika 31'</td><td>1-0</td><td></td></tr><tr><td></td><td>1-1</td><td>Klančišar 36'</td></tr><tr><td>Momić 68'</td><td>2-1</td><td></td></tr></tbody></table></div></div>
+            <div class="table-cell" style="text-align: center; flex: 1; margin-top: auto; margin-bottom: auto;"><span>2 - 1</span></div>
             <div class="table-cell size1" style="text-align: center; flex: 0.6; background-color: #D9EAD3;">P</div>
             <div class="table-cell size1" style="text-align: right; flex: 0.7;">3,500</div>
         <div class="table-cell paper clickable-row" data-row-id="2" style="text-align: right; flex: 1;" id="showBox2"><img src="../images/site/press/sloboda.png" style="width: 90%"></div></div>
-        <div class="table-row hover-row" data-hover-id="2">
+        <div class="table-row hover-row" data-hover-id="2" style="display: flex;">
       <div class="table-cell" colspan="8"><div class="two-column-layout">
   <div class="report-column">
     <p>Stadion: Bijeli Brijeg. Gledalaca: 3.000. Sudija: Veljko Korać (Cetinje).</p>
@@ -895,6 +948,25 @@ h2 {
     <p>Igrao se 23. minut, usledila je munjevita akcija „rođenih” i sve je teklo kao po koncu. Mladi Jokišić je uposlio svog kolegu Tufeka, a ovaj je majstorski centrirao. Centarfor Veleža, Meho Kodro, je znalački matirao odbranu gostiju i njihovog čuvara mreže Fahrudina Omerovića koji je, istina, bio nemoćan. Na semaforu — 1:0 za „rođene”.</p>
     <div class="signature"><b>Dragan MILADINOVIĆ</b><br><i>Sport</i></div>
   </div>
+</div>
+<div class="size2">
+    <p>Stadion: Bijeli Brijeg. Gledalaca: 3.000. Sudija: Veljko Korać (Cetinje).</p>
+    <p style="margin-bottom: 0px;">VELEŽ: Pudar (Glogovac 87'), Musa, Pušić, Bejatović <font color="BF9000">■</font>, Jedvaj, Pintul <font color="BF9000">■</font>, Jokišić <font color="BF9000">■</font> (Dalić 81'), Tufek, Kodro, Maslovar, Beširević</p>
+    <p>PARTIZAN: Omerović, Stanojković, Milanič, Novak, Miletić (Mijalković 46'), Vujačić, Bogdanović, Gudelj (Šćepović 73'), Vorkapić, Brnović, Krčmarević</p>
+    <p class="aligned-text" style="margin-bottom: 0px;"><span class="left-text">Kodro 23'</span><span class="left-text">1-0</span></p>
+    <div style="border-top: 2px solid #404040; margin-top: 10px;"></div>
+    <h4>Neuspeo prvenstveni debi selektora na kormilu Partizana — Golom Kodra u 23. minutu podmlađeni tim Veleža osvojio oba boda</h4>
+    <h2>Osim kratkih rukava</h2>
+    <p>Ovogodišnja premijera pod Bijelim bregom i odmah „Sportov” derbi kola. Za goste iz Beograda, istovremeno prvi test novog tima sa novim dirigentom, selektorom jugoslovenske reprezentacije Ivicom Osimom. Velež se, takođe, prvi put zvanično pred svojim navijačima predstavio u izmenjenom izdanju sa dosta mlađih i neiskusnih prvoligaških fudbalera. Sve je to davalo posebnu draž i aromu jubilarnom 75. prvenstvenom odmetavanju „crno-belih” i „rođenih”.</p>
+    <p>Na stadionskim jarbolima vijorile su se tri zastave: jugoslovenska, FSJ i klupska, crvena Veleža. I to je značilo da je, ipak, ovo Mostar, onaj poznati otvorenog srca i gostoljubivi grad. Uoči meča razgovarali smo i sa Miodragom Mickovićem, superkontrolorom FSJ i predsednikom Takmičarske komisije. Želeli smo da čujemo i njegovo viđenje jutrošnje eksplozije. On je kazao:</p>
+    <p>Veliki „zvučni” efekat. Materijalna šteta nije velika, oštećena je kapija stadiona.</p>
+    <p>Predsednik Predsedništva Veleža, Vid Čuljak je ogorčen:</p>
+    <p>— Očigledno, radi se o provokaciji i upozorenju zbog naše odluke da se takmičimo u ovoj ligi.</p>
+    <p>Eto, na žalost, kao da se nalazimo u frontu a ne na sportskoj priredbi, pa tako počinjemo sa raportom iz grada na Neretvi.</p>
+    <b>Kodro kažnjava</b>
+    <p>U prvih petnaestak minuta igralo se između dva šesnaesterca. Istina, Partizan je imao izvesnu terensku inicijativu. Tek u 20. minutu veče uzbuđenje. Ofanzivni reprezentativni bek „crno-belih” Vujadin Stanojković se stuštio po desnoj strani igrališta i centrirao, ali libero Veleža, Zdenko Jedvaj, je presekao taj atak Beograđana. Ponovo je na sceni Stanojković, ovoga puta pokušao je lobom da iznenadi golmana Veleža Pudara, ali u tome nije uspeo</p>
+    <p>Igrao se 23. minut, usledila je munjevita akcija „rođenih” i sve je teklo kao po koncu. Mladi Jokišić je uposlio svog kolegu Tufeka, a ovaj je majstorski centrirao. Centarfor Veleža, Meho Kodro, je znalački matirao odbranu gostiju i njihovog čuvara mreže Fahrudina Omerovića koji je, istina, bio nemoćan. Na semaforu — 1:0 za „rođene”.</p>
+    <div class="signature"><b>Dragan MILADINOVIĆ</b><br><i>Sport</i></div>
 </div></div>
     </div>
         <div class="table-row">
@@ -1374,5 +1446,4 @@ h2 {
   <iframe src="../copyright.html" frameborder="0" style="margin-left: auto; margin-right: auto; width: 100%;"></iframe>
 
 </div>
-
 </body></html>
