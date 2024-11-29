@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html><head>
+    <title>1994 | KNR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="https://i.imgur.com/XchyWzg.png" type="image/png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+      body {
+            background-image: url('../images/site/background.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 16px;
+        }
+.credits {
+    text-align: center;
+    color: white;
+}
+    .warning {
+    display: inline-block;
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 10px;
+}
+    .warning b {
+    color: red;
+}
+      .fixedBox {
+        position: fixed;
+        top: 20%;
+        left: 25%;
+        width: 50%;
+        height: 60%;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 10px;
+        z-index: 9999;
+        display: none;
+        overflow: auto;
+        padding: 9px;
+      }
+	    @media screen and (max-width: 660px) {
+            .fixedBox {
+            	left: 12.5%;
+                width: 75%;
+            }
+        }
+
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 9998;
+        display: none;
+      }
+    .banner {
+    background-image: url('../images/site/header.png');
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+        position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  }
+    @media screen and (max-width: 660px) {
+            .banner {
+                display: none;
+            }
+        }
+        .logo2 {
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+    display: none;
+}
+
+    .logo2:hover {
+    opacity: 0.5;
+}
+  @media screen and (max-width: 660px) {
+            .logo2 {
+                display: block;
+            }
+        }
+        .size1 {
+        border: none;
+            display: none; 
+        }
+
+        @media screen and (min-width: 661px) {
+            .size1 {
+                display: block;
+            }
+        }
+        .size2 {
+        	border: none;
+            display: none; 
+        }
+
+        @media screen and (max-width: 660px) {
+            .size2 {
+                display: block;
+            }
+        }
+    .content {
+    position: relative;
+    z-index: 2;
+  }
+    .logo {
+    margin-top:7px;
+    margin-left:20px;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+    .logo:hover {
+    opacity: 0.5;
+}
+    .headercontent {
+    height:30px;
+    margin-top:11px;
+    margin-right:20px;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+        display: none;
+}
+@media screen and (min-width: 1425px) {
+            .headercontent {
+            	display: block;
+            }
+        }
+    .headercontent:hover {
+    opacity: 0.5;
+}
+.players {
+  background-color: #F7F7F7;
+  width: 600px;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: absolute;
+  padding: 9px;
+  display: none;
+}
+  
+span:hover + .players {
+  display: block;
+}
+.imagetable {
+    display: block;
+    margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+  
+span:hover + .imagetable {
+  display: block;
+}
+.scorers {
+  background-color: #F7F7F7;
+  white-space: nowrap;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: absolute;
+  right: 39%;
+  padding: 0px;
+  display: none;
+  text-align: left;
+}
+  
+span:hover + .scorers {
+  display: block;
+}
+    @media screen and (max-width: 660px) {
+ 				.scorers {
+        			right: auto;
+                    left: 5%
+    					}
+					}
+    .img-with-text {
+    text-align: center;
+    font-size: 14px;
+    width: 35%;
+    float: right;
+}
+
+.img-with-text img {
+    display: block;
+    margin: 0 auto;
+}
+    h1 {
+        font-family: 'Trebuchet MS', sans-serif;
+        text-align: center;
+    }
+        .table-container {
+            display: flex;
+            flex-direction: column;
+            margin-left: auto;
+            margin-right: auto;
+            width: 98%;
+            }
+            @media screen and (min-width: 661px) {
+ 				.table-container {
+        			width: 75%;
+    					}
+					}
+        .table-row {
+            display: flex;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+        .table-cell {
+            flex: 2;
+            padding: 8px;
+        }
+        .table-row.header {
+            background-color: #D84B4B;
+            color: #fff;
+            font-weight: bold;
+        }
+        .scorerstable {
+            margin: right;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    .scorerstable .th, .td {
+      padding: 0px;
+      border-bottom: 1px solid #ddd;
+    }
+    .scorerstable .th {
+      background-color: #D84B4B;
+      color: white;
+    }
+    .sortable {
+            margin: 0 auto;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    .sortable th, td {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+    .sortable th {
+      background-color: #D84B4B;
+      color: white;
+    }
+    .finaltable {
+        display: block;
+        margin-top: 1%;
+        margin-down: 1%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+    }
+    .column {
+  float: left;
+  width: 50%;
+  padding: 5%;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+h2 {
+    margin-top: 1px; 
+}
+    .signature {
+        text-align: right;
+    }
+	    .dropdown {
+            position: relative;
+            margin-left: auto;
+            margin-right: 10px;
+            float: right;
+            display: none;
+        }
+@media screen and (min-width: 800px) and (max-width: 1424px) {
+            .dropdown {
+                display: block;
+            }
+        }
+        .dropdown-img {
+            width: 100%; 
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(231, 215, 215, 0.5);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 10px;
+            right: 0;
+        }
+
+        .dropdown-content a {
+            padding: 12px 16px;
+            display: block;
+            text-decoration: none;
+            color: #333;
+        }
+    
+        .dropdown-content a:hover {
+            background-color: rgba(239, 215, 147, 0.66);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+<style id="__web-inspector-hide-shortcut-style__">
+.__web-inspector-hide-shortcut__, .__web-inspector-hide-shortcut__ *, .__web-inspector-hidebefore-shortcut__::before, .__web-inspector-hideafter-shortcut__::after
+{
+    visibility: hidden !important;
+}
+</style></head>
+  <body><div id="fixedBox" style="display: none;">
+      <p>Click anywhere outside of this box to hide it.</p>
+    </div>
+
+    <div id="overlay" style="display: none;"></div>
+  
+  <div class="banner"><a href="../index.html"><img src="https://i.imgur.com/gbKQfNP.png" class="logo"></a><a href="../statistika.html"><img src="../images/site/statistika.png" class="headercontent" align="right"></a><a href="../protivnici/protivnici.html"><img src="../images/site/protivnici.png" class="headercontent" align="right"></a><a href="../kalendar/kalendar.html"><img src="../images/site/kalendar.png" class="headercontent" align="right"></a><a href="../abecedarnik/abecedarnik.html"><img src="../images/site/abecedarnik.png" class="headercontent" align="right"></a>
+  <div class="dropdown">
+    <img class="dropdown-img" src="../images/site/dropdown-menu.png">
+    <div class="dropdown-content">
+        <a href="../abecedarnik/abecedarnik.html"><img src="../images/site/abecedarnik.png"></a>
+        <a href="../kalendar/kalendar.html"><img src="../images/site/kalendar.png"></a>
+        <a href="../protivnici/protivnici.html"><img src="../images/site/protivnici.png"></a>
+        <a href="../statistika.html"><img src="../images/site/statistika.png"></a>
+    </div>
+  </div></div>
+  <div class="container">
+    
+    
+    <br class="size1">
+<br>
+    <div class="logo2">
+        <a href="../index.html"><img src="https://i.imgur.com/gbKQfNP.png" style="width:100%;"></a>
+    </div>
+    <br>
+  <div class="panel panel-default">
+    <div class="panel-body"><div class="img-with-text size1"><img src="../images/historical/temp 1994.jpg" width="100%"><p><i></i></p></div><div class="size2" style="text-align: center;"><img src="../images/historical/temp 1994.jpg" width="100%"><p><i></i></p></div><h1>Sezona 1994</h1>
+    <h3><i>Uskoro na ovoj stranici:<li>Rezime sezone</li><li>Ekskluzivne slike sa tekmi</li><li>Protokol (zapisnik) utakmica</li><li>Tabele iz kola u kolo</li><li>Detaljni izvještaji sa terena</li></i></h3>
+
+
+<br class="size1">
+<br class="size1"><br class="size1"><br class="size1"><div id="fixedBox1" class="fixedBox" style="display: none;">
+    <h2>Dobar početak</h2>
+    <h4>„Velež” — „Budućnost” 5:0 (2:0)</h4>
+    <p>Već u drugoj minuti »Velež« postiže gol. Akcija je počela od Radiljevića. Loptu je vrlo lijepo dodao Selimotiću, a ovaj još ljepše Zeleniki, koji je izvanrednim šutem šalje u mrežu. To je bila brza i uspjela akcija. Poslije toga se vjerovalo da će gosti položiti oružje. Ali do toga nije odmah došlo. Oni su počeli da izvode protunapade. U 8 minuti, Irović je bio prisiljen da boksovanjem izbaci loptu u polje. Malo kasnije Darmanović I uspio je da prodre do pred sam gol, ali je lopta prošla više stative. To je bila idealna prilika za postizanje gola. Tek pred kraj prvog dijela igre Hrvić povisuje rezultat. On je iskoristio grešku protivničke odbrane.</p>
+    <p>U tom dijelu igre gosti su bili donekle ravnopravni i na momente nadmoćniji. U polju su dobro igrali, ali navala je komplikovala svaku zrelu akciju, što je opet iskoristila odbrana domaćih i na vrijeme je intervenisala.</p>
+    <p>Drugo poluvrijeme pripada »Veležu«. Gosti su bili primorani da se povuku i brane. Izgledalo je kao da se igra na jedan gol. I pored toga »Veležova« navala nije iskoristila sve one povoljne šanse. Postigli su još tri gola, ali to ne znači da su igrali najbolje. Mnogo se griješilo. Da su se malo više zalagali gosti bi doživjeli još veću katastrofu. Treći gol postigao je Mujić iz blizine. Malo kasnije se pružila prilika da Selimotić I postigne gol, ali je oklijevao. U 65 minuti Zelenika je izveo pravu egzibiciju. Uspio je da predribla 4—5 protivničkih igrača i onda je oštro šutirao po zemlji, između igrača i lopta je zatresla mrežu. Iza toga Hrvić je loptu dodao Zeleniki, a ovaj bez oklijevanja jako tuče i povisuje rezultat.</p>
+    <p>Na nedjeljnoj utakmici »Velež« nije igrao prema svojim mogućnostima. I pored toga, svojom jednostavnom i efikasnom igrom zasluženo je pobijedio. Od gostiju smo više očekivali. Oni su igrali slabo i nismo mogli opaziti izvjestan napredak od prošle godine, već naprotiv nazadovanje. Nije to ona ranija ekipa koja je bila ravnopravna i čak bolja.</p>
+    <p>Kod domaćih istakli su se: Selimotić I i Zelenika, a kod gostiju Vasović, Petrović i Darmanović I.</p>
+    <p>Sudija Stefanović nije imao mnogo posla.</p>
+    <div class="signature"><b>Š. A.</b><br><i>Sloboda</i></div>
+      <div class="size1" style="margin-left: auto; margin-right: auto; width: 60%;"><img src="../images/site/table/tab1954-08-29.png" width="100%"></div>
+      <div class="size2"><img src="../images/site/table/tab1954-08-29.png" width="100%"></div>
+    </div>
+
+    <div id="overlay1" class="overlay" style="display: none;"></div>
+
+    <div id="fixedBox2" class="fixedBox" style="display: none;">
+    <h4>Opreznost Veležovci</h4>
+    <h2>Velež-Odred 2:1(1:1)</h2>
+    <p>I u posljednjem susretu Velež je odnio tijesnu, ali vrijednu pobjedu. To je osma pobjeda unazad dva mjeseca. Za isto vrijeme nije doživio ni jedan poraz. Odlično je počeo i nadamo se da će nastaviti s nizanjem pobjeda.</p>
+    <p>U Ljubljani je Velež nastupio sa nešto izmjenjenim timom. Momić je igrao na krilu, dok su ostali igrali na svojim mjestima.</p>
+    <p>Istina, Velež nije pružio lijepu igru za oko. Ali, ni domaći također. Naročito u prvom poluvremenu igralo se rastrgano i čak i - mlako.</p>
+    <p>Bolfek, koji se uz Mujića i Rukavinu jedino nešto naročito istakao, ali i snosi krivicu za primljeni gol, kaže da je igra bila slaba sigurno zbog toga jer je on zajedno sa svojim drugovima, računao sa stopostotnom sigurnošću na pobjedu.</p>
+    <p>Otuda ležernost.</p>
+    <p>Drugo poluvrijeme međutim, bilo je znatno zanimljivije. Domaćini su pošto — poto nastojali da ostanu neporaženi, a veležovci su tražili da svojoj kući odnesu oba boda.</p>
+    <p>I doista, na kraju, Mostarci su slavili pobjedu...</p>
+    <p>Prvi gol za Velež dao je Zelenika, a drugi pobjedonosni, Momić koji se dobro snašao svojom požrtvovanom igrom na mjestu lijevog krila.</p>
+    <p>Ekipa Odreda nije predala bodove svojim gostima. Svaki igrač u timu dao je sve od sebe što je mogao da bi spasao poraz.</p>
+    <p>Ali, uzalud...</p>
+    <p>Pobjeda Veleža je sasvim zaslužena. Za momčad ona znači mnogo. Prije svega, ohrabrenje za dalje vrlo teške i naporne borbe.</p>
+    <p>Svejedno, iz ove borbe može se izvući jedna pouka: Protivnika nikada ne treba potcijeniti niti prije ulaska u okršaj samouvjereno zaključivati: Ah, pobjeda je sigurno naša.</p>
+    <p>To pogotovo važi za Velež u sadašnjoj situaciji kada se nalazi na čelu tabele. Dovoljno je samo malo umišljenosti i osjećanja nepobjedivosti i kola bi već mogla početi da zaostaju...</p>
+    <p>Znači, na prvom mjestu opreznost i volja za igru.</p>
+    <p>Nedjeljni susret sa zagrebačkim Metalcem mogao bi biti iskušenje. Susret će biti vrlo težak. Zagrebčani su ujednačena i borbena momčad koja je u posljednje vrijeme stekla glas solidne ekipe. Ako ništa drugo, vrijedno je istaći da Metalac u direktnim susretima sa Dinamom, prvakom Jugoslavije i zbilja jednim od najboljih timova u našoj zemlji, obično u međusobnim derbi susretima u Zagrebu izlazi kao pobjednik.</p>
+    <p>Dakle, opreznost veležovci...</p>
+    <div class="signature"><i>Sloboda</i></div>
+    <div class="size1" style="margin-left: auto; margin-right: auto; width: 60%;"><img src="../images/site/table/tab1954-09-12.png" width="100%"></div>
+      <div class="size2"><img src="../images/site/table/tab1954-09-12.png" width="100%"></div>
+    </div>
+
+    <div id="overlay2" class="overlay" style="display: none;"></div>
+
+    <div id="fixedBox3" class="fixedBox" style="display: none;">
+    <h2>I treća pobjeda</h2>
+    <h4>Velež - Metalac 1:0 (0:0)</h4>
+    <p>Od početka do kraja utakmice igra je bila živa i uzbudljiva. Lopta se munjevitom brzinom prenosila s jednog na drugi kraj igrališta. Ovog puta gosti su se pretstavili kao veoma dobar, uigran i borben tim. Oni su istim tempom igrali kroz čitavih 90 minuta. Umalo Velež nije doživio poraz, jer su gosti stalno vršili silovite i veoma opasne prodore. Irović je imao mnogo posla. Nedjelja je bila njegov dan. Branio je izvanredno i slobodno se može reći da je on taj koji je spasio svoj tim od poraza i ima najviše zasluga za pobjedu. Bio je priseban, požrtvovan i siguran. Čak je u 25 minuti igre odbranio penal, koji je prestrogo dosuđen.</p>
+    <p>Dobar dio prvog poluvremena pripadao je gostima, ali je i Velež povremeno izvodio akcije koje nisu ozbiljno ugrožavale gol Zuhića, izuzev u jednoj prilici kad je Selimotić tukao preko gola iako se našao sam u blizini protivničkog gola. Tek pred odmor Velež se donekle sređuje, ali navalni red još uvijek igra ispod svojih mogućnosti.</p>
+    <p>I u drugom poluvremenu su gosti, kao u početku igre, nastojali pošto poto da dođu do pobjede. I veležovci su malo živnuli, ali kod njih nije bilo kolektivnog zalaganja kao kod protivnika. Ipak, jednim dijelom, Velež je bio nadmoćniji, ali njegova navala nije igrala efikasno. Tek u 75 m. igre Zelenika dobacuje loptu slobodnom Hrviću koji je prisebno plasira u gol. Poslije toga Zelenika je u dva maha imao prilike da postigne gol, ali je neprecizno pucao, pored i poviše stativa.</p>
+    <p>Na nedeljnoj utakmici Velež je podbacio. Izuzev Irovića i Rukavine, svi su igrali ispod svojih mogućnosti. Nisu ispoljili borbenost, a ni tehničko znanje.</p>
+    <p>Sudija Makijedo sudio je slabo.</p>
+    <div class="signature"><b>Š. A.</b><br><i>Sloboda</i></div>
+    	<div class="size1" style="margin-left: auto; margin-right: auto; width: 60%;"><img src="../images/site/table/tab1954-09-19.png" width="100%"></div>
+      	<div class="size2"><img src="../images/site/table/tab1954-09-19.png" width="100%"></div>
+    </div>
+
+    <div id="overlay3" class="overlay" style="display: none;"></div>
+
+  <div id="fixedBox4" class="fixedBox" style="display: none;">
+	<h4>Velež — Bokelj 6:1 (2:1)</h4>
+    <h2>Egzibicija mostarskog drugoligaša u Kotoru</h2>
+    <p>Postignuti uspjesi u posljednjih nekoliko nedjelja, vodeći položaj, na tabeli i izvanredna forma mostarskog drugoligaša, sve je to skupa išlo u prilog opravdanim prognozama čak i onih navijača iz Boke da će Bokelj položiti oružje i na svom terenu.</p>
+    <p>Ipak interesovanje, i pored toga, je bilo veliko, pa je čak preko Radio stanice Titograd bio organizovan prenos utakmice. A iz Mostara je došlo oko 100 navijača.</p>
+    <p>Kad je sa centra izveden prvi udarac i kad je razigrani navalni red Bokelja punih 30 minuta opsjedao Irovićeva vrata, potpomognut svojim vatrenim navijačima, pretpostavljalo se je da će pretposljednji sa tabele prirediti i ovog puta neugodno iznenađenje Mostarcima; kao što se to često događa u fudbalu.</p>
+    <p>Međutim, nakon jedne idealno povoljne šanse, koju je Bokelj, nesnalažljivošću svojih napadača, propustio da postigne vodeći gol, Velež u 29 minuti igre, nakon jedne iznenadne i lijepo smišljene akcije preko Zelenike postiže vodstvo — 1:0. Malo kasnije, samo nakon jedne minute Bokelj uspijeva preko prodornog i brzog Brajaka da izjednači. Preostalih 15 minuta prošlo je u naizmeničnim navalama i jednih i drugih, u kojima je od igre nešto više pripadalo Bokelju a Veležu da preko Momića postigne i drugi gol u 37 minuti.</p>
+    <p>U nastavku drugog poluvremena slika se sasvim izmjenila, razigrani napadači Veleža krenuli su u ofanzivni napad i potpuno zagospodarili terenom.</p>
+    <p>Treći, četvrti, peti i šesti gol — bili su plodovi jedne velike igre jedanaestorice Mostaraca, koji su daleko nadmašili svoga protivnika, napravili egzebiciju kakva se rijetko viđa.</p>
+    <p>Da nije bilo onih pretjeranih kombinacija i nepotrebnog driblanja pred golom domaćih, a naročito nakon postignutog četvrtog gola, rezultat bi kud i kamo mogao biti veći.</p>
+    <p>No i pored takove nadmoćnosti Veleža, Bokelj je do posljednjeg minuta parirao sa rijetkim ali opasnim prodorima i ugrožavao Irovićeva vrata.</p>
+    <p>Ako bi željeli da dajemo ocjenu onda bi jednom riječi kazali da su svi bili dobri, ali ipak razlika bi bila u podjeli ocjena pojedincima: Irović (7), Dilberović (6), Bolfek (7), Radiljević (6), Slišković (8), Selimotić II (8).</p>
+    <p>Za neke igrače Bokelja bio bi galantan poklon kad bi im se dodjelile ocjene 3—4.</p>
+    <p>Sudija Sreta Stefanović vodio je susret sa dovoljno autoriteta no najviše je griješio u ofsajd pozicijama, ali greške nisu uticale na sam rezultat.</p>
+    <div class="signature"><b>Zlatko ČELIKOVIĆ</b><br><i>Sloboda</i></div>    	
+    <div class="size1" style="margin-left: auto; margin-right: auto; width: 60%;"><img src="../images/site/table/tab1954-09-26.png" width="100%"></div>
+      	<div class="size2"><img src="../images/site/table/tab1954-09-26.png" width="100%"></div>
+	</div>
+
+    <div id="overlay4" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox5" class="fixedBox" style="display: none;">
+    <h4>Velež — Zenica 5:1 (3:1)</h4>
+    <h2>Gruba igra Zenice</h2>
+    <p>Ljubitelji futbala u Mostaru, željni većih futbalskih utakmica nestrpljivo su očekivali susret futbalera Veleža i Zenice. Osobito interesovanje vladalo je za nastup gostujućeg tima, koji se ove godine prvi puta takmiči u saveznoj konkurenciji.</p>
+    <p>Rezultat je 5:1. Dovoljno ubjedljiv dokaz vrijednosti partnera na nedeljnoj utakmici. Ali on ne kazuje ništa o onom što se zbivalo na terenu za 90 minuta. Iz njega oni koji nisu prisustvovali utakmici (bolje za njih!) ne mogu ništa saznati o tamnim mrljama, o nesportskim ispadima kojih je bilo na pretek. Kada bi se nekako nesportsko ponašanje moglo izraziti rezultatom, u tom slučaju bi Zenica apsolutno imala prednost, jer ono što su činili pojedini igrači Zenice zaslužuje prezir i stroge kazne. Tačno je da ni pojedini igrači Veleža u otsudnim trenucima nisu bili dovoljno staloženi, te su i oni na nesportski način reagovali na grube nasrtaje futbalera Zenice. Tačno je da je Dilberović u drugom poluvremenu napravio jedan grubi nasrtaj, koji zaslužuje i oštriju kaznu od faula. Ali...</p>
+    <p>Daleko bi nas odvelo nabrajanje svega onoga što su učinili igrači Zenice. Slučaj isključenog lijevog krila Kaknje i njegovo ponašanje na terenu su najkarakterističniji. Nakon niza prekršaja, on se u jednom momentu toliko zaboravio da je u sprintu pretrčao 15—20 metara da bi iza leđa pokosio Selimotića I, koji se nalazio u prodoru. I kada mu je sudac rukom dao znak da napusti teren, začudio se! Ne samo on, već i njegovi suigrači. Slijedili su protesti kod sudije... A zatim, ono što se u Mostaru nije vidjelo dugo vremena, napuštajući teren, Kaknjo je pred očima 4500 ljudi pljunuo sudiju.</p>
+    <p>Da se samo desio taj slučaj sa Kaknjom, i to bi bila velika sramota za futbalski kolektiv Zenice. Za zgražanje je i postupak kapitena (!) gostiju Mujkića koji je u više mahova nekulturnim gestikuliranjem izazvao burne proteste gledalaca. Kako i ne bi, kada su su njegovi gestovi u krajnjem slučaju značili povredu morala na javnom mjestu.</p>
+    <b>Efektni golovi</b>
+    <p>Već u početku utakmice Velež je počeo silovitim napadima. Na gol se čekalo svega 11 minuta. Tada je Zelenika idealno iskoristio slobodnog Mujića koji se spretno probio u blizinu protivničkog gola i vratar Tomanović doveden je pred svršen čin. Velež je poveo sa 1:0. I poslije gola napadi Veleža ne popuštaju. Očito je da domaći žele da se osiguraju, jer minimalno voćstvo ne pretstavlja veliku prednost. Kada je u 25 minutu Mujić povisio rezultat na 2:0, smatralo se da je sudbina gostiju zapečaćena. Tek što su poveli loptu sa centra Zeničani su, greškom Bolfeka, opet povećali svoje šanse za povoljan rezultat. Dobro odmjeren šut Tucakovića otsjeo je u mreži Veležovog gola. Smanjenje rezultata nije utjecalo na visok borbeni moral domaćih. No, još jedanput postojala je opasnost za nastupanje krizer. Zelenika je u 32 minutu promašio — jedanaesterac. Našao se »majstor« za odbranu njegovih majstorskih udaraca sa 11 metara! Ono što nije postigao iz te idealne prilike, nadoknadio je u 44 minutu. Nalazeći se na udaljenosti od preko 25 metara od protivničkih vrata, odlučio se na šut. Tomanoviću je jedino preostalo da se uhvati za glavu, gledajući kako se lopta odbijena od stative koprca u mreži.</p>
+    <p>Vidjelo se da su povučenom igrom polutki futbaleri Zenice ušli u nastavak utakmice sa namjerom da se izvuku od što većeg poraza. I kroz redove gusto zbijene odbrane gostiju, domaći su preko Zelenike i rasploženog Mujića postigli još dva gola i na taj način postavili konačan rezultat ove veoma grube utakmice.</p>
+    <b>Na momente je Velež briljirao</b>
+    <p>Primjećuje se da Velež u toku cijele utakmice ne pruža kvalitetnu igru. Osobito navalni red. Njegova navala samo na mahove zaigra prema svojim mogućnostima i tada se protivnička mreža napuni golovima. To su najbolje osjetili Bokelj i Zenica. U subotu je u redovima domaćih bilo više istaknutih pojedinaca. Golman Irović siguran i ne snosi krivicu za primljeni gol. Bekovi su dobro obavili zadatak. Naročito Dilberović (treba se odvići grube igre). Bolfek je utakmicu odigrao u velikom stilu. Ali, načinio je jednu grašku i postignut je gol. I Radiljević se nalazi na spisku najistaknutijih pojedinaca utakmice. Većina opasnih napada izvodila se preko desne strane navale, uz suradnju sa Zelenikom. Najbolji Mujić i Selimotić I. Dobija se utisak da se talentovani Selimotić II ne snalazi na lijevom krilu.</p>
+    <p>Sudija Božo Stanišić vodio je ovu tešku utakmicu dobro.</p>
+    <div class="signature"><b>Asim HADŽAJLIĆ</b><br><i>Sloboda</i></div>
+    	<div class="size1" style="margin-left: auto; margin-right: auto; width: 60%;"><img src="../images/site/table/tab1954-10-16.png" width="100%"></div>
+      	<div class="size2"><img src="../images/site/table/tab1954-10-16.png" width="100%"></div>
+    </div>
+
+    <div id="overlay5" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox6" class="fixedBox" style="display: none;">
+    <h4>0:0 u Kruševcu</h4>
+    <h2>Dragocjen bod</h2>
+    <p>Poslije pet uzastopnih pobjeda nad svojim protivnicima, Veleža je u Kruševcu očekivao težak zadatak. Simpatizeri su priželjkivali i šestu pobjedu, iako su malo vjerovali u nju. Pritajeno su mislili da bi i jedan bod bio veliki uspjeh, jer i Napredak je protivnik koji reflektira na jedno od prva dva mjesta Druge lige. A, igrači Veleža znali su šta bi značila pobjeda u Kruševcu. Ušli su u igru, mirno, bez nervoze i bojazni. Kao što se i očekivalo, protivnik je odmah u početku navalio želeći da prvim akcijama riješi utakmicu. To nisu bile smišljene kombinacije, jer Napredak je ekipa sa dosta oskudnim tehničkim znanjem, ali sa neobičnom borbenošću i zalaganjem. Njihova borbenost u drugom poluvremenu prelazila je u određenu grubost. Zahvaljujući vrlo brzim intervencijama odbrane Veleža, koja u duelima sa domaćim igračima nije oklijevala, nije dolazilo do većih grubosti.</p>
+    <p>Igra Veleža mogla bi se podijeliti na dva dijela. Jedan dio iz prvog poluvremena, kada je cijeli tim igrao vrlo požrtvovano i tehnički dobro, ali sa starom manom — slabim završnim udarcem. U tom dijelu, uz sve ostale, najbolje je zadatak obavio Slišković, koji je protiv sebe imao najopasnijeg igrača Kruševca. Posebno treba istaći i veliko požrtvovanje Irovića, koji je intervenisao uvijek u pravi momenat. U drugom dijelu odbrana je podnijela najveći teret utakmice. Sa navalom je drugi slučaj. Dok su u prvom poluvremenu svi igrali lijepo, colidno i požrtvovno, poslije odmora se nisu mogli ni prepoznati. Skoro nijedna akcija na vrata Napretka nije izvedena u tom dijelu igre. Velež je može se reći tada u navali igrao sa igračem manje, jer je Radiljević, zbog povrede samo statirao na lijevom krilu.</p>
+    <p>Nešto o sudiji i publici. Do momenta, dok sudija Mika Stefanović nije isključio jednog igrača domaćih, bilo je sve normalno. A kada je Petrović III, zbog očiglednog i namjernog faula istjeran sa igrališta, publika je psovala, vrijeđala i bacala kamenje na igralište da je trebalo 3—4 minuta da se nastavi igra. I pri izlasku na poluvremenu scena se ponovila. Sudija i jedan od njegovih pomoćnika dobili su kamenjem udarce po glavi. Poslije utakmice razjarena masa je ponovno namjeravala napasti sudije, ali kordon milicije i funckionera zaštitio ih je od fizičkog napada. Inače, suđenje od Mike Stefanovića bilo je vrlo dobro i zaista mu treba odati priznanje kada je utakmicu, pod ovakvim okolnostima priveo kraju.</p>
+    <div class="signature"><b>Haldun HRVIĆ</b><br><i>Sloboda</i></div>
+    	<div class="size1" style="margin-left: auto; margin-right: auto; width: 60%;"><img src="../images/site/table/tab1954-10-24.png" width="100%"></div>
+      	<div class="size2"><img src="../images/site/table/tab1954-10-24.png" width="100%"></div>
+    </div>
+
+    <div id="overlay6" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox7" class="fixedBox" style="display: none;">
+    <h4>Velež - Mačva 4:0 (3:0)</h4>
+    <h2>Moglo je i više</h2>
+    <p>U jesenjoj sezoni Velež postiže odlične rezultate. Prošlo je sedam kola, protkanih teškim i ogorčenim borbama sa solidnim drugoligaškim ekipama — rivalima u borbi za najviša mjesta na tabeli, a Velež nije izgubio ni jednu utakmicu. Ako se letimice osvrnemo malo unazad, na rezultate proteklih prvenstava, zapazićemo da ranije, hercegovački ligaš, ni u Republičkoj ligi, nije postizao slične rezultate. Osobito na »stranim« igralištima, pa i sa neuporedivo slabije kvalitetnim timovima.</p>
+    <p>U pobjedonosnom jesenskom »maršu« čiji je cilj prva liga, zahuktale veležovce nije zaustavila ni poznata ligaška momčad, Mačve iz Šapca. Ne samo da ih nije zaustavila, već je mostarski teren napustila poražena sa 0:4. Vjerovatno zadovoljna ,jer je moglo biti i više.</p>
+    <b>Pola sata bolji — bez gola!</b>
+    <p>Od prve minute Velež je zaigrao ofanzivno, riješen da u početnim akcijama, postizavanjem zgoditka, zbuni protivnika i odluči utakmicu. Polutke Mujić i Hrvić, koji su u tom periodu iskušavanja protivnika bili nosioci napada, pokušavali su da svoju napadačku aktivnost sprovedu preko Zelenike. Napad za napadom je propadao. Visoki diša Stefanović, koji je na mjestu centerhalfa igrao za Partizan. paralizovao je u prvim naletima Zeleniku. Pogreška Veležovih navalnih igrača je možda bila u tome što se Zeleniku pokušavalo uposliti visokim loptama, što je, naravno konveniralo Stefanoviću, odličnom u igri glavom. Takva nadmoćna, ali neefkasna i jalova igra, odvijala se skoro punih dvadeset minuta.</p>
+    <p>A onda su uslijedile tri dramatične minute, najdramatičnije na cijeloj utakmici, koje su svu publiku podigli na noge. Tada nije pao ni jedan gol, a čini mi se da nije bilo nijednog posmatrača koji u tim trenucima, od 20 do 23 minute, nije vidio loptu u mreži! Zbilja, bile su to idealne šanse, za kojima se samo može požaliti. Seriju promašaja počeo je Selimotić II koji je od najjednostavnije potrebnog poteza namjeravao načiniti nešto komplikovano, a efektno. Umjesto da centriranu loptu sa desne strane običnim podmetanjem noge i sa nekoliko metara ubaci u gol, on je pokušao to isto učiniti skokom »škarama« i — kiksirao. Tek što su odbranbeni igrači Mačve raščistili gužvu, Velež je ponovno bio u akciji. Selimotić I u šesnaestercu gostiju je umirio loptu, lijepo »okinuo«, ali je jak udarac prošao tik iznad prečke. Još se uzbuđenje gledalaca nije ni stišalo a domaći su ponovno pošli u opsadu Begovićevog gola. Stvorila se rijetko viđena gužva, tri - četiri puta su navalni igrači domaćih iz neposredne blizine pokušavali pronaći put ka Mačvinoj mreži, ali se uvijek na putu ka cilju ispriječilo nečije tijelo ili ruka požrtvovnog golmana Begovića. Konačno je smjelim padom u noge, Begović za izvjesno vrijeme smirio »situaciju«.</p>
+    <b>Najzad golovi</b>
+    <p>I kada je izgledalo da će navala Veleža, sa skoro potpuno onemogućenim Zelenikom, teško uspjeti da savlada protivnika, došlo je do golova. Za osam minuta borbeni, ali i iscrpljeni Šapčani, primili su tri gola! Najmlađi prvotimac navalnog reda Veleža, Selimotić II divnim volej udarcem »načeo« je protivničku mrežu. Konačno, jedan šut na prvo mjesto. Poslije pola sata neprestane igre u protivničkom polju. Napadi nisu malaksavali i sve je »mirisalo« na drugi gol. U 36 minuti brzi i okretni Selimotić I prešao je svog čuvara Stankovića, centrirao, Hrvić je podmetnuo glavu, lopta ispada golmanu iz ruke. Hrvić ponovno pritrčava . . . Gol! Nemoćnom Begoviću je samo preostalo da loptu izvadi iz mreže. Kazaljka na satu pokazivala je još sedam minuta do poluvremena, kada je Velež i trećim golom krunisao svoju premoć nad protivnikom. Strijelac je ponovo bio raspoloženi Hrvić.</p>
+    <p>Promjena rezultata postignuta u 48 minuti nagovještavala je katastrofu Mačve. Rezultat od 4:0 postavio je golgeter utakmice, Hrvić, istina zaslugom malog Selimotića. Visoku loptu, koja je dolazila sa lijeve strane, Leo <i>[oštećeno]</i>-skim potezom glave, između nekoliko zbunjenih igrača Mačve, smjestio na pravo mjesto. Gledaoci su mislili da će taj gol, postignut odmah u početku nastavka, potpuno demoralisati ošamućenu jedanaestoricu Šapčana. Međutim, pojedinci u redovima Veleža su počeli ispoljavati ležernost, očito zadovoljni rezultatom i umjesto da zbunjenog protivnika, koji je ličio na skoro nokautiranog boksera u ringu, postizanjem još kojeg pogodka katastrofalnije poraze, dopustili su da rezultat od 4:0 ostane i krajnji. Najveću krivnju snosi Zelenika, koji se u najvećem dijelu drugog poluvremena »šetao« po igralištu. Ti njegovi postupci zaslužuju poseban osvrt.</p>
+    <b>Čudnovato, ali uspjelo</b>
+    <p>Sastav Veleža nas je iznenadio. Moramo priznati da smo svi, sa prilično pesimizma, očekivali nastup jednog iskusnog, prekaljenog futbalera na mjestu, na kome do sada nije nastupao. Riječ je o Momiću. Znalo se, da se zbog kršenja discipline, na mjestu desnog beka neće pojaviti Dilberović. Ali se nije moglo ni pretpostaviti da će zamjena Dilberoviću na pomenutom mjestu biti iko drugi sem Ćubele, koji je uzgred rečeno, u par jačih utakmica položio »vatreno krštenje«. Bar za nestručnjake! Izgleda da se nema povjerenja u ovog mladog futbalera, koji obećava da će se razviti u jednog od najboljih bekova Mostara. Niko ne osporava ni Momićeve kvalitete. Opravdao je u potpunosti povjerenje, zaigrao je dobro — ukratko, zadovoljio je na novom mjestu. No, napustili smo igralište pod dojmom da bi i Neđo Ćubela pružio istu, zadovoljavajuću igru. S tom razlikom, što bi utakmica Ćubeli više koristila, možda bi mu doprinijela sticanju rutine u prvenstvenim okršajima, a to je neophodno futbaleru na koga se u perspektivi računa.</p>
+    <p>Skoro je postalo uobičajeno da u odbrani ističemo Bolfeka. O njemu se može govoriti samo u superlativima. Igrao je pametno i bio glavna spona između odbrane i navale. Halfovi su u većem dijelu utakmice igrali prosječno. Više slabo nego dobro. Rukavina je imponovao borbenošću, brzinom, oštrim startovima i — efektnim potezima, koje je publika aplauzom obilato nagrađivala. Svega nekoliko intervencija dokazalo je da je Irović u silnoj formi i da ga samo neodbranjivi udarci mogu prisiliti na »kapitulaciju«. Ali, ne svi. Trebalo ga je posmatrati, kako »mačjim« skokom boksuje u korner dobro odmjerenu loptu Vilotića, upućenu iz slobodnog udarca!</p>
+    <p>Po visokom rezultatu bi se sudilo da je u navali išlo sve kako treba. Ali, rezultat je varljiv. Slučaj Zelenike smo spomenuli. Interesantno je, da odavno kompletna Veležova navalna petorka nije zaigrala u punom sjaju. Ranije su Mujić i Selimotić I uz Zeleniku davali partije iznad prosjeka, dok je lijeva strana podbacivala. U nedjelju je bio obrnut slučaj. Koliko li bi tek bilo golova bilo da su svi zaigrali prema svojim mogućnostima!</p>
+    <p>Gosti, osim primjerne borbenosti nisu pokazali ništa. Odbrana im je solidniji dio tima, a u njoj se iskustvom izdvajaju Stefanović II i Vilotić. Navala bez Ivoša — slaba. Nemoćna da ozbiljnije ugrozi protivničku mrežu. Stari Sava Stefanović je sjenka nekadašnjeg nosioca napada abačkog ligaša. Tek pogdjekojim potezom potsjećao je, da je nekada znao igrati futbal.</p>
+    <p>Iznenadilo nas je primjerno suđenje Bujišića iz Tivta. Energičan, autoritativan i dobar. Možemo konstatovati da je »prijemni« ispit za vođenje ligaških utakmica položio sa odličnim uspjehom.</p>
+    <div class="signature"><b>Asim HADŽAJLIĆ</b><br><i>Sloboda</i></div>
+    	<div class="size1" style="margin-left: auto; margin-right: auto; width: 60%;"><img src="../images/site/table/tab1954-10-31.png" width="100%"></div>
+      	<div class="size2"><img src="../images/site/table/tab1954-10-31.png" width="100%"></div>
+    </div>
+
+    <div id="overlay7" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox8" class="fixedBox" style="display: none;">
+    <h4>Uspjeh Veleža</h4>
+    <h2>Još dva boda</h2>
+    <p>Još dva boda upisana su Veležu u ovogodišnjem takmičenju II savezne lige. Iako se prilično skeptički gledalo na nedjeljni susret, Veležova zahuktala mašina nije dozvolila da joj se prave neugodna iznenađenja i umanji ugled, stečen kroz prethodnih sedam kola. Svi igrači stekli su uvjerenje da su mnogo kvalitetnija ekipa od ostalih, ali postali još svjesniji da se u sve prvenstvene utakmice, bez obzira na protivnika i mjesto odigravanja, mora unijeti maksimum zalaganja i znanja, te uspjeh neće izostati.</p>
+    <b>Razigrana navala...</b>
+    <p>I u dosadašnjim susretima ove lige navala Veleža bila je vrlo plodna što pokazuje i omjer datih i primljenih golova, ali onakvu razigranu pokretljivu i nesebičnu, kako je igrala u Cetinju, nismo gledali ove jeseni. Od samoga početka Mostarci su počeli diktirati brzi tempo, a brze akcije i promjene mjesta navalne petorke unijele zabunu u redove domaćih. I kada je to uspjelo Veležovci su stalno opsjedali vrata golmana Markovića, koji je za prvih desetak minuta tresao ruke od oštrih i preciznih udaraca Zelenike, Mujića i Selimotića I. Bilo je zaista i za oko neobično posmatrati ovakve akcije protiv odbrane koja nije bila mnogo ljubazna, nego je na sve lopte išla oštro ali i u granicama dozvoljenog. Međutim, uz veliko zalaganje povezano sa znanjem i nesebičnosti svih navalnih igrača ni ovakva odbrana nije mogla ništa učiniti, a lopta se prenosila sa noge na nogu onako kako se rijetko može vidjeti na utakicama. U ovakvoj navali ugodno je iznenadio Zelenika kako po igri tako po sportskom i fer držanju. Za razliku od prošle nedjelje, ovoga puta on je dospijevao svuda, otkrivao se, nesebično dodavao, vrlo dobro pucao i zabio dva gola (jedan je nepravilno poništen na intervenciju međašnog sudije). Za njim nimalo ne zaostaje, kao i do sada korisni i požrtvovani Mujić. Istina ovog puta se nije ubilježio u golgetere utakmice, ali nije ni on toliko kriv jer je, upotrebivši sve svoje umijeće i zalaganje, ipak uputio lopte pored gola, iako su situacije za gol bile vrlo dozrele. I mladi Čišić potpuno je opravdao postavljanje u tim. Poneki njegovi potezi potsjećali su na akcije već rutiniranih krila, a gol koji je postigao sličan je golovima tipičnih lijevih krila sa dugogodišnjom praksom.</p>
+    <b>I čvrsta odbrana</b>
+    <p>Ne bi bilo najmnaje fer ako bi hvala za ovu pobjedu pripisali samo petorici Veležovaca iz navalnog reda. Nije bio baš lagan posao ni Veležove odbrane. Napadi koje su pripremali, nisu bili tako prefinjeni i tehnički obrađeni. To su bili, uglavom, iznenadni propadi izvođeni preko rutiniranog Pajevića, a usmjereni najkraćim putem ka Irovićevom golu. U takvim rijetkim slučajevima odbrana je intervenisala pravovremeno i sigurno, a naročito su imponovali mirnoćom i osjećajem za loptu Bolfek i Irović. Ovaj posljednji je, osjetivši takve prodore, istrčavao na vrijeme i otklanjao svaku daljnju opasnoast po gol Veleža. Osim toga nekoliko njegovih odvažnih padova u noge osujetilo je postizavanje cilja navalnih igrača Lovćena. Uz ovu dvojicu iznenadio je odličnom igrom mladi Selimotić II, kome je ovo ujedno bio derbi na ovom mjestu, za koje on najviše i odgovara. Iako je imao skoro najteži zadatak u odbrani obavio ga je sa lakoćom i na zadovoljstvo. Smatramo da je ovoga mladića šteta pomjerati sa halfa, tim prije što su dva halfa u momentalnoj situaciji »Ahilova peta« Veležovog tima. Solidnu igru pružio je i standardni Rukavina, dok su Momić i Slišković igrali ispod mogućnosti.</p>
+    <p>Lovćen na ovoj utakmici nije bio onakav protivnik kakvog smo gledali prošle godine. Imponovao je borbenošću, zalaganjem i oštrim startom što je sve bilo nedovoljno da se suprotstavi tehnički kvalitetnijoj momčadi Veleža.</p>
+    <p>I ovu, kao i prošlonedjeljnu utakmicu u Mostaru vodio je do sada skoro nepoznati sudija Božidar Botić iz Valjeva.</p>
+    <div class="signature"><b>Haldun HRVIĆ</b><br><i>Sloboda</i></div>
+    	<div class="size1" style="margin-left: auto; margin-right: auto; width: 60%;"><img src="../images/site/table/tab1954-11-07.png" width="100%"></div>
+      	<div class="size2"><img src="../images/site/table/tab1954-11-07.png" width="100%"></div>
+    </div>
+
+    <div id="overlay8" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox9" class="fixedBox" style="display: none;">
+    <h4>Velež - Rabotnički 2:0 (1:0)</h4>
+    <h2>Blijed završetak uspješne sezone</h2>
+    <p>Osvojena su i dva posljednja boda u jesenjem dijelu prvenstva. Postignuta je i osma pobjeda, ovoga puta nad skopskim Rabotničkim, ali uz napomenu da ta pobjeda nije izborena u osobito lijepoj i smišljenoj igri. Bio je to blijed završetak jedne uspješne sezone mostarskog ligaša. Možda se od futbalera obadva tima, na onakvom kaljužastom terenu, prekrivenom »jezerima«, nije moglo ni tražiti nešto ljepše od onoga što smo u nedjelju vidjeli. Ali, sigurni smo da se korisnije moglo igrati. Ta primjedba se odnosi na futbalere domaćih. Pretjerane kombinacije, dodavanje na kratko, »ti meni ja tebi«, driblanja na teškom blatnjavom terenu završavala bi se obično pobjedama protivnika. A u većem dijelu utakmice pojedinci iz ekipe Veleža primjenjivali su beskorisno dodavanje na kratko, još beskorisnije zadržavanje lopte i »vozanje« i u tome treba i tražiti uzrojke teško izvojevane pobjede.</p>
+    <b>»Gužva« oko penala</b>
+    <p>Dogodilo se u 23 minuti . . . Domaći su se nalazili u napadu. Vođa navale Zelenika primio je loptu na oko 25 metara od protivničkog gola, sporim driblingom prešao svog čuvara, skrenuo u desno i zaobišao još jednog protivnika. Već je bio na ivici kaznenog prostora, imao je i slobodnog prostora na šutiranje, ali nastavio je i dalje da prodire, kako bi se što bliže primakao mreži Rabotničkog. Tek što je ušao u kazneni prostor, odbrana Skopljana ga je nepropisno odmela i sudac je pokazao na mjesto odakle se izvodi najteža kazna — jedanaesterac. Ponovila se slika, viđena često na igralištima: gostujući futbaleri su se okupili oko sudije i neopravdano protestovali. Činjenica je da je prekršaj postojao, a pošto se zbio unutar granica kaznenog prostora, po pravilima futbalske igre, druga kazna, osim penala, ne može se dosuditi. Ali činjenica je da je nešto ranije Slišković, u jednom naletu, neposredno pred vratarem gostiju Gičevskim, u skoro stopostotnoj situaciji za postizanje gola, spriječen na još nepropisniji način od Zelenike. Tada nisu protestovali igrači Rabotničkog, već gledaoci. Ali sudija je sudija . . . Njegova odluka je neopoziva i lako se ne mijenja. Zelenika je i ovog puta penal sigurno realizovao, udarcem u gornji lijevi ugao.</p>
+    <p>Kroz čitavo prvo poluvrijeme igra je bila dosta dinamična, živa, napeta uz terensku nadmoćnost domaćih. Navalna petorka Veleža potpomognuta halfovima izvodila je napade uglavnom preko desne strane. Tada bi obično loptu primio Zelenika u umjesto da je najkraćim putem uputi na gol, zadržavao bi je, nepotrebno bi trošio snagu na driblanje i tek onda bi ili šutirao ili bi bio fauliran. Vrijedilo je zabilježiti njegov majstorski slobodni udarac sa, oko 20 metara, izveden u 34 minuti. I pored gustog zida futbalera Rabotničkog, Zelenika je našao toliko slobodnog prostora da lopta ne dodirne nikoga od protivničkih igrača. Vratar Gičevski bio je nemoćan, učinio je trzaj, skok, tijelo se izvilo u vazduhu . . . Ni njegova intervencija nije uspjela, ali se prečka ispriječila na put lopti. Situacija je ponovno bila kritična za goste. No, samo za kratko vrijeme jer je Hrvić, odbijenu loptu od prečke iz blizine plasirao prilično blago, te se ona, na sreću igrača Rabotničkog, zaustavila u blatu na samoj liniji gola.</p>
+    <p>U drugom poluvremenu igra je popustila u tempu, najvjerovatnije usljed iscrpljenosti igrača i nedostatka fizičke kondicije. To se naročito primjećivalo kod pojedinaca u gostujućoj momčadi. I u tome periodu bilo je i nekoliko uzbudljivih akcija, a jedna od njih donijela je povećanje rezultata za domaće. Nakon oštrog udarca Ćišića u 57 minuti Gicevski je ispustio klizavu loptu, Hrvić se našao na mjestu i bez mnogo napora ubacio je u mrežu.</p>
+    <b>Selimotić II najistaknutiji</b>
+    <p>Najistaknutiji pojedinac utakmice bio je mali Selimotić, lijevi half Veleža. I ranije ga je mostarska publika gledala na par ligaških utakmica, ali silom prilika kao lijevo krilo. Zapažalo se da je to tipičan odbrambeni igrač koji u navalnoj formaciji ne može ispoljiti svo svoje futbalsko znanje. U nedjelju se i pored veoma teškog igrališta brzo kretao po terenu, bio neumoran kao krtica, srčano se borio za loptu, gotovo uvijek u duelima izlazio kao pobjednik, korisno upošljavao svoje drugove u navali — kratko rečeno dokazao da mu je mjesto u prvom timu.</p>
+    <p>Gledali smo još neke rehabilitovane »debitante«. Ćubela se uopšte nije pojavljivao na prvenstvenim utakmicama. U prvoj utakmici zaslužio je pozitivnu ocjenu osobito svojom igrom u drugom poluvremenu. I »nestalni« prvotimac Ćišić dokazao je da zna igrati futbal, ali jasno, nema snalažljivosti ni dovoljno iskustva. Kroz više prvenstvenih okršaja te mane će postepeno iščeznuti. Ostali u odbrani takođe su svoj posao obavili sigurno. Navala — nekorisna. Jedino Hrvić nije zadržavao loptu, upućivao je svom slobodnom igraču, ali kod ostalih nije naišao na potporu. »Pinda« je bio glavni u zadržavanju lopte, kočnica većine navalnih akcija. A na momente se ponašao i nesportski.</p>
+    <p>Gostima je, izgleda više konvenirao teren i postigli su častan rezultat. Najzapaženiji: polutke Radevski i Stojanovski i pouzdani čuvar mreže Gičevski.</p>
+    <p>Sudija Anđelić iz Beograda bio je najzapaženija figura na utakmici. Pištaljka mu se previše često čula, u nekoliko navrata nije poštivao preimućstvo, a inače — zadovoljio je.</p>
+    <div class="signature"><b>Asim HADŽAJLIĆ</b><br><i>Sloboda</i></div>
+    	<div class="size1" style="margin-left: auto; margin-right: auto; width: 60%;"><img src="../images/site/table/tab1954-11-14.png" width="100%"></div>
+      	<div class="size2"><img src="../images/site/table/tab1954-11-14.png" width="100%"></div>
+    </div>
+
+    <div id="overlay9" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox10" class="fixedBox" style="display: none;">
+    <h2>Dragocjena pobjeda</h2>
+    <h4>Velež — Odred 3:1 (1:1)</h4>
+    <p>Bila je to borba, i to ogorčena borba od prvog do posljednjeg minuta, za dva dragocjena boda. Važna i jednim, i drugim... Više gostima iz Ljubljane, kojima bi eventualna pobjeda u Mostaru, ili bar polovičan uspjeh umnogom povećali šanse za ulazak u ligu četrnaestorice najboljih. A i Veležu nije bilo svejedno da li će Odred osvojiti u Mostaru bodove. Pobjeda bi značila krupan korak dalje o pobjedonosnom »maršu« ka Prvoj ligi.</p>
+    <p>Dakle, cilj i jednih, i drugih bio je zajednički — odlučno se boriti za bodove. Slovenci su na utakmicu sa Veležom došli »po sve ili ništa«. Glavnu pažnju usredsredili su na svoj navalni red, te su zbog toga pomjerili inače odličnog halfa Leškova na mjesto lijeve polutke. Da bi navala dobila prodornosti i efikasnosti...</p>
+    <b>»Remi« u prvom poluvremenu</b>
+    <p>Tek što se lopta pomakla sa centra, igrači Odreda krenuli su u napad. Iznenadna i brza navala gostiju zamalo da ih nije dovela u voćstvo. Odlični Leškov odjedanput se našao u kaznenom prostoru. Uslijedio je oštar udarac i odlična intervencija Veležovog čuvara mreže Irovića. Poslije te akcije, desetak minuta se igralo oko sredine igrališta i u tom kratkotrajnom periodu igra je bila izjednačena.</p>
+    <p>Sve akcije domaćih u toj početnoj fazi bile su usmjerene preko unutarnjeg tria. Računalo sse na Zeleniku kao realizatora. Ali, on je bio neprestano pod kontrolom dvojice, ponekad i trojice protivničkih igrača. I kad bi uspio da se oslobodi svojih pratilaca, bio bi fauliran. Svi ti prekršaji dešavali su se u neposrednoj blizini kaznenog prostora, ali izvedeni slobodni udarci nisu doveli do promjene rezultata. Ipak je do prvog gola Veleža došlo nakon izvedenog prekršaja na polovini Odreda. Igralo se 13 minuta... Visoko nabačenu loptu Zelenika je nesebično glavom produžio demarkiranom Hrviću, kome je samo preostalo da je prisebno plasira u mrežu.</p>
+    <p>Do tog momenta publika kao da nije postojala na terenu. Nastalo je oduševljenje. Ali, kratkotrajno... Lopta je opet dotakla mrežu. Samo ovog puta igralište je zanijemilo. Odred je u 25 minuti uspio izjednačiti rezultat na 1:1. Neko od igrača gostujuće momčadi proturio je loptu u prazan prostor slobodnom Beleeru na lijevu stranu. Izgledalo je da će Irović prije stići do lopte, jer joj je pravovremeno krenuo u susret. I kad se očekivalo otklanjanje opasnosti, Irović je ispoljio neodlučnost. Stao je na pola puta između linije golmanskog prostora i lopte. Dok se on snašao lopta se već našla u mreži. Strelac — Vorgić. Do konca poluvremena uslijedio je period nadmoćnosti Odreda, jalove nadmoćnosti bez završnog udarca.</p>
+    <b>Dva lijepa gola</b>
+    <p>Mnogi su sa pritajenim pesimizmom očekivali nastavak utakmice. Pribojavali su se da Velež ne doživi poraz, koji je prema dotadašnjoj igri mogao lako uslijediti. U potpun uspjeh i pobjedu u Veleža počelo se sve više sumnjati, pogotovo kada se po prvim potezima nastavka primjetilo da su Slovenci još više zbili odbranu. Znak da su se pomirili i sa jednim bodom. Možda bi se njihov plan i ostvario da u 60 minuti Zelenika, jednim iznenadnim i preciznim udarcem sa oko 20 metara nije poslao loptu u desni gornji ugao Odredovog gola, kraj nemoćnog Brezara.</p>
+    <p>Još je bilo nepunih osam minuta do posljednjeg zvižduka sudiske pištaljke kada je sudbina Odreda na ovoj utakmici bila definitivno riješena. Na centeršut Selimotića II, raspoloženi Hrvić je glavom postigao treći gol. Opet je Brezar bio bespomoćan. I pokunjen... Jer primiti treći gol pred konac utakmice značilo je pomiriti se sa porazom. Ofd bolje ekipe?</p>
+    <p>Općenito uzevši Velež nije u nedjelju bio bolja ekipa, ali niko ne može osporiti zasluženost njegove pobjede. U redovima Veleža niko nije naročito blistao, ali bolji od ostalih su bili: Hrvić, Rukavina, Radiljević i Zelenika.</p>
+    <p>U većem dijelu utakmice Odred je pokazao tehničku superiornost. Imao je istaknutijih pojedinaca (Krgin, Brezar I, Leškov, Belcer), na momente prosto dominirao terenom, ali — do granice šesnaesterca. A dalje, igrači Odreda kao da su zaboravili konačan cilj futbalske igre. Komplikovali su »završnicu« i onaj njihov jedini gol bio je više plod greške odbranbenih igrača Veleža nego rezultanta realizatorskih sposobnosti Odredovih napadača.</p>
+    <p>Sudio Mikulin iz Zagreba dobro.</p>
+    <div class="signature"><b>Asim HADŽAJLIĆ</b><br><i>Sloboda</i></div>
+    	<div class="size1" style="margin-left: auto; margin-right: auto; width: 60%;"><img src="../images/site/table/tab1955-04-17.png" width="100%"></div>
+      	<div class="size2"><img src="../images/site/table/tab1955-04-17.png" width="100%"></div>
+    </div>
+
+    <div id="overlay10" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox11" class="fixedBox" style="display: none;">
+    <h2>Prvi poraz Mostaraca</h2>
+    <h4>„Metalac”-„Velež” 4:1 (3:0)</h4>
+    <p>Rezultat zna nekada biti varljiv. Tako je i ovog puta, oni koji vide u naslovu da je »Metalac« porazio »Velež« sa 4:1, valjda pomisliti da su Mostarci u Zagrebu podbacili.</p>
+    <p>Da ne bi došlo do nesporazuma, treba odmah naglasiti da je vodeći tim Druge lige igrao vrlo dobro, da je oduševio publiku tehnički lijepom i zrelom partijom.</p>
+    <p>Ali, šta se može kada je protivnik toga jutra bio jači i kad mu je navala spretnije rješavala probleme pred golom, nego Zelenika i drugovi.</p>
+    <p>Znači: potpuno je zaslužen uspjeh »Metalca«.</p>
+    <b>*</b>
+    <p>Prije utakmice potražio sam sastav tima od Hrvića.</p>
+    <p>— Irović... počeo je diktirati »Veležov« kapiten.</p>
+    <p>— A šta je sa Barbarićem?</p>
+    <p>— Nije još u formi.</p>
+    <p>Ipak, Barbarić kakav-takav učinio bi, mislimo, više nego danas nesigurni Irović. Ne mora se na njega bacati »drvlje i kamenje«, jer i on je imao niz lijepih momenata, ali Barbarić bi sigurno uz svoje iskustvo mnogo više koristio »Veležu«.</p>
+    <p>Jer, Irović je »kumovao« prvom golu koji je pao već udrugoj minuti. Ispustio je uhvaćenu loptu i Firm je onda lako pogodio mrežu.</p>
+    <b>*</b>
+    <p>U ovom drugoligaškom okršaju dogodila se mala rijetkost. Skopski sudija Nedelkovski dosudio je ni manje ni niše nego tri penala!</p>
+    <p>Gosti su ljuti na njega. Vele da nije uopšte trebalo svirati prvi u 20 minutu. Ističu da Rukavina nije namjerno igrao rukom.</p>
+    <p>Mi smo, međutim, dobro vidjeli da se on umjesto nogom poslužio šakom kako bi umirio loptu.</p>
+    <p>I zato je izvan svake diskusije pitanje da li je bio jedanaesterac ili ne.</p>
+    <b>*</b>
+    <p>»Velež« je svoj jedini pogodak postigao sa 11 metara, iako je ranije imao nekoliko lijepih prilika.</p>
+    <p> Mujić je vodio loptu, već je opasno ugrozio Majdića, kad ga je Zobić rukama zadržao.</p>
+    <p>Zelenika je tijelom prevario »Metalčevog« golmana jer je lopta otišla u sasvim drugi kut.</p>
+    <p>Da kažemo nešto i o šansama »Veleža«. Zelenika i Mujić su se u dva navrata stvorili na tri-četiri metra ispred gola ali su vrlo jako i — visoko šutirali.</p>
+    <b>*</b>
+    <p>Najbolji na terenu bio je Pukšec, koji je uprkos poodmaklim godinama neumorno »vukao«.</p>
+    <p>U »Veležu« se najviše svidio Zelenika o kome se stvorio utisak da je centar velikih mogućnosti, potom Rukavina i marljivi Mujić. Što se tiče »Metalca«, još bi se mogli pohvaliti Šmitlehner i Firm.</p>
+   <div class="signature"><b>Pero ZLATAR</b><br><i>Oslobođenje</i></div>
+   		<div class="size1" style="margin-left: auto; margin-right: auto; width: 60%;"><img src="../images/site/table/tab1955-04-24.png" width="100%"></div>
+      	<div class="size2"><img src="../images/site/table/tab1955-04-24.png" width="100%"></div>
+    </div>
+
+    <div id="overlay11" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox12" class="fixedBox" style="display: none;">
+    <h2>Drugi poraz Mostaraca</h2>
+    <h4>»Budućnost« — »Velež« 3:1 (2:0)</h4>
+    <p>Počelo je kao osam dana ranije u Zagrebu. Za nepunih 10 minuta domaći su vodili sa 2:0. To je uglavnom i odlučilo utakmicu, jer za 80 preostalih minuta obje ekipe postigle su po jedan zgoditak. Slično se dešavalo »Veležu« često: naime, da u početku olako shvati utakmicu i primi golove, a poslije svi napori za poboljšanje rezultata ostaju bezuspješni.</p>
+    <b>Obostrana slaba igra</b>
+    <p>Očekivalo se da će to biti igra dostojna mjesta koje zauzimaju dvije najbolje momčadi ove lige. U prilog tome išla je i činjenica da su Titograđani dvije prethodne utakmice, igrane u gostima, riješili u svoju korist. Međutim, poslije primljenih golova greškom nesigurne odbrane gostiju, razvijala se prilično rastrgana utakmica, na momente preoštra, a u tehničkom pogledu daleko od mogućnosti koje mogu dati igrači ove dvije momčadi.</p>
+    <p>Od »Veleža« se takođe mnogo više očekivalo. To nije ni blizu onaj kolektiv iz jesenjeg dijela prvenstva. Po nedeljnoj igri vidjelo se da njihova forma opada i da ne mogu da pronađu način kako da pariraju protivniku, odnosno — u navalnom redu — kako da najbrže dođu do cilja. U Titogradu su Mostarci bili hendikepirani bolešću Mujića, te se u navali pojavio Musa, a pored njega i Bosek na lijevom krilu. Ni jedan ni drugi nisu se mogli uklopiti u potpunosti u kolektiv, te nisu ništa doprinijeli za bolji uspjeh svoga tima. Selimotić se donekle trudio, a Zelenika na položaju desne spojke pokušavao je da unese više takta i sredi redove svoje navale.</p>
+    <b>Tri poništena gola</b>
+    <p>Svega četiri minuta poslije prvog sudijinog znaka, Mostarci su morali početi sa centra. Jedna bezopasna lopta padala je u kazneni prostor »Veleža«. Niko nije intervenisao. Lopta je dva puta otskočila od zemlje i tek se tada Bolfek odlučivao na akciju. Bilo je kasno. Darmanović je bio brži i pucao pored nemoćnog Barbarića. I drugi gol je slične prirode. Izdaleka šutiranu loptu sa desnog krila Barbarić je trebalo da boksuje mnogo oštrije, ali kratko odbijena lopta ubrzo se našla u njegovoj mreži. Treći gol Titograđani su postigli iz jedne brze akcije cijelog navalnog reda koju je završio Vučeković razantnim šutom u desni donji ugao. Do konačnog rezultata, »Budućnost« je postigla još dva, a »Velež« jedan zgoditak, ali su pomoćne sudije reklamirale ofsajd pozicije. Konačan rezultat postigao je Hrvić, skrenuvši glavom u suprotni ugao jednu oštro pucanu loptu Selimotića.</p>
+    <div class="signature"><b>Haldun HRVIĆ</b><br><i>Oslobođenje</i></div>
+    	<div class="size1" style="margin-left: auto; margin-right: auto; width: 60%;"><img src="../images/site/table/tab1955-05-01.png" width="100%"></div>
+      	<div class="size2"><img src="../images/site/table/tab1955-05-01.png" width="100%"></div>
+    </div>
+
+    <div id="overlay12" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox13" class="fixedBox" style="display: none;">
+	<h4>Velež - Bokelj 3:0 (1:0)</h4>
+    <h2>Zamalo iznenadjenje</h2>
+    <p>U nedjelju nije mnogo nedostajalo pa da se uvjerimo u nezahvalnost prognoziranja futbalskih utakmica. Na igralištu Veleža, vodećeg kluba Druge »divizije«, gostovao je Bokelj, posljednji sa tabele , koga je mostarski ligaš, pred njegovom publikom u Kotoru, u prvom dijelu prvenstva ubjedljivo pregazio sa 6 : 1. Sve realne prognoze išle su u prilog domaćih i s pravom se očekivala laka pobjeda Veleža, bez većeg napora.</p>
+    <p>Ali, u futbalu nema ništa nemoguće. Umjesto očekivanog popravljanja goldiferencije, moglo se vrlo lako desiti da autsajder Druge lige Bokelj oduzme slabom Veležu u Mostaru i jedan bod!</p>
+    <b>Preko pola sata iščekivanja</b>
+    <p>Sve do 80 minute konačan rezultat utakmice bio je neizvjestan. Velež je rezultatski imao prednost od jednog gola razlike, ali nesigurna i nervozna igra većine odbranbenih igrača domaćih nije ulivala potpunu garanciju u očuvanje tog minimalno stečenog preimućstva.</p>
+    <p>Na prvi gol čekalo se više od pola časa. I do tog momenta navalni igrači Veleža stvorili su nekoliko povoljnih pozicija za realizovanje, ali slabo su »nišanili«. U jednom trenutku Hrvić se neočekivano našao slobodan u kaznenom prostoru Bokelja, oklijevao je samo za trenutak i — šansa je otišla u nepovrat. Pucački raspoližen Mujić je u prvom poluvremenu, u nekoliko mahova, oštrim udarcima izdaleka pokušavao načeti mrežu gostiju, ali bez uspjeha. Jaki udarci prolazili su tik pored cilja. Sve do 32 minute... Tada je precizan i snažan udarac Mujića čuvar mreže gostiju Kantić izboksovao do dobro postavljenog Ćišića, kome nije bilo teško da prisebno plasiranim udarcem pronađe prazan dio mreže.</p>
+    <p>Ni navalni igrači Bokelja nisu bili pasivni, a ni bezopasni. Stvorili su dvije idealne šanse, može se reći šanse utakmice. Obadva puta se lijevo krilo Martinović našlo samo pred Irovićem i obadva puta se — zašeprtljalo.</p>
+    <b>Mujićevi efektni golovi</b>
+    <p>Ostalo što zaslužuje da bude zabilježeno na ovoj kvalitetno slaboj utakmici — to su dva efektna Mujićeva gola. Odlična desna polutka Veleža osjetila je da ostalim navalnim suigračima, a naročito Zeleniki ne polazi ništa za rukom. Pred kraj utakmice Mujić je odličio da svoje izvrsne tehničke sposobnosti iskoristi za solo akcije. I prvi pokušaj je uspio. Negdje oko centra u sprintu s loptom prešao je nezadrživo nekoliko protivničkih igrača i razatnim udarcem u donji desni ugao sa daljine od oko 20 metara doveo Velež u voćstvo od 2:0. Još se oduševljenje domaćih navijača nije ni stišalo, a igrači Bokelja su i treći put poveli loptu sa centra. Mujić je opet predriblao dvojicu protivničkih igrača i vratara gostiju Katniću jedino je preostalo da njegovu dobro odmjerenu loptu prati pogledom do u same rašlje. Tek tada, u 82 minuti, Bokelj je bio potučen. Isuviše kasno...</p>
+    <p>Igra Veleža zabrinjava. S iznenađenjem smo primali vijesti o zagrebačkom i titogradskom porazu, čudili se kako Velež olako gubi utakmice sa dva — tri gola razlike. Posljednja nedjelja nas je uvjerila da od onakvih igara Veleža ne možemo ni očekivati pobjede i povoljnije rezultate. Velež, cijeneći po igri s Bokeljom, pretstavlja ekipu koja trenutno igra bez ikakvog sistema. Većina igrača je van forme, igra bezvoljno, samouvjereno, precjenjujući svoje momentalne sposobnosti.</p>
+    <p>U slaboj cjelini teško je istaći najbolje. U odbrani, pored sigurnog Irovića, izdvojili bi Bolfeka, dok u navalnom redu najbolju ocjenu zaslužuje Mujić, glavni akter sva tri gola. Najslabiji — Zelenika. Jesenas je u Kotoru bio odličan, dao tri gola i valjda je zbog toga bio odlično čuvan. Centerhalf Matavulj ga za cijelo vrijeme utakmice nije ispuštao sa oka.</p>
+    <p>Bokelj, mimo očekivanja dobar. Borbena, žilava momčad koju je u nedjelju bilo teško savladati. Bolji dio tima je odbrana čije su osnovne poluge: Katnić, Matavulj i Preljević.</p>
+    <div class="signature"><b>Asim HADŽAJLIĆ</b><br><i>Sloboda</i></div>
+    <div class="size1" style="margin-left: auto; margin-right: auto; width: 60%;"><img src="../images/site/table/tab1955-05-08.png" width="100%"></div>
+      	<div class="size2"><img src="../images/site/table/tab1955-05-08.png" width="100%"></div>
+    </div>
+
+    <div id="overlay13" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox14" class="fixedBox" style="display: none;">
+    <h2>Neriješeno u Zenici</h2>
+    <h4>„Zenica”—„Velež” 0:0</h4>
+    <p>Utakmice u proljećnom dijelu prvenstva sa »Metalcem« i »Budućnošću« »Velež« je gubio u prvih 15 minuta, kad su uglavnom protivnici rješavali susrete u svoju korist. Poučen takvim iskustvom, »Velež« je danas odmah u početku zaigrao sa dva centarhalfa da bi razbio protivničke navale, a onda je postepeno prelazio u napade, sredujući svoje redove. Taktika sa dva centarhalfa potpuno je uspjela. Zahvaljujući takvoj igri u prvih 15 minuta prvog i drugog poluvremena »Velež« je uspio da osvoji jedan bod u Zenici. Utakmica se inače završila bez golova, i to uglavnom zahvaljujući neefikasnosti navala, a osim toga i zbog odlične odbrane oba vratara.</p>
+    <p>Odmah u početku »Velež«, iako igrajući defanzivno sa povučenim igračima i sa četiri futbalera u navali, uspio je da »raširi« odbranu Zeničana, prodire u dubinu preko krila, te opasnim centaršutevima Sliškovića ugrozi nekoliko puta gol Tomanovića. Domaći su tek poslije 15 minuta takvog pritiska počeli sređivati svoje redove. Međutim, uspjeha nije bilo, jer su sve navale sprovođene kroz sredinu igrališta, gdje se danas nalazio izvrsni i neprelazni Momić. Igra je naročito u prvom poluvremenu bila staložena, dopadljiva i pred vratima uzbudljiva, jer su se pred oba gola stvarale gužve koje su dizale gledaoce sa njihovih sjedišta.</p>
+    <p>U drugom poluvremenu »Veležovci« su imali priliku da postignu zgoditak, ali, jednom Hrvić, a drugi put Bolfek nisu iskoristili sigurne šanse. Što se igra više bližila kraju, domaći su sve opasnije navaljivali u namjeri da riješe utakmicu u svoju korist. »Velež« je bio prisiljen da se brani. I, zaista, u posljednjih deset minuta situacija na terenu bila je tako uzbudljiva da se svakog časa očekivao gol u korist Zeničana. Jednom se Tarabar pred sam kraj utakmice našao oči u oči sa Irovićem, ali je golman »Veleža« opasnim padom u noge spasio svoja vrata.</p>
+    <p>I jedni i drugi mogu biti zadovoljni rezultatom. Obje momčadi mogle su postići po nekoliko zgoditaka. U današnjem »Veležovom« okrnjenom timu, bez Zelenike i Selimotića, isticao se naročito raspoloženi Momić, zatim Radiljević i Irović i donekle Mujić u navali. »Velež« je igrao bolje nego na svim dosadašnjim utakmicama u proljećnom dijelu. Kod domaćih najbolji je bio Mujkić, uz vratara Tomanovića, a u navali Brdarević i Tarabar.</p>
+    <p>Iako su se gledaoci ljutili zbog čestog sjeckanja i dosuđivanja faulova od strane sudije Rakovića, ipak treba pohvaliti njegovo suđenje, jer je utakmica završena u potpunom redu.</p>
+    <div class="signature"><b>Haldun HRVIĆ</b><br><i>Oslobođenje</i></div>
+    	<div class="size1" style="margin-left: auto; margin-right: auto; width: 60%;"><img src="../images/site/table/tab1955-05-15.png" width="100%"></div>
+      	<div class="size2"><img src="../images/site/table/tab1955-05-15.png" width="100%"></div>
+    </div>
+
+    <div id="overlay14" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox15" class="fixedBox" style="display: none;">
+    <h4>Velež - Napredak 1:0</h4>
+    <h2>Nikako ne ide</h2>
+    <p>Prosto ne znamo odakle početi. Bilježnica sa utakmice je poluprazna, jer se faktički za 90 minuta te veoma slabe utakmice, skoro nije imalo šta zabilježiti.</p>
+    <p>Veležu je pobjeda značajna. Sa ta dva boda, tri kola pred kraj prvenstva, osigurao je ulazak u Prvu ligu. Drugi put od oslobođenjaVelež će učestvovati u takmičenju najboljih futbalskih klubova Jugoslavije. I pored važnosti te pobjede, preko 4.000 gledalaca nezadovoljno je napustilo igralište. Nije bilo uobičajenog oduševljenja i radosti. Mostarski ligaš je pobijedio sa 1:0 (0:0) iako je po razvoju situacije na terenu mogao napustiti svoj, domaći teren poražen s dva — tri gola razlike. Eto, to je ono što je primoralo gledaoce da onako tužni i nezadovoljni napuštaju igralište i pored sigurnog ulaska njihovih ljubimaca u Prvu ligu. Kako i s kim igrati protiv daleko jačih protivnika, kada se moglo desiti da Napredak u Mostaru slavi pobjedu. Šta očekivati u susretima sa Partizanom, Hajdukom, Dinamom, Sarajevom i ostalim prvoligašima?</p>
+    <b>Nadmoćnost gostiju</b>
+    <p>Domaći su u prvom poluvremenu igrali protiv vjetra. Po već uvriježenoj tradiciji iz proljećnog dijela, počeli su rastrgano i konfuzno. A kada je u jednom naletu Mujić dobio udarac u butinu od protivničkog beka i počeo »šepati« bilo je jasno da će hendikepirana ekipa Veleža teško izaći na kraj sa borbenim Kruševljanima.</p>
+    <p>Skoro pola sata proteklo je u terenskoj superiornosti Napretka. Desno krilo gostiju, Spasić, u jednoj od iznenadnih akcija našao se neometan pred vratima Veleža, ali je u brzini prebacio gol. U dva maha udarce navalnih igrača Napretka sigurni Irović nije mogao u potpunosti ukrotiti, oštre i precizne lopte skrenuo je u posljednji čas vrhovima prstiju do — stative.</p>
+    <p>Poslije polučasovnog »spavanja« Veležova navalna petorka malo se trgla. Mujić je učinio nekoliko sprintova i bjegova, a jedan od njih, u 35 minuti, urodio je plodom. Privukao je na lijevu stranu nekoliko protivnika, iznenada centrirao i Bolfeku je samo preostalo da prisebnim udarcem glavom pored golmana i dvojice protivničkih igrača postigne jedini gol utakmice.</p>
+    <b>Opet protiv vjetra</b>
+    <p>Interesantno, ali Velež je i drugo poluvrijeme imao za protivnika vjetar! Dok je u prvom poluvremenu pirio jug, nakon odmora dunuo je prilično jak sjeverac. Velež se skoro cijelo vrijeme branio, a gosti, više zahvaljujući vjetru nego znanju, napadali. Ti njihovi napadi nisu se odlikovali smišljenošću, te nisu mogli donijeti ni promjenu rezultata.</p>
+    <p>O igri Veleža nema se pohvalno šta napisati. Gotovo kroz cijelu utakmicu bio je podređen partner. I vjetar ne bi trebao pretstavljati opravdavajući okolnost za onakvu rastrganu i lošu igru Veleža. Jedine svijetle tačke u timu bili su Irović i Rukavina, te donekle Radiljević i Mujić, koji je i pored povrede bio najbolji navalni igrač. Poslije duže pauze nastupio je i Ćemalović. U slaboj cjelini ni on nije mogao predvesti zadovoljavajuću igru, pogotovo što mu je to prvi ozbiljniji nastup nakon desetomjesečnog neigranja.</p>
+    <p>Utakmicu je sudio Veljko Rončević iz Beograda autorativno.</p>
+    <div class="signature"><b>Asim HADŽAJLIĆ</b><br><i>Sloboda</i></div>
+    	<div class="size1" style="margin-left: auto; margin-right: auto; width: 60%;"><img src="../images/site/table/tab1955-05-22.png" width="100%"></div>
+      	<div class="size2"><img src="../images/site/table/tab1955-05-22.png" width="100%"></div>
+    </div>
+
+    <div id="overlay15" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox16" class="fixedBox" style="display: none;">
+    <h4>Mačva—Velež 1:0 (0:0)</h4>
+	<h2>Treći poraz budućeg prvoligaša u pet prolećnih igara</h2>
+	<p>Šapčani su više očekivali od budućeg prvoligaša. Izgleda da je Mačvi bolje odgovarao blatnjav teren i njeni su se igrači lakše kretali. Da je Mačva imala bar jednog realizatora u navali, i da golman Irović nije odlično branio, Velež bi bio osetno poražen. Ovako je kapitulirao samo u 61', posle dobro ubačenog kornera: neko od Veležovih igrača izbacio je loptu u polje, i half Voja Stefanović iz trka, sa 30 metara oštro je tukao na gol. Lopta je pogodila prečku i odbila se u — mrežu.</p>
+	<p>Taj gol doneo je Mačvi dva dragocena boda i nadu da neće igrati u Potsaveznoj ligi, a Veležu je time ugroženo prvo mesto, mada ne i odlazak u Prvu ligu.</p>
+    <div class="signature"><b>Jovan IVANKOVIĆ</b><br><i>Futbal</i></div>
+    	<div class="size1" style="margin-left: auto; margin-right: auto; width: 60%;"><img src="../images/site/table/tab1955-05-29.png" width="100%"></div>
+      	<div class="size2"><img src="../images/site/table/tab1955-05-29.png" width="100%"></div>
+    </div>
+
+    <div id="overlay16" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox17" class="fixedBox" style="display: none;">
+    <h4>Velež — Lovćen 4 : 1</h4>
+    <h2>Najzad - zadovoljni</h2>
+    <p>Posljednju utakmicu u Drugoj ligi pred svojim navijačima Velež je sigurno riješio u svoju korist sa rezultatom 4:1 (3:0). I sve ostale utakmice ovogodišnjeg drugoligaškog prvenstva u Mostaru Velež je odlučivao u svoju korist, ali te pobjede nisu izazivale uobičajeno oduševljenje kod gledalaca. Njihovi ljubimci su samo na momente blistali u punom sjaju. Inače, gotovo u svim linijama nešto je »škripalo« i pobjede su postizavane više iskustvom i vanredno dobrom igrom pojedinih odbranbenih igrača. Međutim, u nedjelju smo bili svjedoci odlične igre kompletne jedanaestorice veležovaca. Istina, samo u prvom poluvremenu... Svi igrači domaćih zaigrali su poletno, oštro, brzo se oslobađali lopte, lijepo demarkirali, često šutirali i u tom periodu prosto »matirali« protivnika. Pružili su bez dvoumljenja najbolju igru u proljećnom dijelu prvenstva.</p>
+    <b>Zelenikini golovi</b>
+    <p>Znali smo da Zelenika ume da igra. I pored toga često puta smo željeli da ga ne vidimo u timu Veleža zbog niza mana (težnje za individualnom igrom, prgavost). I pauzirao je tri nedjelje. Poslije tronedjeljnog »mirovanja« uvjerili smo se da Zelenika kad hoće da igra korisno, mnogo znači. Lovćen je to najbolje osjetio. Igrao je kao rijetko kada korisno za kolektiv, neprestano je bio u pokretu lijevo - desno, često puta da bi se lakše domogao lopte nalazio se i na polovini cvog dijela igrališta, dijelio veoma upotrebljive lopte suigračima, šutirao oprezno i precizno . . . Ukratko, bio je nezadrživ i snosi najveći dio zasluga za savršeno funkcionisanje navalnog kvinteta Veleža kroz prvih 45 minuta.</p>
+    <p>Tek što je lopta pošla sa centra, Velež je krenuo u napad. Iznuđen je prvi korner. Selimotić I je nabacio loptu negdje u prostor oko penaltika, a Zelenika je iz teške situacije, leđima okrenut golu, šutirao preko sebe. Igrači gostiju gledali su zbunjeno kako lopta prolazi svega nekoliko centimetara preko vratnice. Domaći nisu prestajali sa »ofanzivom« i futbaleri Lovćena, u nekoliko navrata, raščišćavali su opasne situacije izbacivanjem lopte u korner. Nakon drugog kornera, izvedenog opet s desne strane, stvorila se velika gužva pred vratima gostiju. Radiljević, koji je došao da pomogne navali, prebacio je glavom loptu do Hrvića koji je prisebno pronašao neobezbjeđeni dio mreže. 1:0 u 23 minuti!</p>
+    <p>Drugi i treći gol, su djelo Zelenike. Obadva su realizovana iz slobodnih udaraca. Prvi put gosti nisu pravili »zid«. Imali su povjerenje u vratara. Zelenika je uzeo mali zalet i iskosa sa 18 metara neodbranjivo pogodio mrežu. Kada je dvije minute pred kraj poluvremena ponovno dosuđen slobodan udarac sa ivice šesnaesterca, skor svi igrači Lovćena stali su u živi »zid«. Pravo je čudo kako je Zelenika, u takvoj situaciji, postigao gol.</p>
+    <p>Ni u nastavku utakmice Velež nije igrao loše, ali popustio je oštar tempo iz prvog poluvremena. Odmah u početku desno krilo Lovćena, Pravilović, odmjerenim udarcem u desni gornji ugao smanjio je rezultat na 1:3. Futbaleri Lovćena su jedno vrijeme bili u nadmoći, ali njihova navala ni u najpovoljnijim prilikama nije znala uputiti loptu u Veležov gol. U jednoj od iznenadnih akcija Mujić je povećao pobjedu Veleža na 4:1.</p>
+    <p>O igri Veleža može se govoriti samo u superlativima. Najbolji među više dobrih — Zelenika. Ostale bi klasificirali ovako: Radiljević, Selimotić I, Irović, Rukavina (samo u prvom poluvremenu) itd. Uglavnom, nije bilo slabog mjesta. Da je Mujić zaigrao u svojoj uobičajenoj formi i da nije imao »peh« pri šutiranju, pobjeda bi bila još uvjerljivija.</p>
+    <p>Cetinjani su takođe pružili dopadljivu igru. Najbolji pojedinci u njihovom timu bili su: Mišo Pajević, Ivanović i Jabučanin.</p>
+    <p>Beogradski sudija Anđelić zaslužio je ocjenu vrlo dobar.</p>
+    <div class="signature"><b>Asim HADŽAJLIĆ</b><br><i>Sloboda</i></div>
+    	<div class="size1" style="margin-left: auto; margin-right: auto; width: 60%;"><img src="../images/site/table/tab1955-06-05.png" width="100%"></div>
+      	<div class="size2"><img src="../images/site/table/tab1955-06-05.png" width="100%"></div>
+    </div>
+
+    <div id="overlay17" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox18" class="fixedBox" style="display: none;">
+    <h2>»Velež« prvak</h2>
+    <h4>„Budućnost” drugi član Prve savezne lige</h4>
+    <p>Kroz takmičenja u saveznim ligama »Velež« je mnogo puta igrao u Skoplju i nijedanput nije izašao kao pobjednik. Za današnju pobjedu »Veleža bili su od presudnog značaja početak prvog i drugog poluvremena kada su postignuti zgodici. Prva navala »Veleža« urodila je plodom. Mujić se sa lijeve strane probio sve do gola autlinije, prešavši cijelu odbranu domaćih. Tada je ubacio oštru loptu prema golu. Musa je stavio nogu i lopta se našla u mreži. Slično je bilo i početkom drugog poluvremena, sa razlikom što je ovog puta Mujić izmijenio ulogu sa Musom. Ostatak prvog, a i drugo poluvrijeme, pripalo je uglavnom domaćima. Oni su dobrim dijelom bili gospodari terena, ali su igrali suviše nervozno. Pored takve nadmoćnosti nije bilo bojazni za gol. Ipak su Mostarci imali vrlo pouzdanu momčad koja je lako izlazila na kraj sa visokim loptama domaćih i neobično sigurnog vratara Irovića. Kolika je bila nadmoć domaćih u prvom poluvremenu vidi se i iz omjera kornera, jer su domaći pucali devet, a Mostarci nijedan. Istina, za takvu nadmoć treba da se zahvali dobrim dijelom i vrlo jakom vjetru, koji je duvao u prvom poluvremenu.</p>
+    <p>Mostarci su danas igrali neobično mirno i staloženo, iako se moglo desiti da izgube prvo mjesto. Baš takva igra je i urodila plodom.</p>
+    <p>Pobjeda je mogla biti još veća da je Momić sredinom prvog poluvremena kod stanja 1:0 za »Velež« realizovao jedanaesterac. On je pucao u stativu, poslije prekršaja nad Hrvićem. I gosti su pred kraj prvog poluvremena zapucali penal, jer je Bačvarov tukao pored stative.</p>
+    <p>Od današnje jedanaestorice »Veleža« treba naročito pohvaliti Momića, Irovića i Radiljevića u odbrani, te Selimotića, zamjenika Zelenike Musu i Mujića. Priznanje treba odati sudiji Gegiću, koji je, iako malo poznat, vodio utakmicu u velikom stilu i sa puno autoriteta.</p>
+    <div class="signature"><b>Haldun HRVIĆ</b><br><i>Oslobođenje</i></div>
+    	<div class="size1" style="margin-left: auto; margin-right: auto; width: 60%;"><img src="../images/site/table/tab1955-06-12.png" width="100%"></div>
+      	<div class="size2"><img src="../images/site/table/tab1955-06-12.png" width="100%"></div>
+    </div>
+
+    <div id="overlay18" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox19" class="fixedBox" style="display: none;">
+    <h2>Velež — Partizan 0:4 (0:1)</h2>
+    <p>Već u prvom minutu Milutinović prelazi tri Veležova igrača i šalje opasan šut na Veležov gol. Odmah zatim Velež izvodi protivnapad i potpuno preuzima inicijativu u svoje ruke. Nižu se akcije prema Stojanovićevom golu. Već u 4 min. Borozan šalje loptu u kazneni prostor gde se stvara gužva, ali Stojanović smelim skokom spasava gol izbacivanjem lopte u korner. Odmah zatim opet je Velež u napadu i Zelenika šutira. Loptu dodiruje Stefanović i ona dolazi do slobodnog Rebca koji tuče pored gola. Minut kasnije ponavlja se slična situacija, ali ovoga puta Stefanović uspešnije interveniše.</p><b>Neočekivani gol</b><p>Posle 25 minuta Partizan se konačno sređuje. Do tog vremena Veležova navala nije znala da iskoristi nadmoćnost. Njegovi igrači pravili su početničke greške. Stojanović se tri puta našao u veoma kritičnoj situaciji, ali je uspešno intervenisao i tako uspeo da spase svoja vrata. Posle toga Partizan brzim prodorima vrlo često dolazi pred Barbarićev gol. U jednom momentu stvorila se gužva pred golom, pritrčao je Milutinović, ali Barbarić je intervenisao i prosto neverovatnim skokom uspeo da uhvati loptu. U 30 minutu došlo je da igralištu do jedne veoma ružne slike. Borili su se Zelenika i Stefanović. Kada je Stefanović oduzeo loptu, Zelenika ga je bezobrazno udario po nogama. Poslednji minuti prvog poluvremena pripadali su Partizanu, ali ni njegova navala nije uspela da realizuje sve napore. U nastavku igre već u prvim minutima opet greškom levog beka, lopta je došla do Veselinovića koji se našao oči u oči sa Barbarićem. On je ispod njega poslao loptu u mrežu sa skoro 20 metara.</p><b>Gruba igra</b><p>Posle ovoga, pa do završetka, nije više bilo lepe igre i uzbudljivih situacija. Igrači su se međusobno čarkali i otvoreno udarali. Igralo se grubo. Ispadi pojedinih igrača bili su nesportski. U jednom momentu Čajkovski je zajaukao, izgledao je kao da je udaren, iako to nije bio. On je simulirao i zato je bio izviždan od publike. Malo zatim gosti iznenada povećavaju rezultat. U 52 minutu Barbarić izbacuje loptu, ali veoma kratko. Do lopte je došao Milutinović i razumljivo loptu je vratio u prazan gol. Trinaest minuta kasnije dosuđen je penal protiv Veleža koji je pretvoren u gol. Pri kraju igre grubo je srušen Hrvić pred Partizanovim golom. Igra je prekiinuta. Dok je lekar intervenisao, sudija je na zaprepašćenje publike nastavio igru iako je na terenu bilo i neigrača.</p><p>Sve u svemu nijedan tim nije ispunio očekivanja. Velež nije igrao kako zna niti je njegova ekipa pružila uobičajenu borbenost.</p><p>Partizan je ovoga puta razočarao Mostarce gde je prvi put igrao od 1946 godine. Njegovi najbolji igrači, inače naši poznati reprezentativci, nisu pokazali ono što znaju, a tim kao celina igrao je veoma mlako i rastrgano.</p><p>Sudija Makijedo na kraju igre bio je prisiljen da isključi Dilberovića zbog ispada.</p><div class="signature"><b>Šefik PAŠIĆ</b><br><i>Sport</i></div>
+    <div class="size1" style="margin-left: auto; margin-right: auto; width: 60%;"><img src="../images/site/table/tab1953-05-24.png" width="100%"></div>
+      	<div class="size2"><img src="../images/site/table/tab1953-05-24.png" width="100%"></div>
+</div>
+
+    <div id="overlay19" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox20" class="fixedBox" style="display: none;"><h2>„Velež“ iznenadio BSK-a sa 4:2 (2:2)</h2>
+    <p>Poletnom igrom »Velež« je danas zasluženo pobijedio »BSK« sa 4:2 (2:2). [...]</p><p>Mada klizav teren od pljuska, koji je trajao neprekidno dva sata prije utakmice nije dozvoljavao da se razvije lijepa igra, za današnju utakmicu između »BSK-a« i »Veleža« može se reći da je bila vrlo interesantna. Još u početku obje ekipe snažno navaljuju u namjeri da osiguraju pobjedu. Iako Marković postiže gol u osmom minutu, Zelenika izjednačuje u 12. minuti. Poslije toga BSK opet prelazi u vodstvo preko istog igrača u 35. minuti, ali u 44. minutu Zelenika izjednačuje na 2:2 iz jedanaesterca koji je skrivio Stanković.</p><p>Drugo poluvrijeme proteklo je u znatnoj nadmoćnosti »Veleža«, koji je uspio da u 48. minuti preko Mujića i u 78. minuti preko Selimotića poveća rezultat na 4:2. U ovom dijelu igre gosti su prikazali odličnu igru. Domaći su vrlo rijetko uspijevali da dođu do gola »Veleža« na kome se nalazio vrlo dobar golman Barbarić. U timu »Veleža« nije bilo slabih mjesta, a najbolji su bili pored Barbarića Borozan, Bolfek i Zelenika. Za požrtvovanu i dobru igru Beograđani su srdačno nagradili goste aplauzom. U timu »BSK-a« nitko se nije naročito istakao.</p><div class="signature"><i>Slobodna Dalmacija</i></div>
+    <div class="size1" style="margin-left: auto; margin-right: auto; width: 60%;"><img src="../images/site/table/tab1953-05-31.png" width="100%"></div>
+      	<div class="size2"><img src="../images/site/table/tab1953-05-31.png" width="100%"></div></div>
+
+    <div id="overlay20" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox21" class="fixedBox" style="display: none;"><h2>Velež - Spartak 2:0</h2>
+    <p>Poslije nedeljne utakmice navijači su zadovoljno napustili teren. Kako i ne bi kad je njihov ljubimac odnio još jednu pobjedu. To je bila teška borba po blatnjavom terenu. Veležovci su zaigrali kao nikada do sada. Mladi tim dao je sve od sebe. Igrao je jednostavnije i korisnije. Rezultat takve igre ispoljio ce u golovima. Ovog puta znali su iskoristiti povoljne situacije.</p><p>»Spartak« nije bio loš tim, već naprotiv veoma dobar, borben sa odličnom kondicijom i ostalim odlikama jedne iskusne ekipe. Ipak oni nisu imali uspjeha. Igrali su dobro u polju, ali kad se takva igra trebala realizovati njihova navala je u završnicima pravila grube greške. Mnogo su kombinovali, a to im se osvetilo. Takač, Palatinos, Branisavljević i još neki drugi imali su pogodnih situacija da postignu gol, ali su uvijek oklijevali.</p><p>Odbrana »Veleža« ispunila je časno svoj zadatak. Momić je bio stub svog tima i ujedno najbolji na terenu. Barbarić nije imao mnogo posla, ali je odbranio dvije opasne lopte. Bolfek je podbacio. Izgleda da mu nije odgovaralo mjesto beka. Rukavina je bio siguran, ali mu se može zamjeriti što je ostavljao protivničko krilo. Borozan nije ispunio očakivanja koja su se od njega očekivala. Radiljević je položio ispit. Bio je siguran i uz Momića najbolji u svom timu. Za Sliškovića ce može reći da napreduje i da će to biti efikasno i korisno krilo. Mujić, Zelenika, Hrvić i Ćemalović dobro su se slagali i znali su da opasno ugrožavaju protivnički gol. Tim kao cjelina igrao je dobro.</p><p>Ovom pobjedom dokazao je tim »Veleža« da nije bio »zreo« za ispadanje i da je tvrd orah i za naše najbolje timove. Sve šanse nisu izgubljene. Ukoliko bi tukli »Vardara« u Skoplju sa nekoliko golova razlike bilo bi mogućnosti da ostane u ligi najboljih. Bilo kako, smatramo da će se igrači »Veleža« dostojno boriti i na posljednjoj utakmici, onako kako to znaju. To očekuje sportska javnost Mostara i Hercegovine.</p>
+    <div class="signature"><i>Sloboda</i></div>
+    <div class="size1" style="margin-left: auto; margin-right: auto; width: 60%;"><img src="../images/site/table/tab1953-06-14.png" width="100%"></div>
+      	<div class="size2"><img src="../images/site/table/tab1953-06-14.png" width="100%"></div></div>
+
+    <div id="overlay21" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox22" class="fixedBox" style="display: none;">
+    <h2>Utakmica odlučena u prvim minutima</h2>
+    <h4>„Vardar” — „Velež” 5:2 (2:0)</h4>
+    <p>Već u prvim minutima igre videlo se da će tim „Vardara” odneti pobedu. Igrači „Vardara” su počeli silovitim napadima, bez uobičajene nervoze. Nasuprot njima igrači „Veleža” zaigrali su bolje tek pri kraju drugog dela igre. Njih je možda u početku igre demoralisao prvi gol koji je postignut već u 5 minutu. Dao ga je Velkovski. On je sa tridesetak metara pogodio gornji desni ugao i iznenadio inače odličnog Barbarića. U 24 minutu Karamfilović je lako pored palog Barbarića poslao loptu u mrežu.</p>
+        <p>U drugom delu „Vardar” počinje sa silovitim napadima i već u 2 minutu Karamfilović dodaje Velkovskom, koji je prodro do gol-aut linije i centrirao previsoko Cincijevski je vešto prevario i Barbarića i centarhalfa „Veleža” propustivši loptu slobodnom Georgijevski II, koji je bez oklevanja povećao na 3:0. Od ovog momenta igrači „Vardara” počinju da igraju ležerno. Kao plod ovakve igre „Vardara” došla su dva gola Zelenike. Četvrti gol za „Vardar” postigao je Velkovski, a peti gol bio je autogol Bolfeka. Pobeda Vardara je zaslužena.</p>
+    <div class="signature"><b>B. BLAGOJEVSKI</b><br><i>Borba</i></div>
+    <div class="size1" style="margin-left: auto; margin-right: auto; width: 60%;"><img src="../images/site/table/tab1953-06-21.png" width="100%"></div>
+      	<div class="size2"><img src="../images/site/table/tab1953-06-21.png" width="100%"></div></div>
+
+    <div id="overlay22" class="overlay" style="display: none;"></div>
+
+<div id="fixedBox23" class="fixedBox" style="display: none;">
+    <div class="imagetable"><img src="https://cdn.discordapp.com/attachments/1079034616264016034/1079094041234395157/bez_kruga.png" width="100%"></div></div>
+
+    <div id="overlay23" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox24" class="fixedBox" style="display: none;">
+    <div class="imagetable"><img src="https://cdn.discordapp.com/attachments/1079034616264016034/1079094041234395157/bez_kruga.png" width="100%"></div></div>
+
+    <div id="overlay24" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox25" class="fixedBox" style="display: none;">
+    <div class="imagetable"><img src="https://cdn.discordapp.com/attachments/1079034616264016034/1079094041234395157/bez_kruga.png" width="100%"></div></div>
+
+    <div id="overlay25" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox26" class="fixedBox" style="display: none;">
+    <div class="imagetable"><img src="https://cdn.discordapp.com/attachments/1079034616264016034/1079094041234395157/bez_kruga.png" width="100%"></div></div>
+
+    <div id="overlay26" class="overlay" style="display: none;"></div>
+    
+    <div id="fixedBox27" class="fixedBox" style="display: none;">
+    <div class="imagetable"><img src="https://cdn.discordapp.com/attachments/1079034616264016034/1079094041234395157/bez_kruga.png" width="100%"></div></div>
+
+    <div id="overlay27" class="overlay" style="display: none;"></div><h1>Fudbalsko prvenstvo BiH</h1><h1 style="margin-top: 0px;">Grupa Zenica</h1></div>
+	
+    <div class="table-container table-width">
+        <div class="table-row header">
+            <div class="table-cell size1" style="flex: 1.7;">Datum</div>
+            <div class="table-cell size2">Datum</div>
+            <div class="table-cell">Protivnik</div>
+            <div class="table-cell size1">Stadion</div>
+            <div class="table-cell" style="text-align: center; flex: 1.2;">Rezultat</div>
+            <div class="table-cell" style="text-align: center; flex: 1;">P,N,I?</div>
+            <div class="table-cell size1" style="text-align: right; flex: 1.1;">Posjeta</div>
+        </div>
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.7;">15.7.1994.</div>
+            <div class="table-cell size2">15.7.1994.</div>
+            <div class="table-cell"><span>Slaven Živinice</span></div>
+            <div class="table-cell size1">Bilino polje</div>
+            <div class="table-cell" style="text-align: center; flex: 1.2;"><span>0 - 3</span></div>
+            <div class="table-cell" style="text-align: center; flex: 1; background-color: #F4CCCC;" id="showBox1x">I</div>
+            <div class="table-cell size1" style="text-align: right; flex: 1.1;">500</div>
+        </div>
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.7;">16.7.1994.</div>
+            <div class="table-cell size2">16.7.1994.</div>
+            <div class="table-cell"><span>Rudar Zenica</span></div>
+            <div class="table-cell size1">Bilino polje</div>
+            <div class="table-cell" style="text-align: center; flex: 1.2;"><span>0 - 2</span></div>
+            <div class="table-cell" style="text-align: center; flex: 1; background-color: #F4CCCC;" id="showBox2x">I</div>
+            <div class="table-cell size1" style="text-align: right; flex: 1.1;">400</div>
+        </div>
+        <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.7;">18.7.1994.</div>
+            <div class="table-cell size2">18.7.1994.</div>
+            <div class="table-cell"><span>Čelik Zenica</span></div>
+            <div class="table-cell size1">Bilino polje</div>
+            <div class="table-cell" style="text-align: center; flex: 1.2;"><span>2 - 6</span></div>
+            <div class="table-cell" style="text-align: center; flex: 1; background-color: #F4CCCC;" id="showBox3x">I</div>
+            <div class="table-cell size1" style="text-align: right; flex: 1.1;">700</div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </div>
+      <h1>Kup Bosne i Hercegovine</h1>
+      <div class="table-container table-width">
+        <div class="table-row header">
+            <div class="table-cell size1" style="flex: 1.5;">Datum</div>
+            <div class="table-cell size2">Datum</div>
+            <div class="table-cell">Protivnik</div>
+            <div class="table-cell size1">Stadion</div>
+            <div class="table-cell" style="text-align: center; flex: 1;">Rezultat</div>
+            <div class="table-cell" style="text-align: center; flex: 0.9;">Prolaz?</div>
+            <div class="table-cell size1" style="text-align: right; flex: 1.1;">Faza takm.</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.8;">Posjeta</div>
+        </div>
+       <div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">26.4.1995.</div>
+            <div class="table-cell size2">26.4.1995.</div>
+            <div class="table-cell"><span>FK Sarajevo</span></div><div class="table-cell size1">Sjeverni logor</div>
+            <div class="table-cell" style="text-align: center; flex: 1;"><span>6 - 1</span></div>
+            <div class="table-cell" style="text-align: center; flex: 0.9; background-color: #D9EAD3;" id="showBox1x"><b>✓</b></div>
+            <div class="table-cell size1" style="text-align: right; flex: 1.1;">1/4</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.8;">200</div>
+        </div><div class="table-row">
+            <div class="table-cell size1" style="flex: 1.5;">3.5.1995.</div>
+            <div class="table-cell size2">2.10.2019.</div>
+            <div class="table-cell"><span>Sloboda Tuzla</span></div><div class="table-cell size1">Tušanj</div>
+            <div class="table-cell" style="text-align: center; flex: 1;"><span>0 - 4</span></div>
+            <div class="table-cell" style="text-align: center; flex: 0.9; background-color: #F4CCCC;" id="showBox1x"><b>✕</b></div>
+            <div class="table-cell size1" style="text-align: right; flex: 1.1;">1/2</div>
+            <div class="table-cell size1" style="text-align: right; flex: 0.8;"></div>
+        </div></div>
+     <div class="row">
+  </div><div class="row">
+  <div class="column size1">
+    <img src="../images/site/table/tabela1994.png" style="width:120%">
+  </div><div class="column size1"><table class="sortable">
+  <tbody>
+    <tr>
+      <th>Ime igrača</th>
+      <th>Pozicija</th>
+      <th>Nastupi</th>
+      <th>Golovi</th>
+    </tr>
+    <tr>
+      <td>Adnan Sandžaktar</td>
+      <td>Golman</td>
+      <td>2 (0)</td>
+      <td>-9</td>
+    </tr>
+    <tr>
+      <td>Semir Kaplan</td>
+      <td>Golman</td>
+      <td>1 (0)</td>
+      <td style="">-2</td>
+    </tr><tr>
+      <td>Nermin Čolaković</td>
+      
+      <td style="filter: blur(4px);">Uskoro...</td>
+      <td>3</td><td>1</td>
+    </tr>
+    <tr>
+      <td>Samir Ćemalović</td>
+      <td style="filter: blur(4px);">Uskoro</td>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Emir Ćupina</td>
+      <td style="filter: blur(4px);">Uskoro...</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Miralem Greljo</td>
+      <td style="filter: blur(4px);">Uskoro...</td>
+      <td>3</td>
+      <td>0</td>
+    </tr><tr>
+      <td>Mario Knezović</td>
+      <td style="filter: blur(4px);">Uskoro...</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Adis Obad</td>
+      <td style="filter: blur(4px);">Uskoro...</td>
+      <td>3</td>
+      <td>0</td>
+    </tr><tr>
+      <td>Omer Čampara</td>
+      <td style="filter: blur(4px);">Uskoro...</td>
+      <td>2</td>
+      <td>0</td>
+    </tr><tr>
+      <td>Esad Salčin</td>
+      <td style="filter: blur(4px);">Uskoro...</td>
+      <td>2</td>
+      <td>0</td>
+    </tr><tr>
+      <td>Almir Tanović</td>
+      <td style="filter: blur(4px);">Uskoro...</td>
+      <td>2</td>
+      <td>0</td>
+    </tr><tr>
+      <td>Suad Nožić</td>
+      <td style="filter: blur(4px);">Uskoro...</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td>Saradak</td>
+      <td style="filter: blur(4px);">Uskoro...</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+  <tr>
+      <td>Enver Vilogorac</td>
+      <td style="filter: blur(4px);">Uskoro...</td>
+      <td>1</td>
+      <td>0</td>
+    </tr></tbody>
+</table>
+</div>
+</div>
+<br class="size2"><div class="size2" style="text-align: center;"><img src="../images/site/table/tabela1994.png" width="98%"></div>
+<br class="size2"><div class="size2"><div class="table-container table-width">
+        <div class="table-row header" style="border-radius: 8px 8px 0px 0px;">
+            <div class="table-cell">Ime igrača</div>
+            <div class="table-cell">Pozicija</div>
+            <div class="table-cell">Nastupi</div>
+            <div class="table-cell" style="flex: 1.5;">Golovi</div>
+        </div>
+        
+        
+	<div class="table-row">
+            <div class="table-cell">Adnan Sandžaktar</div>
+            <div class="table-cell">GK</div>
+            <div class="table-cell">2 (0)</div>
+            <div class="table-cell" style="flex: 1.5;">-9</div>
+        </div><div class="table-row">
+            <div class="table-cell">Semir Kaplan</div>
+            <div class="table-cell">GK</div>
+            <div class="table-cell">1 (0)</div>
+            <div class="table-cell" style="flex: 1.5;">-2</div>
+        </div><div class="table-row">
+            <div class="table-cell">Nermin Čolaković</div>
+            <div class="table-cell" style="filter: blur(4px);">???</div>
+            <div class="table-cell">3</div>
+            <div class="table-cell" style="flex: 1.5;">1</div>
+        </div><div class="table-row">
+            <div class="table-cell">Samir Ćemalović</div>
+            <div class="table-cell" style="filter: blur(4px);">???</div>
+            <div class="table-cell">3</div>
+            <div class="table-cell" style="flex: 1.5;">1</div>
+        </div>
+        <div class="table-row">
+            <div class="table-cell">Emir Ćupina</div>
+            <div class="table-cell" style="filter: blur(4px);">???</div>
+            <div class="table-cell">3</div>
+            <div class="table-cell" style="flex: 1.5;">0</div>
+        </div>
+        <div class="table-row">
+            <div class="table-cell">Miralem Greljo</div>
+            <div class="table-cell" style="filter: blur(4px);">???</div>
+            <div class="table-cell">3</div>
+            <div class="table-cell" style="flex: 1.5;">0</div>
+        </div>
+        <div class="table-row">
+            <div class="table-cell">Mario Knezović</div>
+            <div class="table-cell" style="filter: blur(4px);">???</div>
+            <div class="table-cell">3</div>
+            <div class="table-cell" style="flex: 1.5;">0</div>
+        </div>
+        
+        <div class="table-row">
+            <div class="table-cell">Adis Obad</div>
+            <div class="table-cell" style="filter: blur(4px);">???</div>
+            <div class="table-cell">3</div>
+            <div class="table-cell" style="flex: 1.5;">0</div>
+        </div>
+        <div class="table-row">
+            <div class="table-cell">Omer Čampara</div>
+            <div class="table-cell" style="filter: blur(4px);">???</div>
+            <div class="table-cell">2</div>
+            <div class="table-cell" style="flex: 1.5;">0</div>
+        </div><div class="table-row">
+            <div class="table-cell">Esad Salčin</div>
+            <div class="table-cell" style="filter: blur(4px);">???</div>
+            <div class="table-cell">2</div>
+            <div class="table-cell" style="flex: 1.5;">0</div>
+        </div><div class="table-row">
+            <div class="table-cell">Almir Tanović</div>
+            <div class="table-cell" style="filter: blur(4px);">???</div>
+            <div class="table-cell">2</div>
+            <div class="table-cell" style="flex: 1.5;">0</div>
+        </div><div class="table-row">
+            <div class="table-cell">Suad Nožić</div>
+            <div class="table-cell" style="filter: blur(4px);">???</div>
+            <div class="table-cell">1</div>
+            <div class="table-cell" style="flex: 1.5;">0</div>
+        </div>
+        <div class="table-row">
+            <div class="table-cell">Saradak</div>
+            <div class="table-cell" style="filter: blur(4px);">???</div>
+            <div class="table-cell">1</div>
+            <div class="table-cell" style="flex: 1.5;">0</div>
+        </div>
+        
+        
+        <div class="table-row">
+            <div class="table-cell">Enver Vilogorac</div>
+            <div class="table-cell" style="filter: blur(4px);">???</div>
+            <div class="table-cell">1</div>
+            <div class="table-cell" style="flex: 1.5;">0</div>
+        </div>
+        
+        
+        
+    </div>
+       <br class="size2"></div></div>
+
+    <script>
+      const showBoxButton1 = document.getElementById('showBox1');
+      const fixedBox1 = document.getElementById('fixedBox1');
+      const overlay1 = document.getElementById('overlay1');
+
+      showBoxButton1.addEventListener('click', function() {
+        fixedBox1.style.display = 'block';
+        overlay1.style.display = 'block';
+      });
+
+      overlay1.addEventListener('click', function() {
+        fixedBox1.style.display = 'none';
+        overlay1.style.display = 'none';
+      });
+
+      const showBoxButton2 = document.getElementById('showBox2');
+      const fixedBox2 = document.getElementById('fixedBox2');
+      const overlay2 = document.getElementById('overlay2');
+
+      showBoxButton2.addEventListener('click', function() {
+        fixedBox2.style.display = 'block';
+        overlay2.style.display = 'block';
+      });
+
+      overlay2.addEventListener('click', function() {
+        fixedBox2.style.display = 'none';
+        overlay2.style.display = 'none';
+      });
+
+      const showBoxButton3 = document.getElementById('showBox3');
+      const fixedBox3 = document.getElementById('fixedBox3');
+      const overlay3 = document.getElementById('overlay3');
+
+      showBoxButton3.addEventListener('click', function() {
+        fixedBox3.style.display = 'block';
+        overlay3.style.display = 'block';
+      });
+
+      overlay3.addEventListener('click', function() {
+        fixedBox3.style.display = 'none';
+        overlay3.style.display = 'none';
+      });
+      
+      const showBoxButton4 = document.getElementById('showBox4');
+      const fixedBox4 = document.getElementById('fixedBox4');
+      const overlay4 = document.getElementById('overlay4');
+
+      showBoxButton4.addEventListener('click', function() {
+        fixedBox4.style.display = 'block';
+        overlay4.style.display = 'block';
+      });
+
+      overlay4.addEventListener('click', function() {
+        fixedBox4.style.display = 'none';
+        overlay4.style.display = 'none';
+      });
+      
+      const showBoxButton5 = document.getElementById('showBox5');
+      const fixedBox5 = document.getElementById('fixedBox5');
+      const overlay5 = document.getElementById('overlay5');
+
+      showBoxButton5.addEventListener('click', function() {
+        fixedBox5.style.display = 'block';
+        overlay5.style.display = 'block';
+      });
+
+      overlay5.addEventListener('click', function() {
+        fixedBox5.style.display = 'none';
+        overlay5.style.display = 'none';
+      });
+      
+      const showBoxButton6 = document.getElementById('showBox6');
+      const fixedBox6 = document.getElementById('fixedBox6');
+      const overlay6 = document.getElementById('overlay6');
+
+      showBoxButton6.addEventListener('click', function() {
+        fixedBox6.style.display = 'block';
+        overlay6.style.display = 'block';
+      });
+
+      overlay6.addEventListener('click', function() {
+        fixedBox6.style.display = 'none';
+        overlay6.style.display = 'none';
+      });
+      
+      const showBoxButton7 = document.getElementById('showBox7');
+      const fixedBox7 = document.getElementById('fixedBox7');
+      const overlay7 = document.getElementById('overlay7');
+
+      showBoxButton7.addEventListener('click', function() {
+        fixedBox7.style.display = 'block';
+        overlay7.style.display = 'block';
+      });
+
+      overlay7.addEventListener('click', function() {
+        fixedBox7.style.display = 'none';
+        overlay7.style.display = 'none';
+      });
+      
+      const showBoxButton8 = document.getElementById('showBox8');
+      const fixedBox8 = document.getElementById('fixedBox8');
+      const overlay8 = document.getElementById('overlay8');
+
+      showBoxButton8.addEventListener('click', function() {
+        fixedBox8.style.display = 'block';
+        overlay8.style.display = 'block';
+      });
+
+      overlay8.addEventListener('click', function() {
+        fixedBox8.style.display = 'none';
+        overlay8.style.display = 'none';
+      });
+      
+      const showBoxButton9 = document.getElementById('showBox9');
+      const fixedBox9 = document.getElementById('fixedBox9');
+      const overlay9 = document.getElementById('overlay9');
+
+      showBoxButton9.addEventListener('click', function() {
+        fixedBox9.style.display = 'block';
+        overlay9.style.display = 'block';
+      });
+
+      overlay9.addEventListener('click', function() {
+        fixedBox9.style.display = 'none';
+        overlay9.style.display = 'none';
+      });
+      
+      const showBoxButton10 = document.getElementById('showBox10');
+      const fixedBox10 = document.getElementById('fixedBox10');
+      const overlay10 = document.getElementById('overlay10');
+
+      showBoxButton10.addEventListener('click', function() {
+        fixedBox10.style.display = 'block';
+        overlay10.style.display = 'block';
+      });
+
+      overlay10.addEventListener('click', function() {
+        fixedBox10.style.display = 'none';
+        overlay10.style.display = 'none';
+      });
+      
+      const showBoxButton11 = document.getElementById('showBox11');
+      const fixedBox11 = document.getElementById('fixedBox11');
+      const overlay11 = document.getElementById('overlay11');
+
+      showBoxButton11.addEventListener('click', function() {
+        fixedBox11.style.display = 'block';
+        overlay11.style.display = 'block';
+      });
+
+      overlay11.addEventListener('click', function() {
+        fixedBox11.style.display = 'none';
+        overlay11.style.display = 'none';
+      });
+      
+      const showBoxButton12 = document.getElementById('showBox12');
+      const fixedBox12 = document.getElementById('fixedBox12');
+      const overlay12 = document.getElementById('overlay12');
+
+      showBoxButton12.addEventListener('click', function() {
+        fixedBox12.style.display = 'block';
+        overlay12.style.display = 'block';
+      });
+
+      overlay12.addEventListener('click', function() {
+        fixedBox12.style.display = 'none';
+        overlay12.style.display = 'none';
+      });
+      
+      const showBoxButton13 = document.getElementById('showBox13');
+      const fixedBox13 = document.getElementById('fixedBox13');
+      const overlay13 = document.getElementById('overlay13');
+
+      showBoxButton13.addEventListener('click', function() {
+        fixedBox13.style.display = 'block';
+        overlay13.style.display = 'block';
+      });
+
+      overlay13.addEventListener('click', function() {
+        fixedBox13.style.display = 'none';
+        overlay13.style.display = 'none';
+      });
+      
+      const showBoxButton14 = document.getElementById('showBox14');
+      const fixedBox14 = document.getElementById('fixedBox14');
+      const overlay14 = document.getElementById('overlay14');
+
+      showBoxButton14.addEventListener('click', function() {
+        fixedBox14.style.display = 'block';
+        overlay14.style.display = 'block';
+      });
+
+      overlay14.addEventListener('click', function() {
+        fixedBox14.style.display = 'none';
+        overlay14.style.display = 'none';
+      });
+      
+      const showBoxButton15 = document.getElementById('showBox15');
+      const fixedBox15 = document.getElementById('fixedBox15');
+      const overlay15 = document.getElementById('overlay15');
+
+      showBoxButton15.addEventListener('click', function() {
+        fixedBox15.style.display = 'block';
+        overlay15.style.display = 'block';
+      });
+
+      overlay15.addEventListener('click', function() {
+        fixedBox15.style.display = 'none';
+        overlay15.style.display = 'none';
+      });
+      
+      const showBoxButton16 = document.getElementById('showBox16');
+      const fixedBox16 = document.getElementById('fixedBox16');
+      const overlay16 = document.getElementById('overlay16');
+
+      showBoxButton16.addEventListener('click', function() {
+        fixedBox16.style.display = 'block';
+        overlay16.style.display = 'block';
+      });
+
+      overlay16.addEventListener('click', function() {
+        fixedBox16.style.display = 'none';
+        overlay16.style.display = 'none';
+      });
+      
+      const showBoxButton17 = document.getElementById('showBox17');
+      const fixedBox17 = document.getElementById('fixedBox17');
+      const overlay17 = document.getElementById('overlay17');
+
+      showBoxButton17.addEventListener('click', function() {
+        fixedBox17.style.display = 'block';
+        overlay17.style.display = 'block';
+      });
+
+      overlay17.addEventListener('click', function() {
+        fixedBox17.style.display = 'none';
+        overlay17.style.display = 'none';
+      });
+      
+      const showBoxButton18 = document.getElementById('showBox18');
+      const fixedBox18 = document.getElementById('fixedBox18');
+      const overlay18 = document.getElementById('overlay18');
+
+      showBoxButton18.addEventListener('click', function() {
+        fixedBox18.style.display = 'block';
+        overlay18.style.display = 'block';
+      });
+
+      overlay18.addEventListener('click', function() {
+        fixedBox18.style.display = 'none';
+        overlay18.style.display = 'none';
+      });
+      
+      const showBoxButton19 = document.getElementById('showBox19');
+      const fixedBox19 = document.getElementById('fixedBox19');
+      const overlay19 = document.getElementById('overlay19');
+
+      showBoxButton19.addEventListener('click', function() {
+        fixedBox19.style.display = 'block';
+        overlay19.style.display = 'block';
+      });
+
+      overlay19.addEventListener('click', function() {
+        fixedBox19.style.display = 'none';
+        overlay19.style.display = 'none';
+      });
+      
+      const showBoxButton20 = document.getElementById('showBox20');
+      const fixedBox20 = document.getElementById('fixedBox20');
+      const overlay20 = document.getElementById('overlay20');
+
+      showBoxButton20.addEventListener('click', function() {
+        fixedBox20.style.display = 'block';
+        overlay20.style.display = 'block';
+      });
+
+      overlay20.addEventListener('click', function() {
+        fixedBox20.style.display = 'none';
+        overlay20.style.display = 'none';
+      });
+      
+      const showBoxButton21 = document.getElementById('showBox21');
+      const fixedBox21 = document.getElementById('fixedBox21');
+      const overlay21 = document.getElementById('overlay21');
+
+      showBoxButton21.addEventListener('click', function() {
+        fixedBox21.style.display = 'block';
+        overlay21.style.display = 'block';
+      });
+
+      overlay21.addEventListener('click', function() {
+        fixedBox21.style.display = 'none';
+        overlay21.style.display = 'none';
+      });
+      
+      const showBoxButton22 = document.getElementById('showBox22');
+      const fixedBox22 = document.getElementById('fixedBox22');
+      const overlay22 = document.getElementById('overlay22');
+
+      showBoxButton22.addEventListener('click', function() {
+        fixedBox22.style.display = 'block';
+        overlay22.style.display = 'block';
+      });
+
+      overlay22.addEventListener('click', function() {
+        fixedBox22.style.display = 'none';
+        overlay22.style.display = 'none';
+      });
+      
+      const showBoxButton23 = document.getElementById('showBox23');
+      const fixedBox23 = document.getElementById('fixedBox23');
+      const overlay23 = document.getElementById('overlay23');
+
+      showBoxButton23.addEventListener('click', function() {
+        fixedBox23.style.display = 'block';
+        overlay23.style.display = 'block';
+      });
+
+      overlay23.addEventListener('click', function() {
+        fixedBox23.style.display = 'none';
+        overlay23.style.display = 'none';
+      });
+      
+      const showBoxButton24 = document.getElementById('showBox24');
+      const fixedBox24 = document.getElementById('fixedBox24');
+      const overlay24 = document.getElementById('overlay24');
+
+      showBoxButton24.addEventListener('click', function() {
+        fixedBox24.style.display = 'block';
+        overlay24.style.display = 'block';
+      });
+
+      overlay24.addEventListener('click', function() {
+        fixedBox24.style.display = 'none';
+        overlay24.style.display = 'none';
+      });
+      
+      const showBoxButton25 = document.getElementById('showBox25');
+      const fixedBox25 = document.getElementById('fixedBox25');
+      const overlay25 = document.getElementById('overlay25');
+
+      showBoxButton25.addEventListener('click', function() {
+        fixedBox25.style.display = 'block';
+        overlay25.style.display = 'block';
+      });
+
+      overlay25.addEventListener('click', function() {
+        fixedBox25.style.display = 'none';
+        overlay25.style.display = 'none';
+      });
+      
+      const showBoxButton26 = document.getElementById('showBox26');
+      const fixedBox26 = document.getElementById('fixedBox26');
+      const overlay26 = document.getElementById('overlay26');
+
+      showBoxButton26.addEventListener('click', function() {
+        fixedBox26.style.display = 'block';
+        overlay26.style.display = 'block';
+      });
+
+      overlay26.addEventListener('click', function() {
+        fixedBox26.style.display = 'none';
+        overlay26.style.display = 'none';
+      });
+      
+      const showBoxButton27 = document.getElementById('showBox27');
+      const fixedBox27 = document.getElementById('fixedBox27');
+      const overlay27 = document.getElementById('overlay27');
+
+      showBoxButton27.addEventListener('click', function() {
+        fixedBox27.style.display = 'block';
+        overlay27.style.display = 'block';
+      });
+
+      overlay27.addEventListener('click', function() {
+        fixedBox27.style.display = 'none';
+        overlay27.style.display = 'none';
+      });
+    </script>
+  <iframe src="../copyright.html" frameborder="0" style="margin-left: auto; margin-right: auto; width: 100%;"></iframe>
+
+</div>
+	
+</body></html>
