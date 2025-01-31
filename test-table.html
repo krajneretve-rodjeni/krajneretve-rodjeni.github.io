@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Results Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .team-list, .results-grid, .standings {
+      margin-bottom: 30px;
+      overflow: auto;
+    }
+
+    h1, h2 {
+      color: #333;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      padding: 5px 0;
+    }
+
+    input {
+      padding: 5px;
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 5px 10px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f8f9fa;
+    }
+
+    input[type="text"] {
+      width: 150px;
+    }
+
+    .button-container {
+      margin: 20px 0;
+    }
+
+    .results-grid-container {
+      margin-bottom: 40px;
+    }
+
+    .results-grid-container h2 {
+      margin-bottom: 10px;
+    }
+
+    sup {
+      font-size: 0.8em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Team Results Tracker</h1>
+
+    <!-- Team List Section -->
+    <div class="team-list">
+      <h2>Teams</h2>
+      <ul id="team-list"></ul>
+      <input type="text" id="team-input" placeholder="Enter team name">
+      <button onclick="addTeam()">Add Team</button>
+    </div>
+
+    <!-- Results Grids Section -->
+    <div id="results-grids-container">
+      <div class="results-grid-container">
+        <h2>Results Grid 1</h2>
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>Home \ Away</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Buttons Section -->
+    <div class="button-container">
+      <button onclick="toggleWinPoints()">Change Win Points (Current: <span id="win-points">3</span>)</button>
+      <button onclick="toggleGoalColumn()">Toggle Goal Difference/Average</button>
+      <button onclick="addResultsGrid()">Add Results Grid</button>
+      <button onclick="toggleHeadToHead()">Toggle Head-to-Head Tiebreakers (Current: <span id="head-to-head-status">Off</span>)</button>
+    </div>
+
+    <!-- Standings Table Section -->
+    <div class="standings">
+      <h2>Standings</h2>
+      <table id="standings-table">
+        <thead>
+          <tr>
+            <th>Team</th>
+            <th>Games Played</th>
+            <th>Wins</th>
+            <th>Draws</th>
+            <th>Losses</th>
+            <th>Goals Scored/Conceded</th>
+            <th id="goal-column-header">Goal Difference</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    let teams = [];
+    let results = {}; // Stores results for all grids
+    let standings = {};
+    let winPoints = 3; // Default points for a win
+    let useGoalAverage = false; // Default to goal difference
+    let useHeadToHead = false; // Default to no head-to-head tiebreakers
+    let gridCount = 1; // Counter for results grids
+
+    // Add a team to the list
+    function addTeam() {
+      const teamName = document.getElementById('team-input').value.trim();
+      if (teamName && !teams.includes(teamName)) {
+        teams.push(teamName);
+        updateTeamList();
+        updateAllResultsGrids();
+        updateStandingsTable();
+        document.getElementById('team-input').value = '';
+      }
+    }
+
+    // Update the team list in the UI
+    function updateTeamList() {
+      const teamList = document.getElementById('team-list');
+      teamList.innerHTML = '';
+      teams.forEach(team => {
+        const li = document.createElement('li');
+        li.textContent = team;
+        const editButton = document.createElement('button');
+        editButton.textContent = 'Edit';
+        editButton.onclick = () => editTeam(team);
+        li.appendChild(editButton);
+        teamList.appendChild(li);
+      });
+    }
+
+    // Edit a team's name
+    function editTeam(oldName) {
+      const newName = prompt('Enter new team name:', oldName);
+      if (newName && newName.trim() && !teams.includes(newName.trim())) {
+        const index = teams.indexOf(oldName);
+        teams[index] = newName.trim();
+        updateTeamList();
+        updateAllResultsGrids();
+        updateStandingsTable();
+      }
+    }
+
+    // Update all results grids
+    function updateAllResultsGrids() {
+      const grids = document.querySelectorAll('.results-table');
+      grids.forEach(grid => updateResultsGrid(grid));
+    }
+
+    // Update a specific results grid
+    function updateResultsGrid(grid) {
+      const tableBody = grid.querySelector('tbody');
+      tableBody.innerHTML = '';
+      const headerRow = document.createElement('tr');
+      headerRow.innerHTML = '<th>Home \\ Away</th>';
+      teams.forEach(team => headerRow.innerHTML += `<th>${team}</th>`);
+      tableBody.appendChild(headerRow);
+
+      teams.forEach(homeTeam => {
+        const row = document.createElement('tr');
+        row.innerHTML = `<th>${homeTeam}</th>`;
+        teams.forEach(awayTeam => {
+          const cell = document.createElement('td');
+          if (homeTeam === awayTeam) {
+            cell.textContent = '-';
+          } else {
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.placeholder = '0-0';
+            const gridId = grid.closest('.results-grid-container').querySelector('h2').textContent;
+            input.value = results[`${gridId}-${homeTeam}-${awayTeam}`] || '';
+            input.onchange = () => updateResult(gridId, homeTeam, awayTeam, input.value);
+            cell.appendChild(input);
+          }
+          row.appendChild(cell);
+        });
+        tableBody.appendChild(row);
+      });
+    }
+
+    // Update a result in the grid
+    function updateResult(gridId, homeTeam, awayTeam, result) {
+      if (result.match(/^\d+-\d+$/)) {
+        results[`${gridId}-${homeTeam}-${awayTeam}`] = result;
+        calculateStandings();
+        updateStandingsTable();
+      } else {
+        alert('Invalid result format. Use format like "1-0".');
+      }
+    }
+
+    // Calculate standings based on results
+    function calculateStandings() {
+      standings = {};
+      teams.forEach(team => {
+        standings[team] = { wins: 0, draws: 0, losses: 0, goalsFor: 0, goalsAgainst: 0, gamesPlayed: 0 };
+      });
+
+      for (const key in results) {
+        const [gridId, homeTeam, awayTeam] = key.split('-');
+        const [homeGoals, awayGoals] = results[key].split('-').map(Number);
+
+        standings[homeTeam].goalsFor += homeGoals;
+        standings[homeTeam].goalsAgainst += awayGoals;
+        standings[homeTeam].gamesPlayed++;
+        standings[awayTeam].goalsFor += awayGoals;
+        standings[awayTeam].goalsAgainst += homeGoals;
+        standings[awayTeam].gamesPlayed++;
+
+        if (homeGoals > awayGoals) {
+          standings[homeTeam].wins++;
+          standings[awayTeam].losses++;
+        } else if (homeGoals < awayGoals) {
+          standings[awayTeam].wins++;
+          standings[homeTeam].losses++;
+        } else {
+          standings[homeTeam].draws++;
+          standings[awayTeam].draws++;
+        }
+      }
+    }
+
+    // Calculate head-to-head results for a team against all tied teams
+    function calculateHeadToHead(team, tiedTeams) {
+      let h2hPoints = 0, h2hGoalDiff = 0;
+
+      tiedTeams.forEach(opponent => {
+        if (team !== opponent) {
+          for (const key in results) {
+            const [gridId, homeTeam, awayTeam] = key.split('-');
+            if ((homeTeam === team && awayTeam === opponent) || (homeTeam === opponent && awayTeam === team)) {
+              const [homeGoals, awayGoals] = results[key].split('-').map(Number);
+              if (homeTeam === team) {
+                h2hGoalDiff += homeGoals - awayGoals;
+                if (homeGoals > awayGoals) h2hPoints += winPoints;
+                else if (homeGoals < awayGoals) h2hPoints += 0;
+                else h2hPoints += 1;
+              } else {
+                h2hGoalDiff += awayGoals - homeGoals;
+                if (awayGoals > homeGoals) h2hPoints += winPoints;
+                else if (awayGoals < homeGoals) h2hPoints += 0;
+                else h2hPoints += 1;
+              }
+            }
+          }
+        }
+      });
+
+      return { h2hPoints, h2hGoalDiff };
+    }
+
+    // Update the standings table
+    function updateStandingsTable() {
+      const tableBody = document.querySelector('#standings-table tbody');
+      tableBody.innerHTML = '';
+
+      // Convert standings to an array and sort
+      const sortedTeams = teams.slice().sort((a, b) => {
+        const teamA = standings[a];
+        const teamB = standings[b];
+        const pointsA = teamA.wins * winPoints + teamA.draws;
+        const pointsB = teamB.wins * winPoints + teamB.draws;
+        const goalDiffA = teamA.goalsFor - teamA.goalsAgainst;
+        const goalDiffB = teamB.goalsFor - teamB.goalsAgainst;
+        const goalAvgA = teamA.goalsAgainst === 0 ? teamA.goalsFor : (teamA.goalsFor / teamA.goalsAgainst);
+        const goalAvgB = teamB.goalsAgainst === 0 ? teamB.goalsFor : (teamB.goalsFor / teamB.goalsAgainst);
+        const goalsForA = teamA.goalsFor;
+        const goalsForB = teamB.goalsFor;
+
+        // Sort by points (descending)
+        if (pointsA !== pointsB) return pointsB - pointsA;
+
+        // Apply head-to-head tiebreakers if enabled
+        if (useHeadToHead) {
+          const tiedTeams = teams.filter(t => standings[t].wins * winPoints + standings[t].draws === pointsA);
+          if (tiedTeams.length > 1) {
+            const { h2hPoints: h2hPointsA, h2hGoalDiff: h2hGoalDiffA } = calculateHeadToHead(a, tiedTeams);
+            const { h2hPoints: h2hPointsB, h2hGoalDiff: h2hGoalDiffB } = calculateHeadToHead(b, tiedTeams);
+            if (h2hPointsA !== h2hPointsB) return h2hPointsB - h2hPointsA;
+            if (h2hGoalDiffA !== h2hGoalDiffB) return h2hGoalDiffB - h2hGoalDiffA;
+          }
+        }
+
+        // Sort by goal difference or goal average
+        if (useGoalAverage) {
+          if (goalAvgA !== goalAvgB) return goalAvgB - goalAvgA;
+        } else {
+          if (goalDiffA !== goalDiffB) return goalDiffB - goalDiffA;
+        }
+
+        // Sort by goals for (descending)
+        if (goalsForA !== goalsForB) return goalsForB - goalsForA;
+
+        // Sort alphabetically (ascending)
+        return a.localeCompare(b);
+      });
+
+      // Populate the standings table
+      sortedTeams.forEach(team => {
+        const { wins, draws, losses, goalsFor, goalsAgainst, gamesPlayed } = standings[team];
+        const goalDifference = goalsFor - goalsAgainst;
+        const goalAverage = goalsAgainst === 0 ? goalsFor : (goalsFor / goalsAgainst).toFixed(3);
+        const points = wins * winPoints + draws;
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${team}</td>
+          <td>${gamesPlayed}</td>
+          <td>${wins}</td>
+          <td>${draws}</td>
+          <td>${losses}</td>
+          <td>${goalsFor}:${goalsAgainst}</td>
+          <td>
+            ${goalDifference > 0 ? `+${goalDifference}` : goalDifference}
+            ${useHeadToHead ? getHeadToHeadSuperscript(team) : ''}
+          </td>
+          <td>${points}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+
+    // Get head-to-head superscript for a team
+    function getHeadToHeadSuperscript(team) {
+      const tiedTeams = teams.filter(t => standings[t].wins * winPoints + standings[t].draws === standings[team].wins * winPoints + standings[team].draws);
+      if (tiedTeams.length > 1) {
+        const { h2hPoints, h2hGoalDiff } = calculateHeadToHead(team, tiedTeams);
+        return `<sup>(${h2hPoints}, ${h2hGoalDiff > 0 ? `+${h2hGoalDiff}` : h2hGoalDiff})</sup>`;
+      }
+      return '';
+    }
+
+    // Toggle win points between 3 and 2
+    function toggleWinPoints() {
+      winPoints = winPoints === 3 ? 2 : 3;
+      document.getElementById('win-points').textContent = winPoints;
+      updateStandingsTable();
+    }
+
+    // Toggle between goal difference and goal average
+    function toggleGoalColumn() {
+      useGoalAverage = !useGoalAverage;
+      document.getElementById('goal-column-header').textContent = useGoalAverage ? 'Goal Average' : 'Goal Difference';
+      updateStandingsTable();
+    }
+
+    // Toggle head-to-head tiebreakers
+    function toggleHeadToHead() {
+      useHeadToHead = !useHeadToHead;
+      document.getElementById('head-to-head-status').textContent = useHeadToHead ? 'On' : 'Off';
+      updateStandingsTable();
+    }
+
+    // Add a new results grid
+    function addResultsGrid() {
+      gridCount++;
+      const resultsGridsContainer = document.getElementById('results-grids-container');
+      const newGrid = document.createElement('div');
+      newGrid.className = 'results-grid-container';
+      newGrid.innerHTML = `
+        <h2>Results Grid ${gridCount}</h2>
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>Home \\ Away</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      `;
+      resultsGridsContainer.appendChild(newGrid);
+      updateResultsGrid(newGrid.querySelector('.results-table'));
+    }
+
+    // Initialize the page
+    updateTeamList();
+    updateAllResultsGrids();
+    updateStandingsTable();
+  </script>
+</body>
+</html>
