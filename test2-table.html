@@ -370,7 +370,7 @@
           <td>${losses}</td>
           <td>${goalsFor}:${goalsAgainst}</td>
           <td>
-            ${goalDifference > 0 ? `+${goalDifference}` : goalDifference}
+            ${useGoalAverage ? goalAverage : (goalDifference > 0 ? `+${goalDifference}` : goalDifference)}
             ${useHeadToHead ? getHeadToHeadSuperscript(team) : ''}
           </td>
           <td>${points}</td>
