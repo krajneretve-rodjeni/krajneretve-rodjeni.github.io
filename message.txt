@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Player Tracking System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        input, select, button {
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .player-slots {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .player-slot {
+            border: 1px dashed #ccc;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .hidden {
+            display: none;
+        }
+        .active {
+            background-color: #4CAF50;
+        }
+        .tab-button {
+            padding: 10px 20px;
+            background-color: #ddd;
+            border: none;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        .tab-button:hover {
+            background-color: #ccc;
+        }
+        .player-info {
+            margin-top: 5px;
+        }
+        .card-option {
+            background-color: #ffeb3b;
+        }
+        .red-card-option {
+            background-color: #f44336;
+            color: white;
+        }
+        .player-details {
+            background-color: #f9f9f9;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .search-box {
+            width: 200px;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        .clickable {
+            cursor: pointer;
+            color: #0066cc;
+        }
+        .clickable:hover {
+            text-decoration: underline;
+        }
+	.debut-info {
+            background-color: #e6f7ff;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        .edit-match-btn {
+            background-color: #2196F3;
+            margin-left: 10px;
+        }
+        .edit-match-btn:hover {
+            background-color: #0b7dda;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enhanced Player Tracking System</h1>
+    
+    <div class="tab-buttons">
+        <button class="tab-button active" onclick="openTab('players')">Players</button>
+        <button class="tab-button" onclick="openTab('seasons')">Seasons</button>
+        <button class="tab-button" onclick="openTab('competitions')">Competitions</button>
+        <button class="tab-button" onclick="openTab('matches')">Matches</button>
+    </div>
+    
+    <!-- Players Section -->
+    <div id="players" class="section tab-content">
+        <h2>Players</h2>
+        <div>
+            <input type="text" id="playerName" placeholder="Player name">
+            <button onclick="addPlayer()">Add Player</button>
+        </div>
+        <table id="playersTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Matches</th>
+                    <th>Goals</th>
+                    <th>Yellow Cards</th>
+                    <th>Red Cards</th>
+                </tr>
+            </thead>
+            <tbody id="playersList"></tbody>
+        </table>
+        <div id="playerDetailsContainer"></div>
+    </div>
+    
+    <!-- Seasons Section -->
+    <div id="seasons" class="section tab-content hidden">
+        <h2>Seasons</h2>
+        <div>
+            <input type="text" id="seasonName" placeholder="Season name">
+            <button onclick="addSeason()">Add Season</button>
+        </div>
+        <table id="seasonsTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody id="seasonsList"></tbody>
+        </table>
+    </div>
+    
+    <!-- Competitions Section -->
+    <div id="competitions" class="section tab-content hidden">
+        <h2>Competitions</h2>
+        <div>
+            <select id="competitionSeason">
+                <option value="">Select Season</option>
+            </select>
+            <input type="text" id="competitionName" placeholder="Competition name">
+            <button onclick="addCompetition()">Add Competition</button>
+        </div>
+        <table id="competitionsTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Season</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody id="competitionsList"></tbody>
+        </table>
+    </div>
+    
+    <!-- Matches Section -->
+    <div id="matches" class="section tab-content hidden">
+        <h2>Matches</h2>
+        <div>
+            <select id="matchCompetition" onchange="updateMatchDropdown()">
+                <option value="">Select Competition</option>
+            </select>
+            <select id="existingMatches">
+                <option value="">Select Match to Edit</option>
+            </select>
+            <button onclick="newMatch()">New Match</button>
+            <button onclick="saveMatch()" id="saveMatchBtn" disabled>Save Match</button>
+        </div>
+        
+        <div id="matchDetails" class="hidden">
+            <div>
+                <input type="text" id="matchName" placeholder="Match name">
+                <input type="date" id="matchDate">
+                <input type="text" id="matchLocation" placeholder="Location">
+            </div>
+            
+            <h3>Players</h3>
+            <input type="text" id="playerSearch" class="search-box" placeholder="Search players..." onkeyup="searchPlayers()">
+            <div class="player-slots" id="playerSlots"></div>
+        </div>
+    </div>
+
+    <script>
+    // Data storage
+    let data = {
+        players: [],
+        seasons: [],
+        competitions: [],
+        matches: [],
+        nextPlayerId: 1,
+        nextSeasonId: 1,
+        nextCompetitionId: 1,
+        nextMatchId: 1,
+        currentMatch: null,
+        filteredPlayers: []
+    };
+
+    // Card options
+    const cardOptions = [
+        { value: 'none', text: 'No cards' },
+        { value: 'yellow', text: 'Yellow card', class: 'card-option' },
+        { value: 'yellow_red', text: 'Yellow + Red card', class: 'card-option' },
+        { value: 'red', text: 'Red card', class: 'red-card-option' }
+    ];
+
+    // Load data from localStorage if available
+    function loadData() {
+        const savedData = localStorage.getItem('matchTrackingData');
+        if (savedData) {
+            data = JSON.parse(savedData);
+            renderAll();
+        }
+        data.filteredPlayers = [...data.players];
+    }
+
+    // Save data to localStorage
+    function saveData() {
+        localStorage.setItem('matchTrackingData', JSON.stringify(data));
+    }
+
+    // Tab navigation
+    function openTab(tabName) {
+        const tabs = document.getElementsByClassName('tab-content');
+        for (let i = 0; i < tabs.length; i++) {
+            tabs[i].classList.add('hidden');
+        }
+        document.getElementById(tabName).classList.remove('hidden');
+        
+        const tabButtons = document.getElementsByClassName('tab-button');
+        for (let i = 0; i < tabButtons.length; i++) {
+            tabButtons[i].classList.remove('active');
+        }
+        event.currentTarget.classList.add('active');
+    }
+
+    // Player functions
+    function addPlayer() {
+        const name = document.getElementById('playerName').value.trim();
+        if (name) {
+            const player = {
+                id: data.nextPlayerId++,
+                name: name,
+                matchesPlayed: 0,
+                goals: 0,
+                yellowCards: 0,
+                redCards: 0,
+                firstMatch: null,
+                lastMatch: null
+            };
+            data.players.push(player);
+            data.filteredPlayers.push(player);
+            document.getElementById('playerName').value = '';
+            renderPlayers();
+            saveData();
+        }
+    }
+
+    function renderPlayers() {
+        const tbody = document.getElementById('playersList');
+        tbody.innerHTML = '';
+        data.players.forEach(player => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${player.id}</td>
+                <td class="clickable" onclick="showPlayerDetails(${player.id})">${player.name}</td>
+                <td>${player.matchesPlayed}</td>
+                <td>${player.goals}</td>
+                <td>${player.yellowCards}</td>
+                <td>${player.redCards}</td>
+            `;
+            tbody.appendChild(row);
+        });
+    }
+
+    function showPlayerDetails(playerId) {
+        const player = data.players.find(p => p.id === playerId);
+        if (!player) return;
+
+        const container = document.getElementById('playerDetailsContainer');
+        container.innerHTML = '';
+
+        // Find debut match (oldest match by date)
+        let debutMatch = null;
+        data.matches.forEach(match => {
+            if (match.players.some(slot => slot.playerId === playerId)) {
+                if (!debutMatch || match.date < debutMatch.date) {
+                    debutMatch = match;
+                }
+            }
+        });
+
+        // Create a nested structure: Season → Competition → Stats
+        const statsBySeason = {};
+
+        data.matches.forEach(match => {
+            const playerSlot = match.players.find(slot => slot.playerId === playerId);
+            if (!playerSlot) return;
+
+            const competition = data.competitions.find(c => c.id === match.competitionId);
+            if (!competition) return;
+
+            const season = data.seasons.find(s => s.id === competition.seasonId);
+            if (!season) return;
+
+            // Initialize season if not exists
+            if (!statsBySeason[season.id]) {
+                statsBySeason[season.id] = {
+                    seasonName: season.name,
+                    competitions: {}
+                };
+            }
+
+            // Initialize competition if not exists
+            if (!statsBySeason[season.id].competitions[competition.id]) {
+                statsBySeason[season.id].competitions[competition.id] = {
+                    competitionName: competition.name,
+                    appearances: 0,
+                    goals: 0,
+                    yellowCards: 0,
+                    redCards: 0
+                };
+            }
+
+            // Update competition stats
+            const compStats = statsBySeason[season.id].competitions[competition.id];
+            compStats.appearances++;
+            compStats.goals += playerSlot.goals || 0;
+
+            // Update card stats
+            if (playerSlot.cards === 'yellow') {
+                compStats.yellowCards++;
+            } else if (playerSlot.cards === 'yellow_red') {
+                compStats.yellowCards++;
+                compStats.redCards++;
+            } else if (playerSlot.cards === 'red') {
+                compStats.redCards++;
+            }
+        });
+
+        // Create HTML for the details
+        let html = '<div class="player-details">';
+        html += `<h3>${player.name} - Career Statistics</h3>`;
+        
+        // Add debut information
+        if (debutMatch) {
+            const competition = data.competitions.find(c => c.id === debutMatch.competitionId);
+            html += `
+                <div class="debut-info">
+                    <h4>Debut</h4>
+                    <p><strong>Match:</strong> ${debutMatch.name || 'Unnamed match'}</p>
+                    <p><strong>Date:</strong> ${debutMatch.date}</p>
+                    <p><strong>Competition:</strong> ${competition ? competition.name : 'Unknown'}</p>
+                </div>
+            `;
+        }
+
+        // Sort seasons by ID (assuming higher IDs are more recent)
+        const sortedSeasonIds = Object.keys(statsBySeason).sort((a, b) => b - a);
+        
+        sortedSeasonIds.forEach(seasonId => {
+            const season = statsBySeason[seasonId];
+            html += `
+                <div class="season-stats">
+                    <h4>${season.seasonName}</h4>
+            `;
+            
+            // Sort competitions by ID
+            const sortedCompIds = Object.keys(season.competitions).sort((a, b) => b - a);
+            
+            sortedCompIds.forEach(compId => {
+                const comp = season.competitions[compId];
+                html += `
+                    <div class="competition-stats">
+                        <strong>${comp.competitionName}:</strong>
+                        ${comp.appearances} apps, 
+                        ${comp.goals} goals, 
+                        ${comp.yellowCards} yellow card(s),
+                        ${comp.redCards} red card(s)
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+        });
+        
+        html += '</div>';
+        container.innerHTML = html;
+    }
+
+    // Season functions
+    function addSeason() {
+        const name = document.getElementById('seasonName').value.trim();
+        
+        if (name) {
+            const season = {
+                id: data.nextSeasonId++,
+                name: name
+            };
+            data.seasons.push(season);
+            document.getElementById('seasonName').value = '';
+            renderSeasons();
+            updateSeasonDropdowns();
+            saveData();
+        }
+    }
+
+    function renderSeasons() {
+        const tbody = document.getElementById('seasonsList');
+        tbody.innerHTML = '';
+        data.seasons.forEach(season => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${season.id}</td>
+                <td>${season.name}</td>
+            `;
+            tbody.appendChild(row);
+        });
+    }
+
+    // Competition functions
+    function addCompetition() {
+        const seasonId = parseInt(document.getElementById('competitionSeason').value);
+        const name = document.getElementById('competitionName').value.trim();
+        
+        if (seasonId && name) {
+            const season = data.seasons.find(s => s.id === seasonId);
+            const competition = {
+                id: data.nextCompetitionId++,
+                seasonId: seasonId,
+                seasonName: season.name,
+                name: name
+            };
+            data.competitions.push(competition);
+            document.getElementById('competitionName').value = '';
+            renderCompetitions();
+            updateCompetitionDropdown();
+            saveData();
+        }
+    }
+
+    function renderCompetitions() {
+        const tbody = document.getElementById('competitionsList');
+        tbody.innerHTML = '';
+        data.competitions.forEach(comp => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${comp.id}</td>
+                <td>${comp.seasonName}</td>
+                <td>${comp.name}</td>
+            `;
+            tbody.appendChild(row);
+        });
+    }
+
+    // Match functions
+    function newMatch() {
+        const competitionId = parseInt(document.getElementById('matchCompetition').value);
+        if (!competitionId) {
+            alert('Please select a competition first');
+            return;
+        }
+        
+        data.currentMatch = {
+            id: data.nextMatchId++,
+            competitionId: competitionId,
+            name: '',
+            date: '',
+            location: '',
+            players: Array(16).fill(null).map(() => ({
+                playerId: null,
+                goals: 0,
+                cards: 'none'
+            }))
+        };
+        
+        renderMatchForm();
+        document.getElementById('saveMatchBtn').disabled = false;
+    }
+
+    function saveMatch() {
+        if (!data.currentMatch) return;
+        
+        // Validate match name
+        const matchName = document.getElementById('matchName').value.trim();
+        if (!matchName) {
+            alert('Please enter a match name');
+            return;
+        }
+        data.currentMatch.name = matchName;
+        
+        // Update match date and location
+        data.currentMatch.date = document.getElementById('matchDate').value;
+        data.currentMatch.location = document.getElementById('matchLocation').value;
+
+        // Check if this is an edit of an existing match
+        const existingIndex = data.matches.findIndex(m => m.id === data.currentMatch.id);
+        const isEdit = existingIndex >= 0;
+
+        if (isEdit) {
+            // For edits, first remove the old match's stats from players
+            removeMatchStats(data.matches[existingIndex]);
+        }
+
+        // Update or add the match
+        if (isEdit) {
+            data.matches[existingIndex] = {...data.currentMatch};
+        } else {
+            data.matches.push({...data.currentMatch});
+        }
+        
+        // Update player stats
+        updatePlayerStats(data.currentMatch);
+        
+        data.currentMatch = null;
+        document.getElementById('matchDetails').classList.add('hidden');
+        document.getElementById('saveMatchBtn').disabled = true;
+        updateMatchDropdown();
+        renderPlayers();
+        saveData();
+    }
+
+    function removeMatchStats(match) {
+        const matchDate = match.date;
+        
+        match.players.forEach(slot => {
+            if (slot.playerId) {
+                const player = data.players.find(p => p.id === slot.playerId);
+                if (player) {
+                    // Decrement matches played
+                    player.matchesPlayed = Math.max(0, (player.matchesPlayed || 0) - 1);
+                    
+                    // Decrement goals
+                    player.goals = Math.max(0, (player.goals || 0) - (slot.goals || 0));
+                    
+                    // Decrement cards
+                    if (slot.cards === 'yellow') {
+                        player.yellowCards = Math.max(0, (player.yellowCards || 0) - 1);
+                    } else if (slot.cards === 'yellow_red') {
+                        player.yellowCards = Math.max(0, (player.yellowCards || 0) - 1);
+                        player.redCards = Math.max(0, (player.redCards || 0) - 1);
+                    } else if (slot.cards === 'red') {
+                        player.redCards = Math.max(0, (player.redCards || 0) - 1);
+                    }
+                    
+                    // Note: We don't update first/last match here as it would require
+                    // scanning all matches to determine the correct dates
+                }
+            }
+        });
+    }
+
+    function updatePlayerStats(match) {
+        const matchDate = match.date;
+        
+        match.players.forEach(slot => {
+            if (slot.playerId) {
+                const player = data.players.find(p => p.id === slot.playerId);
+                if (player) {
+                    // Update matches played
+                    player.matchesPlayed = (player.matchesPlayed || 0) + 1;
+                    
+                    // Update goals
+                    player.goals = (player.goals || 0) + (slot.goals || 0);
+                    
+                    // Update cards
+                    if (slot.cards === 'yellow') {
+                        player.yellowCards = (player.yellowCards || 0) + 1;
+                    } else if (slot.cards === 'yellow_red') {
+                        player.yellowCards = (player.yellowCards || 0) + 1;
+                        player.redCards = (player.redCards || 0) + 1;
+                    } else if (slot.cards === 'red') {
+                        player.redCards = (player.redCards || 0) + 1;
+                    }
+                    
+                    // Update first/last match dates
+                    if (!player.firstMatch || matchDate < player.firstMatch) {
+                        player.firstMatch = matchDate;
+                    }
+                    
+                    if (!player.lastMatch || matchDate > player.lastMatch) {
+                        player.lastMatch = matchDate;
+                    }
+                }
+            }
+        });
+    }
+
+    function renderMatchForm() {
+        const match = data.currentMatch;
+        if (!match) return;
+        
+        document.getElementById('matchDetails').classList.remove('hidden');
+        document.getElementById('matchName').value = match.name;
+        document.getElementById('matchDate').value = match.date;
+        document.getElementById('matchLocation').value = match.location;
+        
+        renderPlayerSlots();
+    }
+
+    function renderPlayerSlots() {
+        const slotsContainer = document.getElementById('playerSlots');
+        slotsContainer.innerHTML = '';
+        
+        for (let i = 0; i < 16; i++) {
+            const slot = data.currentMatch.players[i] || { playerId: null, goals: 0, cards: 'none' };
+            const slotDiv = document.createElement('div');
+            slotDiv.className = 'player-slot';
+            
+            // Player search input
+            const searchDiv = document.createElement('div');
+            const searchInput = document.createElement('input');
+            searchInput.type = 'text';
+            searchInput.placeholder = 'Search player...';
+            searchInput.className = 'search-box';
+            searchInput.oninput = function() {
+                updatePlayerSearchResults(i, this.value);
+            };
+            
+            const resultsDiv = document.createElement('div');
+            resultsDiv.className = 'search-results';
+            resultsDiv.style.display = 'none';
+            
+            searchDiv.appendChild(searchInput);
+            searchDiv.appendChild(resultsDiv);
+            slotDiv.appendChild(searchDiv);
+            
+            // Display selected player
+            const selectedPlayerDiv = document.createElement('div');
+            if (slot.playerId) {
+                const player = data.players.find(p => p.id === slot.playerId);
+                if (player) {
+                    selectedPlayerDiv.textContent = `Selected: ${player.name}`;
+                }
+            }
+            slotDiv.appendChild(selectedPlayerDiv);
+            
+            // Goals input
+            const goalsDiv = document.createElement('div');
+            goalsDiv.className = 'player-info';
+            goalsDiv.innerHTML = `
+                <label>Goals: </label>
+                <input type="number" min="0" value="${slot.goals}" onchange="updatePlayerGoals(${i}, this.value)">
+            `;
+            slotDiv.appendChild(goalsDiv);
+            
+            // Cards selection
+            const cardsDiv = document.createElement('div');
+            cardsDiv.className = 'player-info';
+            const cardsSelect = document.createElement('select');
+            cardsSelect.onchange = function() {
+                data.currentMatch.players[i].cards = this.value;
+            };
+            
+            cardOptions.forEach(option => {
+                const optElement = document.createElement('option');
+                optElement.value = option.value;
+                optElement.textContent = option.text;
+                if (option.class) {
+                    optElement.className = option.class;
+                }
+                optElement.selected = slot.cards === option.value;
+                cardsSelect.appendChild(optElement);
+            });
+            
+            cardsDiv.appendChild(document.createTextNode('Cards: '));
+            cardsDiv.appendChild(cardsSelect);
+            slotDiv.appendChild(cardsDiv);
+            
+            slotsContainer.appendChild(slotDiv);
+        }
+    }
+
+    function updatePlayerSearchResults(slotIndex, searchTerm) {
+        const results = data.players.filter(player => 
+            player.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        
+        const slotDiv = document.querySelectorAll('.player-slot')[slotIndex];
+        const resultsDiv = slotDiv.querySelector('.search-results');
+        resultsDiv.innerHTML = '';
+        
+        if (searchTerm && results.length > 0) {
+            resultsDiv.style.display = 'block';
+            results.forEach(player => {
+                const playerDiv = document.createElement('div');
+                playerDiv.textContent = player.name;
+                playerDiv.className = 'clickable';
+                playerDiv.onclick = function() {
+                    data.currentMatch.players[slotIndex].playerId = player.id;
+                    renderMatchForm();
+                };
+                resultsDiv.appendChild(playerDiv);
+            });
+        } else {
+            resultsDiv.style.display = 'none';
+        }
+    }
+
+    function updatePlayerGoals(slotIndex, value) {
+        if (data.currentMatch && data.currentMatch.players[slotIndex]) {
+            data.currentMatch.players[slotIndex].goals = parseInt(value) || 0;
+        }
+    }
+
+    function loadMatch(matchId) {
+        const match = data.matches.find(m => m.id === matchId);
+        if (match) {
+            data.currentMatch = JSON.parse(JSON.stringify(match)); // Deep clone
+            renderMatchForm();
+            document.getElementById('saveMatchBtn').disabled = false;
+        }
+    }
+
+    function updateMatchDropdown() {
+        const competitionId = parseInt(document.getElementById('matchCompetition').value);
+        const dropdown = document.getElementById('existingMatches');
+        dropdown.innerHTML = '<option value="">Select Match to Edit</option>';
+        
+        if (competitionId) {
+            const compMatches = data.matches.filter(m => m.competitionId === competitionId);
+            compMatches.forEach(match => {
+                const option = document.createElement('option');
+                option.value = match.id;
+                option.textContent = `${match.name || 'Unnamed match'} - ${match.date} - ${match.location}`;
+                dropdown.appendChild(option);
+            });
+            
+            dropdown.onchange = function() {
+                if (this.value) {
+                    loadMatch(parseInt(this.value));
+                }
+            };
+        }
+    }
+
+    // Dropdown updates
+    function updateSeasonDropdowns() {
+        const seasonDropdown = document.getElementById('competitionSeason');
+        seasonDropdown.innerHTML = '<option value="">Select Season</option>';
+        
+        data.seasons.forEach(season => {
+            const option = document.createElement('option');
+            option.value = season.id;
+            option.textContent = season.name;
+            seasonDropdown.appendChild(option);
+        });
+    }
+
+    function updateCompetitionDropdown() {
+        const compDropdown = document.getElementById('matchCompetition');
+        compDropdown.innerHTML = '<option value="">Select Competition</option>';
+        
+        data.competitions.forEach(comp => {
+            const option = document.createElement('option');
+            option.value = comp.id;
+            option.textContent = `${comp.seasonName} - ${comp.name}`;
+            option.setAttribute('data-season-id', comp.seasonId);
+            compDropdown.appendChild(option);
+        });
+    }
+
+    // Search players
+    function searchPlayers() {
+        const searchTerm = document.getElementById('playerSearch').value.toLowerCase();
+        if (!searchTerm) {
+            data.filteredPlayers = [...data.players];
+            renderMatchForm();
+            return;
+        }
+        
+        data.filteredPlayers = data.players.filter(player => 
+            player.name.toLowerCase().includes(searchTerm)
+        );
+        renderMatchForm();
+    }
+
+    // Render all data
+    function renderAll() {
+        renderPlayers();
+        renderSeasons();
+        renderCompetitions();
+        updateSeasonDropdowns();
+        updateCompetitionDropdown();
+        updateMatchDropdown();
+    }
+
+    // Initialize
+    loadData();
+</script>
+</body>
+</html>
