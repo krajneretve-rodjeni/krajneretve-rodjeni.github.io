@@ -1,15 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Enhanced Player Tracking System</title>
-
     <style>
 
         body {
@@ -1397,265 +1391,140 @@
                     optElement.className = option.class;
 
                 }
-
                 optElement.selected = slot.cards === option.value;
-
                 cardsSelect.appendChild(optElement);
-
             });
-
-            
 
             cardsDiv.appendChild(document.createTextNode('Cards: '));
-
             cardsDiv.appendChild(cardsSelect);
-
             slotDiv.appendChild(cardsDiv);
-
-            
-
             slotsContainer.appendChild(slotDiv);
-
         }
-
     }
-
-
 
     function updatePlayerSearchResults(slotIndex, searchTerm) {
-
         const results = data.players.filter(player => 
-
             player.name.toLowerCase().includes(searchTerm.toLowerCase())
-
         );
 
-        
-
         const slotDiv = document.querySelectorAll('.player-slot')[slotIndex];
-
         const resultsDiv = slotDiv.querySelector('.search-results');
-
         resultsDiv.innerHTML = '';
 
-        
-
         if (searchTerm && results.length > 0) {
-
             resultsDiv.style.display = 'block';
-
             results.forEach(player => {
-
                 const playerDiv = document.createElement('div');
-
                 playerDiv.textContent = player.name;
-
                 playerDiv.className = 'clickable';
-
                 playerDiv.onclick = function() {
-
                     data.currentMatch.players[slotIndex].playerId = player.id;
-
                     renderMatchForm();
-
                 };
-
                 resultsDiv.appendChild(playerDiv);
-
             });
-
         } else {
-
             resultsDiv.style.display = 'none';
-
         }
-
     }
-
-
 
     function updatePlayerGoals(slotIndex, value) {
-
         if (data.currentMatch && data.currentMatch.players[slotIndex]) {
-
             data.currentMatch.players[slotIndex].goals = parseInt(value) || 0;
-
         }
-
     }
-
-
 
     function loadMatch(matchId) {
 
         const match = data.matches.find(m => m.id === matchId);
 
         if (match) {
-
             data.currentMatch = JSON.parse(JSON.stringify(match)); // Deep clone
-
             renderMatchForm();
-
             document.getElementById('saveMatchBtn').disabled = false;
-
         }
-
     }
-
-
 
     function updateMatchDropdown() {
-
         const competitionId = parseInt(document.getElementById('matchCompetition').value);
-
         const dropdown = document.getElementById('existingMatches');
-
         dropdown.innerHTML = '<option value="">Select Match to Edit</option>';
 
-        
-
         if (competitionId) {
-
             const compMatches = data.matches.filter(m => m.competitionId === competitionId);
-
             compMatches.forEach(match => {
-
                 const option = document.createElement('option');
-
                 option.value = match.id;
-
                 option.textContent = `${match.name || 'Unnamed match'} - ${match.date} - ${match.location}`;
-
                 dropdown.appendChild(option);
-
-            });
-
-            
+            });            
 
             dropdown.onchange = function() {
-
                 if (this.value) {
-
                     loadMatch(parseInt(this.value));
-
                 }
-
             };
-
         }
-
     }
-
-
 
     // Dropdown updates
-
     function updateSeasonDropdowns() {
-
         const seasonDropdown = document.getElementById('competitionSeason');
-
         seasonDropdown.innerHTML = '<option value="">Select Season</option>';
-
         
-
         data.seasons.forEach(season => {
-
             const option = document.createElement('option');
-
             option.value = season.id;
-
             option.textContent = season.name;
-
             seasonDropdown.appendChild(option);
-
         });
-
     }
-
-
 
     function updateCompetitionDropdown() {
-
         const compDropdown = document.getElementById('matchCompetition');
-
         compDropdown.innerHTML = '<option value="">Select Competition</option>';
-
         
-
         data.competitions.forEach(comp => {
-
             const option = document.createElement('option');
-
             option.value = comp.id;
-
             option.textContent = `${comp.seasonName} - ${comp.name}`;
-
             option.setAttribute('data-season-id', comp.seasonId);
-
             compDropdown.appendChild(option);
-
         });
-
     }
 
-
-
     // Search players
-
     function searchPlayers() {
-
         const searchTerm = document.getElementById('playerSearch').value.toLowerCase();
-
         if (!searchTerm) {
-
             data.filteredPlayers = [...data.players];
-
             renderMatchForm();
-
             return;
-
-        }
-
-        
+        }        
 
         data.filteredPlayers = data.players.filter(player => 
-
             player.name.toLowerCase().includes(searchTerm)
-
         );
-
         renderMatchForm();
-
     }
 
 
 
     // Render all data
-
     function renderAll() {
-
         renderPlayers();
-
         renderSeasons();
-
         renderCompetitions();
-
         updateSeasonDropdowns();
-
         updateCompetitionDropdown();
-
         updateMatchDropdown();
-
     }
 
 
 
     // Initialize
-
     loadData();
 
 </script>
-
 </body>
-
 </html>
