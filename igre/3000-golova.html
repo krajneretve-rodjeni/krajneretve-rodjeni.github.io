@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html><head>
+    <title>3000 golova | KNR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="https://i.imgur.com/5Xzesxr.png" type="image/png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<meta property="og:title" content="Kraj Neretve Rođeni">
+	<meta property="og:description" content="Poredajte igrače na pravilna mjesta po golovima.">
+	<meta property="og:image" content="https://i.imgur.com/5Xzesxr.png">
+    <meta property="og:type" content="website"><meta property="og:url" content="https://krajneretve-rodjeni.com/igre/3000-golova">
+    <style>
+        body {
+            background-image: url('../images/site/background.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 16px;
+        }
+          .banner {
+    background-color: white;
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+        position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  }
+    @media screen and (max-width: 690px) {
+            .banner {
+                display: none;
+            }
+        }
+    .content {
+    position: relative;
+    z-index: 2;
+  }
+    .logo {
+    margin-top:7px;
+    margin-left:20px;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+    .logo:hover {
+    opacity: 0.5;
+}
+  .logo2 {
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+    display: none;
+}
+
+    .logo2:hover {
+    opacity: 0.5;
+}
+  @media screen and (max-width: 690px) {
+            .logo2 {
+                display: block;
+            }
+        }
+    .headercontent {
+    height:30px;
+    margin-top:11px;
+    margin-right:20px;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+    display: none;
+}
+@media screen and (min-width: 1000px) {
+            .headercontent {
+            	display: block;
+            }
+        }
+    .headercontent:hover {
+    opacity: 0.5;
+}
+	.size1 {
+    		border: none;
+            display: none; 
+        }
+
+        @media screen and (min-width: 691px) {
+            .size1 {
+                display: block;
+            }
+        }
+        .size2 {
+    		border: none;
+            display: none; 
+        }
+
+        @media screen and (max-width: 690px) {
+            .size2 {
+                display: block;
+            }
+        }
+        table, td {
+  border: 2px solid black;
+  border-collapse: collapse;
+  color: black;
+  width: 90%;
+  table-layout: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  }
+          td {
+          width: 1%;
+    text-align: center;
+    font-size: 15px;
+  }
+	    .dropdown {
+            position: relative;
+            margin-left: auto;
+            margin-right: 10px;
+            float: right;
+            display: none;
+        }
+@media screen and (min-width: 661px) and (max-width: 999px) {
+            .dropdown {
+                display: block;
+            }
+        }
+        .dropdown-img {
+            width: 100%; 
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(231, 215, 215, 0.8);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 10px;
+            right: 0;
+        }
+
+        .dropdown-content a {
+            padding: 12px 16px;
+            display: block;
+            text-decoration: none;
+            color: #333;
+        }
+    
+        .dropdown-content a:hover {
+            background-color: rgba(239, 215, 147, 0.66);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="banner"><a><img src="https://i.imgur.com/baPdESA.png" class="logo"></a><a href="../statistika"><img src="../images/site/statistika.png" class="headercontent" align="right"></a><a href="../protivnici/protivnici"><img src="../images/site/protivnici.png" class="headercontent" align="right"></a><a href="../kalendar/kalendar"><img src="../images/site/kalendar.png" class="headercontent" align="right"></a><a href="../abecedarnik/abecedarnik"><img src="../images/site/abecedarnik.png" class="headercontent" align="right"></a>
+	<div class="dropdown">
+    <img class="dropdown-img" src="../images/site/dropdown-menu.png">
+    <div class="dropdown-content">
+        <a href="../abecedarnik/abecedarnik"><img src="../images/site/abecedarnik.png"></a>
+        <a href="../kalendar/kalendar"><img src="../images/site/kalendar.png"></a>
+        <a href="../protivnici/protivnici"><img src="../images/site/protivnici.png"></a>
+        <a href="../statistika"><img src="../images/site/statistika.png"></a>
+    </div>
+	</div></div>
+<div class="container">
+    <br class="size1">
+    <br><div class="logo2">
+        <img src="https://i.imgur.com/auxUofx.png" style="width:100%;">
+    </div>
+    <br>
+  <div class="panel panel-default">
+    <div class="panel-body"><br class="size2"><iframe src="https://flolhub.github.io/game2" frameborder="0" style="margin-left: auto; margin-right: auto; width: 100%; height: 750px;"></iframe></div>
+    
+  
+    
+  </div>
+</div>
+<iframe src="../copyright.html" frameborder="0" style="margin-left: auto; margin-right: auto; width: 100%;"></iframe>
+
+</body></html>
