@@ -376,112 +376,6 @@ h2 {
     <br>
   <div class="panel panel-default">
     <div class="panel-body"><h1 style="margin-top: 2px;">Igre</h1>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-  
-
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-
-
-
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
 <div class="letter-center size1">
   <div class="letter">
     <a href="../igre/više-manje" style="text-decoration: none;">
@@ -541,25 +435,6 @@ h2 {
       <ol id="3000goals-top10"></ol>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
 <p>Dobrodošli na sekciju Igre. Ovdje možete naći igre znanja bazirane na historiji Veleža.</p> 
 
@@ -595,7 +470,7 @@ h2 {
         leaderboard.innerHTML = '';
         querySnapshot.forEach((doc, index) => {
           const data = doc.data();
-          leaderboard.innerHTML += `<li>${index+1}. ${data.username}: ${data.score}</li>`;
+          leaderboard.innerHTML += `<li>${data.username}: ${data.score} (${formatFirebaseTimestamp(data.timestamp)})</li>`;
         });
       });
 
@@ -632,6 +507,19 @@ h2 {
 
   // Load leaderboards when page loads
   window.onload = loadLeaderboards;
+	function formatFirebaseTimestamp(timestamp) {
+  if (!timestamp) return "No date";
+  
+  // Convert Firestore timestamp to JS Date
+  const date = timestamp.toDate();
+  
+  // Extract components
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const year = String(date.getFullYear()).slice(-2);
+  
+  return `${day}/${month}/${year}`;
+}
 </script>
   <iframe src="../copyright.html" frameborder="0" style="margin-left: auto; margin-right: auto; width: 100%;"></iframe>
 
