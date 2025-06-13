@@ -610,7 +610,7 @@ h2 {
         leaderboard.innerHTML = '';
         querySnapshot.forEach((doc, index) => {
           const data = doc.data();
-          leaderboard.innerHTML += `<li>${index+1}. ${data.username}: ${data.score}</li>`;
+          leaderboard.innerHTML += `<li>${data.username}: ${data.score}</li>`;
         });
       });
 
