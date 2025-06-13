@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html><head>
+    <title>Igre | KNR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="https://i.imgur.com/5Xzesxr.png" type="image/png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta property="og:title" content="Igre | Kraj Neretve Rođeni">
+	<meta property="og:image" content="https://i.imgur.com/5Xzesxr.png">
+    <meta property="og:type" content="website"><meta property="og:url" content="https://krajneretve-rodjeni.com/igre/igre">
+  <style>
+      body {
+            background-image: url('../images/site/background.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 16px;
+        }
+        th {
+        text-align: center;
+        }
+        td {
+        text-align: right;
+        border: 2px solid white;
+        }
+        table {
+        display: inline-block;
+        }
+.credits {
+    text-align: center;
+    color: white;
+}
+    .warning {
+    display: inline-block;
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 10px;
+}
+    .warning b {
+    color: red;
+}
+      .fixedBox {
+        position: fixed;
+        top: 20%;
+        left: 25%;
+        width: 50%;
+        height: 60%;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 10px;
+        z-index: 9999;
+        display: none;
+        overflow: auto;
+        padding: 9px;
+      }
+	    @media screen and (max-width: 660px) {
+            .fixedBox {
+            	left: 12.5%;
+                width: 75%;
+            }
+        }
+
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 9998;
+        display: none;
+      }
+    .banner {
+    background-color: white;
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+        position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  }
+    @media screen and (max-width: 660px) {
+            .banner {
+                display: none;
+            }
+        }
+        .logo2 {
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+    display: none;
+}
+
+    .logo2:hover {
+    opacity: 0.5;
+}
+  @media screen and (max-width: 660px) {
+            .logo2 {
+                display: block;
+            }
+        }
+        .size1 {
+        border: none;
+            display: none; 
+        }
+
+        @media screen and (min-width: 661px) {
+            .size1 {
+                display: block;
+            }
+        }
+        .size2 {
+        	border: none;
+            display: none; 
+        }
+
+        @media screen and (max-width: 660px) {
+            .size2 {
+                display: block;
+            }
+        }
+    .content {
+    position: relative;
+    z-index: 2;
+  }
+    .logo {
+    margin-top:7px;
+    margin-left:20px;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+    .logo:hover {
+    opacity: 0.5;
+}
+    .headercontent {
+    height:30px;
+    margin-top:11px;
+    margin-right:20px;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+        display: none;
+}
+@media screen and (min-width: 1000px) {
+            .headercontent {
+            	display: block;
+            }
+        }
+    .headercontent:hover {
+    opacity: 0.5;
+}
+.players {
+  background-color: #F7F7F7;
+  width: 600px;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: absolute;
+  padding: 9px;
+  display: none;
+}
+  
+span:hover + .players {
+  display: block;
+}
+.imagetable {
+    display: block;
+    margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+  
+span:hover + .imagetable {
+  display: block;
+}
+.scorers {
+  background-color: #F7F7F7;
+  white-space: nowrap;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: absolute;
+  right: 39%;
+  padding: 0px;
+  display: none;
+  text-align: left;
+}
+  
+span:hover + .scorers {
+  display: block;
+}
+    @media screen and (max-width: 660px) {
+ 				.scorers {
+        			right: auto;
+                    left: 5%
+    					}
+					}
+    .img-with-text {
+    text-align: center;
+    font-size: 14px;
+    width: 35%;
+        float: right;
+}
+
+.img-with-text img {
+    display: block;
+    margin: 0 auto;
+}
+    h1 {
+        font-family: 'Trebuchet MS', sans-serif;
+        text-align: center;
+    }
+    .column {
+  float: left;
+  width: 50%;
+  padding: 5%;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+h2 {
+    margin-top: 1px; 
+}
+    .signature {
+        text-align: right;
+    }
+        .paper {
+        margin-top: auto;
+        margin-bottom: auto;
+        cursor: pointer;
+        padding: 0px;
+    }
+    .dropdown {
+            position: relative;
+            margin-left: auto;
+            margin-right: 10px;
+            float: right;
+            display: none;
+        }
+@media screen and (min-width: 661px) and (max-width: 999px) {
+            .dropdown {
+                display: block;
+            }
+        }
+        .dropdown-img {
+            width: 100%; 
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(231, 215, 215, 0.5);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 10px;
+            right: 0;
+        }
+
+        .dropdown-content a {
+            padding: 12px 16px;
+            display: block;
+            text-decoration: none;
+            color: #333;
+        }
+    
+        .dropdown-content a:hover {
+            background-color: rgba(239, 215, 147, 0.66);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .letter-center {
+        text-align: center;
+        }
+        .letter {
+        display: inline-block;
+        width: 30.2%;
+        margin: 0 auto;
+        margin-bottom: 5px;
+        }
+        .letter img {
+        padding: 4%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 66%;
+        }
+    @media screen and (max-width: 661px) {
+        .letter {
+        width: 30%;
+        }
+    }
+        @media screen and (max-width: 1200px) {
+        .letter {
+        height: auto;
+        font-size: auto;
+        }
+            .letter img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        .letter h1 {
+        margin-top: 0px;
+        }
+        .letter-player {
+        display: inline-block;
+        border: 2px solid #BFBFBF;
+        border-radius: 9px;
+        width: 33%;
+        height: 100px;
+        margin: 0 auto;
+        margin-bottom: 5px;
+        cursor: pointer;
+        position: relative;
+        }
+        .letter-player img {
+        display: inline-block;
+        padding: 2%;
+        margin-right: 0px;
+        width: auto;
+        height: 100%;
+        float: left;
+        }
+            .letter-player h4, h5 {
+                display: block;
+                margin-left: 95px;
+        }
+    @media screen and (max-width: 661px) {
+        .letter-player {
+            width: 99%;
+        }
+        }
+    .letter-center2 {
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+    }
+    </style></head>
+  <body><div id="fixedBox" style="display: none;">
+      <p>Click anywhere outside of this box to hide it.</p>
+    </div>
+
+    <div id="overlay" style="display: none;"></div>
+  
+  <div class="banner"><a href="/"><img src="https://i.imgur.com/baPdESA.png" class="logo"></a><a href="../statistika"><img src="../images/site/statistika.png" class="headercontent" align="right"></a><a href="../protivnici/protivnici"><img src="../images/site/protivnici.png" class="headercontent" align="right"></a><img src="../images/site/kalendar.png" class="headercontent" align="right"><a href="../abecedarnik/abecedarnik"><img src="../images/site/abecedarnik.png" class="headercontent" align="right"></a><div class="dropdown">
+    <img class="dropdown-img" src="../images/site/dropdown-menu.png">
+    <div class="dropdown-content">
+        <a href="../abecedarnik/abecedarnik"><img src="../images/site/abecedarnik.png"></a>
+        <a><img src="../images/site/kalendar.png"></a>
+        <a href="../protivnici/protivnici"><img src="../images/site/protivnici.png"></a>
+        <a href="../statistika"><img src="../images/site/statistika.png"></a>
+    </div>
+</div></div>
+  <div class="container">
+    
+    <br class="size1">
+    <br>
+    <div class="logo2">
+        <a href="/"><img src="https://i.imgur.com/auxUofx.png" style="width:100%;"></a>
+    </div>
+    <br>
+  <div class="panel panel-default">
+    <div class="panel-body"><h1 style="margin-top: 2px;">Igre</h1>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+
+
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+
+<div class="letter-center size1">
+  <div class="letter">
+    <a href="../igre/više-manje" style="text-decoration: none;">
+      <div style="background-color: #D8D8D8; color: black; padding: 15px; border-radius: 8px; text-align: center;">
+        <h3><b>Više/Manje</b></h3>
+        <p>Izaberite ko ima više nastupa/golova između ova dva igrača.</p>
+      </div>
+    </a>
+    <div id="appearances-leaderboard" style="margin-top: 15px; background-color: #f5f5f5; padding: 10px; border-radius: 8px;">
+      <h4>Top 10 - Nastupi</h4>
+      <ol id="appearances-top10"></ol>
+    </div>
+    <div id="goals-leaderboard" style="margin-top: 15px; background-color: #f5f5f5; padding: 10px; border-radius: 8px;">
+      <h4>Top 10 - Golovi</h4>
+      <ol id="goals-top10"></ol>
+    </div>
+  </div>
+
+  <div class="letter">
+    <a href="../igre/3000-golova" style="text-decoration: none;">
+      <div style="background-color: #D8D8D8; color: black; padding: 15px; border-radius: 8px; text-align: center;">
+        <h3><b>3000 golova</b></h3>
+        <p>Poredajte igrače na pravilna mjesta po golovima.</p>
+      </div>
+    </a>
+    <div id="3000goals-leaderboard" style="margin-top: 15px; background-color: #f5f5f5; padding: 10px; border-radius: 8px;">
+      <h4>Top 10 - 3000 Golova</h4>
+      <ol id="3000goals-top10"></ol>
+    </div>
+  </div>
+</div>
+<div class="letter-center size2"><div class="letter" style="width: 100%;">
+    <a href="../igre/više-manje" style="text-decoration: none;">
+      <div style="background-color: #D8D8D8; color: black; padding: 15px; border-radius: 8px; text-align: center;">
+        <h3><b>Više/Manje</b></h3>
+        <p>Izaberite ko ima više nastupa/golova između ova dva igrača.</p>
+      </div>
+    </a>
+    <div id="appearances-leaderboard" style="margin-top: 15px; background-color: #f5f5f5; padding: 10px; border-radius: 8px;">
+      <h4>Top 10 - Nastupi</h4>
+      <ol id="appearances-top10"></ol>
+    </div>
+    <div id="goals-leaderboard" style="margin-top: 15px; background-color: #f5f5f5; padding: 10px; border-radius: 8px;">
+      <h4>Top 10 - Golovi</h4>
+      <ol id="goals-top10"></ol>
+    </div>
+  </div>
+<div class="letter" style="width: 100%;">
+    <a href="../igre/3000-golova" style="text-decoration: none;">
+      <div style="background-color: #D8D8D8; color: black; padding: 15px; border-radius: 8px; text-align: center;">
+        <h3><b>3000 golova</b></h3>
+        <p>Poredajte igrače na pravilna mjesta po golovima.</p>
+      </div>
+    </a>
+    <div id="3000goals-leaderboard" style="margin-top: 15px; background-color: #f5f5f5; padding: 10px; border-radius: 8px;">
+      <h4>Top 10 - 3000 Golova</h4>
+      <ol id="3000goals-top10"></ol>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<p>Dobrodošli na sekciju Igre. Ovdje možete naći igre znanja bazirane na historiji Veleža.</p> 
+
+</div></div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+<script>
+  // Firebase configuration
+  const firebaseConfig = {
+      apiKey: "AIzaSyDjxTYiGjicfv8gVfeUV27eSXEeToxzHmI",
+      authDomain: "velez-highscores.firebaseapp.com",
+      projectId: "velez-highscores",
+      storageBucket: "velez-highscores.firebasestorage.app",
+      messagingSenderId: "185579966696",
+      appId: "1:185579966696:web:2785e72ea8efdbc318f95d"
+    };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+  // Function to load and display leaderboards
+  function loadLeaderboards() {
+    // Load appearances leaderboard
+    db.collection("scores")
+      .where("mode", "==", "appearances")
+      .orderBy("score", "desc")
+      .limit(10)
+      .get()
+      .then((querySnapshot) => {
+        const leaderboard = document.getElementById('appearances-top10');
+        leaderboard.innerHTML = '';
+        querySnapshot.forEach((doc, index) => {
+          const data = doc.data();
+          leaderboard.innerHTML += `<li>${index+1}. ${data.username}: ${data.score}</li>`;
+        });
+      });
+
+    // Load goals leaderboard
+    db.collection("scores")
+      .where("mode", "==", "goals")
+      .orderBy("score", "desc")
+      .limit(10)
+      .get()
+      .then((querySnapshot) => {
+        const leaderboard = document.getElementById('goals-top10');
+        leaderboard.innerHTML = '';
+        querySnapshot.forEach((doc, index) => {
+          const data = doc.data();
+          leaderboard.innerHTML += `<li>${index+1}. ${data.username}: ${data.score}</li>`;
+        });
+      });
+
+    // Load 3000-goals leaderboard
+    db.collection("scores")
+      .where("mode", "==", "3000-goals")
+      .orderBy("score", "desc")
+      .limit(10)
+      .get()
+      .then((querySnapshot) => {
+        const leaderboard = document.getElementById('3000goals-top10');
+        leaderboard.innerHTML = '';
+        querySnapshot.forEach((doc, index) => {
+          const data = doc.data();
+          leaderboard.innerHTML += `<li>${index+1}. ${data.username}: ${data.score}</li>`;
+        });
+      });
+  }
+
+  // Load leaderboards when page loads
+  window.onload = loadLeaderboards;
+</script>
+  <iframe src="../copyright.html" frameborder="0" style="margin-left: auto; margin-right: auto; width: 100%;"></iframe>
+
+</div>
+
+</body></html>
