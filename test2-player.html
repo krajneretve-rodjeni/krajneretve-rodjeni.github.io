@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Player Tracking System</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="firebase-config.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        input, select, button {
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .player-slots {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .player-slot {
+            border: 1px dashed #ccc;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .hidden {
+            display: none;
+        }
+        .active {
+            background-color: #4CAF50;
+        }
+        .tab-button {
+            padding: 10px 20px;
+            background-color: #ddd;
+            border: none;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        .tab-button:hover {
+            background-color: #ccc;
+        }
+        .player-info {
+            margin-top: 5px;
+        }
+        .card-option {
+            background-color: #ffeb3b;
+        }
+        .red-card-option {
+            background-color: #f44336;
+            color: white;
+        }
+        .debut-info {
+            background-color: #e6f7ff;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        .delete-btn {
+            background-color: #f44336;
+            margin-left: 5px;
+        }
+        .delete-btn:hover {
+            background-color: #d32f2f;
+        }
+        .clickable-id {
+            color: #0066cc;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .competition-players {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+        .clickable {
+            cursor: pointer;
+            color: #0066cc;
+        }
+        .clickable:hover {
+            text-decoration: underline;
+        }
+        .search-box {
+            width: 200px;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        .competition-stats {
+            margin-left: 20px;
+            border-left: 2px solid #ddd;
+            padding-left: 10px;
+        }
+        .season-stats {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+	#deleteMatchBtn {
+   		 margin-top: 10px;
+    		display: none; /* Hidden by default */
+	}
+    </style>
+</head>
+<body>
+    <h1>Advanced Player Tracking System</h1>
+    
+    <div class="tab-buttons">
+        <button class="tab-button active" onclick="openTab('players')">Players</button>
+        <button class="tab-button" onclick="openTab('seasons')">Seasons</button>
+        <button class="tab-button" onclick="openTab('competitions')">Competitions</button>
+        <button class="tab-button" onclick="openTab('matches')">Matches</button>
+    </div>
+    
+    <!-- Players Section -->
+    <div id="players" class="section tab-content">
+        <h2>Players</h2>
+        <div>
+            <input type="text" id="playerName" placeholder="Player name">
+            <button onclick="addPlayer()">Add Player</button>
+        </div>
+        <table id="playersTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Matches</th>
+                    <th>Goals</th>
+                    <th>Yellow Cards</th>
+                    <th>Red Cards</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="playersList"></tbody>
+        </table>
+        <div id="playerDetailsContainer"></div>
+    </div>
+    
+    <!-- Seasons Section -->
+    <div id="seasons" class="section tab-content hidden">
+        <h2>Seasons</h2>
+        <div>
+            <input type="text" id="seasonName" placeholder="Season name">
+            <button onclick="addSeason()">Add Season</button>
+        </div>
+        <table id="seasonsTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="seasonsList"></tbody>
+        </table>
+    </div>
+    
+    <!-- Competitions Section -->
+    <div id="competitions" class="section tab-content hidden">
+        <h2>Competitions</h2>
+        <div>
+            <select id="competitionSeason">
+                <option value="">Select Season</option>
+            </select>
+            <input type="text" id="competitionName" placeholder="Competition name">
+            <button onclick="addCompetition()">Add Competition</button>
+        </div>
+        <table id="competitionsTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Season</th>
+                    <th>Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="competitionsList"></tbody>
+        </table>
+        <div id="competitionPlayersContainer"></div>
+    </div>
+    
+    <!-- Matches Section -->
+    <div id="matches" class="section tab-content hidden">
+        <h2>Matches</h2>
+        <div>
+            <select id="matchCompetition" onchange="updateMatchDropdown()">
+                <option value="">Select Competition</option>
+            </select>
+            <select id="existingMatches">
+                <option value="">Select Match to Edit</option>
+            </select>
+            <button onclick="newMatch()">New Match</button>
+            <button onclick="saveMatch()" id="saveMatchBtn" disabled>Save Match</button>
+        </div>
+        
+        <div id="matchDetails" class="hidden">
+            <div>
+                <input type="text" id="matchName" placeholder="Match name">
+                <input type="date" id="matchDate">
+                <input type="text" id="matchLocation" placeholder="Location">
+            </div>
+            
+            <h3>Players</h3>
+            <input type="text" id="playerSearch" class="search-box" placeholder="Search players..." onkeyup="searchPlayers()">
+            <div class="player-slots" id="playerSlots"></div>
+        </div>
+    </div>
+
+    <script>
+    // Data storage structure
+    let data = {
+        players: [],
+        seasons: [],
+        competitions: [],
+        matches: [],
+        nextPlayerId: 1,
+        nextSeasonId: 1,
+        nextCompetitionId: 1,
+        nextMatchId: 1,
+        currentMatch: null,
+        filteredPlayers: []
+    };
+
+    // Card options (unchanged)
+    const cardOptions = [
+        { value: 'none', text: 'No cards' },
+        { value: 'yellow', text: 'Yellow card', class: 'card-option' },
+        { value: 'yellow_red', text: 'Yellow + Red card', class: 'card-option' },
+        { value: 'second_yellow', text: 'Second yellow card', class: 'card-option' },
+        { value: 'red', text: 'Red card', class: 'red-card-option' }
+    ];
+
+    // Firebase data management
+    const FirebaseManager = {
+        // Load all data from Firebase
+        async loadData() {
+            try {
+                console.log('Loading data from Firebase...');
+                
+                // Load players
+                const playersSnapshot = await db.collection('players').get();
+                data.players = playersSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                
+                // Load seasons
+                const seasonsSnapshot = await db.collection('seasons').get();
+                data.seasons = seasonsSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                
+                // Load competitions
+                const competitionsSnapshot = await db.collection('competitions').get();
+                data.competitions = competitionsSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                
+                // Load matches
+                const matchesSnapshot = await db.collection('matches').get();
+                data.matches = matchesSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                
+                // Calculate next IDs
+                data.nextPlayerId = this.getNextId(data.players);
+                data.nextSeasonId = this.getNextId(data.seasons);
+                data.nextCompetitionId = this.getNextId(data.competitions);
+                data.nextMatchId = this.getNextId(data.matches);
+                
+                data.filteredPlayers = [...data.players];
+                console.log('Data loaded successfully from Firebase');
+                renderAll();
+                
+            } catch (error) {
+                console.error('Error loading data from Firebase:', error);
+                // Fallback to localStorage for migration
+                loadFromLocalStorage();
+            }
+        },
+
+        // Get next ID from existing data
+        getNextId(items) {
+            if (items.length === 0) return 1;
+            const maxId = Math.max(...items.map(item => parseInt(item.id)));
+            return maxId + 1;
+        },
+
+        // Save player to Firebase
+        async savePlayer(player) {
+            try {
+                await db.collection('players').doc(player.id.toString()).set({
+                    name: player.name,
+                    matchesPlayed: player.matchesPlayed || 0,
+                    goals: player.goals || 0,
+                    yellowCards: player.yellowCards || 0,
+                    redCards: player.redCards || 0,
+                    firstMatch: player.firstMatch,
+                    lastMatch: player.lastMatch
+                });
+            } catch (error) {
+                console.error('Error saving player:', error);
+            }
+        },
+
+        // Save season to Firebase
+        async saveSeason(season) {
+            try {
+                await db.collection('seasons').doc(season.id.toString()).set({
+                    name: season.name
+                });
+            } catch (error) {
+                console.error('Error saving season:', error);
+            }
+        },
+
+        // Save competition to Firebase
+        async saveCompetition(competition) {
+            try {
+                await db.collection('competitions').doc(competition.id.toString()).set({
+                    seasonId: competition.seasonId,
+                    seasonName: competition.seasonName,
+                    name: competition.name
+                });
+            } catch (error) {
+                console.error('Error saving competition:', error);
+            }
+        },
+
+        // Save match to Firebase
+        async saveMatch(match) {
+            try {
+                await db.collection('matches').doc(match.id.toString()).set({
+                    competitionId: match.competitionId,
+                    name: match.name,
+                    date: match.date,
+                    location: match.location,
+                    players: match.players
+                });
+            } catch (error) {
+                console.error('Error saving match:', error);
+            }
+        },
+
+        // Delete player from Firebase
+        async deletePlayer(playerId) {
+            try {
+                await db.collection('players').doc(playerId.toString()).delete();
+            } catch (error) {
+                console.error('Error deleting player:', error);
+            }
+        },
+
+        // Delete season from Firebase
+        async deleteSeason(seasonId) {
+            try {
+                await db.collection('seasons').doc(seasonId.toString()).delete();
+            } catch (error) {
+                console.error('Error deleting season:', error);
+            }
+        },
+
+        // Delete competition from Firebase
+        async deleteCompetition(competitionId) {
+            try {
+                await db.collection('competitions').doc(competitionId.toString()).delete();
+            } catch (error) {
+                console.error('Error deleting competition:', error);
+            }
+        },
+
+        // Delete match from Firebase
+        async deleteMatch(matchId) {
+            try {
+                await db.collection('matches').doc(matchId.toString()).delete();
+            } catch (error) {
+                console.error('Error deleting match:', error);
+            }
+        },
+
+        // Migrate data from localStorage to Firebase
+        async migrateFromLocalStorage() {
+            const savedData = localStorage.getItem('matchTrackingData');
+            if (savedData) {
+                const localData = JSON.parse(savedData);
+                
+                // Migrate players
+                for (const player of localData.players) {
+                    await this.savePlayer(player);
+                }
+                
+                // Migrate seasons
+                for (const season of localData.seasons) {
+                    await this.saveSeason(season);
+                }
+                
+                // Migrate competitions
+                for (const competition of localData.competitions) {
+                    await this.saveCompetition(competition);
+                }
+                
+                // Migrate matches
+                for (const match of localData.matches) {
+                    await this.saveMatch(match);
+                }
+                
+                console.log('Migration from localStorage to Firebase completed!');
+                localStorage.removeItem('matchTrackingData'); // Clear localStorage after migration
+            }
+        }
+    };
+
+    // Load data from localStorage (for migration)
+    function loadFromLocalStorage() {
+        const savedData = localStorage.getItem('matchTrackingData');
+        if (savedData) {
+            const localData = JSON.parse(savedData);
+            data = { ...data, ...localData };
+            data.filteredPlayers = [...data.players];
+            renderAll();
+            console.log('Loaded from localStorage. Migrating to Firebase...');
+            FirebaseManager.migrateFromLocalStorage();
+        }
+    }
+
+    // Tab navigation (unchanged)
+    function openTab(tabName) {
+        const tabs = document.getElementsByClassName('tab-content');
+        for (let i = 0; i < tabs.length; i++) {
+            tabs[i].classList.add('hidden');
+        }
+        document.getElementById(tabName).classList.remove('hidden');
+        
+        const tabButtons = document.getElementsByClassName('tab-button');
+        for (let i = 0; i < tabButtons.length; i++) {
+            tabButtons[i].classList.remove('active');
+        }
+        event.currentTarget.classList.add('active');
+    }
+
+    // Player functions (updated for Firebase)
+    async function addPlayer() {
+        const name = document.getElementById('playerName').value.trim();
+        if (name) {
+            const player = {
+                id: data.nextPlayerId++,
+                name: name,
+                matchesPlayed: 0,
+                goals: 0,
+                yellowCards: 0,
+                redCards: 0,
+                firstMatch: null,
+                lastMatch: null
+            };
+            data.players.push(player);
+            data.filteredPlayers.push(player);
+            document.getElementById('playerName').value = '';
+            
+            await FirebaseManager.savePlayer(player);
+            renderPlayers();
+        }
+    }
+
+    async function deletePlayer(playerId) {
+        if (confirm('Are you sure you want to delete this player? This will also remove them from all matches!')) {
+            // Remove from players array
+            data.players = data.players.filter(p => p.id !== playerId);
+            data.filteredPlayers = data.filteredPlayers.filter(p => p.id !== playerId);
+            
+            // Remove from matches
+            data.matches.forEach(match => {
+                match.players = match.players.map(slot => {
+                    if (slot.playerId === playerId) {
+                        return { playerId: null, goals: 0, cards: 'none' };
+                    }
+                    return slot;
+                });
+            });
+            
+            // Update matches in Firebase
+            for (const match of data.matches) {
+                await FirebaseManager.saveMatch(match);
+            }
+            
+            // Delete player from Firebase
+            await FirebaseManager.deletePlayer(playerId);
+            
+            renderAll();
+        }
+    }
+
+    // Season functions (updated for Firebase)
+    async function addSeason() {
+        const name = document.getElementById('seasonName').value.trim();
+        
+        if (name) {
+            const season = {
+                id: data.nextSeasonId++,
+                name: name
+            };
+            data.seasons.push(season);
+            document.getElementById('seasonName').value = '';
+            
+            await FirebaseManager.saveSeason(season);
+            renderSeasons();
+            updateSeasonDropdowns();
+        }
+    }
+
+    async function deleteSeason(seasonId) {
+        if (confirm('Are you sure you want to delete this season? This will also delete all competitions and matches in this season!')) {
+            // Find competitions to delete
+            const compsToDelete = data.competitions.filter(c => c.seasonId === seasonId);
+            
+            // First remove stats from all matches in these competitions
+            data.matches.forEach(match => {
+                if (compsToDelete.some(c => c.id === match.competitionId)) {
+                    removeMatchStats(match);
+                }
+            });
+            
+            // Then delete matches from Firebase and data
+            for (const match of data.matches.filter(m => compsToDelete.some(c => c.id === m.competitionId))) {
+                await FirebaseManager.deleteMatch(match.id);
+            }
+            data.matches = data.matches.filter(m => !compsToDelete.some(c => c.id === m.competitionId));
+            
+            // Delete competitions from Firebase and data
+            for (const comp of compsToDelete) {
+                await FirebaseManager.deleteCompetition(comp.id);
+            }
+            data.competitions = data.competitions.filter(c => c.seasonId !== seasonId);
+            
+            // Delete season from Firebase and data
+            await FirebaseManager.deleteSeason(seasonId);
+            data.seasons = data.seasons.filter(s => s.id !== seasonId);
+            
+            renderAll();
+        }
+    }
+
+    // Competition functions (updated for Firebase)
+    async function addCompetition() {
+        const seasonId = parseInt(document.getElementById('competitionSeason').value);
+        const name = document.getElementById('competitionName').value.trim();
+        
+        if (seasonId && name) {
+            const season = data.seasons.find(s => s.id === seasonId);
+            const competition = {
+                id: data.nextCompetitionId++,
+                seasonId: seasonId,
+                seasonName: season.name,
+                name: name
+            };
+            data.competitions.push(competition);
+            document.getElementById('competitionName').value = '';
+            
+            await FirebaseManager.saveCompetition(competition);
+            renderCompetitions();
+            updateCompetitionDropdown();
+        }
+    }
+
+    async function deleteCompetition(compId) {
+        if (confirm('Are you sure you want to delete this competition? This will also delete all matches in this competition!')) {
+            // First remove stats from all matches in this competition
+            data.matches.forEach(match => {
+                if (match.competitionId === compId) {
+                    removeMatchStats(match);
+                }
+            });
+            
+            // Then delete matches from Firebase and data
+            for (const match of data.matches.filter(m => m.competitionId === compId)) {
+                await FirebaseManager.deleteMatch(match.id);
+            }
+            data.matches = data.matches.filter(m => m.competitionId !== compId);
+            
+            // Delete competition from Firebase and data
+            await FirebaseManager.deleteCompetition(compId);
+            data.competitions = data.competitions.filter(c => c.id !== compId);
+            
+            renderAll();
+        }
+    }
+
+    // Match functions (updated for Firebase)
+    async function saveMatch() {
+        if (!data.currentMatch) return;
+        
+        // Validate match name
+        const matchName = document.getElementById('matchName').value.trim();
+        if (!matchName) {
+            alert('Please enter a match name');
+            return;
+        }
+        data.currentMatch.name = matchName;
+        
+        // Update match date and location
+        data.currentMatch.date = document.getElementById('matchDate').value;
+        data.currentMatch.location = document.getElementById('matchLocation').value;
+
+        // Check if this is an edit of an existing match
+        const existingIndex = data.matches.findIndex(m => m.id === data.currentMatch.id);
+        const isEdit = existingIndex >= 0;
+
+        if (isEdit) {
+            // For edits, first remove the old match's stats from players
+            removeMatchStats(data.matches[existingIndex]);
+        }
+
+        // Update or add the match
+        if (isEdit) {
+            data.matches[existingIndex] = {...data.currentMatch};
+        } else {
+            data.matches.push({...data.currentMatch});
+        }
+        
+        // Update player stats
+        updatePlayerStats(data.currentMatch);
+        
+        // Save match to Firebase
+        await FirebaseManager.saveMatch(data.currentMatch);
+        
+        // Update players in Firebase
+        for (const player of data.players) {
+            await FirebaseManager.savePlayer(player);
+        }
+        
+        data.currentMatch = null;
+        document.getElementById('matchDetails').classList.add('hidden');
+        document.getElementById('saveMatchBtn').disabled = true;
+        updateMatchDropdown();
+        renderPlayers();
+    }
+
+    async function deleteMatch(matchId) {
+        if (confirm('Are you sure you want to delete this match?')) {
+            // First remove stats from players
+            const match = data.matches.find(m => m.id === matchId);
+            if (match) removeMatchStats(match);
+            
+            // Then delete the match from Firebase and data
+            await FirebaseManager.deleteMatch(matchId);
+            data.matches = data.matches.filter(m => m.id !== matchId);
+            
+            // Update players in Firebase
+            for (const player of data.players) {
+                await FirebaseManager.savePlayer(player);
+            }
+            
+            // Update the interface
+            updateMatchDropdown();
+            renderAll();
+            
+            // Clear the current selection
+            document.getElementById('existingMatches').value = '';
+            alert('Match deleted successfully!');
+        }
+    }
+
+    // The rest of your functions remain largely the same (renderPlayers, renderSeasons, etc.)
+    // Only the data persistence parts have been updated
+
+    // Initialize with Firebase
+    FirebaseManager.loadData();
+</script>
+</body>
+</html>
