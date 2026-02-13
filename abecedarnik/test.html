@@ -210,6 +210,36 @@ span:hover + .scorers {
         font-family: 'Trebuchet MS', sans-serif;
         text-align: center;
     }
+    .table-container {
+                display: flex;
+                flex-direction: column;
+                margin-left: auto;
+                margin-right: auto;
+                width: 98%;
+            }
+
+            @media screen and (min-width: 661px) {
+                .table-container {
+                    width: 75%;
+                }
+            }
+
+            .table-row {
+                display: flex;
+                background-color: #fff;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .table-cell {
+                flex: 2;
+                padding: 8px;
+            }
+
+            .table-row.header {
+                background-color: #D84B4B;
+                color: #fff;
+                font-weight: bold;
+            }
     .column {
   float: left;
   width: 50%;
@@ -376,69 +406,162 @@ h2 {
   <div class="panel panel-default">
     <div class="panel-body"><h1 style="margin-top: 2px;">Abecedarnik</h1>
     <div id="fixedBox1" class="fixedBox" style="display: none;">
-    <img src="https://krajneretve-rodjeni.github.io/images/players/%C5%BEarko%20barbari%C4%87.png" style="width: 200px; float: left; margin-right: 10px;" class="size1">
-    <img src="https://krajneretve-rodjeni.github.io/images/players/%C5%BEarko%20barbari%C4%87.png" style="width: 50%; margin-left: auto; margin-right: auto;" class="size2"><h2>Šefik Alajbegović</h2>
+    <img src="https://krajneretve-rodjeni.github.io/images/players/šefik alajbegović.png" style="width: 200px; float: left; margin-right: 10px;" class="size1">
+    <img src="https://krajneretve-rodjeni.github.io/images/players/šefik alajbegović.png" style="width: 50%; margin-left: auto; margin-right: auto;" class="size2"><h2>Šefik Alajbegović</h2>
     <h4>Datum rođenja: 10.5.1938. (Mostar)</h4>
     <h4>Datum smrti: 15.12.2020. (Mostar)</h4>
     <h4>Pozicija: Vezni red</h4>
     <h4>Debi: 4.11.1956. v FK Sarajevo (H, kup)</h4>
     <br class="size1"><br class="size1">
-    <div class="letter-center"><table>
-    <tbody><tr style="text-align: center;">
-    <th>⠀Prvenstvo⠀</th>
-    <th>⠀Nastupi⠀</th>
-    <th>⠀Golovi⠀</th></tr>
-    <tr>
-    <td>1956-57</td>
-    <td>3</td>
-    <td>0</td></tr>
-    <tr>
-    <td>1957-58</td>
-    <td>6</td>
-    <td>1</td></tr>
-    <tr>
-    <td>1958-59</td>
-    <td>4</td>
-    <td>0</td></tr><tr>
-    <td>1959-60</td>
-    <td>1</td>
-    <td>0</td></tr><tr>
-    <td>1960-61</td>
-    <td>7</td>
-    <td>0</td></tr><tr>
-    <td>1962-63</td>
-    <td>24</td>
-    <td>0</td></tr><tr>
-    <td><b>Ukupno</b></td>
-    <td><b>45</b></td>
-    <td><b>1</b></td></tr></tbody></table>
-    <table>
-    <tbody><tr style="text-align: center;">
-    <th>⠀⠀Kup⠀⠀</th>
-    <th>⠀Nastupi⠀</th>
-    <th>⠀Golovi⠀</th></tr>
-    <tr>
-    <td>1956-57</td>
-    <td>1</td>
-    <td>0</td></tr>
-    <tr>
-    <td>1957-58</td>
-    <td>3</td>
-    <td>0</td></tr>
-    <tr>
-    <td>1958-59</td>
-    <td>1</td>
-    <td>0</td></tr><tr>
-    <td>1961-62</td>
-    <td>1</td>
-    <td>0</td></tr><tr>
-    <td>1962-63</td>
-    <td>1</td>
-    <td>0</td></tr><tr>
-    <td><b>Ukupno</b></td>
-    <td><b>7</b></td>
-    <td><b>0</b></td></tr></tbody></table>
-    </div></div>
+    <div class="letter-center"><div class="table-row header">
+            <div class="table-cell">Sezona</div>
+            
+            <div class="table-cell">Liga</div>
+            <div class="table-cell">Golovi</div>
+            <div class="table-cell">Kup</div>
+            <div class="table-cell">Golovi</div>
+            
+        	
+            
+        </div>
+    <div class="table-row">
+            <div class="table-cell">1956-57</div>
+            
+            <div class="table-cell"><span>3</span></div>
+            <div class="table-cell">0</div>
+            <div class="table-cell"><span>1</span></div>
+            
+            <div class="table-cell">0</div>
+        </div>
+    <div class="table-row">
+            <div class="table-cell">1957-58</div>
+            
+            <div class="table-cell"><span>6</span></div>
+            <div class="table-cell">1</div>
+            <div class="table-cell"><span>3</span></div>
+            
+            <div class="table-cell">0</div>
+        </div><div class="table-row">
+            <div class="table-cell">1958-59</div>
+            
+            <div class="table-cell"><span>4</span></div>
+            <div class="table-cell">0</div>
+            <div class="table-cell"><span>1</span></div>
+            
+            <div class="table-cell">0</div>
+        </div><div class="table-row">
+            <div class="table-cell">1959-60</div>
+            
+            <div class="table-cell"><span>1</span></div>
+            <div class="table-cell">0</div>
+            <div class="table-cell"><span></span></div>
+            
+            <div class="table-cell"></div>
+        </div><div class="table-row">
+            <div class="table-cell">1960-61</div>
+            
+            <div class="table-cell"><span>6</span></div>
+            <div class="table-cell">0</div>
+            <div class="table-cell"><span></span></div>
+            
+            <div class="table-cell"></div>
+        </div><div class="table-row">
+            <div class="table-cell">1961-62</div>
+            
+            <div class="table-cell"><span></span></div>
+            <div class="table-cell"></div>
+            <div class="table-cell"><span>1</span></div>
+            
+            <div class="table-cell">0</div>
+        </div><div class="table-row">
+            <div class="table-cell">1962-63</div>
+            
+            <div class="table-cell"><span>24</span></div>
+            <div class="table-cell">0</div>
+            <div class="table-cell"><span>1</span></div>
+            
+            <div class="table-cell">0</div>
+        </div><div class="table-row">
+            <div class="table-cell">1963-64</div>
+            
+            <div class="table-cell"><span>15</span></div>
+            <div class="table-cell">0</div>
+            <div class="table-cell"><span>1</span></div>
+            
+            <div class="table-cell">0</div>
+        </div><div class="table-row">
+            <div class="table-cell">1964-65</div>
+            
+            <div class="table-cell"><span>1</span></div>
+            <div class="table-cell">0</div>
+            <div class="table-cell"><span></span></div>
+            
+            <div class="table-cell"></div>
+        </div><div class="table-row">
+            <div class="table-cell">1966-67</div>
+            
+            <div class="table-cell"><span>14</span></div>
+            <div class="table-cell">0</div>
+            <div class="table-cell"><span></span></div>
+            
+            <div class="table-cell"></div>
+        </div><div class="table-row">
+            <div class="table-cell">1967-68</div>
+            
+            <div class="table-cell"><span>27</span></div>
+            <div class="table-cell">0</div>
+            <div class="table-cell"><span>2</span></div>
+            
+            <div class="table-cell">0</div>
+        </div><div class="table-row">
+            <div class="table-cell">1968-69</div>
+            
+            <div class="table-cell"><span>17</span></div>
+            <div class="table-cell">0</div>
+            <div class="table-cell"><span>1</span></div>
+            
+            <div class="table-cell">0</div>
+        </div><div class="table-row">
+            <div class="table-cell">1969-70</div>
+            
+            <div class="table-cell"><span>33</span></div>
+            <div class="table-cell">0</div>
+            <div class="table-cell"><span>1</span></div>
+            
+            <div class="table-cell">0</div>
+        </div><div class="table-row">
+            <div class="table-cell">1970-71</div>
+            
+            <div class="table-cell"><span>18</span></div>
+            <div class="table-cell">0</div>
+            <div class="table-cell"><span>1</span></div>
+            
+            <div class="table-cell">0</div>
+        </div><div class="table-row" style="font-weight: bold; background-color: #ddd;">
+            <div class="table-cell">Ukupno</div>
+            
+            <div class="table-cell"><span>169</span></div>
+            <div class="table-cell">1</div>
+            <div class="table-cell"><span>13</span></div>
+            
+            <div class="table-cell">0</div>
+        </div><div class="table-row" style="border-bottom: 0px;">
+            <div class="table-cell size1" style="font-weight: bold; background-color: #ddd;">182 | 1</div>
+            
+            <div class="table-cell size1"><span></span></div>
+            <div class="table-cell size1"></div>
+            <div class="table-cell size1"><span></span></div>
+            
+            <div class="table-cell size1"></div>
+        </div><div class="table-row" style="border-bottom: 0px;">
+            <div class="table-cell size2" style="font-weight: bold; background-color: #ddd;">182 | 1</div>
+            
+            
+            
+            
+            
+            
+        </div></div></div>
 
     <div id="overlay1" class="overlay" style="display: none;"></div>
 
@@ -875,7 +998,7 @@ h2 {
 <a href="../abecedarnik/z"><div class="letter"><img src="https://i.imgur.com/eRhUoPE.png"><h2>Z,Ž</h2></div></a></div>
 <p>Dobrodošli na sekciju Abecedarnik. Ovdje možete naći spis svih igrača Veleža koji su odigrali barem jednu prvenstvenu ili kup utakmicu od 1946. pa nadalje. Nakon što kliknete slovo i otvorite novu stranicu, kliknite na igrača kako bi vam se otvorila njegova statistika i osnovni biografski podaci.</p><p>Na kraju svake stranice nalazi se spisak registrovanih igrača Veleža iz Jugoslavenskog nogometnog saveza u periodu od 1922. do 1940. koji dolazi iz knjige Saše Ibrulja "<a href="https://fkvelez.ba/product/knjiga-velez-prica-o-100-godina-mostarskih-rodjenih/">Velež - Priča o 100 godina mostarskih Rođenih</a>" (Mostar, 2022). Spisak je dobio zahvaljujući najboljem arhivisti predratnog jugoslovenskog fudbala Nebojši Jakovljeviću, od kojeg je ova stranica preuzela inspiraciju za samo ime "Abecedarnik".</p> 
 <p>Spisak zadnji put ažuriran: <b>13.11.2023.</b></p>
-<div class="letter-center"><div class="letter-player" id="showBox1"><img src="https://krajneretve-rodjeni.github.io/images/players/%C5%BEarko%20barbari%C4%87.png"><div class="letter-center2"><h4>Šefik Alajbegović</h4></div>
+<div class="letter-center"><div class="letter-player" id="showBox1"><img src="https://krajneretve-rodjeni.github.io/images/players/šefik alajbegović.png"><div class="letter-center2"><h4>Šefik Alajbegović</h4></div>
 </div>
 <div class="letter-player"><img src="https://krajneretve-rodjeni.github.io/images/players/%C5%BEarko%20barbari%C4%87.png"><div class="letter-center2"><h4>Žarko Barbarić</h4></div></div>
 <div class="letter-player"><img src="https://krajneretve-rodjeni.github.io/images/players/%C5%BEarko%20barbari%C4%87.png"><div class="letter-center2"><h4>Meho Karamehmedović</h4></div></div></div></div></div>
