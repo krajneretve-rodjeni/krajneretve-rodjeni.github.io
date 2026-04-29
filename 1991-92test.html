@@ -349,6 +349,83 @@ h2 {
         .dropdown:hover .dropdown-content {
             display: block;
         }
+
+		.clickable-row {
+      cursor: pointer;
+    }
+
+    .clickable-row:hover {
+      background-color: #F7F7F7; /* Light gray on hover */
+    }
+
+    .hover-row {
+      display: none;
+      background-color: #f9f9f9; /* Light background for hover rows */
+    }
+
+    .hover-row td {
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    .hover-row td {
+      border-top: 1px solid #ddd;
+    }
+    .two-column-layout {
+    display: flex;
+    width: 100%;
+    position: relative; /* Ensure layout stays within parent */
+    height: 480px;
+    overflow: auto;
+}
+    
+@media screen and (max-width: 660px) {
+            .two-column-layout {
+                display: none;
+            }
+        }
+    
+.report-column {
+    padding: 9px;
+    flex: 1vh 2vh; /* Equal spacing between columns */
+}
+
+.report-column:first-child {
+    left: 0;
+    width: 33.33%;
+}
+
+.report-column:last-child {
+    padding-left: 16px; /* Add spacing from the first column */
+    left: 33.33%;
+    width: 66.66%;
+}
+		.signature {
+        text-align: right;
+    }
+    h2 {
+                margin-top: 1px;
+            }
+.aligned-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-text {
+  text-align: left;
+}
+
+.right-text {
+  text-align: right;
+}
+    .vl {
+        border: 1px solid #404040;
+        position: sticky;
+        top: 0;
+    }
     </style>
   </head>
   <body><div id="fixedBox" style="display: none;">
